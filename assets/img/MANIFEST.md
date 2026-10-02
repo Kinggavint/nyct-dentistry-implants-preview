@@ -33,3 +33,6 @@ All files: EXIF/metadata stripped, orientation applied, WebP q80. Pairs 3 and 5 
 
 ## Correction (page author, eye review)
 Pair 7 was exported reversed: the image from kakao-105252336.jpg shows the finished, whiter smile and kakao-105252336_04.jpg shows the discoloured teeth. Files swapped: ba-7-before.webp is now from kakao-105252336_04.jpg and ba-7-after.webp from kakao-105252336.jpg. Confirm the order with the practice before launch.
+
+## Update
+office-hallway, office-waiting and teaching-2 were removed in favour of the Stamford office photos (stamford-*), lecture photos (lecture-*) and team photos (team-*), taken from the Stamford office website. All re-encoded without metadata.
