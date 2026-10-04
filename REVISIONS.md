@@ -1,5 +1,9 @@
 # Open items before launch
 
+This site consolidates nyctdentistry.com and clearsmiledentalstudio.com into one site for all three
+offices. Every old URL on both domains is mapped to its new page in `REDIRECTS.csv` for 301
+redirects at launch.
+
 Everything on the site comes from the practice's onboarding answers, its uploads, its current
 website (nyctdentistry.com), or the Stamford office's own website (clearsmiledentalstudio.com,
 same address and phone as the Stamford office). Items below need the practice's confirmation or
@@ -33,20 +37,34 @@ material we do not have yet.
 10. **Spanish review.** The five Spanish pages need Maggie's review before the "in review"
     banner is removed. Terms to check: rediseño de sonrisa, carillas, tratamiento de conducto,
     empastes, muelas del juicio, consulta de cortesía, docente de implantes.
+11. **Implant package prices.** The Stamford office publishes Single Implant from $1,499, Overdenture
+    from $11,999 and Full Arch from $19,999, with what each includes. They are shown on the insurance
+    page as Stamford prices. Confirm they are current and whether they apply at all three offices.
+12. **Medicaid.** One Stamford page says Medicaid is accepted; another says "Husky, children under 21
+    only". The site uses the narrower wording (HUSKY Health for children under 21, Stamford only).
+13. **Dr. Chun.** An old Stamford blog post names a Dr. Chun for Invisalign. He is not on the new
+    site. Confirm whether he still practices with you.
+14. **Sedation.** The old Stamford pages mention sedation. The site says to ask the Stamford office.
+15. **Town pages.** The ten "dental implants in <town>" pages were near-duplicates of each other,
+    which search engines treat as doorway pages. They are combined into one Areas We Serve page,
+    and each old address redirects there.
+16. **Blog posts.** All 31 Stamford blog posts are rewritten under the same addresses. Market prices,
+    statistics and lifespan figures that could not be verified were removed.
 
 ## Photos
 
-11. **Before and after order.** Please confirm set 7 (front teeth restored and brightened) is in
+17. **Before and after order.** Please confirm set 7 (front teeth restored and brightened) is in
     the right order, and that set 2 (missing front tooth replaced) is one patient.
-12. **Unpaired photos.** Four "before" photos have no matching "after":
-    DSC_0248, DSC_0259, DSC_0667, DSC_0679. DSC_0248 and DSC_0259 may be one patient.
-13. **Mount Kisco and Kent office photos.** The only photos we have of these two offices are
+18. **Unpaired photos.** DSC_0248 and DSC_0259 are now shown as a pair (the old site pairs them too).
+    DSC_0667 and DSC_0679 still have no "after"; the old site shows them as a pair, but both look
+    like "before" photos. The two full-arch X-ray cases come from the old site's gallery.
+19. **Mount Kisco and Kent office photos.** The only photos we have of these two offices are
     low resolution, so the site shows the Stamford office. Five to eight photos of each would
     let every office have its own gallery.
 
 ## Features waiting on access
 
-14. **Live Google reviews.** Approval given for all three offices. Needs the three Google
+20. **Live Google reviews.** Approval given for all three offices. Needs the three Google
     Business Profile links to connect. Real patient quotes from both websites are shown meanwhile.
-15. **Website chat.** Live. It answers from the site's own content. Common questions and
+21. **Website chat.** Live. It answers from the site's own content. Common questions and
     answers from the practice would make it more useful.

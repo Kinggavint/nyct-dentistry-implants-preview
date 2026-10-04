@@ -498,3 +498,10 @@ h3 { font-size: clamp(1.35rem, 2vw, 1.75rem); letter-spacing: -0.02em; line-heig
 @media (max-width: 860px) { .plan-office .plan-list { columns: 2; } .offer-list { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 600px) { .plan-office .plan-list { columns: 2; column-gap: 18px; } }
 .section-ink .photo-trio figcaption, .section-ink .team-photo figcaption { color: #b9b9b9; }
+.office-row h3 a { color: inherit; text-decoration: none; }
+.office-row h3 a:hover { color: var(--accent-text); text-decoration: underline; text-decoration-thickness: 2px; }
+.footer-office-name { text-decoration: none; }
+.footer-legal { display: inline-flex; gap: 18px; }
+.footer-legal a { color: var(--muted); }
+.general-list h3 a { text-decoration: none; } .general-list h3 a:hover { text-decoration: underline; color: var(--accent-text); }
+.di-ba-xray .di-ba-img img { aspect-ratio: 2 / 1; object-fit: contain; background: #000; }
