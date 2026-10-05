@@ -233,3 +233,78 @@ a.mo-ticker { display: block; text-decoration: none; }
   .mo-story-meter { margin-top: 8px; }
   .mo-story-steps li { min-height: 46vh; padding-top: 22px; }
 }
+
+/* ===== 2026-10-05: Apple-style home (client feedback: branding first, services up front) ===== */
+.button { color: var(--accent-ink, var(--ink)); }
+.button:hover { color: var(--accent-ink, var(--ink)); }
+.apple-hero { padding: clamp(64px, 9vw, 120px) var(--gutter) clamp(28px, 4vw, 48px); text-align: center; background: var(--paper); overflow: hidden; }
+.apple-hero .eyebrow { margin-bottom: 1.2rem; }
+.apple-hero .brand-title { margin: 0 auto; font-size: clamp(3.2rem, 9vw, 8rem); letter-spacing: -0.055em; line-height: 0.98; }
+.apple-hero .brand-title .brand-amp { color: var(--accent); }
+.apple-tagline { margin: 1.1rem 0 0; color: var(--ink); font-family: var(--display); font-size: clamp(1.4rem, 2.6vw, 2.2rem); font-weight: 500; letter-spacing: -0.03em; }
+.apple-hero .lede { max-width: 680px; margin: 1.4rem auto 2rem; }
+.button-row.center { justify-content: center; }
+.more-link.center { text-align: center; }
+
+/* Auto-scrolling service strip */
+.svc-strip { margin: clamp(44px, 6vw, 72px) calc(-1 * var(--gutter)) 0; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.svc-strip-track { display: flex; width: max-content; animation: mo-marquee var(--dur, 55s) linear infinite; }
+.svc-strip:hover .svc-strip-track, .svc-strip:focus-within .svc-strip-track { animation-play-state: paused; }
+.svc-strip ul { display: flex; gap: 14px; margin: 0; padding: 0 7px; list-style: none; }
+.svc-strip a { display: flex; align-items: center; gap: 12px; padding: 8px 20px 8px 8px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); color: var(--ink); font-weight: 600; text-decoration: none; white-space: nowrap; transition: border-color 200ms ease, transform 250ms var(--ease-out); }
+.svc-strip a:hover { border-color: var(--ink); transform: translateY(-2px); color: var(--ink); }
+.svc-strip img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+.svc-strip .chip-dot { width: 44px; height: 44px; border-radius: 50%; background: var(--ink); position: relative; }
+.svc-strip .chip-dot::after { content: ""; position: absolute; inset: 17px; border-radius: 50%; background: var(--accent); }
+
+/* Apple-style tiles */
+.tiles-section { padding: clamp(24px, 3vw, 40px) var(--gutter) var(--pad); }
+.tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.tile { position: relative; display: flex; flex-direction: column; min-height: 520px; overflow: hidden; padding: clamp(32px, 4vw, 52px) clamp(24px, 3vw, 44px) 0; background: var(--mist); text-align: center; }
+.tile-wide { grid-column: 1 / -1; min-height: 600px; }
+.tile-dark { background: var(--ink); color: #e9e9e9; }
+.tile-dark .eyebrow, .tile-dark .tile-tag { color: #bdbdbd; }
+.tile-dark .tile-title, .tile-dark .text-link { color: var(--paper); }
+.tile-mist { background: #f6f6f6; }
+.tile .eyebrow { margin-bottom: 0.6rem; }
+.tile-title { margin: 0; font-size: clamp(2.2rem, 4.4vw, 3.8rem); letter-spacing: -0.045em; }
+.tile-wide .tile-title { font-size: clamp(2.6rem, 5.6vw, 4.8rem); }
+.tile-tag { max-width: 520px; margin: 0.8rem auto 1.2rem; color: var(--muted); font-size: clamp(1.05rem, 1.5vw, 1.3rem); }
+.tile-links { display: flex; flex-wrap: wrap; gap: 10px 28px; justify-content: center; }
+.tile-links .tile-book { color: var(--accent-text); }
+.tile-dark .tile-links .tile-book { color: var(--accent); }
+.tile-media { flex: 1; display: flex; align-items: flex-end; justify-content: center; margin: clamp(24px, 3vw, 36px) 0 0; min-height: 240px; }
+.tile-media img { width: min(100%, 720px); aspect-ratio: 16 / 9; object-fit: cover; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18); transition: transform 900ms var(--ease-out); }
+.tile-wide .tile-media img { width: min(100%, 940px); }
+.tile-media.contain img { object-fit: contain; background: #000; }
+.tile:hover .tile-media img { transform: translateY(-8px) scale(1.02); }
+.tile-mark { flex: 1; display: flex; align-items: center; justify-content: center; margin: 0; color: var(--accent); font-family: var(--display); font-size: clamp(4.5rem, 10vw, 8rem); font-weight: 600; letter-spacing: -0.06em; opacity: 0.95; }
+
+/* Call Now in the header, and a call/schedule dock on phones */
+.header-call { flex: 0 0 auto; }
+.cta-dock { display: none; }
+@media (max-width: 1180px) and (min-width: 1081px) { .primary-nav a { font-size: 0.9rem; } .primary-nav { gap: 12px; } }
+@media (max-width: 860px) {
+  .tiles { grid-template-columns: minmax(0, 1fr); }
+  .tile, .tile-wide { min-height: 0; padding-bottom: 0; }
+  .tile-media { min-height: 0; }
+  .tile-mark { padding: 28px 0 40px; }
+  .cta-dock { position: fixed; left: 0; right: 0; bottom: 0; z-index: 9990; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-top: 1px solid var(--line); }
+  .cta-dock a { display: flex; align-items: center; justify-content: center; min-height: 48px; font-weight: 700; text-decoration: none; }
+  .cta-dock .cta-call { border: 2px solid var(--ink); color: var(--ink); }
+  .cta-dock .cta-book { background: var(--accent); color: var(--accent-ink, var(--ink)); }
+  body { padding-bottom: 76px; }
+  #di-chat, .di-chat { bottom: 84px !important; }
+  #di-a11y, .di-a11y { bottom: 84px !important; }
+  .header-call { display: none; }
+  .site-footer { padding-bottom: 40px; }
+}
+@media (prefers-reduced-motion: reduce) { .svc-strip-track { animation: none; flex-wrap: wrap; width: auto; justify-content: center; } .svc-strip ul[aria-hidden] { display: none; } .svc-strip ul { flex-wrap: wrap; justify-content: center; } }
+
+/* Accent theme switch for the color decision: ?accent=blue (persists for the session) */
+html[data-accent="blue"] { --accent: #1463ff; --accent-hover: #3b7dff; --accent-text: #0b4fd6; --accent-ink: #ffffff; }
+html[data-accent="blue"] .button:hover { box-shadow: 0 10px 22px rgba(20, 99, 255, 0.25); }
+html[data-accent="blue"] .office-row:hover { background: linear-gradient(90deg, rgba(20, 99, 255, 0.05), transparent 70%); }
+.button.button-ghost { color: var(--ink); }
+.button.button-ghost:hover { color: var(--paper); }
+.tile-wide .tile-media img { width: min(100%, 780px); }

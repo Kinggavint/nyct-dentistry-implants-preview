@@ -1,8 +1,9 @@
 # Open items before launch
 
-This site consolidates nyctdentistry.com and clearsmiledentalstudio.com into one site for all three
-offices. Every old URL on both domains is mapped to its new page in `REDIRECTS.csv` for 301
-redirects at launch.
+This site consolidates three websites into one for all three offices: nyctdentistry.com,
+clearsmiledentalstudio.com and kentdentistryct.com. kentdentistryct.com already forwards its home
+page to nyctdentistry.com, but its other pages return "page not found". Every old URL on all three
+domains (175) is mapped to its new page in `REDIRECTS.csv` for 301 redirects at launch.
 
 Everything on the site comes from the practice's onboarding answers, its uploads, its current
 website (nyctdentistry.com), or the Stamford office's own website (clearsmiledentalstudio.com,

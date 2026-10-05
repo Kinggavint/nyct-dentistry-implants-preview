@@ -1,0 +1,80 @@
+/* Video components. Prefix vd-. Uses tokens from site.css. */
+.vd-loop, .vd-feature, .vd-testimonial { margin: 0; position: relative; }
+.vd-loop { overflow: hidden; background: var(--ink); aspect-ratio: 16 / 9; }
+.vd-loop video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.vd-toggle {
+  position: absolute; right: 16px; bottom: 16px; z-index: 2;
+  display: grid; place-items: center; width: 44px; height: 44px; padding: 0;
+  background: rgba(17, 17, 17, 0.72); color: var(--paper); border: 2px solid var(--paper); border-radius: 0; cursor: pointer;
+  transition: background-color 200ms ease, transform 200ms ease;
+}
+.vd-toggle:hover { background: var(--ink); transform: translateY(-2px); }
+.vd-toggle:focus-visible, .vd-start:focus-visible, .vd-filter:focus-visible, .vd-close:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.vd-toggle svg { width: 20px; height: 20px; fill: currentColor; }
+
+/* Poster button shared by feature and testimonial */
+.vd-start {
+  position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; padding: 0; overflow: hidden;
+  background: linear-gradient(135deg, #1d1d1d, #3a3a3a); border: 0; border-radius: 0; cursor: pointer; color: var(--paper);
+}
+.vd-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 900ms var(--ease-out, ease); }
+.vd-start:hover .vd-poster { transform: scale(1.045); }
+.vd-start::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0, 0, 0, 0.35), transparent 55%); pointer-events: none; }
+.vd-play {
+  position: absolute; top: 50%; left: 50%; z-index: 1; display: grid; place-items: center;
+  width: 84px; height: 84px; margin: -42px 0 0 -42px; border-radius: 50%;
+  background: var(--accent); color: var(--ink); box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+  transition: transform 260ms var(--ease-out, ease), background-color 200ms ease;
+}
+.vd-play svg { width: 34px; height: 34px; fill: currentColor; margin-left: 4px; }
+.vd-start:hover .vd-play { transform: scale(1.08); background: var(--accent-hover); }
+.vd-duration {
+  position: absolute; left: 12px; bottom: 12px; z-index: 1; padding: 4px 9px;
+  background: rgba(17, 17, 17, 0.82); color: var(--paper); font: 600 0.85rem/1.2 var(--body); font-variant-numeric: tabular-nums;
+}
+
+/* Playing media */
+.vd-feature .vd-media, .vd-dialog .vd-media { display: block; width: 100%; aspect-ratio: 16 / 9; height: auto; border: 0; background: #000; }
+.vd-feature.vd-active { background: #000; }
+
+/* Testimonials */
+.vd-filters { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 28px; }
+.vd-filter {
+  min-height: 44px; padding: 0.6rem 1.2rem; background: transparent; color: var(--ink);
+  border: 2px solid var(--ink); border-radius: 0; font: 700 1rem/1.2 var(--body); cursor: pointer;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+.vd-filter:hover { background: var(--mist); }
+.vd-filter[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.vd-testimonials { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.vd-testimonial[hidden] { display: none; }
+.vd-testimonial figcaption { padding: 14px 0 0; color: var(--ink); font: 600 1.05rem/1.35 var(--display); letter-spacing: -0.01em; }
+.vd-testimonial .vd-play { width: 64px; height: 64px; margin: -32px 0 0 -32px; }
+.vd-testimonial .vd-play svg { width: 26px; height: 26px; }
+.vd-badge {
+  position: absolute; top: 12px; left: 12px; z-index: 1; padding: 4px 9px;
+  background: var(--paper); color: var(--ink); font: 700 0.8rem/1.2 var(--body); letter-spacing: 0.08em;
+}
+@media (max-width: 980px) { .vd-testimonials { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 620px) { .vd-testimonials { grid-template-columns: 1fr; gap: 24px; } }
+
+/* Modal */
+.vd-dialog { width: min(960px, calc(100% - 32px)); max-height: calc(100% - 32px); padding: 0; border: 0; background: var(--ink); color: var(--paper); overflow: visible; }
+.vd-dialog::backdrop { background: rgba(0, 0, 0, 0.8); }
+.vd-dialog[open] { animation: vd-in 260ms var(--ease-out, ease); }
+@keyframes vd-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.vd-dialog-box { position: relative; padding: 56px 0 0; }
+.vd-dialog-title { position: absolute; top: 0; left: 0; right: 64px; margin: 0; padding: 16px 20px; color: var(--paper); font: 600 1.05rem/1.3 var(--display); }
+.vd-close {
+  position: absolute; top: 6px; right: 6px; display: grid; place-items: center; width: 44px; height: 44px; padding: 0;
+  background: transparent; color: var(--paper); border: 0; cursor: pointer;
+}
+.vd-close:hover { color: var(--accent); }
+.vd-close svg { width: 22px; height: 22px; }
+html.vd-lock { overflow: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  .vd-poster, .vd-play, .vd-toggle { transition: none; }
+  .vd-start:hover .vd-poster, .vd-start:hover .vd-play { transform: none; }
+  .vd-dialog[open] { animation: none; }
+}

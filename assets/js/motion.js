@@ -19,7 +19,7 @@
   }
 
   /* 1. Staggered reveal for grid children */
-  var GRIDS = ".general-list, .feature-list, .offer-list, .quote-list, .article-list, .stat-row, .photo-trio, .team-grid, .di-ba-grid, .plan-columns, .steps, .office-list, .service-index, .cred-list";
+  var GRIDS = ".tiles, .general-list, .feature-list, .offer-list, .quote-list, .article-list, .stat-row, .photo-trio, .team-grid, .di-ba-grid, .plan-columns, .steps, .office-list, .service-index, .cred-list";
   $all(GRIDS).forEach(function (grid) {
     var kids = Array.prototype.slice.call(grid.children);
     kids.forEach(function (k, i) {
@@ -56,7 +56,7 @@
     });
   }
   if (!RM) {
-    $all(".hero h1, .hero-full h1, .page-hero h1").forEach(function (h) {
+    $all(".hero h1, .hero-full h1, .page-hero h1, .apple-hero h1, .apple-tagline").forEach(function (h) {
       splitWords(h, { i: 0 });
       requestAnimationFrame(function () { requestAnimationFrame(function () { h.classList.add("mo-words-in"); }); });
     });
@@ -166,14 +166,22 @@
     c.addEventListener("pointerup", end); c.addEventListener("pointercancel", end);
     range.addEventListener("input", function () { set(parseFloat(range.value)); });
     set(50);
-    if (!RM) {
-      onVisible(c, function () {
-        c.classList.add("mo-hint");
-        setTimeout(function () { set(78); }, 250);
-        setTimeout(function () { set(22); }, 1250);
-        setTimeout(function () { set(50); }, 2250);
-        setTimeout(function () { c.classList.remove("mo-hint"); }, 3200);
-      }, { threshold: 0.6 });
+    var touched = false, inView = false, loop = null;
+    function sweep() {
+      if (touched || !inView) return;
+      c.classList.add("mo-hint");
+      setTimeout(function () { if (!touched) set(80); }, 200);
+      setTimeout(function () { if (!touched) set(20); }, 1400);
+      setTimeout(function () { if (!touched) set(50); }, 2600);
+      setTimeout(function () { if (!touched) c.classList.remove("mo-hint"); }, 3600);
+    }
+    ["pointerdown", "keydown", "focusin"].forEach(function (ev) { c.addEventListener(ev, function () { touched = true; clearInterval(loop); c.classList.remove("mo-hint"); }); });
+    if (!RM && "IntersectionObserver" in window) {
+      new IntersectionObserver(function (es) {
+        inView = es[0].isIntersecting && es[0].intersectionRatio > 0.5;
+        clearInterval(loop);
+        if (inView && !touched) { sweep(); loop = setInterval(sweep, 7000); }
+      }, { threshold: [0, 0.5, 0.8] }).observe(c);
     }
   });
 
@@ -217,6 +225,20 @@
     });
     track.addEventListener("click", function (e) { if (moved > 5) { e.preventDefault(); e.stopPropagation(); } }, true);
     update();
+    /* autoplay: advance every few seconds while visible; pause on hover, focus or touch */
+    var auto = null, hold = false, seen = false;
+    function tick() {
+      if (hold || !seen) return;
+      var max = track.scrollWidth - track.clientWidth - 2;
+      if (track.scrollLeft >= max) track.scrollTo({ left: 0, behavior: "smooth" });
+      else track.scrollBy({ left: stepW(), behavior: "smooth" });
+    }
+    if (!RM) {
+      ["mouseenter", "focusin", "touchstart"].forEach(function (ev) { car.addEventListener(ev, function () { hold = true; }, { passive: true }); });
+      ["mouseleave", "focusout"].forEach(function (ev) { car.addEventListener(ev, function () { hold = false; }); });
+      if ("IntersectionObserver" in window) new IntersectionObserver(function (es) { seen = es[0].isIntersecting; }, { threshold: 0.4 }).observe(car);
+      auto = setInterval(tick, 3800);
+    }
   });
 
   /* 8. Review rotator */
@@ -290,13 +312,14 @@
   });
 
   /* 10. Ticker: duplicate the list for a seamless loop */
-  $all(".mo-ticker").forEach(function (tk) {
-    var track = tk.querySelector(".mo-ticker-track"), list = track && track.querySelector("ul");
+  $all(".mo-ticker, .svc-strip").forEach(function (tk) {
+    var track = tk.querySelector(".mo-ticker-track, .svc-strip-track"), list = track && track.querySelector("ul");
     if (!list) return;
     var clone = list.cloneNode(true); clone.setAttribute("aria-hidden", "true");
     track.appendChild(clone);
     var n = list.children.length;
-    track.style.setProperty("--dur", Math.max(30, n * 3.2) + "s");
+    track.style.setProperty("--dur", Math.max(30, n * (tk.classList.contains("svc-strip") ? 3.8 : 3.2)) + "s");
+    $all("a", clone).forEach(function (a) { a.setAttribute("tabindex", "-1"); });
   });
 
   /* 11. Scroll story */
