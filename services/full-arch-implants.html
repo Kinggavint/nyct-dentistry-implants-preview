@@ -18,8 +18,10 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap">
   <link rel="stylesheet" href="../assets/css/site.css">
   <link rel="stylesheet" href="../assets/css/features.css">
+  <link rel="stylesheet" href="../assets/css/motion.css">
   <script src="../assets/js/site.js" defer></script>
   <script src="../assets/js/features.js" defer></script>
+  <script src="../assets/js/motion.js" defer></script>
   <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -244,17 +246,29 @@
     </section>
 
     <section class="section">
-      <div class="two-col">
-        <div class="sticky">
-          <p class="eyebrow">The Process</p>
-          <h2>From Consultation to Your New <span class="accent">Teeth</span></h2>
-        </div>
-        <ol class="steps">
-          <li><div><h3>Consultation and imaging</h3><p>A comprehensive exam and 3D scans show your bone and decide the plan, including how many implants you need.</p></div></li>
-          <li><div><h3>Preparation</h3><p>Remaining teeth that cannot be saved are removed first. Some patients also need bone grafting or ridge smoothing to prepare.</p></div></li>
-          <li><div><h3>Implant placement</h3><p>Your mouth is cleaned and numbed, and sedation is typically recommended so you stay comfortable. The implants are placed one by one, and you receive temporary teeth to wear while you heal.</p></div></li>
-          <li><div><h3>Healing and fittings</h3><p>Over the next three to six months, you return for check-ups, measurements and impressions while your permanent teeth are made.</p></div></li>
-          <li><div><h3>Your permanent teeth</h3><p>Once you have healed and your new teeth are ready, they are fitted and your bite is checked.</p></div></li>
+      <div class="section-heading">
+        <p class="eyebrow">The Process</p>
+        <h2>From Consultation to Your New <span class="accent">Teeth</span></h2>
+        <p>Scroll through each step. The picture changes as you go.</p>
+      </div>
+      <div class="mo-story">
+        <figure class="mo-story-media">
+          <div class="mo-story-frame">
+            <img src="../assets/img/stamford-operatory.webp" alt="A treatment room at our Stamford office" data-img="s0" loading="lazy" width="600" height="700">
+            <img src="../assets/img/xray-2-before.webp" alt="Panoramic X-ray before full-arch treatment" data-img="s1" class="is-contain" loading="lazy" width="550" height="283">
+            <img src="../assets/img/lecture-hands-on.webp" alt="Dr. Kwon teaching implant technique to dentists" data-img="s2" loading="lazy" width="1600" height="900">
+            <img src="../assets/img/xray-2-after.webp" alt="Panoramic X-ray after full-arch implant treatment" data-img="s3" class="is-contain" loading="lazy" width="550" height="285">
+            <img src="../assets/img/dr-kwon-portrait.webp" alt="Dr. GiTae Kwon" data-img="s4" loading="lazy" width="1536" height="1024">
+          </div>
+          <figcaption class="mo-story-caption"></figcaption>
+          <div class="mo-story-meter" aria-hidden="true"></div>
+        </figure>
+        <ol class="mo-story-steps">
+          <li data-img="s0" data-caption="Consultation and 3D imaging"><h3>Consultation and imaging</h3><p>A comprehensive exam and 3D scans show your bone and decide the plan, including how many implants you need.</p></li>
+          <li data-img="s1" data-caption="Before: failing and missing teeth"><h3>Preparation</h3><p>Remaining teeth that cannot be saved are removed first. Some patients also need bone grafting or ridge smoothing to prepare.</p></li>
+          <li data-img="s2" data-caption="The technique Dr. Kwon teaches other dentists"><h3>Implant placement</h3><p>Your mouth is cleaned and numbed, and sedation is typically recommended so you stay comfortable. The implants are placed one by one, and you receive temporary teeth to wear while you heal.</p></li>
+          <li data-img="s3" data-caption="After: an arch anchored on implants"><h3>Healing and fittings</h3><p>Over the next three to six months, you return for check-ups, measurements and impressions while your permanent teeth are made.</p></li>
+          <li data-img="s4" data-caption="Your new teeth, fitted and checked"><h3>Your permanent teeth</h3><p>Once you have healed and your new teeth are ready, they are fitted and your bite is checked.</p></li>
         </ol>
       </div>
     </section>

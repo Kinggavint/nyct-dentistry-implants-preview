@@ -18,8 +18,10 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap">
   <link rel="stylesheet" href="../assets/css/site.css">
   <link rel="stylesheet" href="../assets/css/features.css">
+  <link rel="stylesheet" href="../assets/css/motion.css">
   <script src="../assets/js/site.js" defer></script>
   <script src="../assets/js/features.js" defer></script>
+  <script src="../assets/js/motion.js" defer></script>
   <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -262,17 +264,29 @@
     </section>
 
     <section class="section section-soft">
-      <div class="two-col">
-        <div class="sticky">
-          <p class="eyebrow">The Process</p>
-          <h2>From First Visit to Finished <span class="accent">Smile</span></h2>
-        </div>
-        <ol class="steps">
-          <li><div><h3>Exam and imaging</h3><p>We examine your teeth and gums and take detailed 3D scans of your jaw. Our Stamford office uses a handheld intraoral scanner and a CBCT scanner, so you can see exactly what we see.</p></div></li>
-          <li><div><h3>Preparation, if needed</h3><p>A tooth that cannot be saved may need a gentle extraction first. Some cases also need bone grafting. Your plan lists every step in order.</p></div></li>
-          <li><div><h3>Implant placement</h3><p>The area is cleaned and numbed, and the implant is placed in the bone.</p></div></li>
-          <li><div><h3>Healing</h3><p>Over about three to six months, the implant bonds with your jawbone. We see you for follow-up visits along the way.</p></div></li>
-          <li><div><h3>Final restoration</h3><p>Your custom crown, bridge or denture is attached, and we check your bite and fit.</p></div></li>
+      <div class="section-heading">
+        <p class="eyebrow">The Process</p>
+        <h2>From First Visit to Finished <span class="accent">Smile</span></h2>
+        <p>Scroll through each step. The picture changes as you go.</p>
+      </div>
+      <div class="mo-story">
+        <figure class="mo-story-media">
+          <div class="mo-story-frame">
+            <img src="../assets/img/stamford-operatory.webp" alt="A treatment room at our Stamford office" data-img="s0" loading="lazy" width="600" height="700">
+            <img src="../assets/img/xray-1-before.webp" alt="Panoramic X-ray before treatment" data-img="s1" class="is-contain" loading="lazy" width="550" height="283">
+            <img src="../assets/img/ba-4-before.webp" alt="A gap where a tooth is missing" data-img="s2" loading="lazy" width="960" height="720">
+            <img src="../assets/img/xray-1-after.webp" alt="Panoramic X-ray showing implants in the jawbone" data-img="s3" class="is-contain" loading="lazy" width="550" height="283">
+            <img src="../assets/img/ba-4-after.webp" alt="The gap filled with an implant crown" data-img="s4" loading="lazy" width="960" height="720">
+          </div>
+          <figcaption class="mo-story-caption"></figcaption>
+          <div class="mo-story-meter" aria-hidden="true"></div>
+        </figure>
+        <ol class="mo-story-steps">
+          <li data-img="s0" data-caption="A treatment room at our Stamford office"><h3>Exam and imaging</h3><p>We examine your teeth and gums and take detailed 3D scans of your jaw. Our Stamford office uses a handheld intraoral scanner and a CBCT scanner, so you can see exactly what we see.</p></li>
+          <li data-img="s1" data-caption="Planning starts with imaging"><h3>Preparation, if needed</h3><p>A tooth that cannot be saved may need a gentle extraction first. Some cases also need bone grafting. Your plan lists every step in order.</p></li>
+          <li data-img="s2" data-caption="Before: a missing tooth"><h3>Implant placement</h3><p>The area is cleaned and numbed, and the implant is placed in the bone.</p></li>
+          <li data-img="s3" data-caption="Implants bonded with the bone"><h3>Healing</h3><p>Over about three to six months, the implant bonds with your jawbone. We see you for follow-up visits along the way.</p></li>
+          <li data-img="s4" data-caption="After: the finished implant crown"><h3>Final restoration</h3><p>Your custom crown, bridge or denture is attached, and we check your bite and fit.</p></li>
         </ol>
       </div>
     </section>
