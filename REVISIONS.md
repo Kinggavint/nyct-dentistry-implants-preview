@@ -11,6 +11,9 @@ material we do not have yet.
 
 ## Needs the practice's answer
 
+0. **Dr. Byungchul Park.** Dr. Park appears on both old sites, but it is not confirmed that he is
+   part of this practice's new website, so the site shows Dr. Kwon only for now. His bio, photos and
+   the patient quotes that name him are held back and can be restored quickly once confirmed.
 1. **Logo.** The uploaded logo files read "Clear Smile Dental Studio", the Stamford office's
    brand. The site uses a "Dentistry & Implants" text wordmark until the practice sends a
    Dentistry & Implants logo or tells us which mark to use across all three offices.
