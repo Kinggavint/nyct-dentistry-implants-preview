@@ -15,7 +15,7 @@
   var SCRIPT = (doc.currentScript && doc.currentScript.src) || '';
   var EMAIL = 'nyctdentistryimplants@gmail.com';
 
-  var ACCENTS = { coral: '#ff5a36', cyan: '#00c2ff', lime: '#b6f400' };
+  var ACCENTS = { coral: '#d4360f', cyan: '#00c2ff', lime: '#b6f400' };
   var ACCENT_LABEL = { coral: 'Coral', cyan: 'Cyan', lime: 'Lime' };
 
   var SERVICES = [
@@ -415,7 +415,7 @@
         '<filter id="v2-lens" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">' +
           '<feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/>' +
           '<feGaussianBlur in="noise" stdDeviation="2.5" result="soft"/>' +
-          '<feDisplacementMap in="SourceGraphic" in2="soft" scale="14" xChannelSelector="R" yChannelSelector="G"/>' +
+          '<feDisplacementMap in="SourceGraphic" in2="soft" scale="28" xChannelSelector="R" yChannelSelector="G"/>' +
         '</filter>' +
       '</svg>';
     doc.body.appendChild(box);
@@ -472,6 +472,16 @@
     check();
   }
 
+  /* touch widths: hide the bottom dock while the hero's own Schedule Now / Call Now are on screen (one set of CTAs at a time) */
+  function initHeroDock() {
+    var btn = $('.v2-hero .v2-btn-schedule');
+    if (!btn || !('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { root.classList.toggle('v2-hero-visible', e.isIntersecting); });
+    }, { threshold: 0 });
+    io.observe(btn);
+  }
+
   function start() {
     initHeader();
     initPreview();
@@ -482,6 +492,7 @@
     initLens();
     initGlassLight();
     initHeaderTone();
+    initHeroDock();
     var chat = $('#di-chat .di-chat-toggle');
     if (chat) chat.classList.add('lg');
   }
