@@ -585,6 +585,31 @@
     setTimeout(tick, 650);
   }
 
+  /* Reddit pill beside the docked "Ask a question": links to Dr. Kwon's Reddit (subreddit / answers) once REDDIT_URL is set.
+     Until then it shows "Coming soon" and does nothing. */
+  function initRedditPill() {
+    var pill = el('a', 'v3-reddit-pill');
+    pill.innerHTML = '<span class="v3-reddit-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#ff4500"/><ellipse cx="12" cy="14.2" rx="6.4" ry="4.3" fill="#fff"/><circle cx="6.6" cy="10.6" r="1.5" fill="#fff"/><circle cx="17.4" cy="10.6" r="1.5" fill="#fff"/><circle cx="9.7" cy="13.7" r="1.05" fill="#ff4500"/><circle cx="14.3" cy="13.7" r="1.05" fill="#ff4500"/><path d="M9.6 16.2c1.4.9 3.4.9 4.8 0" stroke="#ff4500" stroke-width=".9" fill="none" stroke-linecap="round"/><path d="M12 9.9l.9-3.6 2.7.6" stroke="#fff" stroke-width=".9" fill="none" stroke-linecap="round"/><circle cx="16.4" cy="7.1" r="1.1" fill="#fff"/></svg></span><span class="v3-reddit-txt">Ask us on Reddit</span>';
+    if (REDDIT_URL) { pill.href = REDDIT_URL; pill.target = '_blank'; pill.rel = 'noopener'; }
+    else { pill.classList.add('is-soon'); pill.setAttribute('aria-disabled', 'true'); pill.setAttribute('role', 'link'); pill.appendChild(el('span', 'v3-reddit-soon', 'Coming soon')); pill.addEventListener('click', function (e) { e.preventDefault(); }); }
+    doc.body.appendChild(pill);
+    function place() {
+      var t = $('#di-chat .di-chat-toggle');
+      if (!t) return;
+      var r = t.getBoundingClientRect();
+      if (!r.width) return;
+      pill.style.left = (r.right + 12) + 'px';
+      pill.style.top = (r.top + r.height / 2) + 'px';
+    }
+    var raf = 0;
+    function q() { if (!raf) raf = requestAnimationFrame(function () { raf = 0; place(); }); }
+    window.addEventListener('resize', q);
+    window.addEventListener('scroll', q, { passive: true });
+    setTimeout(place, 700); setTimeout(place, 1500);
+    var chat = $('#di-chat');
+    if (chat && window.MutationObserver) new MutationObserver(q).observe(chat, { attributes: true, subtree: true, attributeFilter: ['hidden', 'class', 'style'] });
+  }
+
   /* services carousel: duplicate the pill track once so the marquee loops without a seam */
   function initMarquee() {
     $all('.v3-marquee-track').forEach(function (t) {
@@ -637,6 +662,7 @@
     initFly();
     initEmphasis();
     initType();
+    setTimeout(initRedditPill, 650);
     /* the chat widget is injected by features.js; tag its launcher once it exists */
     setTimeout(tagGlass, 600);
   }

@@ -683,3 +683,22 @@ html.v3-sda.v3-js .page-v3:has(.v3-marquee.v3-sda-collapse) .v3-offers[data-v3-s
   .page-v3 .v3h-band { justify-content: center; text-align: center; }
   .page-v3 .v3h-band .v3-links { justify-content: center; }
 }
+
+/* Reddit pill: rides beside the docked "Ask a question" pill, appears and hides with it */
+.v3-reddit-pill { position: fixed; z-index: 9996; left: 220px; top: calc(100vh - 50px); translate: 0 -50%; display: inline-flex; align-items: center; gap: 10px; min-height: 60px; padding: 0 22px 0 12px; border-radius: 980px; box-sizing: border-box;
+  font: 600 16px/1 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif; letter-spacing: -.016em; color: #1d1d1f; text-decoration: none; white-space: nowrap; cursor: pointer;
+  background: rgba(255,255,255,.72); border: 1px solid rgba(255,255,255,.95); -webkit-backdrop-filter: blur(14px) saturate(190%); backdrop-filter: blur(14px) saturate(190%);
+  box-shadow: inset 0 1px 1px #fff, inset 0 -1px 1px rgba(0,0,0,.06), 0 0 0 .5px rgba(29,29,31,.12), 0 12px 30px -10px rgba(40,44,60,.32);
+  transition: opacity .42s cubic-bezier(.22,.61,.36,1), transform .52s cubic-bezier(.34,1.56,.64,1), visibility 0s; }
+.v3-reddit-pill:hover { transform: translateY(-2px); color: #1d1d1f; }
+.v3-reddit-ico { display: grid; width: 36px; height: 36px; flex: 0 0 auto; }
+.v3-reddit-ico svg { width: 36px; height: 36px; }
+.v3-reddit-soon { margin-left: 2px; padding: 4px 9px; border-radius: 99px; background: rgba(0,0,0,.06); color: #6e6e73; font-size: 12px; font-weight: 600; }
+.v3-reddit-pill.is-soon { cursor: default; }
+html:not(.v3-chat-docked) .v3-reddit-pill { opacity: 0; visibility: hidden; transform: translateY(28px) scale(.92); pointer-events: none; transition: opacity .3s, transform .38s, visibility 0s linear .38s; }
+body:has(.primary-nav.is-open) .v3-reddit-pill { display: none; }
+@media (max-width: 734px) {
+  .v3-reddit-pill { min-height: 52px; padding: 0 8px; gap: 0; }
+  .v3-reddit-txt, .v3-reddit-soon { display: none; }
+  .v3-reddit-ico, .v3-reddit-ico svg { width: 34px; height: 34px; }
+}
