@@ -376,6 +376,7 @@
   }
 
   /* offers: each card rises and fades in as the strip scrolls up into view (--s 0..1, staggered per card) */
+  var collapseOn = false;
   function initOffersScroll() {
     var wrap = $('.v3-offers[data-v3-scroll]');
     if (!wrap) return;
@@ -385,6 +386,7 @@
       var vh = window.innerHeight, top = wrap.getBoundingClientRect().top;
       var base = (vh - top) / (vh * 0.42);
       cards.forEach(function (c, i) {
+        if (c.hasAttribute('data-v3-all') && collapseOn) return;
         var s = Math.max(0, Math.min(1, base - i * 0.18));
         c.style.setProperty('--s', RM ? '1' : (s * s * (3 - 2 * s)).toFixed(3));
       });
@@ -452,6 +454,50 @@
     measure(); paint();
   }
 
+  /* services carousel -> one pill -> the third offer card: scroll-linked. Phase 1 (u) the pills slide together and shrink into a single
+     pill; phase 2 (v) that pill floats down into the third card's place, where the card takes over. Desktop only. */
+  function initCollapse() {
+    var mq = $('.v3-marquee'), card = $('[data-v3-all]'), wrap = $('.v3-offers[data-v3-scroll]');
+    if (!mq || !card || !wrap || RM || window.innerWidth < 1000) return;
+    collapseOn = true;
+    var pill = el('a', 'v3-allpill');
+    pill.href = LROOT + 'v2-services.html'; pill.setAttribute('aria-hidden', 'true'); pill.tabIndex = -1;
+    var faces = el('span', 'v3-allpill-faces');
+    ['ba-4-after.webp', 'ba-5-after.webp', 'ba-7-after.webp'].forEach(function (n) { var im = el('img'); im.src = img(n); im.alt = ''; faces.appendChild(im); });
+    pill.appendChild(faces); pill.appendChild(el('span', null, 'View all of our services'));
+    doc.body.appendChild(pill);
+    var pills = $all('.v3-pill', mq), frozen = false, raf = 0;
+    function sm(x) { x = Math.max(0, Math.min(1, x)); return x * x * (3 - 2 * x); }
+    function freeze() {
+      var cx = window.innerWidth / 2;
+      mq.classList.remove('is-collapsing');
+      pills.forEach(function (p) { var r = p.getBoundingClientRect(); p.style.setProperty('--dx', (cx - (r.left + r.width / 2)).toFixed(1) + 'px'); });
+      mq.classList.add('is-collapsing'); frozen = true;
+    }
+    function paint() {
+      raf = 0;
+      var vh = window.innerHeight, mr = mq.getBoundingClientRect(), mTop = mr.top;
+      var u = Math.max(0, Math.min(1, (vh * 0.58 - mTop) / (vh * 0.26)));
+      var v = Math.max(0, Math.min(1, (vh * 0.32 - mTop) / (vh * 0.34)));
+      if (u > 0 && !frozen) freeze();
+      if (u === 0 && frozen) { mq.classList.remove('is-collapsing'); frozen = false; pills.forEach(function (p) { p.style.removeProperty('--dx'); }); }
+      mq.style.setProperty('--u', u.toFixed(3));
+      var cr = card.getBoundingClientRect();
+      var sx = window.innerWidth / 2, sy = mr.top + mr.height / 2;
+      var tx = cr.left + cr.width / 2, ty = cr.top + cr.height * 0.36;
+      var e = sm(v), x = sx + (tx - sx) * e, y = sy + (ty - sy) * e;
+      var hand = sm((v - 0.72) / 0.28);
+      var appear = sm((u - 0.55) / 0.45);
+      pill.style.opacity = (appear * (1 - hand)).toFixed(3);
+      pill.style.transform = 'translate(' + (x - pill.offsetWidth / 2).toFixed(1) + 'px,' + (y - pill.offsetHeight / 2).toFixed(1) + 'px) scale(' + (1 - 0.1 * e).toFixed(3) + ')';
+      card.style.setProperty('--s', hand.toFixed(3));
+    }
+    function queue() { if (!raf) raf = requestAnimationFrame(paint); }
+    window.addEventListener('scroll', queue, { passive: true });
+    window.addEventListener('resize', queue);
+    paint();
+  }
+
   /* services carousel: duplicate the pill track once so the marquee loops without a seam */
   function initMarquee() {
     $all('.v3-marquee-track').forEach(function (t) {
@@ -500,6 +546,7 @@
     initMarquee();
     initBanner();
     initOffersScroll();
+    initCollapse();
     initFly();
     initEmphasis();
     /* the chat widget is injected by features.js; tag its launcher once it exists */
