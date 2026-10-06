@@ -345,6 +345,18 @@
     check();
   }
 
+  /* header Call Now / Schedule Now: absent while the hero's own buttons are on screen, float up into the bar once they scroll away */
+  function initHeaderCtas() {
+    var btn = $('.v3-hero .v3-btn-schedule');
+    if (!btn) { root.classList.add('v3-ctas-docked'); return; }
+    var raf = 0;
+    function check() { raf = 0; root.classList.toggle('v3-ctas-docked', btn.getBoundingClientRect().bottom < 64); }
+    function queue() { if (!raf) raf = requestAnimationFrame(check); }
+    window.addEventListener('scroll', queue, { passive: true });
+    window.addEventListener('resize', queue);
+    check();
+  }
+
   /* services carousel: duplicate the pill track once so the marquee loops without a seam */
   function initMarquee() {
     $all('.v3-marquee-track').forEach(function (t) {
@@ -389,6 +401,7 @@
     initGlassLight();
     initHeroDock();
     initChatDock();
+    initHeaderCtas();
     initMarquee();
     initEmphasis();
     /* the chat widget is injected by features.js; tag its launcher once it exists */

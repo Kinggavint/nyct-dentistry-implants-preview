@@ -331,6 +331,10 @@ html.v3-js .page-v3 [data-v3-reveal].v3-done { transition-delay: 0ms; }
 html.v3-js .page-v3 .v3-card[data-v3-reveal].v3-done { transition: transform .3s var(--v3-lift), box-shadow .3s, opacity .3s; }
 html.v3-js .page-v3 .v3-frame[data-v3-reveal].v3-done { transition: transform .35s var(--v3-lift); }
 
+/* header CTAs float into the bar after the hero buttons scroll away (home page) */
+body.page-v3 .site-header :is(.header-call, .header-cta) { transition: transform .55s var(--v3-gel), opacity .35s var(--v3-ease), visibility 0s, box-shadow .3s, --gs .4s, --gi .4s; }
+html:not(.v3-ctas-docked) body.page-v3 .site-header :is(.header-call, .header-cta) { opacity: 0; visibility: hidden; transform: translateY(18px) scale(.9); pointer-events: none; transition: transform .35s var(--v3-ease), opacity .25s var(--v3-ease), visibility 0s linear .35s; }
+
 /* ---------- header: light frosted bar (the glass is on a pseudo layer so the flyout can sit inside) ---------- */
 .page-v3 .site-header { position: sticky; top: 0; z-index: 60; isolation: isolate; padding: 0; background: none; border: 0; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; color: var(--v3-ink); }
 .page-v3 .site-header::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: rgba(250,250,252,.72); border-bottom: 1px solid rgba(0,0,0,.06); -webkit-backdrop-filter: saturate(190%) blur(34px); backdrop-filter: saturate(190%) blur(34px); }
