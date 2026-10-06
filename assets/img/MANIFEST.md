@@ -36,3 +36,16 @@ Pair 7 was exported reversed: the image from kakao-105252336.jpg shows the finis
 
 ## Update
 office-hallway, office-waiting and teaching-2 were removed in favour of the Stamford office photos (stamford-*), lecture photos (lecture-*) and team photos (team-*), taken from the Stamford office website. All re-encoded without metadata.
+
+## Update 2026-10-06 (Dr. Kwon's Drive upload, folder "2 Doctors and Team")
+| file | WxH | KB | subject | source |
+|---|---|---|---|---|
+| lecture-podium.webp | 1600x900 | 108 | Dr. Kwon lecturing at the front of a course room | DSC01944.JPG |
+| teaching-live-surgery.webp | 1440x1080 | 121 | Dr. Kwon guiding dentists through a live implant surgery | "Dr Kwon teaching dental implants live surgery" |
+| lecture-conference.webp | 1440x810 | 37 | Dr. Kwon speaking at a conference, microphone in hand | KakaoTalk_20250801_183248051_01.jpg |
+| unicamillus-rome.webp | 1080x1440 | 62 | Dr. Kwon at UniCamillus, Rome, holding a certificate, two colleagues in gowns | KakaoTalk_20250804_144026258.jpg |
+
+Same upload, not exported: "Dr Kwon" (same photo as dr-kwon-portrait), DSC01851 (same as teaching-1),
+"Dr Park.jpg" and "dr kwon & park photo.jpg" (same as the held Dr. Park photos), KakaoTalk_..._02.jpg
+(portrait-format lecture shot, dim, implant company branding prominent in the foreground).
+All re-encoded without metadata, orientation applied, WebP q80.

@@ -196,6 +196,9 @@ h3 { font-size: clamp(1.35rem, 2vw, 1.75rem); letter-spacing: -0.02em; line-heig
 .cred-list .cred-when { color: var(--ink); font-family: var(--display); font-weight: 600; }
 .section-ink .cred-list, .section-ink .cred-list li { border-color: #333; }
 .section-ink .cred-list .cred-when { color: var(--paper); }
+.cred-photo { margin: 28px 0 0; max-width: 300px; }
+.cred-photo img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+.cred-photo figcaption { margin-top: 10px; color: var(--muted); font-size: 0.95rem; }
 
 /* Quotes */
 .quote-feature { max-width: 980px; margin: 0 0 clamp(48px, 6vw, 80px); }

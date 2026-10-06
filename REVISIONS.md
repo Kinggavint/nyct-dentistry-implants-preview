@@ -15,6 +15,9 @@ material we do not have yet.
 0. **Dr. Byungchul Park.** Dr. Park appears on both old sites, but it is not confirmed that he is
    part of this practice's new website, so the site shows Dr. Kwon only for now. His bio, photos and
    the patient quotes that name him are held back and can be restored quickly once confirmed.
+   On 2026-10-06 the practice uploaded Dr. Park's portrait and a photo of both doctors to the Doctors
+   and Team folder (the same photos we already hold), without a note. Please confirm in words that he
+   should be on the site, which offices he sees patients at, and his title.
 1. **Logo.** The uploaded logo files read "Clear Smile Dental Studio", the Stamford office's
    brand. The site uses a "Dentistry & Implants" text wordmark until the practice sends a
    Dentistry & Implants logo or tells us which mark to use across all three offices.
@@ -38,6 +41,10 @@ material we do not have yet.
    strengthen the Dr. Kwon page.
 9. **Implant company.** Dr. Kwon is faculty for a dental implant company. Name it if you would
    like it shown.
+22. **New photos of Dr. Kwon (2026-10-06).** A podium lecture, a live surgery course, a conference talk
+    and the UniCamillus photo in Rome are now on his page and the home page. Please tell us where and
+    when each was taken if you would like that in the captions, and confirm the live surgery patient is
+    comfortable being shown (face not visible).
 10. **Spanish review.** The five Spanish pages need Maggie's review before the "in review"
     banner is removed. Terms to check: rediseño de sonrisa, carillas, tratamiento de conducto,
     empastes, muelas del juicio, consulta de cortesía, docente de implantes.
