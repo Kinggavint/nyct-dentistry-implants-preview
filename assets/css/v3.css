@@ -108,11 +108,24 @@
   transition: transform .45s var(--v3-gel), --gs .4s, --gi .4s;
 }
 .page-v3 :is(.v3-btn-schedule, .header-cta, .office-row-actions .button, .v3-flyout-cta, .cta-dock .cta-book, .v3-form-actions .v3-btn) {
-  --btn-text: #fff; --btn-border: rgba(255,255,255,.22); --btn-light: 255,255,255;
-  --btn-base: linear-gradient(180deg, #4a4a50 0%, #2a2a2e 52%, #1d1d1f 100%);
-  --btn-shadow: inset 0 0 0 1px rgba(255,255,255,.14), inset 0 1px 1px rgba(255,255,255,.55), inset 0 -1px 1px rgba(0,0,0,.45), inset 0 0 10px rgba(255,255,255,.08), 0 0 0 .5px rgba(0,0,0,.4), 0 14px 28px -12px rgba(20,20,30,.55), 0 4px 10px -4px rgba(20,20,30,.3);
-  --btn-shadow-hover: inset 0 1px 1px rgba(255,255,255,.7), inset 0 -1px 1px rgba(0,0,0,.45), 0 0 0 .5px rgba(0,0,0,.4), 0 0 24px rgba(255,255,255,.22), 0 22px 36px -12px rgba(20,20,30,.6);
+  --btn-border: rgba(29,29,31,.16);
+  --btn-base: linear-gradient(180deg, rgba(255,255,255,.95), rgba(243,246,251,.8));
+  --btn-shadow: inset 0 0 0 1px rgba(255,255,255,.55), inset 0 1px 1px #fff, inset 0 -1px 1px rgba(0,0,0,.07), inset 0 0 8px rgba(255,255,255,.45), inset 0 1px 0 #fff, inset 0 -1px 0 rgba(90,94,104,.16), 0 0 0 3px rgba(255,255,255,.07), 0 10px 24px -10px rgba(40,44,60,.28);
+  --btn-shadow-hover: inset 0 1px 0 #fff, inset 0 -1px 0 rgba(90,94,104,.16), 0 0 0 4px rgba(255,255,255,.12), 0 0 22px rgba(255,255,255,.26), 0 16px 30px -10px rgba(40,44,60,.32);
 }
+/* hero "Ask us anything": the one dark glass pill on the page, so it reads first; it becomes the bottom-left chat pill on scroll */
+body.page-v3 .v3h-ask .v3-ask {
+  --btn-text: #fff; --btn-border: rgba(255,255,255,.28);
+  --btn-base: linear-gradient(180deg, rgba(86,86,92,.94), rgba(40,40,44,.96));
+  --btn-shadow: inset 0 1px 1px rgba(255,255,255,.5), inset 0 -1px 1px rgba(0,0,0,.4), inset 0 0 8px rgba(255,255,255,.08), 0 16px 34px -10px rgba(0,0,0,.42), 0 2px 6px rgba(0,0,0,.14);
+  --btn-shadow-hover: inset 0 1px 1px rgba(255,255,255,.6), inset 0 -1px 1px rgba(0,0,0,.4), 0 0 24px rgba(255,255,255,.2), 0 22px 44px -10px rgba(0,0,0,.46);
+  margin-top: 0; padding: 12px 26px 12px 14px; gap: 12px; font-size: 19px; font-weight: 600; overflow: visible;
+}
+body.page-v3 .v3h-ask .v3-ask::after { width: 34px; height: 34px; background-size: 17px, auto; box-shadow: inset 0 1px 0 rgba(255,255,255,.4), inset 0 0 0 1px rgba(255,255,255,.14); background-color: transparent; }
+body.page-v3 .v3h-ask .v3-ask::before { z-index: 1; }
+body.page-v3 .v3h-ask { position: relative; }
+body.page-v3 .v3h-ask .v3-ask { animation: v3-ask-pulse 3.4s var(--v3-ease) 1.4s 3 both; }
+@keyframes v3-ask-pulse { 0% { box-shadow: var(--btn-shadow), 0 0 0 0 rgba(60,60,66,.4); } 70%, 100% { box-shadow: var(--btn-shadow), 0 0 0 20px rgba(60,60,66,0); } }
 .page-v3 :is(.v3-btn, .v3-ask, .header-cta, .header-call, .menu-toggle, .v3-flyout-cta, .office-row-actions .button, .cta-dock a)::before {
   content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; padding: 1.5px; box-sizing: border-box; pointer-events: none;
   background: conic-gradient(from var(--ang), rgba(255,255,255,0) 0deg, rgba(255,255,255,.95) 45deg, #fff 90deg, rgba(220,222,228,.9) 135deg, rgba(255,255,255,.85) 175deg, rgba(255,255,255,0) 225deg, rgba(255,255,255,0) 360deg);
@@ -367,13 +380,12 @@ html.mo-scrolled .page-v3 .site-header { background: none; box-shadow: none; }
 .page-v3 .v3-sheet .v3-flyout-foot { margin-top: 16px; padding-top: 14px; }
 .page-v3 .primary-nav .v3-sheet a { padding: 0; font: 500 12px/1.25 var(--v3-font); letter-spacing: -.01em; white-space: normal; }
 .page-v3 .primary-nav .v3-sheet .v3-flyout-foot a.v3-link { font-size: 15px; }
-.page-v3 .primary-nav .v3-sheet .v3-flyout-cta { padding: 0 18px; font: 600 14px/1 var(--v3-font); color: #fff; }
+.page-v3 .primary-nav .v3-sheet .v3-flyout-cta { padding: 0 18px; font: 600 14px/1 var(--v3-font); }
 @keyframes v3-sheet-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
 
 /* ---------- phone dock ---------- */
 .page-v3 .cta-dock { background: rgba(250,250,252,.72); -webkit-backdrop-filter: saturate(190%) blur(30px); backdrop-filter: saturate(190%) blur(30px); border-top: 1px solid rgba(0,0,0,.06); box-shadow: none; }
 .page-v3 .cta-dock a { min-height: 48px; font-size: 16px; }
-.page-v3 .cta-dock .cta-book { color: #fff; }
 
 /* ---------- footer: graphite ---------- */
 .page-v3 .site-footer { position: relative; padding: 56px var(--v3-gutter) 24px; color: rgba(245,245,247,.64); background: linear-gradient(180deg, #2b2b30, #1f1f23); font: 400 13px/1.38 var(--v3-font); letter-spacing: -.01em; }
