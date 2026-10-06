@@ -44,15 +44,15 @@
 .page-sample-cinematic .cn-btn-sm { padding: 11px 18px; font-size: 13px; }
 
 /* Hero: full-bleed photo, Ken Burns, white fade into type */
-.page-sample-cinematic .cn-hero { position: relative; min-height: 92vh; display: grid; align-items: end; overflow: hidden; background: #fff; }
+.page-sample-cinematic .cn-hero { position: relative; min-height: 84vh; display: grid; align-items: end; overflow: hidden; background: #fff; }
 .page-sample-cinematic .cn-hero-bg { position: absolute; inset: 0; z-index: 0; }
 .page-sample-cinematic .cn-hero-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1600ms ease; transform-origin: 60% 40%; }
 .page-sample-cinematic .cn-hero-bg img.is-active { opacity: 1; animation: cn-kb 18s ease-in-out infinite alternate; }
 .page-sample-cinematic .cn-hero-bg img:nth-child(2) { transform-origin: 30% 60%; }
 .page-sample-cinematic .cn-hero-bg img:nth-child(3) { transform-origin: 70% 70%; }
 @keyframes cn-kb { from { transform: scale(1.02) translate(0, 0); } to { transform: scale(1.16) translate(-1.5%, 1.5%); } }
-.page-sample-cinematic .cn-hero-fade { position: absolute; inset: 0; z-index: 1; background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 24%, rgba(255,255,255,.72) 42%, rgba(255,255,255,.97) 56%, #fff 100%); }
-.page-sample-cinematic .cn-hero-in { position: relative; z-index: 2; width: min(1240px, 100%); margin: 0 auto; padding: 46vh 24px 110px; }
+.page-sample-cinematic .cn-hero-fade { position: absolute; inset: 0; z-index: 1; background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,.1) 10%, rgba(255,255,255,.78) 26%, rgba(255,255,255,.97) 40%, #fff 100%); }
+.page-sample-cinematic .cn-hero-in { position: relative; z-index: 2; width: min(1240px, 100%); margin: 0 auto; padding: 24vh 24px 110px; }
 .page-sample-cinematic .cn-hero .cn-h1 { max-width: 13ch; }
 .page-sample-cinematic .cn-hero .cn-eyebrow { color: var(--cn-ink); opacity: .72; }
 .page-sample-cinematic .cn-hero-meta { display: flex; flex-wrap: wrap; gap: 10px 26px; margin: 28px 0 0; padding: 0; list-style: none; color: var(--cn-mute); font: 500 14px/1.4 var(--cn-font); }
@@ -172,7 +172,7 @@
 /* Phone */
 @media (max-width: 860px) {
   .page-sample-cinematic .cn-hero { min-height: 86vh; }
-  .page-sample-cinematic .cn-hero-in { padding: 46vh 18px 86px; }
+  .page-sample-cinematic .cn-hero-in { padding: 30vh 18px 86px; }
   .page-sample-cinematic .cn-hero-fade { background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 26%, rgba(255,255,255,.7) 46%, #fff 64%); }
   .page-sample-cinematic .cn-scrollcue { display: none; }
   .page-sample-cinematic .cn-wrap { padding: 0 18px; }
@@ -191,7 +191,7 @@
   .page-sample-cinematic .cn-grid3 figure { aspect-ratio: 4 / 3; }
   .page-sample-cinematic .office-row { grid-template-columns: 1fr; padding: 22px; gap: 18px; }
   .page-sample-cinematic .cn-band { min-height: 60vh; }
-  .page-sample-cinematic .cn-switch { position: absolute; top: 12px; bottom: auto; }
+  .page-sample-cinematic .cn-switch { position: absolute; top: 80px; bottom: auto; }
   .page-sample-cinematic .cn-hero { position: relative; }
   .page-sample-cinematic .cn-switch a { padding: 9px 10px; font-size: 11px; }
   .page-sample-cinematic .site-footer { padding-bottom: 190px; }
