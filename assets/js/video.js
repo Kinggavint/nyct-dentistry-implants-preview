@@ -58,7 +58,7 @@
   }
   function data(node) {
     var s = node.dataset;
-    return { src: s.src, embed: s.embed, poster: s.poster, title: s.title, captions: s.captions, duration: s.duration, lang: s.lang };
+    return { src: s.src, embed: s.embed, poster: s.poster, title: s.title, captions: s.captions, duration: s.duration, lang: s.lang, orient: s.orient };
   }
   function posterImg(poster) {
     if (!poster) return null;
@@ -163,6 +163,7 @@
     dlgBody.textContent = "";
     dlgBody.appendChild(m);
     dlgTitle.textContent = d.title || T.dialog;
+    dd.classList.toggle("vd-portrait", d.orient === "portrait");
     doc.documentElement.classList.add("vd-lock");
     if (dd.showModal) dd.showModal(); else dd.setAttribute("open", "");
     if (m.tagName === "VIDEO") { var pr = m.play(); if (pr && pr.catch) pr.catch(function () {}); }

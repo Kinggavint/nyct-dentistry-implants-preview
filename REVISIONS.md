@@ -18,9 +18,12 @@ material we do not have yet.
    On 2026-10-06 the practice uploaded Dr. Park's portrait and a photo of both doctors to the Doctors
    and Team folder (the same photos we already hold), without a note. Please confirm in words that he
    should be on the site, which offices he sees patients at, and his title.
-1. **Logo.** The uploaded logo files read "Clear Smile Dental Studio", the Stamford office's
-   brand. The site uses a "Dentistry & Implants" text wordmark until the practice sends a
-   Dentistry & Implants logo or tells us which mark to use across all three offices.
+1. **Logo.** On 2026-10-06 the practice uploaded all three office logos (Kent Dentistry & Implants
+   in blue, Mt Kisco Dentistry & Implants in teal, the Stamford logo, a photo of the Mount Kisco
+   sign and a combined sheet). All three share the same tooth in an open circle. There was no note
+   picking a direction, so the site keeps its "Dentistry & Implants" text wordmark. A fourth logo
+   concept (D) built on that tooth mark and the Kent blue is on the logo board. Which concept, or
+   should the site use the existing tooth mark as is? Note the Kent logo on the sheet names Dr. Park.
 2. **Stamford details taken from clearsmiledentalstudio.com.** Hours (open Saturdays, closed
    Thursdays), 39 accepted plans plus Medicaid, Sunbit, Chewsi and GreenSky financing, the $399
    in-house membership plan, the $149 new patient special, $1,000 off implants, complimentary
@@ -39,9 +42,9 @@ material we do not have yet.
 8. **Book titles.** Dr. Kwon has published implant books and textbook translations with
    Dr. Youngsam Kim, with a sinus lift textbook coming. Titles and a release date would
    strengthen the Dr. Kwon page.
-9. **Implant company.** Dr. Kwon is faculty for a dental implant company. Name it if you would
-   like it shown.
-22. **New photos of Dr. Kwon (2026-10-06).** A podium lecture, a live surgery course, a conference talk
+9. **Implant company.** Dr. Kwon is faculty for a dental implant company. The 2026 Dallas course
+   flier he uploaded carries an implant maker's brand. Is that the company, and should it be named?
+22. **New photos of Dr. Kwon (2026-10-06, first upload).** A podium lecture, a live surgery course, a conference talk
     and the UniCamillus photo in Rome are now on his page and the home page. Please tell us where and
     when each was taken if you would like that in the captions, and confirm the live surgery patient is
     comfortable being shown (face not visible).
@@ -79,3 +82,18 @@ material we do not have yet.
     Business Profile links to connect. Real patient quotes from both websites are shown meanwhile.
 21. **Website chat.** Live. It answers from the site's own content. Common questions and
     answers from the practice would make it more useful.
+23. **Teaching photos and fliers (2026-10-06, second upload).** Three live surgery photos from
+    Tijuana (patients covered by drapes) and the 2026 Dallas lecture photo are on his page and the
+    home slideshow. From the fliers his page now lists: Dallas 2026 and New York 2024 hands-on crestal
+    sinus lift courses at the K-Dental World Conference, and interpreting Dr. Youngsam Kim's 2024 Los
+    Angeles third molar seminar. The fliers themselves are not shown (prices and sponsor logos).
+    One Tijuana photo was left out because a patient's name is readable on the X-ray screen.
+24. **Patient videos (2026-10-06).** Nine testimonial videos are live: all nine on the Reviews page,
+    three on each home page (English and Spanish), and one on each office page. Please confirm:
+    - Each patient agreed to appear on the website.
+    - Which office the five videos without an office are from (1.mp4, 2.mp4 and 3.mp4 are one patient;
+      "1 (1).mp4", "2 (1).mp4"). Kent comes from the phone's location data, Stamford from the sign.
+    - The Stamford video shows the old Clear Smile sign on a screen behind the patient. Keep it?
+    - The Spanish video "2 (1).mp4" has a built-in caption reading "Doctor Quick". Keep it as is?
+    - Two patients say their full names; the site shows first name and last initial only.
+    Still wanted: an office tour and a short introduction of Dr. Kwon and the team.

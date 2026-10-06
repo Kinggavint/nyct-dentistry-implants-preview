@@ -53,8 +53,13 @@
 .vd-testimonial .vd-play svg { width: 26px; height: 26px; }
 .vd-badge {
   position: absolute; top: 12px; left: 12px; z-index: 1; padding: 4px 9px;
-  background: var(--paper); color: var(--ink); font: 700 0.8rem/1.2 var(--body); letter-spacing: 0.08em;
+  background: var(--paper); color: var(--ink); font: 700 0.85rem/1.2 var(--body); letter-spacing: 0.08em;
 }
+/* Phone-shot (vertical) testimonials: taller cards, narrow modal */
+.vd-testimonials.vd-tall .vd-start { aspect-ratio: 4 / 5; }
+.vd-testimonials.vd-tall .vd-poster { object-position: 50% 30%; }
+.vd-dialog.vd-portrait { width: min(440px, calc(100% - 32px)); }
+.vd-dialog.vd-portrait .vd-media { aspect-ratio: 9 / 16; max-height: calc(100vh - 120px); max-height: calc(100dvh - 120px); }
 @media (max-width: 980px) { .vd-testimonials { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 620px) { .vd-testimonials { grid-template-columns: 1fr; gap: 24px; } }
 
