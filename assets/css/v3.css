@@ -702,3 +702,8 @@ body:has(.primary-nav.is-open) .v3-reddit-pill { display: none; }
   .v3-reddit-txt, .v3-reddit-soon { display: none; }
   .v3-reddit-ico, .v3-reddit-ico svg { width: 34px; height: 34px; }
 }
+
+.v3-reddit-txt { display: grid; gap: 2px; text-align: left; }
+.v3-reddit-main { font: inherit; }
+.v3-reddit-sub { font-size: 11px; font-weight: 500; letter-spacing: .01em; line-height: 1; color: #6e6e73; }
+.v3-reddit-sub[hidden] { display: none; }
