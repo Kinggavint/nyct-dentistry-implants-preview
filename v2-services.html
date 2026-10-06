@@ -409,42 +409,31 @@
     <style>
       body.page-v2 .v2s-hero { min-height: 0; padding-top: calc(var(--v2-nav-h) + 96px); padding-bottom: 150px; }
       body.page-v2 .v2s-hero .v2-subhead { max-width: 640px; }
-      body.page-v2 .v2s-bar { position: relative; z-index: 3; width: min(1120px, calc(100% - 2 * var(--v2-gutter))); margin: -84px auto -56px; padding: 26px 20px 24px; border-radius: 32px; box-sizing: border-box; --lg-fill: rgba(255,255,255,.34); --lg-blur: 20px; --lg-hr: 380px; }
+      body.page-v2 .v2s-bar { position: relative; z-index: 3; width: min(1120px, calc(100% - 2 * var(--v2-gutter))); margin: -84px auto -56px; padding: 26px 20px 24px; border-radius: 32px; box-sizing: border-box; --lg-fill: rgba(255,255,255,.22); --lg-blur: 12px; --lg-hr: 380px; }
       body.page-v2 .v2s-bar:hover { --lg-hi: 1; }
       body.page-v2 .v2s-bar .v2-icon-img { --lg-fill: rgba(255,255,255,.4); }
-      /* soft low-saturation blobs behind glass, so the translucency has something to bend */
+      /* one calm, low-contrast wash behind glass (no blurred blobs) */
       body.page-v2 .v2s-glow::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; }
       body.page-v2 .v2s-after-bar { padding-top: calc(var(--v2-section-pad) * .55 + 56px); }
       body.page-v2 .v2s-after-bar::before {
         background:
-          radial-gradient(26% 120px at 18% 18px, var(--v2-blob-a), rgba(255,255,255,0) 72%),
-          radial-gradient(24% 110px at 52% 10px, var(--v2-blob-c), rgba(255,255,255,0) 72%),
-          radial-gradient(26% 120px at 84% 22px, var(--v2-blob-b), rgba(255,255,255,0) 72%),
-          radial-gradient(26% 34% at 24% 78%, var(--v2-blob-b), rgba(255,255,255,0) 72%),
-          radial-gradient(24% 36% at 50% 30%, var(--v2-blob-c), rgba(255,255,255,0) 72%),
-          radial-gradient(26% 40% at 78% 62%, var(--v2-blob-a), rgba(255,255,255,0) 72%);
+          radial-gradient(60% 70% at 50% 45%, rgba(160,170,185,.20), rgba(160,170,185,0) 75%);
       }
       body.page-v2 #same-day::before {
         background:
-          radial-gradient(30% 24% at 20% 58%, var(--v2-blob-a), rgba(255,255,255,0) 72%),
-          radial-gradient(30% 24% at 82% 80%, var(--v2-blob-b), rgba(255,255,255,0) 72%),
-          radial-gradient(26% 16% at 70% 36%, var(--v2-blob-c), rgba(255,255,255,0) 72%),
-          radial-gradient(28% 18% at 52% 98%, var(--v2-blob-c), rgba(255,255,255,0) 72%);
+          radial-gradient(60% 50% at 50% 70%, rgba(160,170,185,.18), rgba(160,170,185,0) 75%);
       }
       body.page-v2 #full-arch::before {
         background:
-          radial-gradient(30% 28% at 24% 70%, rgba(146,166,188,.22), rgba(0,0,0,0) 72%),
-          radial-gradient(30% 28% at 78% 56%, rgba(208,186,156,.16), rgba(0,0,0,0) 72%);
+          radial-gradient(60% 50% at 50% 65%, rgba(255,255,255,.06), rgba(255,255,255,0) 75%);
       }
       body.page-v2 .v2s-offices::before {
         background:
-          radial-gradient(28% 26% at 26% 50%, var(--v2-blob-a), rgba(255,255,255,0) 72%),
-          radial-gradient(28% 26% at 74% 58%, var(--v2-blob-b), rgba(255,255,255,0) 72%),
-          radial-gradient(24% 18% at 50% 74%, var(--v2-blob-c), rgba(255,255,255,0) 72%);
+          radial-gradient(60% 50% at 50% 60%, rgba(160,170,185,.16), rgba(160,170,185,0) 75%);
       }
-      body.page-v2 .v2s-pin { --lg-fill: rgba(255,255,255,.40); --lg-blur: 20px; --lg-hr: 360px; border-radius: 32px; }
+      body.page-v2 .v2s-pin { --lg-fill: rgba(255,255,255,.30); --lg-blur: 14px; --lg-hr: 360px; border-radius: 32px; }
       body.page-v2 .v2s-pin:hover { --lg-hi: 1; }
-      body.page-v2 .v2s-pin .v2-btn-call { --lg-fill: rgba(255,255,255,.42); }
+      body.page-v2 .v2s-pin .v2-btn-call { --lg-fill: rgba(255,255,255,.24); }
       body.page-v2 .v2s-frame { --lg-fill: rgba(255,255,255,.22); }
       body.page-v2 .v2s-bar .v2-icons { margin: 0; gap: 18px 4px; }
       body.page-v2 .v2s-bar .v2-icons a { width: 72px; font-size: 12px; }

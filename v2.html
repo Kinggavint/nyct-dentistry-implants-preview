@@ -236,11 +236,12 @@
           <a class="v2-btn v2-btn-lg v2-btn-call lg" href="locations.html" data-office="call">Call Now</a>
         </div>
         <div class="v2-links v2h-ask" data-v2-reveal style="--v2-i:3">
-          <button class="v2-link" type="button" data-v2-chat><span>Ask us anything</span></button>
+          <button class="v2-ask lg" type="button" data-v2-chat>Ask us anything</button>
         </div>
       </div>
       <figure class="v2-frame lg" data-v2-tilt="5" data-v2-reveal="scale" style="--v2-i:3">
         <img src="assets/img/mk-office-1.webp" alt="The Mount Kisco office" fetchpriority="high" width="2000" height="1496">
+        <figcaption class="v2-frame-cap lg">Our Mount Kisco office</figcaption>
       </figure>
     </section>
 
@@ -500,7 +501,7 @@
       body.page-v2 .v2h-title { max-width: 15ch; margin-left: auto; margin-right: auto; }
       body.page-v2 .v2h-mission { max-width: 46ch; margin-top: 22px; }
       body.page-v2 .v2h-ask { margin-top: 18px; }
-      body.page-v2 .v2h-ask .v2-link { font-size: 19px; }
+      body.page-v2 .v2h-ask .v2-ask { margin-top: 0; }
       body.page-v2 .v2-offers .v2-card .v2-fine { margin-top: 12px; }
       body.page-v2 .v2-card-icon { margin-bottom: 18px; }
 
@@ -587,43 +588,31 @@
         body.page-v2 .v2h-stats { gap: 22px 18px; margin-top: 44px; }
         body.page-v2 .v2h-stats strong { font-size: 30px; }
         body.page-v2 .v2h-stats span { font-size: 13px; }
-        body.page-v2 .v2h-ask .v2-link { font-size: 17px; }
         body.page-v2 .v2h-offices { padding: 0 20px; }
         body.page-v2 .v2h-offices .office-row { grid-template-columns: minmax(0, 1fr); gap: 14px; }
         body.page-v2 .v2h-offices .office-row-hours, body.page-v2 .v2h-offices .office-row-actions { grid-column: auto; }
         body.page-v2 .v2h-offices .hours div { grid-template-columns: minmax(0, 1fr) auto; }
       }
 
-      /* liquid glass only reads over something: soft low-saturation blobs behind every glass element */
+      /* liquid glass only reads over something: one calm, low-contrast wash behind glass (no blurred blobs) */
       body.page-v2 .v2-offers::before { opacity: 1; }
       body.page-v2 #implants {
         background:
-          radial-gradient(20% 22% at 36% 62%, var(--v2-blob-a), rgba(255,255,255,0) 72%),
-          radial-gradient(20% 22% at 64% 84%, var(--v2-blob-b), rgba(255,255,255,0) 72%),
-          radial-gradient(16% 16% at 60% 54%, var(--v2-blob-c), rgba(255,255,255,0) 72%),
+          radial-gradient(60% 50% at 50% 70%, rgba(160,170,185,.18), rgba(160,170,185,0) 75%),
           var(--v2-white);
       }
       body.page-v2 #full-arch {
         background:
-          radial-gradient(26% 26% at 28% 64%, rgba(146,166,188,.30), rgba(58,58,60,0) 72%),
-          radial-gradient(24% 24% at 74% 82%, rgba(208,186,156,.24), rgba(58,58,60,0) 72%),
           radial-gradient(120% 80% at 50% 0%, var(--v2-ti-deep-hi) 0%, var(--v2-ti-deep) 55%, var(--v2-ti-deep-2) 100%);
       }
       body.page-v2 #full-arch .v2-frame { --lg-fill: rgba(255,255,255,.07); }
       body.page-v2 #offices {
         background:
-          radial-gradient(190px 46px at calc(50% - 74px) calc(100% - var(--v2-section-pad) - 30px), var(--v2-blob-a), rgba(245,245,247,0) 72%),
-          radial-gradient(170px 42px at calc(50% + 84px) calc(100% - var(--v2-section-pad) - 14px), var(--v2-blob-b), rgba(245,245,247,0) 72%),
+          radial-gradient(60% 40% at 50% 100%, rgba(160,170,185,.16), rgba(160,170,185,0) 75%),
           var(--v2-silver);
       }
       body.page-v2 #offices .v2-ask { --lg-fill: rgba(255,255,255,.34); --lg-hr: 140px; }
       body.page-v2 #offices .v2-ask:hover { --lg-hi: 1; }
-      @media (max-width: 734px) {
-        body.page-v2 #implants { background:
-          radial-gradient(40% 14% at 24% 70%, var(--v2-blob-a), rgba(255,255,255,0) 72%),
-          radial-gradient(40% 14% at 78% 86%, var(--v2-blob-b), rgba(255,255,255,0) 72%),
-          var(--v2-white); }
-      }
     </style>
 
     <link rel="stylesheet" href="assets/css/video.css">
