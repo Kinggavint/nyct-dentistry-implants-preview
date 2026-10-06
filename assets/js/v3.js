@@ -140,9 +140,9 @@
     function later(state, ms) { clearTimeout(timer); timer = setTimeout(function () { setOpen(state); }, ms); }
 
     svcLink.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse' && !phone()) later(true, 70); });
-    svcLink.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse' && !phone()) later(false, 240); });
+    svcLink.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse' && !phone()) later(false, 450); });
     flyout.addEventListener('pointerenter', function () { clearTimeout(timer); });
-    flyout.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') later(false, 240); });
+    flyout.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') later(false, 450); });
 
     svcLink.addEventListener('click', function (e) {
       if (phone()) {
@@ -430,9 +430,10 @@
     if (!header || !brand || !slot || RM) return;
     var fly = slot.cloneNode(true);
     fly.classList.add('v3-fly'); fly.removeAttribute('aria-label'); fly.setAttribute('aria-hidden', 'true'); fly.tabIndex = -1;
-    doc.body.appendChild(fly);
+    /* live inside the header's stacking context: above its frosted bar, below the Services flyout */
+    header.appendChild(fly);
     var loc = el('p', 'v3-navloc', 'Mount Kisco, NY · Kent, CT · Stamford, CT');
-    doc.body.appendChild(loc);
+    header.appendChild(loc);
     root.classList.add('v3-fly-on');
     var m = {};
     function measure() {

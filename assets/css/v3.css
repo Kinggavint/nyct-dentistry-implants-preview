@@ -91,11 +91,11 @@
 .page-v3 .v3-hero-logo span { font: 600 36px/1 var(--v3-font); letter-spacing: .16em; text-transform: uppercase; }
 .page-v3 .v3-hero-loc { width: fit-content; margin: 0 auto; font: 600 21px/1.19 var(--v3-font); letter-spacing: .011em; color: var(--v3-ink-metal); white-space: nowrap; }
 .page-v3 .v3h-title { margin-top: 12px; }
-.v3-navloc { position: fixed; left: 0; top: 0; z-index: 70; margin: 0; pointer-events: none; will-change: transform, opacity; white-space: nowrap; font: 600 12px/1.2 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif; letter-spacing: .01em; color: #4a4a52; }
+.v3-navloc { position: fixed; left: 0; top: 0; z-index: 2; margin: 0; pointer-events: none; will-change: transform, opacity; white-space: nowrap; font: 600 12px/1.2 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif; letter-spacing: .01em; color: #4a4a52; }
 @media (max-width: 734px) { .v3-navloc { font-size: 11px; } }
 html.v3-js .page-v3 .v3-offers[data-v3-scroll] .v3-card { will-change: transform, opacity; }
 .page-v3 .v3-marquee.is-collapsing .v3-pill { will-change: transform, opacity; }
-.v3-fly { position: fixed; left: 0; top: 0; z-index: 70; margin: 0; transform-origin: 0 0; will-change: transform; pointer-events: none; }
+.v3-fly { position: fixed; left: 0; top: 0; z-index: 2; margin: 0; transform-origin: 0 0; will-change: transform; pointer-events: none; }
 .v3-fly.v3-hero-logo, .v3-fly a { pointer-events: auto; }
 html.v3-fly-on .page-v3 .v3-hero .v3-hero-logo:not(.v3-fly), html.v3-fly-on .page-v3 .v3-hero .v3-hero-loc.is-flying:not(.v3-fly) { visibility: hidden; }
 html.v3-fly-on .page-v3 .site-header .brand { opacity: 0; }
@@ -441,10 +441,11 @@ html.mo-scrolled .page-v3 .site-header { background: none; box-shadow: none; }
 
 /* ---------- services flyout: a frosted sheet under the bar ---------- */
 .page-v3 .v3-flyout { position: absolute; top: 100%; left: 0; right: 0; z-index: 59; width: min(1080px, calc(100% - 2 * var(--v3-gutter))); margin: 10px auto 0; border-radius: 32px; box-sizing: border-box; color: var(--v3-ink);
-  background: linear-gradient(180deg, rgba(255,255,255,.7), rgba(250,250,252,.55)); border: 1px solid rgba(255,255,255,.9);
+  background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(248,248,250,.93)); border: 1px solid rgba(255,255,255,.9);
   -webkit-backdrop-filter: blur(34px) saturate(190%) brightness(1.04); backdrop-filter: blur(34px) saturate(190%) brightness(1.04);
   box-shadow: inset 0 1px 1px #fff, inset 0 -1px 1px rgba(0,0,0,.05), 0 24px 60px -18px rgba(0,0,0,.24), 0 2px 8px rgba(0,0,0,.06);
   opacity: 0; visibility: hidden; transform: translateY(-8px) scale(.985); transform-origin: 50% 0; transition: opacity 280ms var(--v3-ease), transform 380ms var(--v3-ease), visibility 0s linear 380ms; }
+.page-v3 .v3-flyout::before { content: ""; position: absolute; left: 0; right: 0; top: -14px; height: 14px; }
 .page-v3 .v3-flyout.is-open { opacity: 1; visibility: visible; transform: none; transition: opacity 280ms var(--v3-ease), transform 380ms var(--v3-ease), visibility 0s; }
 .page-v3 .v3-flyout-inner { max-width: 1080px; margin: 0 auto; padding: 24px var(--v3-gutter); box-sizing: border-box; }
 .page-v3 .v3-flyout-head { margin: 0 0 4px; font: 600 12px/1 var(--v3-font); letter-spacing: .14em; text-transform: uppercase; color: var(--v3-ink-2); text-align: center; }
