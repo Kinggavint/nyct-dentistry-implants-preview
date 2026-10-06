@@ -60,6 +60,15 @@
 .page-v3 .v3-metal-text { background: linear-gradient(100deg, #1d1d1f 0%, #2e2e33 30%, #1d1d1f 48%, #33343a 70%, #1d1d1f 100%); background-size: 220% 100%; animation: v3-text 10s ease-in-out infinite; -webkit-background-clip: text; background-clip: text; color: transparent; }
 @keyframes v3-text { 0%, 100% { background-position: 0% 0; } 50% { background-position: 100% 0; } }
 
+
+/* cursor-responsive emphasis on "Trust" and "Last": lift + a light glint that follows the pointer, and an underline that grows as it nears */
+.page-v3 .v3-em { --p: 0; position: relative; display: inline-block; transform-origin: 50% 85%;
+  transform: translateY(calc(var(--p) * -4px)) scale(calc(1 + var(--p) * .035)); transition: transform .28s var(--v3-lift);
+  background: radial-gradient(circle 90px at var(--ex, 50%) var(--ey, 50%), rgba(255,255,255,calc(var(--p) * .5)), rgba(255,255,255,0) 70%), linear-gradient(100deg, #0d0d0f 0%, #3a3b42 50%, #0d0d0f 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent; animation: none; }
+.page-v3 .v3-em::after { content: ""; position: absolute; left: .02em; right: .02em; bottom: .04em; height: .055em; border-radius: 99px; pointer-events: none;
+  background: linear-gradient(90deg, #1d1d1f, #8a8b93); transform-origin: 0 50%; transform: scaleX(calc(.34 + var(--p) * .66)); opacity: calc(.4 + var(--p) * .6); transition: transform .28s var(--v3-lift), opacity .28s; }
+
 /* ---------- text links: graphite dot + graphite underline, no color ---------- */
 .page-v3 .v3-links { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px 22px; margin-top: 26px; }
 .page-v3 .v3-link { display: inline-flex; align-items: baseline; color: inherit; font: 400 var(--v3-fs-link)/1.19 var(--v3-font); letter-spacing: .011em; text-decoration: none; white-space: nowrap; background: none; border: 0; padding: 0; cursor: pointer; }

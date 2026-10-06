@@ -354,6 +354,30 @@
     });
   }
 
+  /* cursor emphasis: each .v3-em word gets --p (0..1 proximity) and --ex/--ey (pointer position inside the word) */
+  function initEmphasis() {
+    var words = $all('.v3-em');
+    var fine = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (!words.length || RM || !fine) return;
+    var mx = -1e4, my = -1e4, raf = 0;
+    function paint() {
+      raf = 0;
+      words.forEach(function (w) {
+        var r = w.getBoundingClientRect();
+        var cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+        var d = Math.sqrt(Math.pow(mx - cx, 2) + Math.pow(my - cy, 2));
+        var p = Math.max(0, Math.min(1, 1 - d / 420));
+        w.style.setProperty('--p', (p * p * (3 - 2 * p)).toFixed(3));
+        w.style.setProperty('--ex', Math.max(0, Math.min(100, (mx - r.left) / r.width * 100)).toFixed(1) + '%');
+        w.style.setProperty('--ey', Math.max(0, Math.min(100, (my - r.top) / r.height * 100)).toFixed(1) + '%');
+      });
+    }
+    function queue() { if (!raf) raf = requestAnimationFrame(paint); }
+    doc.addEventListener('pointermove', function (e) { if (e.pointerType === 'mouse') { mx = e.clientX; my = e.clientY; queue(); } }, { passive: true });
+    doc.addEventListener('pointerleave', function () { mx = my = -1e4; queue(); });
+    window.addEventListener('scroll', queue, { passive: true });
+  }
+
   function start() {
     initHeader();
     initReddit();
@@ -365,6 +389,7 @@
     initHeroDock();
     initChatDock();
     initMarquee();
+    initEmphasis();
     /* the chat widget is injected by features.js; tag its launcher once it exists */
     setTimeout(tagGlass, 600);
   }
