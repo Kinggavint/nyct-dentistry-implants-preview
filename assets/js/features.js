@@ -49,7 +49,7 @@
     { name: 'Stamford, CT', addr: '800 E Main St, Stamford, CT 06902', tel: '2038834451', disp: '203-883-4451', book: 'https://www.flexbook.me/bookcsds/googlereserve/1' }
   ];
 
-  var CHAT_ENDPOINT = 'https://jifdopnikyknetsakqfc.supabase.co/functions/v1/site-assistant';
+  var CHAT_ENDPOINT = 'https://pszuxvna48.execute-api.us-east-2.amazonaws.com/site-assistant';
   var CHAT_KEY = '2b768ea6e36846d68158b82da8f5968f';
   var STORE_KEY = 'di-a11y';
 
