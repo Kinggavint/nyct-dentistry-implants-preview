@@ -12,53 +12,42 @@ material we do not have yet.
 
 ## Needs the practice's answer
 
-0. **Dr. Byungchul Park.** Dr. Park appears on both old sites, but it is not confirmed that he is
-   part of this practice's new website, so the site shows Dr. Kwon only for now. His bio, photos and
-   the patient quotes that name him are held back and can be restored quickly once confirmed.
-   On 2026-10-06 the practice uploaded Dr. Park's portrait and a photo of both doctors to the Doctors
-   and Team folder (the same photos we already hold), without a note. Please confirm in words that he
-   should be on the site, which offices he sees patients at, and his title.
-1. **Logo.** On 2026-10-06 the practice uploaded all three office logos (Kent Dentistry & Implants
-   in blue, Mt Kisco Dentistry & Implants in teal, the Stamford logo, a photo of the Mount Kisco
-   sign and a combined sheet). All three share the same tooth in an open circle. There was no note
-   picking a direction, so the site keeps its "Dentistry & Implants" text wordmark. A fourth logo
-   concept (D) built on that tooth mark and the Kent blue is on the logo board. Which concept, or
-   should the site use the existing tooth mark as is? Note the Kent logo on the sheet names Dr. Park.
-2. **Stamford details taken from clearsmiledentalstudio.com.** Hours (open Saturdays, closed
-   Thursdays), 39 accepted plans plus Medicaid, Sunbit, Chewsi and GreenSky financing, the $399
-   in-house membership plan, the $149 new patient special, $1,000 off implants, complimentary
-   parking, CBCT and intraoral cameras, and the office photos. Please confirm all are current
-   and that they should appear on the Dentistry & Implants site.
-3. **Team.** Maggie and Malena Valero are shown from the Stamford site's team page, with photos.
-   Please confirm, and send names, photos and a line about team members at Mount Kisco and Kent.
-4. **Hours for Mount Kisco and Kent.** Copied from nyctdentistry.com. Please confirm.
-5. **Insurance lists.** Taken from the plan logos on both websites. A few logos could not be
-   identified by name (a gold "G", a red "C" with arcs, and four on the Stamford site) and are
-   left off. Please confirm all three lists.
-6. **Cherry application link.** The site says "ask the office for the application link".
-   Send the practice's Cherry link and it will be added as a button.
-7. **Specials.** The $240 new patient special (Mount Kisco and Kent), senior savings and the
-   complimentary consultation are copied from nyctdentistry.com. Please confirm they are current.
-8. **Book titles.** Dr. Kwon has published implant books and textbook translations with
-   Dr. Youngsam Kim, with a sinus lift textbook coming. Titles and a release date would
-   strengthen the Dr. Kwon page.
-9. **Implant company.** Dr. Kwon is faculty for a dental implant company. The 2026 Dallas course
-   flier he uploaded carries an implant maker's brand. Is that the company, and should it be named?
+0. **Dr. Byungchul Park.** Still held off the site. The practice uploaded his portrait and a photo of both
+   doctors on 2026-10-06, and the 2026-10-06 email reply did not answer whether to include him. Please confirm
+   in words that he should be on the site, which offices he sees patients at, and his title.
+1. **Logo.** All three office logos are uploaded (email 2026-10-06: "Done, all 3"). No direction picked yet,
+   so the site keeps its "Dentistry & Implants" text wordmark. Four concepts are on the logo board (D uses
+   the tooth mark and Kent blue). Which one? Note the Kent logo on the sheet names Dr. Park.
+2. **Stamford details still unconfirmed.** Hours, HUSKY, the $150 special and Cherry are confirmed (2026-10-06).
+   Still from clearsmiledentalstudio.com and not yet confirmed: the 39 plans, complimentary parking, CBCT and
+   intraoral cameras, and the office photos.
+   **Removed 2026-10-06 until confirmed:** asked "which offers are current", the practice listed only the
+   $240 and $150 specials and the complimentary consultation, and only Cherry for financing. So the $399
+   membership plan, $1,000 off implants, implant packages ($1,499 / $11,999 / $19,999), senior savings,
+   CareCredit, Sunbit, Chewsi and GreenSky are off the site. Restore from git (before this commit) if any
+   are still offered.
+3. **Team.** Dr. Ryan Oh, associate dentist, Stamford office only, is on the team page and the Stamford page
+   (name, role and office only). His photo and bio are coming from the practice. Maggie and Malena Valero are
+   shown from the Stamford site's team page. Still wanted: names, photos and a line for Mount Kisco and Kent
+   team members.
+5. **Insurance lists.** The practice offered (2026-10-06) to send the updated list of plans for each office.
+   Yes please: the current three lists come from the plan logos on the old websites.
+9. **GIIA sponsors.** The practice wrote "GIA, sponsored by HiOssen, Dentis, Neobiotech, Purgo". The site
+   reads "Gangnam International Implant Academy (GIIA)" and names the four sponsors. Confirm GIA and GIIA
+   are the same academy. **Book:** *Dr. Youngsam Kim's Atlas of Implants* is linked on his page; the
+   listing names only Dr. Kim as author. What was Dr. Kwon's role (co-author, translator)? A second book is
+   expected by the end of 2026.
 22. **New photos of Dr. Kwon (2026-10-06, first upload).** A podium lecture, a live surgery course, a conference talk
     and the UniCamillus photo in Rome are now on his page and the home page. Please tell us where and
     when each was taken if you would like that in the captions, and confirm the live surgery patient is
     comfortable being shown (face not visible).
-10. **Spanish review.** The five Spanish pages need Maggie's review before the "in review"
-    banner is removed. Terms to check: rediseño de sonrisa, carillas, tratamiento de conducto,
-    empastes, muelas del juicio, consulta de cortesía, docente de implantes.
-11. **Implant package prices.** The Stamford office publishes Single Implant from $1,499, Overdenture
-    from $11,999 and Full Arch from $19,999, with what each includes. They are shown on the insurance
-    page as Stamford prices. Confirm they are current and whether they apply at all three offices.
-12. **Medicaid.** One Stamford page says Medicaid is accepted; another says "Husky, children under 21
-    only". The site uses the narrower wording (HUSKY Health for children under 21, Stamford only).
-13. **Dr. Chun.** An old Stamford blog post names a Dr. Chun for Invisalign. He is not on the new
-    site. Confirm whether he still practices with you.
-14. **Sedation.** The old Stamford pages mention sedation. The site says to ask the Stamford office.
+10. **Spanish review.** Maggie will review the Spanish pages and the articles. The practice also wants the
+    intro and the services in Spanish: the Spanish home intro and the Spanish services overview exist; the
+    16 service detail pages are English only. Which ones should be translated first?
+11. **Services list.** The practice plans to send its own list of services (Dental Implants, Smile Makeover,
+    Veneers and Crowns, Extraction and Bone Grafting, Wisdom Teeth Extraction and more) with an explanation of
+    each procedure, process and recovery time. The services page now opens with an Apple-style row of service
+    buttons; new services from that list get their own page and button. There is no bone grafting page yet.
 15. **Town pages.** The ten "dental implants in <town>" pages were near-duplicates of each other,
     which search engines treat as doorway pages. They are combined into one Areas We Serve page,
     and each old address redirects there.
@@ -76,12 +65,26 @@ material we do not have yet.
     low resolution, so the site shows the Stamford office. Five to eight photos of each would
     let every office have its own gallery.
 
+## Answered 2026-10-06 (email)
+
+- Domains: all three are in two GoDaddy accounts owned by the practice. No other domains.
+- Hours confirmed with corrections (Kent and Stamford changed; Stamford is open Thursdays every other week).
+- Specials: $240 new patient special (Mount Kisco, Kent), $150 (Stamford), complimentary consultation at all three.
+- Cherry at all three offices, 0% for 12 to 18 months; per-office apply links and a payment calculator are live.
+- Stamford accepts HUSKY for children and adults. Sedation: nitrous oxide at Kent only, no other types.
+- Dr. Chun was never with the practice. Booking links confirmed. Before and after photos, more office
+  photos and the office tour video are in progress.
+
 ## Features waiting on access
 
-20. **Live Google reviews.** Approval given for all three offices. Needs the three Google
-    Business Profile links to connect. Real patient quotes from both websites are shown meanwhile.
-21. **Website chat.** Live. It answers from the site's own content. Common questions and
-    answers from the practice would make it more useful.
+20. **Live Google reviews.** The practice added our support address to two of the three Google Business
+    Profiles (Stamford is being fixed) and asked why reviews are not already live. They need the Business
+    Profile connection on our side, which is what the access is for. Real patient quotes from both websites are
+    shown meanwhile. Google names today: Kent Dentistry & Implants, Mt Kisco Dentistry & Implants, Stamford
+    Dentistry & Implants - Clear Smile (practice is open to suggestions).
+21. **Website chat.** Live. Handoffs go to nyctdentistryimplants@gmail.com (confirmed 2026-10-06). It now opens
+    by asking which location works best and offers the three offices as buttons, as the practice asked.
+    Common questions and answers from the practice would make it more useful.
 23. **Teaching photos and fliers (2026-10-06, second upload).** Three live surgery photos from
     Tijuana (patients covered by drapes) and the 2026 Dallas lecture photo are on his page and the
     home slideshow. From the fliers his page now lists: Dallas 2026 and New York 2024 hands-on crestal

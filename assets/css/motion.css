@@ -308,3 +308,16 @@ html[data-accent="blue"] .office-row:hover { background: linear-gradient(90deg, 
 .button.button-ghost { color: var(--ink); }
 .button.button-ghost:hover { color: var(--paper); }
 .tile-wide .tile-media img { width: min(100%, 780px); }
+
+/* Services nav, Apple product-row style: icon over label, scrolls sideways on phones */
+.svc-nav { margin-top: clamp(32px, 5vw, 56px); max-width: 100%; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.svc-nav::-webkit-scrollbar { display: none; }
+.svc-nav ul { display: flex; gap: clamp(10px, 2vw, 26px); width: max-content; margin: 0 auto; padding: 6px 0 14px; list-style: none; }
+.svc-nav a { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 92px; color: var(--ink); font-size: 0.85rem; font-weight: 600; line-height: 1.2; text-align: center; text-decoration: none; }
+.svc-nav img, .svc-nav .chip-dot { display: block; width: 60px; height: 60px; border-radius: 50%; object-fit: cover; transition: transform 250ms var(--ease-out), box-shadow 250ms ease; }
+.svc-nav .chip-dot { position: relative; background: var(--ink); }
+.svc-nav .chip-dot::after { content: ""; position: absolute; inset: 23px; border-radius: 50%; background: var(--accent); }
+.svc-nav a:hover, .svc-nav a:focus-visible { color: var(--accent-text); }
+.svc-nav a:hover img, .svc-nav a:hover .chip-dot, .svc-nav a:focus-visible img, .svc-nav a:focus-visible .chip-dot { transform: translateY(-3px); box-shadow: 0 0 0 2px var(--accent); }
+@media (prefers-reduced-motion: reduce) { .svc-nav img, .svc-nav .chip-dot { transition: none; } }
+@media (min-width: 861px) { .svc-nav { overflow: visible; } .svc-nav ul { flex-wrap: wrap; width: auto; row-gap: 22px; } }

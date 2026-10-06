@@ -18,6 +18,9 @@
       chatError: 'Sorry, I could not reach our assistant just then. Please call us and we will help.',
       handoff: 'Want us to get back to you? Leave your name and the best number or email.',
       chatClose: 'Close chat',
+      chatPick: 'Which location works best for you?', chatPicked: 'The {o} office works best for me.',
+      chatOffice: '{o} office: {a}. Call {p} or book online any time. What can I help you with?',
+      perMonth: 'a month',
       a11yToggle: 'Accessibility', a11yLarge: 'Larger text', a11yContrast: 'High contrast',
       a11yUnderline: 'Underline links', a11yReset: 'Reset'
     },
@@ -32,6 +35,9 @@
       chatError: 'Lo sentimos, no pudimos comunicarnos con nuestro asistente en este momento. Llámenos y le ayudaremos.',
       handoff: '¿Quiere que nos comuniquemos con usted? Déjenos su nombre y el mejor número o correo electrónico.',
       chatClose: 'Cerrar chat',
+      chatPick: '¿Qué consultorio le queda mejor?', chatPicked: 'Me queda mejor el consultorio de {o}.',
+      chatOffice: 'Consultorio de {o}: {a}. Llame al {p} o reserve en línea cuando quiera. ¿En qué le puedo ayudar?',
+      perMonth: 'al mes',
       a11yToggle: 'Accesibilidad', a11yLarge: 'Texto más grande', a11yContrast: 'Alto contraste',
       a11yUnderline: 'Subrayar enlaces', a11yReset: 'Restablecer'
     }
@@ -173,6 +179,15 @@
     log.setAttribute('role', 'log');
     log.setAttribute('aria-live', 'polite');
     log.appendChild(el('p', 'di-chat-msg di-chat-bot', T.chatGreeting));
+    log.appendChild(el('p', 'di-chat-msg di-chat-bot', T.chatPick));
+    var picks = el('div', 'di-chat-picks');
+    OFFICES.forEach(function (o) {
+      var b = el('button', 'di-chat-pick', o.name);
+      b.type = 'button';
+      b.addEventListener('click', function () { pickOffice(o); });
+      picks.appendChild(b);
+    });
+    log.appendChild(picks);
 
     var form = el('form', 'di-chat-form');
     var input = el('input');
@@ -224,6 +239,24 @@
       log.appendChild(p);
       log.scrollTop = log.scrollHeight;
       return p;
+    }
+
+    function pickOffice(o) {
+      if (picks.parentNode) picks.parentNode.removeChild(picks);
+      var said = T.chatPicked.replace('{o}', o.name);
+      bubble(o.name, 'user');
+      var reply = T.chatOffice.replace('{o}', o.name).replace('{a}', o.addr).replace('{p}', o.disp);
+      var p = bubble(reply, 'bot');
+      var links = el('span', 'di-chat-links');
+      var call = el('a', null, T.call + ' ' + o.disp);
+      call.href = 'tel:' + o.tel;
+      var book = el('a', null, T.book);
+      book.href = o.book; book.target = '_blank'; book.rel = 'noopener';
+      links.appendChild(call); links.appendChild(book);
+      p.appendChild(links);
+      history.push({ role: 'user', content: said });
+      history.push({ role: 'assistant', content: reply });
+      input.focus();
     }
 
     form.addEventListener('submit', function (e) {
@@ -339,8 +372,30 @@
     apply();
   }
 
+  /* 5. Payment calculator (0% plans): <form data-calc> */
+  function initCalc() {
+    var forms = doc.querySelectorAll('form[data-calc]');
+    Array.prototype.forEach.call(forms, function (f) {
+      var out = f.querySelector('output');
+      function money(n) {
+        return '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      }
+      function update() {
+        var amt = parseFloat(f.elements.amount.value) || 0;
+        var m = f.querySelector('input[name="months"]:checked');
+        var months = m ? parseInt(m.value, 10) : 12;
+        out.textContent = money(Math.max(amt, 0) / months);
+      }
+      f.addEventListener('input', update);
+      f.addEventListener('change', update);
+      f.addEventListener('submit', function (e) { e.preventDefault(); });
+      update();
+    });
+  }
+
   function start() {
     initReveal();
+    initCalc();
     initOffices();
     initChat();
     initA11y();

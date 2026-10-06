@@ -508,3 +508,6 @@ h3 { font-size: clamp(1.35rem, 2vw, 1.75rem); letter-spacing: -0.02em; line-heig
 .footer-legal a { color: var(--muted); }
 .general-list h3 a { text-decoration: none; } .general-list h3 a:hover { text-decoration: underline; color: var(--accent-text); }
 .di-ba-xray .di-ba-img img { aspect-ratio: 2 / 1; object-fit: contain; background: #000; }
+
+/* Team member without a photo yet */
+.team-member.no-photo { grid-template-columns: minmax(0, 1fr); padding-left: 20px; border-left: 3px solid var(--accent); }

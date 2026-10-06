@@ -62,6 +62,11 @@ html.di-js [data-reveal].di-in { opacity: 1; transform: none; }
 .di-chat-form input:focus { border-color: var(--accent, #ff3b00); outline: 2px solid var(--accent, #ff3b00); outline-offset: 0; }
 .di-chat-form button { border: 0; border-radius: 10px; padding: 8px 14px; cursor: pointer; background: #111; color: #fff; font: inherit; font-size: 14px; }
 .di-chat-form button:hover { background: var(--accent-dark, #b52a00); }
+.di-chat-picks { display: flex; flex-wrap: wrap; gap: 6px; }
+.di-chat-pick { border: 1px solid #111; border-radius: 999px; background: #fff; color: #111; padding: 8px 12px; min-height: 40px; font-size: 14px; font-weight: 600; cursor: pointer; }
+.di-chat-pick:hover, .di-chat-pick:focus-visible { background: #111; color: #fff; }
+.di-chat-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
+.di-chat-links a { color: var(--accent-text, #b52a00); font-weight: 600; }
 .di-chat-foot { margin: 0; padding: 0 14px 12px; font-size: 12px; color: #555; }
 
 /* 4. Accessibility toolbar, bottom right */
@@ -107,3 +112,18 @@ html.di-underline-links a { text-decoration: underline; text-underline-offset: 3
 .di-lang a:hover { color: var(--accent-dark, #b52a00); }
 .di-lang a[aria-current="true"] { text-decoration: underline; text-decoration-color: var(--accent, #ff3b00); text-decoration-thickness: 2px; text-underline-offset: 6px; }
 .di-lang a:focus-visible { outline: 3px solid var(--accent, #ff3b00); outline-offset: 2px; }
+
+/* 5. Payment calculator */
+.di-calc { display: grid; grid-template-columns: 1fr 1fr 1.2fr; gap: 24px; align-items: end; max-width: 980px; margin: 32px auto 0; padding: clamp(20px, 3vw, 36px); border: 1px solid var(--line, #d9d9d9); border-radius: 24px; background: var(--paper, #fff); }
+.di-calc-field { margin: 0; padding: 0; border: 0; min-width: 0; }
+.di-calc-field label[for], .di-calc-field legend { display: block; margin-bottom: 10px; font-weight: 700; }
+.di-calc-amount input { width: 100%; min-height: 52px; padding: 0 14px; border: 1px solid var(--ink, #111); border-radius: 12px; font: 600 1.25rem var(--body, Arial, sans-serif); color: var(--ink, #111); background: #fff; }
+.di-calc-opt { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-right: 18px; font-weight: 600; cursor: pointer; }
+.di-calc-opt input { width: 20px; height: 20px; accent-color: var(--accent, #ff3b00); }
+.di-calc-result p { margin: 0; }
+.di-calc-label { color: var(--muted, #505050); font-size: 0.95rem; }
+.di-calc-value { font-family: var(--display, Arial, sans-serif); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; }
+.di-calc-value output { color: var(--accent-text, #b52a00); }
+.di-calc-value span { font-size: 1rem; font-weight: 600; letter-spacing: 0; color: var(--muted, #505050); }
+.di-calc-note { margin-top: 6px; font-size: 0.9rem; color: var(--muted, #505050); }
+@media (max-width: 860px) { .di-calc { grid-template-columns: 1fr; } }
