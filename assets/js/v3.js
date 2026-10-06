@@ -366,8 +366,9 @@
         var r = w.getBoundingClientRect();
         var cx = r.left + r.width / 2, cy = r.top + r.height / 2;
         var d = Math.sqrt(Math.pow(mx - cx, 2) + Math.pow(my - cy, 2));
-        var p = Math.max(0, Math.min(1, 1 - d / 420));
-        w.style.setProperty('--p', (p * p * (3 - 2 * p)).toFixed(3));
+        var reach = Math.max(1100, window.innerWidth * .9);
+        var p = Math.max(0, Math.min(1, 1 - d / reach));
+        w.style.setProperty('--p', Math.pow(p, .55).toFixed(3));
         w.style.setProperty('--ex', Math.max(0, Math.min(100, (mx - r.left) / r.width * 100)).toFixed(1) + '%');
         w.style.setProperty('--ey', Math.max(0, Math.min(100, (my - r.top) / r.height * 100)).toFixed(1) + '%');
       });
