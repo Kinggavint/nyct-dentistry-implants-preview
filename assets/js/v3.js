@@ -395,6 +395,63 @@
     paint();
   }
 
+  /* hero logo and locations fly into the header on scroll: logo shrinks to the top left, locations slide to the top right.
+     Fixed clones follow the hero slots (so the motion is just the page scroll) and ease x and scale toward the header targets. */
+  function initFly() {
+    var header = $('.site-header'), brand = $('.site-header .brand'), inner = $('.site-header .header-inner');
+    var logoSlot = $('.v3-hero .v3-hero-logo'), locSlot = $('.v3-hero .v3-hero-loc');
+    if (!header || !brand || !logoSlot || RM) return;
+    var items = [];
+    function clone(slot, isLoc) {
+      var f = slot.cloneNode(true);
+      f.classList.add('v3-fly'); f.removeAttribute('aria-label');
+      if (!isLoc) { f.setAttribute('aria-hidden', 'true'); f.tabIndex = -1; }
+      doc.body.appendChild(f);
+      return { slot: slot, fly: f, loc: isLoc, ok: false };
+    }
+    items.push(clone(logoSlot, false));
+    if (locSlot) items.push(clone(locSlot, true));
+    root.classList.add('v3-fly-on');
+    function measure() {
+      var hr = header.getBoundingClientRect(), ir = inner.getBoundingClientRect(), br = brand.getBoundingClientRect(), sy = window.scrollY || 0;
+      items.forEach(function (it) {
+        var r = it.slot.getBoundingClientRect(), w = r.width, h = r.height;
+        it.w = w; it.h = h; it.x0 = r.left; it.y0 = r.top + sy;
+        it.fly.style.width = w + 'px'; it.fly.style.height = h + 'px';
+        if (!it.loc) {
+          it.s1 = br.width / w; it.x1 = br.left; it.y1 = hr.top + hr.height / 2 - h * it.s1 / 2;
+          it.ok = true;
+        } else {
+          var wide = window.innerWidth >= 1380;
+          it.s1 = .57; it.x1 = ir.right - 22 - w * it.s1; it.y1 = hr.top + hr.height / 2 - h * it.s1 / 2;
+          it.ok = wide;
+          it.slot.classList.toggle('is-flying', wide);
+          it.fly.style.display = wide ? '' : 'none';
+        }
+        it.D = Math.max(1, it.y0 - it.y1);
+      });
+    }
+    var raf = 0;
+    function paint() {
+      raf = 0;
+      var sy = window.scrollY || 0;
+      items.forEach(function (it) {
+        if (!it.ok) return;
+        var m = Math.min(sy, it.D), t = m / it.D;
+        var e = t * t * (3 - 2 * t);
+        var x = it.x0 + (it.x1 - it.x0) * e, y = it.y0 - m, s = 1 + (it.s1 - 1) * e;
+        it.fly.style.transform = 'translate(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px) scale(' + s.toFixed(4) + ')';
+      });
+    }
+    function queue() { if (!raf) raf = requestAnimationFrame(paint); }
+    function remeasure() { var sy = window.scrollY; if (sy) window.scrollTo(0, 0); measure(); if (sy) window.scrollTo(0, sy); paint(); }
+    window.addEventListener('scroll', queue, { passive: true });
+    window.addEventListener('resize', function () { remeasure(); });
+    if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(remeasure);
+    window.addEventListener('load', remeasure);
+    measure(); paint();
+  }
+
   /* services carousel: duplicate the pill track once so the marquee loops without a seam */
   function initMarquee() {
     $all('.v3-marquee-track').forEach(function (t) {
@@ -443,6 +500,7 @@
     initMarquee();
     initBanner();
     initOffersScroll();
+    initFly();
     initEmphasis();
     /* the chat widget is injected by features.js; tag its launcher once it exists */
     setTimeout(tagGlass, 600);
