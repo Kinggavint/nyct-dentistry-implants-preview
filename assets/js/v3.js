@@ -47,6 +47,12 @@
   function img(name) { try { return new URL('../img/' + name, SCRIPT || location.href).href; } catch (e) { return 'assets/img/' + name; } }
 
   root.classList.add('v3-js');
+  /* Scroll-driven animations (Chrome/Edge 115+, Safari 26+): the browser runs the scroll-linked motion on the compositor, locked to the
+     scroll itself, so nothing lags or jitters. JS only measures the start/end points (on load and resize). Other browsers use the JS path. */
+  var SDA = !RM && !!(window.CSS && CSS.supports && CSS.supports('animation-timeline: scroll()') && CSS.supports('animation-range: 0px 100px'));
+  if (SDA) root.classList.add('v3-sda');
+  function docTop(n) { var y = 0; while (n) { y += n.offsetTop; n = n.offsetParent; } return y; }
+  function docLeft(n) { var x = 0; while (n) { x += n.offsetLeft; n = n.offsetParent; } return x; }
 
   /* Language root prefix taken from the header's Services link ("services.html" or "../services.html"). */
   var svcLink = $all('#primary-nav a').filter(function (a) { return /(^|\/)services\.html$/.test(a.getAttribute('href') || ''); })[0] || null;
@@ -408,7 +414,7 @@
   var collapseOn = false;
   function initOffersScroll() {
     var wrap = $('.v3-offers[data-v3-scroll]');
-    if (!wrap) return;
+    if (!wrap || SDA) return;
     var cards = $all('.v3-card', wrap);
     var set = follow(function (base) {
       cards.forEach(function (c, i) {
@@ -460,6 +466,25 @@
       loc.style.transform = 'translate3d(' + lx.toFixed(2) + 'px,' + m.ly.toFixed(2) + 'px,0)';
       loc.style.opacity = lo.toFixed(3);
     }
+    if (SDA) {
+      var px = function (v) { return v.toFixed(2) + 'px'; };
+      var apply = function () {
+        measure();
+        var sy = window.scrollY || 0;
+        fly.style.transform = '';
+        fly.style.setProperty('--fx0', px(m.x0)); fly.style.setProperty('--fy0', px(m.y0));
+        fly.style.setProperty('--fx1', px(m.x1)); fly.style.setProperty('--fy1', px(m.y1));
+        fly.style.setProperty('--fs1', m.s1.toFixed(4)); fly.style.setProperty('--fD', px(m.D));
+        loc.style.transform = ''; loc.style.opacity = '';
+        loc.style.setProperty('--lx0', px(m.lx0)); loc.style.setProperty('--lx1', px(m.lx1)); loc.style.setProperty('--ly', px(m.ly)); loc.style.setProperty('--fD', px(m.D));
+        loc.classList.toggle('is-narrow', !m.wide);
+      };
+      window.addEventListener('resize', apply);
+      if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(apply);
+      window.addEventListener('load', apply);
+      apply();
+      return;
+    }
     var set = follow(paint, 0.16);
     function target() { return Math.min(window.scrollY || 0, m.D) / m.D; }
     function remeasure() { var sy = window.scrollY; if (sy) window.scrollTo(0, 0); measure(); if (sy) window.scrollTo(0, sy); set(target(), true); }
@@ -482,6 +507,29 @@
     ['ba-4-after.webp', 'ba-5-after.webp', 'ba-7-after.webp'].forEach(function (n) { var im = el('img'); im.src = img(n); im.alt = ''; faces.appendChild(im); });
     pill.appendChild(faces); pill.appendChild(el('span', null, 'View all of our services'));
     doc.body.appendChild(pill);
+    if (SDA) {
+      pill.classList.add('is-sda');
+      var applyC = function () {
+        var vh = window.innerHeight, vw = doc.documentElement.clientWidth;
+        var mT = docTop(mq), mH = mq.offsetHeight;
+        var c0 = mT - 0.58 * vh, c1 = mT - 0.32 * vh, v0 = c1, v1 = mT + 0.02 * vh;
+        var pw = pill.offsetWidth, ph = pill.offsetHeight;
+        var ax = vw / 2 - pw / 2, ay = mT + mH / 2 - ph / 2;
+        var bx = docLeft(card) + card.offsetWidth / 2 - pw / 2, by = docTop(card) + card.offsetHeight * 0.36 - ph / 2;
+        var P = function (v) { return Math.max(0, v).toFixed(1) + 'px'; };
+        mq.style.setProperty('--c0', P(c0)); mq.style.setProperty('--c1', P(c1));
+        pill.style.setProperty('--ax', ax.toFixed(1) + 'px'); pill.style.setProperty('--ay', ay.toFixed(1) + 'px');
+        pill.style.setProperty('--bx', bx.toFixed(1) + 'px'); pill.style.setProperty('--by', by.toFixed(1) + 'px');
+        pill.style.setProperty('--p0', P(c0 + 0.55 * (c1 - c0))); pill.style.setProperty('--p1', P(v1));
+        card.style.setProperty('--h0', P(v0 + 0.72 * (v1 - v0))); card.style.setProperty('--h1', P(v1));
+        mq.classList.add('v3-sda-collapse');
+      };
+      window.addEventListener('resize', applyC);
+      if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(applyC);
+      window.addEventListener('load', applyC);
+      applyC();
+      return;
+    }
     var pills = $all('.v3-pill', mq), frozen = false;
     function freeze() {
       var cx = window.innerWidth / 2;
@@ -511,6 +559,30 @@
       set(1 - mq.getBoundingClientRect().top / vh, first);
       paint(z);
     });
+  }
+
+  /* mission sentence types itself out once on load (layout is reserved: every character is in place, just hidden) */
+  function initType() {
+    var p = $('.v3-hero .v3h-mission');
+    if (!p || RM || p.getAttribute('data-typed')) return;
+    var text = p.textContent.replace(/\s+/g, ' ').trim();
+    p.setAttribute('aria-label', text); p.setAttribute('data-typed', '1');
+    p.textContent = '';
+    var chars = [];
+    text.split('').forEach(function (ch) { var s = el('span', 'v3-ch', ch); s.setAttribute('aria-hidden', 'true'); p.appendChild(s); chars.push(s); });
+    p.classList.add('v3-in', 'v3-done', 'v3-typing');
+    var i = 0, prev = null;
+    function tick() {
+      if (prev) prev.classList.remove('is-caret');
+      var c = chars[i]; c.classList.add('on', 'is-caret'); prev = c; i++;
+      if (i < chars.length) {
+        var ch = c.textContent, d = ch === ' ' ? 34 : (/[,.]/.test(ch) ? 190 : 20 + Math.random() * 22);
+        setTimeout(tick, d);
+      } else {
+        setTimeout(function () { p.classList.add('v3-typed'); }, 1800);
+      }
+    }
+    setTimeout(tick, 650);
   }
 
   /* services carousel: duplicate the pill track once so the marquee loops without a seam */
@@ -564,6 +636,7 @@
     initCollapse();
     initFly();
     initEmphasis();
+    initType();
     /* the chat widget is injected by features.js; tag its launcher once it exists */
     setTimeout(tagGlass, 600);
   }

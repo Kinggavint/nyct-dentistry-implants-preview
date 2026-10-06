@@ -13,7 +13,7 @@
 
 :root {
   --v3-font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --v3-ink: #1d1d1f; --v3-ink-2: #6e6e73; --v3-ink-metal: #4a4a52; --v3-white: #fff; --v3-silver: #f5f5f7;
+  --v3-brand: #2552b0; --v3-brand-2: #6f7ef2; --v3-ink: #1d1d1f; --v3-ink-2: #6e6e73; --v3-ink-metal: #4a4a52; --v3-white: #fff; --v3-silver: #f5f5f7;
   --v3-radius: 28px; --v3-pill: 980px;
   --v3-card-shadow: inset 0 0 0 1px rgba(0,0,0,.07), 0 1px 2px rgba(0,0,0,.04), 0 12px 32px -18px rgba(30,30,40,.2);
   --v3-card-shadow-hover: inset 0 0 0 1px rgba(0,0,0,.08), inset 0 1px 0 rgba(255,255,255,.95), 0 1px 2px rgba(0,0,0,.04), 0 24px 48px -16px rgba(30,30,40,.32);
@@ -67,7 +67,7 @@
   background: radial-gradient(circle 130px at var(--ex, 50%) var(--ey, 50%), rgba(255,255,255,calc(var(--p) * .6)), rgba(255,255,255,0) 70%), linear-gradient(100deg, #0d0d0f 0%, #3a3b42 50%, #0d0d0f 100%);
   -webkit-background-clip: text; background-clip: text; color: transparent; animation: none; }
 .page-v3 .v3-em::after { content: ""; position: absolute; left: .02em; right: .02em; bottom: .04em; height: .055em; border-radius: 99px; pointer-events: none;
-  background: linear-gradient(90deg, #1d1d1f, #8a8b93); transform-origin: 0 50%; transform: scaleX(calc(.34 + var(--p) * .66)); opacity: calc(.4 + var(--p) * .6); transition: transform .28s var(--v3-lift), opacity .28s; }
+  background: linear-gradient(90deg, var(--v3-brand), var(--v3-brand-2)); transform-origin: 0 50%; transform: scaleX(calc(.34 + var(--p) * .66)); opacity: calc(.4 + var(--p) * .6); transition: transform .28s var(--v3-lift), opacity .28s; }
 
 
 /* hero pills flanking "Ask us anything": the two things to know, as light glass chips */
@@ -80,13 +80,13 @@
   background: rgba(255,255,255,.58); border: 1px solid rgba(255,255,255,.9); -webkit-backdrop-filter: blur(10px) saturate(190%) brightness(1.04); backdrop-filter: blur(10px) saturate(190%) brightness(1.04);
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.55), inset 0 1px 1px #fff, inset 0 -1px 1px rgba(0,0,0,.07), 0 0 0 .5px rgba(29,29,31,.12), 0 8px 20px -10px rgba(40,44,60,.28); transition: transform .45s var(--v3-gel), box-shadow .3s; }
 .page-v3 .v3-chip:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 #fff, 0 0 0 .5px rgba(29,29,31,.12), 0 0 18px rgba(255,255,255,.2), 0 14px 26px -10px rgba(40,44,60,.32); }
-.page-v3 .v3-chip-dot { width: 9px; height: 9px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #8a8b93 0 18%, #1d1d1f 60%); flex: 0 0 auto; }
+.page-v3 .v3-chip-dot { width: 9px; height: 9px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #a3adf6 0 18%, var(--v3-brand) 62%); flex: 0 0 auto; }
 @media (max-width: 1100px) { .page-v3 .v3h-ask .v3-ask { order: -1; flex-basis: 100%; justify-content: center; max-width: max-content; margin: 0 auto; } }
 @media (max-width: 734px) { .page-v3 .v3-chip { font-size: 14px; padding: 9px 14px; white-space: normal; text-align: left; } }
 
 
 /* ---------- hero identity: big logo + locations that fly into the header corners on scroll ---------- */
-.page-v3 .v3-hero-logo { display: inline-flex; align-items: center; gap: 30px; margin: 0 0 22px; color: var(--v3-ink); text-decoration: none; white-space: nowrap; }
+.page-v3 .v3-hero-logo { display: inline-flex; align-items: center; gap: 30px; margin: 0 0 22px; color: var(--v3-brand); text-decoration: none; white-space: nowrap; }
 .page-v3 .v3-hero-logo img { width: 84px; height: 84px; object-fit: contain; }
 .page-v3 .v3-hero-logo span { font: 600 36px/1 var(--v3-font); letter-spacing: .16em; text-transform: uppercase; }
 .page-v3 .v3-hero-loc { width: fit-content; margin: 0 auto; font: 600 21px/1.19 var(--v3-font); letter-spacing: .011em; color: var(--v3-ink-metal); white-space: nowrap; }
@@ -105,6 +105,14 @@ html.v3-fly-on .page-v3 .site-header .brand { opacity: 0; }
   .page-v3 .v3-hero-loc { font-size: 15px; white-space: normal; padding: 0 16px; }
 }
 
+
+/* typed mission sentence */
+.page-v3 .v3h-mission.v3-typing .v3-ch { opacity: 0; }
+.page-v3 .v3h-mission.v3-typing .v3-ch.on { opacity: 1; }
+.page-v3 .v3h-mission .v3-ch.is-caret::after { content: ""; display: inline-block; width: 2px; height: 1.05em; margin-left: 1px; margin-right: -3px; vertical-align: -.17em; border-radius: 1px; background: #1d1d1f; animation: v3-blink 1s steps(1) infinite; transition: opacity .6s; }
+.page-v3 .v3h-mission.v3-typed .v3-ch.is-caret::after { opacity: 0; animation: none; }
+@keyframes v3-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
 /* ---------- text links: graphite dot + graphite underline, no color ---------- */
 .page-v3 .v3-links { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px 22px; margin-top: 26px; }
 .page-v3 .v3-link { display: inline-flex; align-items: baseline; color: inherit; font: 400 var(--v3-fs-link)/1.19 var(--v3-font); letter-spacing: .011em; text-decoration: none; white-space: nowrap; background: none; border: 0; padding: 0; cursor: pointer; }
@@ -112,8 +120,8 @@ html.v3-fly-on .page-v3 .site-header .brand { opacity: 0; }
 .page-v3 .v3-link:hover span { text-decoration: underline; text-underline-offset: .16em; }
 .page-v3 .v3-link:hover::after { transform: translateX(3px); }
 .page-v3 .v3-link-cta { font-weight: 500; }
-.page-v3 .v3-link-cta span { border-bottom: 2px solid #1d1d1f; padding-bottom: 2px; }
-.page-v3 .v3-link-cta::before { content: ""; align-self: center; width: 9px; height: 9px; margin-right: 8px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #8a8b93 0 18%, #1d1d1f 60%); }
+.page-v3 .v3-link-cta span { border-bottom: 2px solid var(--v3-brand); padding-bottom: 2px; }
+.page-v3 .v3-link-cta::before { content: ""; align-self: center; width: 9px; height: 9px; margin-right: 8px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #a3adf6 0 18%, var(--v3-brand) 62%); }
 .page-v3 .v3-graphite .v3-link, .page-v3 .v3-graphite .v3-link:hover { color: #f5f5f7; }
 .page-v3 .v3-graphite .v3-link-cta span { border-bottom-color: #f5f5f7; }
 .page-v3 .v3-graphite .v3-link-cta::before { background: radial-gradient(circle at 35% 30%, #fff 0 18%, #8a8b93 70%); }
@@ -427,9 +435,9 @@ html:not(.v3-ctas-docked) body.page-v3 .site-header :is(.header-call, .header-ct
 .page-v3 .site-header::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: rgba(250,250,252,.72); border-bottom: 1px solid rgba(0,0,0,.06); -webkit-backdrop-filter: saturate(190%) blur(34px); backdrop-filter: saturate(190%) blur(34px); }
 html.mo-scrolled .page-v3 .site-header { background: none; box-shadow: none; }
 .page-v3 .header-inner { position: static; width: 100%; max-width: 1080px; min-height: var(--v3-nav-h); margin: 0 auto; padding: 0 22px; gap: 4px; box-sizing: border-box; }
-.page-v3 .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--v3-ink); font: 600 12px/1 var(--v3-font); letter-spacing: .16em; text-transform: uppercase; white-space: nowrap; }
-.page-v3 .brand::before { content: ""; width: 28px; height: 28px; flex: 0 0 auto; background: url("../img/logo/kwon-icon-graphite.png") center / contain no-repeat; }
-.page-v3 .brand:hover { color: var(--v3-ink); }
+.page-v3 .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--v3-brand); font: 600 12px/1 var(--v3-font); letter-spacing: .16em; text-transform: uppercase; white-space: nowrap; }
+.page-v3 .brand::before { content: ""; width: 28px; height: 28px; flex: 0 0 auto; background: url("../img/logo/kwon-icon-blue.png") center / contain no-repeat; }
+.page-v3 .brand:hover { color: var(--v3-brand); }
 .page-v3 .primary-nav { gap: 0; margin: 0 0 0 auto; }
 .page-v3 .primary-nav a { display: flex; align-items: center; height: var(--v3-nav-h); padding: 0 10px; color: var(--v3-ink); opacity: .8; font: 400 13px/1 var(--v3-font); letter-spacing: -.01em; text-decoration: none; transition: opacity 240ms; }
 .page-v3 .primary-nav a:hover, .page-v3 .primary-nav a[aria-current="page"], .page-v3 .primary-nav a[aria-expanded="true"] { opacity: 1; color: var(--v3-ink); text-decoration: none; }
@@ -610,3 +618,28 @@ body.page-v3:has(#di-chat-panel:not([hidden])) #di-a11y { display: none; }
   html.v3-js .page-v3 [data-v3-reveal] { opacity: 1; transform: none; filter: none; transition: none; }
   .page-v3 .v3-frame { transform: none; transition: none; }
 }
+
+/* =====================================================================
+   SCROLL-DRIVEN MOTION (html.v3-sda: Chrome/Edge 115+, Safari 26+). Runs on the compositor, locked to the scroll position.
+   JS only supplies the measured start/end points as custom properties. Other browsers keep the JS-eased path.
+   ===================================================================== */
+/* logo: from the hero into the header's top-left (y is linear so it stays glued to the page; scale eases) */
+html.v3-sda .v3-fly { transform: none; translate: var(--fx0, 0px) var(--fy0, 0px);
+  animation: v3-fly-pos linear both, v3-fly-scale linear both; animation-timeline: scroll(root), scroll(root); animation-range: 0px var(--fD, 1px), 0px var(--fD, 1px); }
+@keyframes v3-fly-pos { from { translate: var(--fx0) var(--fy0); } to { translate: var(--fx1) var(--fy1); } }
+@keyframes v3-fly-scale { from { scale: 1; animation-timing-function: cubic-bezier(.45,0,.25,1); } to { scale: var(--fs1); } }
+/* locations: start in the top-left of the bar, slide out of the logo's way, reappear top-right (wide screens) */
+html.v3-sda .v3-navloc { transform: none; animation: v3-loc linear both; animation-timeline: scroll(root); animation-range: 0px var(--fD, 1px); }
+html.v3-sda .v3-navloc.is-narrow { animation-name: v3-loc-out; }
+@keyframes v3-loc { 0% { translate: var(--lx0) var(--ly); opacity: 1; } 42% { translate: calc(var(--lx0) + 80px) var(--ly); opacity: 0; } 58% { translate: calc(var(--lx1) + 60px) var(--ly); opacity: 0; } 100% { translate: var(--lx1) var(--ly); opacity: 1; } }
+@keyframes v3-loc-out { 0% { translate: var(--lx0) var(--ly); opacity: 1; } 42%, 100% { translate: calc(var(--lx0) + 80px) var(--ly); opacity: 0; } }
+/* offer cards rise as they enter the viewport (separate `translate`, so hover lift still works) */
+html.v3-sda.v3-js .page-v3 .v3-offers[data-v3-scroll] .v3-card { --s: 1; animation: v3-rise linear both; animation-timeline: view(); animation-range: entry 0% cover 34%; }
+html.v3-sda.v3-js .page-v3 .v3-offers[data-v3-scroll] .v3-card:nth-child(2) { animation-range: entry 8% cover 42%; }
+@keyframes v3-rise { from { opacity: 0; translate: 0 90px; } to { opacity: 1; translate: 0 0; } }
+/* services carousel closes toward its centre, the single pill travels to the third card, the card takes over */
+html.v3-sda .page-v3 .v3-marquee.v3-sda-collapse { animation: v3-mq-close linear both; animation-timeline: scroll(root); animation-range: var(--c0, 0px) var(--c1, 1px); }
+@keyframes v3-mq-close { from { clip-path: inset(0 0 0 0 round 999px); opacity: 1; scale: 1; } 70% { opacity: 1; } to { clip-path: inset(0 47% 0 47% round 999px); opacity: 0; scale: .92; } }
+html.v3-sda .v3-allpill.is-sda { position: absolute; transform: none; opacity: 0; animation: v3-allpill linear both; animation-timeline: scroll(root); animation-range: var(--p0, 0px) var(--p1, 1px); }
+@keyframes v3-allpill { 0% { translate: var(--ax) var(--ay); opacity: 0; scale: .9; } 14% { translate: var(--ax) var(--ay); opacity: 1; scale: 1; } 82% { opacity: 1; } 100% { translate: var(--bx) var(--by); opacity: 0; scale: .92; } }
+html.v3-sda.v3-js .page-v3:has(.v3-marquee.v3-sda-collapse) .v3-offers[data-v3-scroll] .v3-card[data-v3-all] { animation: v3-rise linear both; animation-timeline: scroll(root); animation-range: var(--h0, 0px) var(--h1, 1px); }
