@@ -241,6 +241,25 @@ body.page-v3 .v3-hero .v3-links .v3-btn { min-width: 190px; }
 }
 @media (prefers-reduced-motion: reduce) { .page-v3 .v3-banner .v3-banner-stage img { transition: opacity .01s; transform: none; } }
 
+
+/* full-bleed banner: edge to edge under the hero buttons; the two offer cards rise over its lower edge as you scroll */
+.page-v3 .v3-hero:has(.v3-banner-full) { padding-bottom: 0; }
+.page-v3 .v3-banner.v3-banner-full { width: 100%; max-width: none; margin: 48px 0 0; padding: 0; border-radius: 0; background: none; box-shadow: none; animation: none; transform: none; transition: none; }
+.page-v3 .v3-banner-full::after { display: none; }
+.page-v3 .v3-banner-full .v3-banner-stage { aspect-ratio: 21 / 8; border-radius: 0; }
+.page-v3 .v3-banner-full .v3-banner-stage::after { content: ""; position: absolute; inset: auto 0 0 0; height: 42%; pointer-events: none; background: linear-gradient(180deg, rgba(20,22,28,0), rgba(20,22,28,.28)); }
+.page-v3 .v3-banner-full .v3-banner-cap { left: max(30px, calc((100% - 1120px) / 2)); bottom: auto; top: 30px; }
+.page-v3 .v3-banner-full .v3-banner-dots { right: max(30px, calc((100% - 1120px) / 2)); bottom: auto; top: 34px; }
+.page-v3 .v3-offers.v3-overlap { margin-top: -190px; }
+html.v3-js .page-v3 .v3-offers[data-v3-scroll] .v3-card:not(:hover) { opacity: var(--s, 0); transform: translateY(calc((1 - var(--s, 0)) * 90px)); transition: box-shadow .3s; }
+@media (max-width: 734px) {
+  .page-v3 .v3-banner.v3-banner-full { margin-top: 36px; }
+  .page-v3 .v3-banner-full .v3-banner-stage { aspect-ratio: 4 / 3; }
+  .page-v3 .v3-banner-full .v3-banner-cap { left: 16px; top: 16px; } .page-v3 .v3-banner-full .v3-banner-dots { right: 16px; top: 20px; }
+  .page-v3 .v3-offers.v3-overlap { margin-top: -70px; }
+}
+@media (prefers-reduced-motion: reduce) { html.v3-js .page-v3 .v3-offers[data-v3-scroll] .v3-card:not(:hover) { opacity: 1; transform: none; } }
+
 /* ---------- solid cards ---------- */
 .page-v3 .v3-card { position: relative; overflow: hidden; isolation: isolate; padding: 36px 32px; border-radius: var(--v3-radius); text-align: left; box-sizing: border-box; background: #fff; color: var(--v3-ink); box-shadow: var(--v3-card-shadow); transition: transform .3s var(--v3-lift), box-shadow .3s; }
 .page-v3 .v3-card::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0; transition: opacity .4s; background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 0%), rgba(200,204,214,.22), rgba(200,204,214,0) 70%); }

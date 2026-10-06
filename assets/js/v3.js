@@ -375,6 +375,26 @@
     });
   }
 
+  /* offers: each card rises and fades in as the strip scrolls up into view (--s 0..1, staggered per card) */
+  function initOffersScroll() {
+    var wrap = $('.v3-offers[data-v3-scroll]');
+    if (!wrap) return;
+    var cards = $all('.v3-card', wrap), raf = 0;
+    function paint() {
+      raf = 0;
+      var vh = window.innerHeight, top = wrap.getBoundingClientRect().top;
+      var base = (vh - top) / (vh * 0.42);
+      cards.forEach(function (c, i) {
+        var s = Math.max(0, Math.min(1, base - i * 0.18));
+        c.style.setProperty('--s', RM ? '1' : (s * s * (3 - 2 * s)).toFixed(3));
+      });
+    }
+    function queue() { if (!raf) raf = requestAnimationFrame(paint); }
+    window.addEventListener('scroll', queue, { passive: true });
+    window.addEventListener('resize', queue);
+    paint();
+  }
+
   /* services carousel: duplicate the pill track once so the marquee loops without a seam */
   function initMarquee() {
     $all('.v3-marquee-track').forEach(function (t) {
@@ -422,6 +442,7 @@
     initHeaderCtas();
     initMarquee();
     initBanner();
+    initOffersScroll();
     initEmphasis();
     /* the chat widget is injected by features.js; tag its launcher once it exists */
     setTimeout(tagGlass, 600);
