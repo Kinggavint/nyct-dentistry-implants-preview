@@ -357,6 +357,24 @@
     check();
   }
 
+  /* office banner: crossfade through the photos every 5s, dots and caption follow; pauses when the tab is hidden */
+  function initBanner() {
+    $all('.v3-banner').forEach(function (b) {
+      var imgs = $all('.v3-banner-stage img', b), dots = $all('.v3-banner-dot', b), cap = $('[data-v3-cap]', b);
+      if (imgs.length < 2) return;
+      var i = 0, t = null;
+      function show(n) {
+        i = (n + imgs.length) % imgs.length;
+        imgs.forEach(function (im, k) { im.classList.toggle('is-active', k === i); });
+        dots.forEach(function (d, k) { d.classList.toggle('is-active', k === i); });
+        if (cap) cap.textContent = imgs[i].getAttribute('data-cap') || '';
+      }
+      function play() { clearInterval(t); if (!RM) t = setInterval(function () { if (!doc.hidden) show(i + 1); }, 5000); }
+      dots.forEach(function (d, k) { d.addEventListener('click', function () { show(k); play(); }); });
+      play();
+    });
+  }
+
   /* services carousel: duplicate the pill track once so the marquee loops without a seam */
   function initMarquee() {
     $all('.v3-marquee-track').forEach(function (t) {
@@ -403,6 +421,7 @@
     initChatDock();
     initHeaderCtas();
     initMarquee();
+    initBanner();
     initEmphasis();
     /* the chat widget is injected by features.js; tag its launcher once it exists */
     setTimeout(tagGlass, 600);
