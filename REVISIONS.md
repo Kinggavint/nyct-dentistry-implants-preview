@@ -12,9 +12,11 @@ material we do not have yet.
 
 ## Needs the practice's answer
 
-0. **Dr. Byungchul Park.** Still held off the site. The practice uploaded his portrait and a photo of both
-   doctors on 2026-10-06, and the 2026-10-06 email reply did not answer whether to include him. Please confirm
-   in words that he should be on the site, which offices he sees patients at, and his title.
+0. **Dr. Byungchul Park.** Restored 2026-10-06: the practice's second email that day sent his website bio
+   alongside Dr. Kwon's, so his card (new bio, portrait), the two-doctor photo, the team photo and the patient
+   quotes that name him are back on every page. Please confirm his title and which offices he sees patients at;
+   his bio names Fairfield and Litchfield counties in Connecticut and Northern Westchester, New York, so the
+   site says that rather than naming offices.
 1. **Logo.** All three office logos are uploaded (email 2026-10-06: "Done, all 3"). No direction picked yet,
    so the site keeps its "Dentistry & Implants" text wordmark. Four concepts are on the logo board (D uses
    the tooth mark and Kent blue). Which one? Note the Kent logo on the sheet names Dr. Park.
@@ -27,14 +29,15 @@ material we do not have yet.
    CareCredit, Sunbit, Chewsi and GreenSky are off the site. Restore from git (before this commit) if any
    are still offered.
 3. **Team.** Dr. Ryan Oh, associate dentist, Stamford office only, is on the team page and the Stamford page
-   (name, role and office only). His photo and bio are coming from the practice. Maggie and Malena Valero are
+   (name, role and office only). His photo and bio are coming from the practice (email 2026-10-06: "tbd"). Maggie and Malena Valero are
    shown from the Stamford site's team page. Still wanted: names, photos and a line for Mount Kisco and Kent
    team members.
 5. **Insurance lists.** The practice offered (2026-10-06) to send the updated list of plans for each office.
    Yes please: the current three lists come from the plan logos on the old websites.
-9. **GIIA sponsors.** The practice wrote "GIA, sponsored by HiOssen, Dentis, Neobiotech, Purgo". The site
-   reads "Gangnam International Implant Academy (GIIA)" and names the four sponsors. Confirm GIA and GIIA
-   are the same academy. **Book:** *Dr. Youngsam Kim's Atlas of Implants* is linked on his page; the
+9. **GIA and GIIA.** Dr. Kwon's new bio says he is faculty for the "GIA Implant Seminar Live Surgery Course"
+   in Tijuana; the site now uses that wording. Both old websites also call him part-time faculty at the
+   "Gangnam International Implant Academy (GIIA)", which is still listed. Are these the same program? If so,
+   we will use one name. **Book:** *Dr. Youngsam Kim's Atlas of Implants* is linked on his page; the
    listing names only Dr. Kim as author. What was Dr. Kwon's role (co-author, translator)? A second book is
    expected by the end of 2026.
 22. **New photos of Dr. Kwon (2026-10-06, first upload).** A podium lecture, a live surgery course, a conference talk
@@ -74,6 +77,18 @@ material we do not have yet.
 - Stamford accepts HUSKY for children and adults. Sedation: nitrous oxide at Kent only, no other types.
 - Dr. Chun was never with the practice. Booking links confirmed. Before and after photos, more office
   photos and the office tour video are in progress.
+
+## Answered 2026-10-06 (second email)
+
+- Mission statement is on the home page (English and Spanish) right under the opening, and its first line,
+  "Dentistry Built on Trust. Implants Designed to Last.", is now the signature line in the home page opening,
+  the site footer and Dr. Kwon's page. It replaces "Built on Trust. Built to Last."
+- Dr. Kwon's new bio is on his page and the team page (English and Spanish), in his words. Changes from the old
+  text: full university name (UniCamillus, Saint Camillus International University of Health Sciences), the
+  award was received during dental school, the Tijuana course runs several times each year (was "ten times a
+  year"), and he lectures across North America since 2024 (was "North and Central America"). Travel added to
+  his off-the-clock section.
+- Dr. Park's bio received; he is restored (see item 0).
 
 ## Features waiting on access
 
