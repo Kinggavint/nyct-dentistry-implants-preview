@@ -694,7 +694,7 @@ html.v3-sda.v3-js .page-v3:has(.v3-marquee.v3-sda-collapse) .v3-offers[data-v3-s
 .v3-reddit-ico { display: grid; width: 36px; height: 36px; flex: 0 0 auto; }
 .v3-reddit-ico svg { width: 36px; height: 36px; }
 .v3-reddit-soon { margin-left: 2px; padding: 4px 9px; border-radius: 99px; background: rgba(0,0,0,.06); color: #6e6e73; font-size: 12px; font-weight: 600; }
-.v3-reddit-pill.is-soon { cursor: default; }
+.v3-reddit-pill.is-soon { cursor: pointer; }
 html:not(.v3-chat-docked) .v3-reddit-pill { opacity: 0; visibility: hidden; transform: translateY(28px) scale(.92); pointer-events: none; transition: opacity .3s, transform .38s, visibility 0s linear .38s; }
 body:has(.primary-nav.is-open) .v3-reddit-pill { display: none; }
 @media (max-width: 734px) {

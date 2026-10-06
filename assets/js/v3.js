@@ -591,7 +591,7 @@
     var pill = el('a', 'v3-reddit-pill');
     pill.innerHTML = '<span class="v3-reddit-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#ff4500"/><ellipse cx="12" cy="14.2" rx="6.4" ry="4.3" fill="#fff"/><circle cx="6.6" cy="10.6" r="1.5" fill="#fff"/><circle cx="17.4" cy="10.6" r="1.5" fill="#fff"/><circle cx="9.7" cy="13.7" r="1.05" fill="#ff4500"/><circle cx="14.3" cy="13.7" r="1.05" fill="#ff4500"/><path d="M9.6 16.2c1.4.9 3.4.9 4.8 0" stroke="#ff4500" stroke-width=".9" fill="none" stroke-linecap="round"/><path d="M12 9.9l.9-3.6 2.7.6" stroke="#fff" stroke-width=".9" fill="none" stroke-linecap="round"/><circle cx="16.4" cy="7.1" r="1.1" fill="#fff"/></svg></span><span class="v3-reddit-txt">Ask us on Reddit</span>';
     if (REDDIT_URL) { pill.href = REDDIT_URL; pill.target = '_blank'; pill.rel = 'noopener'; }
-    else { pill.classList.add('is-soon'); pill.setAttribute('aria-disabled', 'true'); pill.setAttribute('role', 'link'); pill.appendChild(el('span', 'v3-reddit-soon', 'Coming soon')); pill.addEventListener('click', function (e) { e.preventDefault(); }); }
+    else { pill.classList.add('is-soon'); pill.setAttribute('aria-disabled', 'true'); pill.setAttribute('role', 'link'); pill.addEventListener('click', function (e) { e.preventDefault(); }); }
     doc.body.appendChild(pill);
     function place() {
       var t = $('#di-chat .di-chat-toggle');
