@@ -333,6 +333,27 @@
     io.observe(btn);
   }
 
+  /* chat: "Ask us anything" lives in the hero; once it scrolls out of view the chat docks as the bottom-left pill */
+  function initChatDock() {
+    var btn = $('.v3h-ask .v3-ask');
+    if (!btn) { root.classList.add('v3-chat-docked'); return; }
+    var raf = 0;
+    function check() { raf = 0; root.classList.toggle('v3-chat-docked', btn.getBoundingClientRect().bottom < 90); }
+    function queue() { if (!raf) raf = requestAnimationFrame(check); }
+    window.addEventListener('scroll', queue, { passive: true });
+    window.addEventListener('resize', queue);
+    check();
+  }
+
+  /* services carousel: duplicate the pill track once so the marquee loops without a seam */
+  function initMarquee() {
+    $all('.v3-marquee-track').forEach(function (t) {
+      if (t.getAttribute('data-ready')) return;
+      Array.prototype.slice.call(t.children).forEach(function (c) { var d = c.cloneNode(true); d.setAttribute('aria-hidden', 'true'); $all('a', d).forEach(function (a) { a.tabIndex = -1; }); t.appendChild(d); });
+      t.setAttribute('data-ready', '1');
+    });
+  }
+
   function start() {
     initHeader();
     initReddit();
@@ -342,6 +363,8 @@
     tagGlass();
     initGlassLight();
     initHeroDock();
+    initChatDock();
+    initMarquee();
     /* the chat widget is injected by features.js; tag its launcher once it exists */
     setTimeout(tagGlass, 600);
   }

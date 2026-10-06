@@ -383,6 +383,25 @@ html.mo-scrolled .page-v3 .site-header { background: none; box-shadow: none; }
 .page-v3 .footer-legal a { margin-right: 10px; }
 .page-v3 .v3-footer-reddit { margin-top: 10px; }
 
+/* chat starts as the hero "Ask us anything"; after the hero button scrolls away it docks as the bottom-left pill */
+.page-v3 #di-chat { transition: opacity 420ms var(--v3-ease), transform 520ms var(--v3-gel), visibility 0s; }
+html:not(.v3-chat-docked) .page-v3 #di-chat:not(:has(#di-chat-panel:not([hidden]))) { opacity: 0; visibility: hidden; transform: translateY(28px) scale(.92); pointer-events: none; transition: opacity 300ms var(--v3-ease), transform 380ms var(--v3-ease), visibility 0s linear 380ms; }
+
+/* ---------- services carousel: auto-scrolling glass pills (pauses on hover) ---------- */
+.page-v3 .v3-marquee { position: relative; width: 100%; margin-top: 44px; padding: 12px 0 18px; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.page-v3 .v3-marquee-track { display: flex; width: max-content; animation: v3-marquee 70s linear infinite; }
+.page-v3 .v3-marquee:hover .v3-marquee-track, .page-v3 .v3-marquee:focus-within .v3-marquee-track { animation-play-state: paused; }
+@keyframes v3-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.page-v3 .v3-pill { position: relative; display: flex; align-items: center; gap: 14px; margin-right: 16px; padding: 10px 28px 10px 10px; border-radius: var(--v3-pill); font: 500 19px/1.2 var(--v3-font); white-space: nowrap; text-decoration: none; color: var(--v3-ink);
+  background: rgba(255,255,255,.5); border: 1px solid rgba(255,255,255,.9); -webkit-backdrop-filter: blur(10px) saturate(190%) brightness(1.04); backdrop-filter: blur(10px) saturate(190%) brightness(1.04);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.55), inset 0 1px 1px #fff, inset 0 -1px 1px rgba(0,0,0,.07), inset 0 0 8px rgba(255,255,255,.45), 0 0 0 .5px rgba(29,29,31,.12), 0 10px 24px -12px rgba(40,44,60,.3);
+  transition: transform .45s var(--v3-gel), box-shadow .3s; }
+.page-v3 .v3-pill:hover { transform: translateY(-3px); box-shadow: inset 0 1px 0 #fff, 0 0 0 .5px rgba(29,29,31,.12), 0 0 18px rgba(255,255,255,.2), 0 16px 30px -12px rgba(40,44,60,.36); }
+.page-v3 .v3-pill-img { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; overflow: hidden; background: #f5f5f7; box-shadow: 0 0 0 1px rgba(255,255,255,.9); }
+.page-v3 .v3-pill-img img { width: 100%; height: 100%; object-fit: cover; }
+.page-v3 .v3-pill-img svg { width: 26px; height: 26px; opacity: .85; }
+@media (max-width: 734px) { .page-v3 .v3-pill { font-size: 16px; padding-right: 20px; } .page-v3 .v3-pill-img { width: 44px; height: 44px; } .page-v3 .v3-marquee { margin-top: 32px; } }
+
 /* ---------- chat pill (features.js #di-chat): dark titanium glass, prominent, pulses three times then rests ---------- */
 .page-v3 .di-widget { font-family: var(--v3-font); }
 .page-v3 #di-chat { left: 20px; bottom: 20px; z-index: 9996; gap: 12px; }
