@@ -375,83 +375,98 @@
     });
   }
 
+  /* ---------- scroll-linked motion ----------
+     Every scroll-driven animation reads a progress value that FOLLOWS the scroll target with a time-based ease
+     (frame-rate independent), instead of snapping to it. Wheel and trackpad steps then glide instead of jump.
+     Positions of fixed elements still read live layout each frame, so nothing drifts from the page. */
+  function follow(apply, k) {
+    var cur = null, tgt = 0, raf = 0, last = 0;
+    function step(now) {
+      raf = 0;
+      var dt = last ? Math.min(64, now - last) : 16.7; last = now;
+      cur += (tgt - cur) * (1 - Math.pow(1 - k, dt / 16.7));
+      if (Math.abs(tgt - cur) < 0.0006) cur = tgt;
+      apply(cur);
+      if (cur !== tgt) raf = requestAnimationFrame(step); else last = 0;
+    }
+    return function (v, instant) {
+      tgt = v;
+      if (cur === null || instant || RM) { cur = v; apply(cur); return; }
+      if (!raf) raf = requestAnimationFrame(step);
+    };
+  }
+  function sm(x) { x = Math.max(0, Math.min(1, x)); return x * x * (3 - 2 * x); }
+  function onScroll(fn) {
+    var raf = 0;
+    function q() { if (!raf) raf = requestAnimationFrame(function () { raf = 0; fn(); }); }
+    window.addEventListener('scroll', q, { passive: true });
+    window.addEventListener('resize', q);
+    fn(true);
+  }
+
   /* offers: each card rises and fades in as the strip scrolls up into view (--s 0..1, staggered per card) */
   var collapseOn = false;
   function initOffersScroll() {
     var wrap = $('.v3-offers[data-v3-scroll]');
     if (!wrap) return;
-    var cards = $all('.v3-card', wrap), raf = 0;
-    function paint() {
-      raf = 0;
-      var vh = window.innerHeight, top = wrap.getBoundingClientRect().top;
-      var base = (vh - top) / (vh * 0.42);
+    var cards = $all('.v3-card', wrap);
+    var set = follow(function (base) {
       cards.forEach(function (c, i) {
         if (c.hasAttribute('data-v3-all') && collapseOn) return;
-        var s = Math.max(0, Math.min(1, base - i * 0.18));
-        c.style.setProperty('--s', RM ? '1' : (s * s * (3 - 2 * s)).toFixed(3));
+        c.style.setProperty('--s', RM ? '1' : sm(base - i * 0.18).toFixed(4));
       });
-    }
-    function queue() { if (!raf) raf = requestAnimationFrame(paint); }
-    window.addEventListener('scroll', queue, { passive: true });
-    window.addEventListener('resize', queue);
-    paint();
+    }, 0.12);
+    onScroll(function (first) {
+      var vh = window.innerHeight;
+      set((vh - wrap.getBoundingClientRect().top) / (vh * 0.42), first);
+    });
   }
 
-  /* hero logo and locations fly into the header on scroll: logo shrinks to the top left, locations slide to the top right.
-     Fixed clones follow the hero slots (so the motion is just the page scroll) and ease x and scale toward the header targets. */
+  /* logo flies from the hero into the header's top-left as you scroll; the locations line starts in that top-left spot
+     and slides out of the logo's way (to the top right on wide screens, away entirely on narrower ones). */
   function initFly() {
     var header = $('.site-header'), brand = $('.site-header .brand'), inner = $('.site-header .header-inner');
-    var logoSlot = $('.v3-hero .v3-hero-logo'), locSlot = $('.v3-hero .v3-hero-loc');
-    if (!header || !brand || !logoSlot || RM) return;
-    var items = [];
-    function clone(slot, isLoc) {
-      var f = slot.cloneNode(true);
-      f.classList.add('v3-fly'); f.removeAttribute('aria-label');
-      if (!isLoc) { f.setAttribute('aria-hidden', 'true'); f.tabIndex = -1; }
-      doc.body.appendChild(f);
-      return { slot: slot, fly: f, loc: isLoc, ok: false };
-    }
-    items.push(clone(logoSlot, false));
-    if (locSlot) items.push(clone(locSlot, true));
+    var slot = $('.v3-hero .v3-hero-logo');
+    if (!header || !brand || !slot || RM) return;
+    var fly = slot.cloneNode(true);
+    fly.classList.add('v3-fly'); fly.removeAttribute('aria-label'); fly.setAttribute('aria-hidden', 'true'); fly.tabIndex = -1;
+    doc.body.appendChild(fly);
+    var loc = el('p', 'v3-navloc', 'Mount Kisco, NY · Kent, CT · Stamford, CT');
+    doc.body.appendChild(loc);
     root.classList.add('v3-fly-on');
+    var m = {};
     function measure() {
-      var hr = header.getBoundingClientRect(), ir = inner.getBoundingClientRect(), br = brand.getBoundingClientRect(), sy = window.scrollY || 0;
-      items.forEach(function (it) {
-        var r = it.slot.getBoundingClientRect(), w = r.width, h = r.height;
-        it.w = w; it.h = h; it.x0 = r.left; it.y0 = r.top + sy;
-        it.fly.style.width = w + 'px'; it.fly.style.height = h + 'px';
-        if (!it.loc) {
-          it.s1 = br.width / w; it.x1 = br.left; it.y1 = hr.top + hr.height / 2 - h * it.s1 / 2;
-          it.ok = true;
-        } else {
-          var wide = window.innerWidth >= 1380;
-          it.s1 = .57; it.x1 = ir.right - 22 - w * it.s1; it.y1 = hr.top + hr.height / 2 - h * it.s1 / 2;
-          it.ok = wide;
-          it.slot.classList.toggle('is-flying', wide);
-          it.fly.style.display = wide ? '' : 'none';
-        }
-        it.D = Math.max(1, it.y0 - it.y1);
-      });
+      var sy = window.scrollY || 0, hr = header.getBoundingClientRect(), ir = inner.getBoundingClientRect(), br = brand.getBoundingClientRect();
+      var r = slot.getBoundingClientRect();
+      m.w = r.width; m.h = r.height; m.x0 = r.left; m.y0 = r.top + sy;
+      fly.style.width = m.w + 'px'; fly.style.height = m.h + 'px';
+      m.s1 = br.width / m.w; m.x1 = br.left; m.y1 = hr.top + hr.height / 2 - m.h * m.s1 / 2;
+      m.D = Math.max(1, m.y0 - m.y1);
+      var lw = loc.offsetWidth, lh = loc.offsetHeight;
+      m.lx0 = br.left; m.ly = hr.top + hr.height / 2 - lh / 2;
+      m.wide = window.innerWidth >= 1380;
+      m.lx1 = ir.right - 22 - lw;
     }
-    var raf = 0;
-    function paint() {
-      raf = 0;
-      var sy = window.scrollY || 0;
-      items.forEach(function (it) {
-        if (!it.ok) return;
-        var m = Math.min(sy, it.D), t = m / it.D;
-        var e = t * t * (3 - 2 * t);
-        var x = it.x0 + (it.x1 - it.x0) * e, y = it.y0 - m, s = 1 + (it.s1 - 1) * e;
-        it.fly.style.transform = 'translate(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px) scale(' + s.toFixed(4) + ')';
-      });
+    var t = 0;
+    function paint(te) {
+      t = te;
+      var e = sm(te), sy = window.scrollY || 0;
+      var x = m.x0 + (m.x1 - m.x0) * e, y = m.y0 - Math.min(sy, m.D), s = 1 + (m.s1 - 1) * e;
+      fly.style.transform = 'translate3d(' + x.toFixed(2) + 'px,' + y.toFixed(2) + 'px,0) scale(' + s.toFixed(4) + ')';
+      var out = sm(te / 0.42), back = m.wide ? sm((te - 0.58) / 0.42) : 0, lx, lo;
+      if (te < 0.5 || !m.wide) { lx = m.lx0 + 80 * out; lo = 1 - out; }
+      else { lx = m.lx1 + 60 * (1 - back); lo = back; }
+      loc.style.transform = 'translate3d(' + lx.toFixed(2) + 'px,' + m.ly.toFixed(2) + 'px,0)';
+      loc.style.opacity = lo.toFixed(3);
     }
-    function queue() { if (!raf) raf = requestAnimationFrame(paint); }
-    function remeasure() { var sy = window.scrollY; if (sy) window.scrollTo(0, 0); measure(); if (sy) window.scrollTo(0, sy); paint(); }
-    window.addEventListener('scroll', queue, { passive: true });
-    window.addEventListener('resize', function () { remeasure(); });
+    var set = follow(paint, 0.16);
+    function target() { return Math.min(window.scrollY || 0, m.D) / m.D; }
+    function remeasure() { var sy = window.scrollY; if (sy) window.scrollTo(0, 0); measure(); if (sy) window.scrollTo(0, sy); set(target(), true); }
+    window.addEventListener('scroll', function () { set(target()); paint(t); }, { passive: true });
+    window.addEventListener('resize', remeasure);
     if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(remeasure);
     window.addEventListener('load', remeasure);
-    measure(); paint();
+    measure(); set(target(), true);
   }
 
   /* services carousel -> one pill -> the third offer card: scroll-linked. Phase 1 (u) the pills slide together and shrink into a single
@@ -466,36 +481,35 @@
     ['ba-4-after.webp', 'ba-5-after.webp', 'ba-7-after.webp'].forEach(function (n) { var im = el('img'); im.src = img(n); im.alt = ''; faces.appendChild(im); });
     pill.appendChild(faces); pill.appendChild(el('span', null, 'View all of our services'));
     doc.body.appendChild(pill);
-    var pills = $all('.v3-pill', mq), frozen = false, raf = 0;
-    function sm(x) { x = Math.max(0, Math.min(1, x)); return x * x * (3 - 2 * x); }
+    var pills = $all('.v3-pill', mq), frozen = false;
     function freeze() {
       var cx = window.innerWidth / 2;
       mq.classList.remove('is-collapsing');
       pills.forEach(function (p) { var r = p.getBoundingClientRect(); p.style.setProperty('--dx', (cx - (r.left + r.width / 2)).toFixed(1) + 'px'); });
       mq.classList.add('is-collapsing'); frozen = true;
     }
-    function paint() {
-      raf = 0;
-      var vh = window.innerHeight, mr = mq.getBoundingClientRect(), mTop = mr.top;
-      var u = Math.max(0, Math.min(1, (vh * 0.58 - mTop) / (vh * 0.26)));
-      var v = Math.max(0, Math.min(1, (vh * 0.32 - mTop) / (vh * 0.34)));
+    /* z = how far the carousel has scrolled up, in viewport heights; u and v are both read from the eased z */
+    function paint(z) {
+      var u = Math.max(0, Math.min(1, (z - 0.42) / 0.26)), v = Math.max(0, Math.min(1, (z - 0.68) / 0.34));
       if (u > 0 && !frozen) freeze();
       if (u === 0 && frozen) { mq.classList.remove('is-collapsing'); frozen = false; pills.forEach(function (p) { p.style.removeProperty('--dx'); }); }
-      mq.style.setProperty('--u', u.toFixed(3));
-      var cr = card.getBoundingClientRect();
+      mq.style.setProperty('--u', u.toFixed(4));
+      var mr = mq.getBoundingClientRect(), cr = card.getBoundingClientRect();
       var sx = window.innerWidth / 2, sy = mr.top + mr.height / 2;
       var tx = cr.left + cr.width / 2, ty = cr.top + cr.height * 0.36;
       var e = sm(v), x = sx + (tx - sx) * e, y = sy + (ty - sy) * e;
-      var hand = sm((v - 0.72) / 0.28);
-      var appear = sm((u - 0.55) / 0.45);
+      var hand = sm((v - 0.72) / 0.28), appear = sm((u - 0.55) / 0.45);
       pill.style.opacity = (appear * (1 - hand)).toFixed(3);
-      pill.style.transform = 'translate(' + (x - pill.offsetWidth / 2).toFixed(1) + 'px,' + (y - pill.offsetHeight / 2).toFixed(1) + 'px) scale(' + (1 - 0.1 * e).toFixed(3) + ')';
-      card.style.setProperty('--s', hand.toFixed(3));
+      pill.style.transform = 'translate3d(' + (x - pill.offsetWidth / 2).toFixed(2) + 'px,' + (y - pill.offsetHeight / 2).toFixed(2) + 'px,0) scale(' + (1 - 0.1 * e).toFixed(4) + ')';
+      card.style.setProperty('--s', hand.toFixed(4));
     }
-    function queue() { if (!raf) raf = requestAnimationFrame(paint); }
-    window.addEventListener('scroll', queue, { passive: true });
-    window.addEventListener('resize', queue);
-    paint();
+    var z = 0;
+    var set = follow(function (zz) { z = zz; paint(zz); }, 0.14);
+    onScroll(function (first) {
+      var vh = window.innerHeight;
+      set(1 - mq.getBoundingClientRect().top / vh, first);
+      paint(z);
+    });
   }
 
   /* services carousel: duplicate the pill track once so the marquee loops without a seam */

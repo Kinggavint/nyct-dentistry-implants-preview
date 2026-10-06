@@ -91,6 +91,10 @@
 .page-v3 .v3-hero-logo span { font: 600 36px/1 var(--v3-font); letter-spacing: .16em; text-transform: uppercase; }
 .page-v3 .v3-hero-loc { width: fit-content; margin: 0 auto; font: 600 21px/1.19 var(--v3-font); letter-spacing: .011em; color: var(--v3-ink-metal); white-space: nowrap; }
 .page-v3 .v3h-title { margin-top: 12px; }
+.v3-navloc { position: fixed; left: 0; top: 0; z-index: 70; margin: 0; pointer-events: none; will-change: transform, opacity; white-space: nowrap; font: 600 12px/1.2 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif; letter-spacing: .01em; color: #4a4a52; }
+@media (max-width: 734px) { .v3-navloc { font-size: 11px; } }
+html.v3-js .page-v3 .v3-offers[data-v3-scroll] .v3-card { will-change: transform, opacity; }
+.page-v3 .v3-marquee.is-collapsing .v3-pill { will-change: transform, opacity; }
 .v3-fly { position: fixed; left: 0; top: 0; z-index: 70; margin: 0; transform-origin: 0 0; will-change: transform; pointer-events: none; }
 .v3-fly.v3-hero-logo, .v3-fly a { pointer-events: auto; }
 html.v3-fly-on .page-v3 .v3-hero .v3-hero-logo:not(.v3-fly), html.v3-fly-on .page-v3 .v3-hero .v3-hero-loc.is-flying:not(.v3-fly) { visibility: hidden; }
@@ -140,10 +144,13 @@ html.v3-fly-on .page-v3 .site-header .brand { opacity: 0; }
   transition: transform .45s var(--v3-gel), --gs .4s, --gi .4s;
 }
 .page-v3 :is(.v3-btn-schedule, .header-cta, .office-row-actions .button, .v3-flyout-cta, .cta-dock .cta-book, .v3-form-actions .v3-btn) {
-  --btn-border: rgba(29,29,31,.16);
-  --btn-base: linear-gradient(180deg, rgba(255,255,255,.95), rgba(243,246,251,.8));
-  --btn-shadow: inset 0 0 0 1px rgba(255,255,255,.55), inset 0 1px 1px #fff, inset 0 -1px 1px rgba(0,0,0,.07), inset 0 0 8px rgba(255,255,255,.45), inset 0 1px 0 #fff, inset 0 -1px 0 rgba(90,94,104,.16), 0 0 0 3px rgba(255,255,255,.07), 0 10px 24px -10px rgba(40,44,60,.28);
-  --btn-shadow-hover: inset 0 1px 0 #fff, inset 0 -1px 0 rgba(90,94,104,.16), 0 0 0 4px rgba(255,255,255,.12), 0 0 22px rgba(255,255,255,.26), 0 16px 30px -10px rgba(40,44,60,.32);
+  /* Schedule Now: periwinkle-to-royal-blue glass, white label (Gavin's pick, 10-06) */
+  --btn-text: #fff;
+  --btn-border: rgba(255,255,255,.38);
+  --btn-base: linear-gradient(100deg, #a3adf6 0%, #6f7ef2 34%, #4c5ee8 70%, #3a4bdc 100%);
+  --btn-shadow: inset 0 1px 1px rgba(255,255,255,.75), inset 0 -1px 1px rgba(20,30,120,.35), inset 0 0 10px rgba(255,255,255,.18), 0 0 0 .5px rgba(40,50,160,.35), 0 10px 24px -10px rgba(58,75,220,.6), 0 3px 8px -4px rgba(40,50,160,.3);
+  --btn-shadow-hover: inset 0 1px 1px rgba(255,255,255,.85), inset 0 -1px 1px rgba(20,30,120,.35), 0 0 0 .5px rgba(40,50,160,.35), 0 0 26px rgba(110,125,245,.45), 0 18px 34px -12px rgba(58,75,220,.65);
+  text-shadow: 0 1px 1px rgba(20,30,120,.25);
 }
 /* hero "Ask us anything": the one dark glass pill on the page, so it reads first; it becomes the bottom-left chat pill on scroll */
 body.page-v3 .v3h-ask .v3-ask {
