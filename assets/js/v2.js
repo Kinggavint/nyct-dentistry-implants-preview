@@ -1,6 +1,9 @@
-/* v2 "space-gray glass" behaviour. Loaded (defer) from the end of each v2 fragment, after site.js,
+/* v2 "titanium + liquid glass" behaviour. Loaded (defer) from the end of each v2 fragment, after site.js,
    features.js and motion.js have run. Progressive enhancement only; honours prefers-reduced-motion.
-   Public API: window.v2 = { openChat, setTheme, setAccent, REDDIT_URL }. */
+   Glass: pointer-following highlight (--lg-x / --lg-y / --lg-hi on every glass element, fine pointers only, no idle
+   animation), Chromium-only refraction (inline SVG filter #v2-lens + html.v2-lens), header ink flips over the one
+   dark section (html.v2-over-dark).
+   Public API: window.v2 = { openChat, setTheme, setAccent, REDDIT_URL }. setTheme('titanium' | 'silver'). */
 (function () {
   'use strict';
 
@@ -89,6 +92,10 @@
   }
 
   function initHeader() {
+    var hin = $('.site-header .header-inner');
+    if (hin) hin.classList.add('lg-under');
+    var hcall = $('.site-header .header-call');
+    if (hcall) hcall.classList.add('lg');
     var brand = $('.site-header .brand');
     if (brand) brand.setAttribute('href', LROOT + 'v2.html');
     var fbrand = $('.site-footer .footer-brand');
@@ -102,7 +109,7 @@
     svcLink.setAttribute('aria-expanded', 'false');
 
     var header = $('.site-header');
-    var flyout = el('div', 'v2-flyout');
+    var flyout = el('div', 'v2-flyout lg');
     flyout.id = 'v2-flyout';
     flyout.setAttribute('role', 'region');
     flyout.setAttribute('aria-label', 'Services');
@@ -173,10 +180,11 @@
   }
 
   /* ---------- 2. Preview control: theme + button color ---------- */
+  /* 'titanium' (default, no attribute) or 'silver' (html[data-theme="silver"]); anything else falls back to titanium */
   function setTheme(name) {
     var silver = name === 'silver';
     if (silver) root.setAttribute('data-theme', 'silver'); else root.removeAttribute('data-theme');
-    store('v2-theme', silver ? 'silver' : 'space-gray');
+    store('v2-theme', silver ? 'silver' : 'titanium');
     syncPreview();
   }
   function setAccent(name) {
@@ -206,12 +214,12 @@
 
     preview = el('div', 'v2-preview');
     preview.id = 'v2-preview';
-    var toggle = el('button', 'v2-preview-toggle');
+    var toggle = el('button', 'v2-preview-toggle lg');
     toggle.type = 'button';
     toggle.innerHTML = '<i aria-hidden="true"></i>Preview';
     toggle.setAttribute('aria-expanded', 'false');
     toggle.setAttribute('aria-controls', 'v2-preview-panel');
-    var panel = el('div', 'v2-preview-panel');
+    var panel = el('div', 'v2-preview-panel lg');
     panel.id = 'v2-preview-panel';
     panel.setAttribute('role', 'group');
     panel.setAttribute('aria-label', 'Preview options');
@@ -221,7 +229,7 @@
     g1.setAttribute('role', 'group'); g1.setAttribute('aria-label', 'Theme');
     g1.appendChild(el('span', 'v2-preview-legend', 'Theme'));
     var seg = el('div', 'v2-seg');
-    [['space-gray', 'Space Gray'], ['silver', 'Silver']].forEach(function (o) {
+    [['titanium', 'Titanium'], ['silver', 'Silver']].forEach(function (o) {
       var b = el('button', null, o[1]);
       b.type = 'button'; b.setAttribute('data-v2-theme', o[0]);
       b.addEventListener('click', function () { setTheme(o[0]); });
@@ -255,7 +263,7 @@
       }
     });
     doc.body.appendChild(preview);
-    setTheme(t === 'silver' ? 'silver' : 'space-gray');
+    setTheme(t === 'silver' ? 'silver' : 'titanium');
     setAccent(a);
   }
 
@@ -354,7 +362,12 @@
     var items = $all('[data-v2-reveal]');
     if (RM || !('IntersectionObserver' in window)) { items.forEach(function (n) { n.classList.add('v2-in'); }); return; }
     var io = new IntersectionObserver(function (es) {
-      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('v2-in'); io.unobserve(e.target); } });
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var t = e.target;
+        t.classList.add('v2-in'); io.unobserve(t);
+        setTimeout(function () { t.classList.add('v2-done'); }, 1700);
+      });
     }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
     items.forEach(function (n) { io.observe(n); });
   }
@@ -381,21 +394,82 @@
           if (!raf) raf = requestAnimationFrame(paint);
         });
         n.addEventListener('pointerleave', function () { px = 0.5; py = 0.5; if (!raf) raf = requestAnimationFrame(paint); });
-      } else {
-        /* touch: a slow idle drift so the glass still catches light */
-        var t0 = performance.now();
-        var visible = false;
-        if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }).observe(n);
-        (function loop(t) {
-          if (visible) {
-            var s = (t - t0) / 1000;
-            px = 0.5 + Math.sin(s * 0.5) * 0.25; py = 0.5 + Math.cos(s * 0.4) * 0.2;
-            paint();
-          }
-          requestAnimationFrame(loop);
-        })(t0);
       }
     });
+  }
+
+  /* ---------- 6. Liquid Glass: refraction lens, pointer highlight, header over the dark section ---------- */
+  var GLASS = '.lg, .lg-under, .v2-glass, .v2-frame, .v2-btn-schedule, .header-cta, .v2-flyout-cta, #di-chat .di-chat-toggle';
+
+  function initLens() {
+    /* Chromium renders SVG filters inside backdrop-filter; Safari and Firefox keep the plain blur (CSS @supports + this class) */
+    var uad = navigator.userAgentData;
+    var chromium = !!(uad && uad.brands && uad.brands.some(function (b) { return /Chromium/i.test(b.brand); }));
+    var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'url(#v2-lens)');
+    if (!chromium || !ok || doc.getElementById('v2-lens')) return;
+    var box = doc.createElement('div');
+    box.className = 'v2-lens-svg';
+    box.setAttribute('aria-hidden', 'true');
+    box.innerHTML =
+      '<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" focusable="false">' +
+        '<filter id="v2-lens" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">' +
+          '<feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/>' +
+          '<feGaussianBlur in="noise" stdDeviation="2.5" result="soft"/>' +
+          '<feDisplacementMap in="SourceGraphic" in2="soft" scale="14" xChannelSelector="R" yChannelSelector="G"/>' +
+        '</filter>' +
+      '</svg>';
+    doc.body.appendChild(box);
+    root.classList.add('v2-lens');
+  }
+
+  function initGlassLight() {
+    var fine = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (RM || !fine) return;
+    var mx = -1e4, my = -1e4, raf = 0, lit = [];
+    function paint() {
+      raf = 0;
+      var vh = window.innerHeight, next = [];
+      $all(GLASS).forEach(function (n) {
+        var r = n.getBoundingClientRect();
+        if (!r.width || r.bottom < 0 || r.top > vh) return;
+        var reach = 80;
+        var dx = Math.max(r.left - mx, 0, mx - r.right), dy = Math.max(r.top - my, 0, my - r.bottom);
+        var d = Math.sqrt(dx * dx + dy * dy);
+        if (d > reach) return;
+        n.style.setProperty('--lg-x', (mx - r.left).toFixed(0) + 'px');
+        n.style.setProperty('--lg-y', (my - r.top).toFixed(0) + 'px');
+        n.style.setProperty('--lg-hi', (1 - d / reach).toFixed(2));
+        next.push(n);
+      });
+      lit.forEach(function (n) { if (next.indexOf(n) < 0) n.style.setProperty('--lg-hi', '0'); });
+      lit = next;
+    }
+    function queue() { if (!raf) raf = requestAnimationFrame(paint); }
+    doc.addEventListener('pointermove', function (e) {
+      if (e.pointerType !== 'mouse') return;
+      mx = e.clientX; my = e.clientY; queue();
+    }, { passive: true });
+    doc.addEventListener('pointerleave', function () { mx = my = -1e4; queue(); });
+    window.addEventListener('scroll', queue, { passive: true });
+  }
+
+  function initHeaderTone() {
+    var hin = $('.site-header .header-inner');
+    if (!hin) return;
+    var raf = 0;
+    function check() {
+      raf = 0;
+      var r = hin.getBoundingClientRect(), mid = r.top + r.height / 2, dark = false;
+      $all('.v2-graphite, .v2-dark').forEach(function (s) {
+        var b = s.getBoundingClientRect();
+        if (b.top <= mid && b.bottom >= mid) dark = true;
+      });
+      root.classList.toggle('v2-over-dark', dark);
+    }
+    function queue() { if (!raf) raf = requestAnimationFrame(check); }
+    window.addEventListener('scroll', queue, { passive: true });
+    window.addEventListener('resize', queue);
+    check();
   }
 
   function start() {
@@ -405,6 +479,11 @@
     initChatHooks();
     initReveal();
     initTilt();
+    initLens();
+    initGlassLight();
+    initHeaderTone();
+    var chat = $('#di-chat .di-chat-toggle');
+    if (chat) chat.classList.add('lg');
   }
 
   window.v2 = { openChat: openChat, setTheme: setTheme, setAccent: setAccent, REDDIT_URL: REDDIT_URL };
