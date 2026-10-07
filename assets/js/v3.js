@@ -99,9 +99,9 @@
 
   function initHeader() {
     var brand = $('.site-header .brand');
-    if (brand && !ES) brand.setAttribute('href', LROOT + 'v3.html');
+    if (brand && !ES) brand.setAttribute('href', LROOT + 'index.html');
     var fbrand = $('.site-footer .footer-brand');
-    if (fbrand && !ES) fbrand.setAttribute('href', LROOT + 'v3.html');
+    if (fbrand && !ES) fbrand.setAttribute('href', LROOT + 'index.html');
     initMenuLang();
     if (!svcLink) return;
 
