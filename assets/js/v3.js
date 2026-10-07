@@ -468,7 +468,7 @@
     }, 0.12);
     onScroll(function (first) {
       var vh = window.innerHeight;
-      set((vh - wrap.getBoundingClientRect().top) / (vh * 0.42), first);
+      set((vh - wrap.getBoundingClientRect().top) / (vh * 0.24), first);
     });
   }
 
@@ -565,7 +565,7 @@
         pill.style.setProperty('--ax', ax.toFixed(1) + 'px'); pill.style.setProperty('--ay', ay.toFixed(1) + 'px');
         pill.style.setProperty('--bx', bx.toFixed(1) + 'px'); pill.style.setProperty('--by', by.toFixed(1) + 'px');
         pill.style.setProperty('--p0', P(c0 + 0.55 * (c1 - c0))); pill.style.setProperty('--p1', P(v1));
-        card.style.setProperty('--h0', P(v0 + 0.72 * (v1 - v0))); card.style.setProperty('--h1', P(v1));
+        card.style.setProperty('--h0', P(v0 + 0.3 * (v1 - v0))); card.style.setProperty('--h1', P(v0 + 0.75 * (v1 - v0)));
         mq.classList.add('v3-sda-collapse');
       };
       window.addEventListener('resize', applyC);

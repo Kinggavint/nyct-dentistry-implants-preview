@@ -634,9 +634,9 @@ html.v3-sda .v3-navloc.is-narrow { animation-name: v3-loc-out; }
 @keyframes v3-loc { 0% { translate: var(--lx0) var(--ly); opacity: 1; } 42% { translate: calc(var(--lx0) + 80px) var(--ly); opacity: 0; } 58% { translate: calc(var(--lx1) + 60px) var(--ly); opacity: 0; } 100% { translate: var(--lx1) var(--ly); opacity: 1; } }
 @keyframes v3-loc-out { 0% { translate: var(--lx0) var(--ly); opacity: 1; } 42%, 100% { translate: calc(var(--lx0) + 80px) var(--ly); opacity: 0; } }
 /* offer cards rise as they enter the viewport (separate `translate`, so hover lift still works) */
-html.v3-sda.v3-js .page-v3 .v3-offers[data-v3-scroll] .v3-card { --s: 1; animation: v3-rise linear both; animation-timeline: view(); animation-range: entry 0% cover 34%; }
-html.v3-sda.v3-js .page-v3 .v3-offers[data-v3-scroll] .v3-card:nth-child(2) { animation-range: entry 8% cover 42%; }
-@keyframes v3-rise { from { opacity: 0; translate: 0 90px; } to { opacity: 1; translate: 0 0; } }
+html.v3-sda.v3-js .page-v3 .v3-offers[data-v3-scroll] .v3-card { --s: 1; animation: v3-rise linear both; animation-timeline: view(); animation-range: entry 0% entry 55%; }
+html.v3-sda.v3-js .page-v3 .v3-offers[data-v3-scroll] .v3-card:nth-child(2) { animation-range: entry 4% entry 62%; }
+@keyframes v3-rise { from { opacity: 0; translate: 0 60px; } to { opacity: 1; translate: 0 0; } }
 /* services carousel closes toward its centre, the single pill travels to the third card, the card takes over */
 html.v3-sda .page-v3 .v3-marquee.v3-sda-collapse { animation: v3-mq-close linear both; animation-timeline: scroll(root); animation-range: var(--c0, 0px) var(--c1, 1px); }
 @keyframes v3-mq-close { from { clip-path: inset(0 0 0 0 round 999px); opacity: 1; scale: 1; } 70% { opacity: 1; } to { clip-path: inset(0 47% 0 47% round 999px); opacity: 0; scale: .92; } }
