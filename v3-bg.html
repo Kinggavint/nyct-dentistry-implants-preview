@@ -20,6 +20,28 @@
   <link rel="stylesheet" href="assets/css/site.css">
   <link rel="stylesheet" href="assets/css/features.css">
   <link rel="stylesheet" href="assets/css/motion.css">
+  <link rel="stylesheet" href="assets/css/video.css">
+  <link rel="stylesheet" href="assets/css/v3.css">
+    <style>
+      /* The office photo rides with you: it is pinned to the screen behind the hero (faded), clears as you scroll,
+         and comes to rest exactly as the full-width banner, then scrolls away with the page. One photo, synced with the banner dots. */
+      body.page-v3 .v3-hero { overflow: clip; }
+      body.page-v3 .v3-hero-bgs { position: sticky; top: 0; z-index: -2; width: 100%; height: 100svh; margin-top: -72px; margin-bottom: calc(72px - 100svh); align-self: stretch; pointer-events: none; overflow: hidden; }
+      body.page-v3 .v3-hero-bgs img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.06); transition: opacity 1.2s cubic-bezier(.22,.61,.36,1), transform 7s linear; }
+      body.page-v3 .v3-hero-bgs img.is-on { opacity: 1; transform: scale(1); }
+      /* uniform pearl veil: heavy at the top of the page, gone when the photo lands as the banner */
+      body.page-v3 .v3-bgs-veil { position: absolute; inset: 0; z-index: 2; background: rgba(240,241,244,.8); opacity: var(--veil, 1); }
+      /* a soft top edge that always stays, so the photo meets the pearl hero without a line */
+      body.page-v3 .v3-hero-bgs::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 38%; z-index: 3; background: linear-gradient(180deg, rgba(240,241,244,.92), rgba(240,241,244,0)); opacity: calc(.35 + var(--veil, 1) * .65); }
+      html.v3-sda body.page-v3 .v3-bgs-veil { animation: v3-veil linear both; animation-timeline: scroll(root); animation-range: 0px var(--v3-land, 600px); }
+      html.v3-sda body.page-v3 .v3-hero-bgs::after { animation: v3-edge linear both; animation-timeline: scroll(root); animation-range: 0px var(--v3-land, 600px); }
+      @keyframes v3-veil { from { opacity: 1; } to { opacity: 0; } }
+      @keyframes v3-edge { from { opacity: 1; } to { opacity: .35; } }
+      body.page-v3 .v3-banner-full .v3-banner-stage { background: transparent; }
+      body.page-v3 .v3-banner-full .v3-banner-stage img { visibility: hidden; }
+      @media (max-width: 734px) { body.page-v3 .v3-hero-bgs { margin-top: -48px; margin-bottom: calc(48px - 100svh); } }
+      @media (prefers-reduced-motion: reduce) { body.page-v3 .v3-hero-bgs img { transition: none; transform: none; } }
+    </style>
   <script src="assets/js/site.js" defer></script>
   <script src="assets/js/features.js" defer></script>
   <script src="assets/js/motion.js" defer></script>
@@ -430,33 +452,11 @@
     </section>
 
 
-    <link rel="stylesheet" href="assets/css/video.css">
-    <link rel="stylesheet" href="assets/css/v3.css">
     <script src="assets/js/video.js" defer></script>
     <script src="assets/js/v3.js" defer></script>
 
 
 
-    <style>
-      /* The office photo rides with you: it is pinned to the screen behind the hero (faded), clears as you scroll,
-         and comes to rest exactly as the full-width banner, then scrolls away with the page. One photo, synced with the banner dots. */
-      body.page-v3 .v3-hero { overflow: clip; }
-      body.page-v3 .v3-hero-bgs { position: sticky; top: 0; z-index: -2; width: 100%; height: 100svh; margin-top: -72px; margin-bottom: calc(72px - 100svh); align-self: stretch; pointer-events: none; overflow: hidden; }
-      body.page-v3 .v3-hero-bgs img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.06); transition: opacity 1.2s cubic-bezier(.22,.61,.36,1), transform 7s linear; }
-      body.page-v3 .v3-hero-bgs img.is-on { opacity: 1; transform: scale(1); }
-      /* uniform pearl veil: heavy at the top of the page, gone when the photo lands as the banner */
-      body.page-v3 .v3-bgs-veil { position: absolute; inset: 0; z-index: 2; background: rgba(240,241,244,.8); opacity: var(--veil, 1); }
-      /* a soft top edge that always stays, so the photo meets the pearl hero without a line */
-      body.page-v3 .v3-hero-bgs::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 38%; z-index: 3; background: linear-gradient(180deg, rgba(240,241,244,.92), rgba(240,241,244,0)); opacity: calc(.35 + var(--veil, 1) * .65); }
-      html.v3-sda body.page-v3 .v3-bgs-veil { animation: v3-veil linear both; animation-timeline: scroll(root); animation-range: 0px var(--v3-land, 600px); }
-      html.v3-sda body.page-v3 .v3-hero-bgs::after { animation: v3-edge linear both; animation-timeline: scroll(root); animation-range: 0px var(--v3-land, 600px); }
-      @keyframes v3-veil { from { opacity: 1; } to { opacity: 0; } }
-      @keyframes v3-edge { from { opacity: 1; } to { opacity: .35; } }
-      body.page-v3 .v3-banner-full .v3-banner-stage { background: transparent; }
-      body.page-v3 .v3-banner-full .v3-banner-stage img { visibility: hidden; }
-      @media (max-width: 734px) { body.page-v3 .v3-hero-bgs { margin-top: -48px; margin-bottom: calc(48px - 100svh); } }
-      @media (prefers-reduced-motion: reduce) { body.page-v3 .v3-hero-bgs img { transition: none; transform: none; } }
-    </style>
     <script>
       (function () {
         var bg = document.querySelector('.v3-hero-bgs'), stage = document.querySelector('.v3-banner-full .v3-banner-stage'), hero = document.querySelector('.v3-hero');
