@@ -23,9 +23,12 @@
   <link rel="stylesheet" href="assets/css/site.css">
   <link rel="stylesheet" href="assets/css/features.css">
   <link rel="stylesheet" href="assets/css/motion.css">
+  <link rel="stylesheet" href="assets/css/v3.css">
+  <link rel="stylesheet" href="assets/css/v3-pages.css">
   <script src="assets/js/site.js" defer></script>
   <script src="assets/js/features.js" defer></script>
   <script src="assets/js/motion.js" defer></script>
+  <script src="assets/js/v3.js" defer></script>
   <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -155,7 +158,7 @@
 }
   </script>
 </head>
-<body class="page-insurance">
+<body class="page-insurance page-v3 v3-inner">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="util-bar" aria-label="Call Now">
     <div class="util-inner">
@@ -181,12 +184,13 @@
       <nav class="di-lang" aria-label="Language"><a href="insurance.html" lang="en" aria-current="true">EN</a><a href="es/insurance.html" lang="es">ES</a></nav>
       <a class="button button-small button-ghost header-call" href="locations.html" data-office="call">Call Now</a>
       <a class="button button-small header-cta" href="locations.html" data-office="book">Schedule Now</a>
+      <p class="v3-loc">Mount Kisco, NY &middot; Kent, CT &middot; Stamford, CT</p>
     </div>
   </header>
   <main id="main">
 <section class="page-hero solo">
-      <p class="eyebrow">Insurance and Financing</p>
-      <h1>Clear Costs Before Any <span class="accent">Treatment</span></h1>
+      <p class="eyebrow">Insurance and financing</p>
+      <h1>Clear costs before any treatment</h1>
       <p class="lede">We check your benefits before your visit and give you a written estimate before treatment, so you know what insurance covers and what you will pay. No surprises afterward.</p>
       <ul class="service-index">
         <li><a href="#plans">Accepted plans</a></li>
@@ -197,34 +201,34 @@
       </ul>
     </section>
 
-    <div class="mo-ticker" aria-hidden="true">
-      <div class="mo-ticker-track"><ul><li>Aetna</li><li>Delta Dental</li><li>Cigna</li><li>MetLife</li><li>Guardian</li><li>Blue Cross Blue Shield</li><li>United Concordia</li><li>Humana</li><li>GEHA</li><li>Ameritas</li><li>Principal</li><li>Sun Life</li><li>UMR</li><li>Lincoln Financial</li><li>Careington</li><li>DentalSelect</li><li>DenteMax</li><li>Healthplex</li><li>Dominion National</li><li>Altus Dental</li><li>Advantica</li><li>First Dental Health</li><li>Solstice</li><li>HealthComp</li><li>Renaissance</li><li>NovaNet</li><li>Pequot Health Care</li><li>FCE Benefits</li><li>Mid America</li><li>BestLife</li></ul></div>
-    </div>
 
     <section class="section section-tight" id="plans">
       <div class="section-heading">
-        <p class="eyebrow">Dental Insurance</p>
-        <h2>Plans We Accept, by <span class="accent">Office</span></h2>
+        <p class="eyebrow">Dental insurance</p>
+        <h2>Plans we accept, by office</h2>
         <p>Each office is in network with a different list of plans. Coverage and participation can vary by employer and plan, so please call the office so we can verify your current benefits.</p>
       </div>
-      <div class="plan-office" data-reveal>
+      <div class="v3p-plans" data-reveal>
+        <div class="v3p-seg" role="radiogroup" aria-label="Choose an office"><input type="radio" name="plan-office" id="plan-stamford" value="stamford" checked><label for="plan-stamford">Stamford</label><input type="radio" name="plan-office" id="plan-mount-kisco" value="mount-kisco"><label for="plan-mount-kisco">Mount Kisco</label><input type="radio" name="plan-office" id="plan-kent" value="kent"><label for="plan-kent">Kent</label></div>
+        <div class="plan-office" data-plan="stamford">
         <div class="plan-office-head"><h3>Stamford, CT</h3><p class="count"><span data-count="39">39</span> plans, plus HUSKY Health (Medicaid) &middot; <a href="tel:2038834451">203-883-4451</a></p></div>
         <ul class="plan-list">
           <li>Advantica</li><li>Aetna</li><li>Altus Dental</li><li>Ameritas</li><li>BestLife</li><li>Blue Cross Blue Shield</li><li>Careington</li><li>Cigna</li><li>Delta Dental</li><li>DentalSelect</li><li>DenteMax</li><li>Dominion National</li><li>EBMS</li><li>Epic</li><li>FCE Benefits</li><li>First Dental Health</li><li>GEHA</li><li>Group Resources</li><li>Guardian</li><li>HealthComp</li><li>Health Edge</li><li>Health Resources, Inc.</li><li>Healthplex</li><li>Humana</li><li>Lincoln Financial</li><li>MetLife</li><li>Mid America</li><li>NovaNet</li><li>NRECA</li><li>Pequot Health Care</li><li>Preferred Health Professionals</li><li>Principal</li><li>Renaissance</li><li>Shasta</li><li>Solstice</li><li>Sun Life</li><li>Tristar</li><li>UMR</li><li>United Concordia</li>
         </ul>
         <p class="plan-note"><strong>HUSKY Health in Stamford.</strong> Our Stamford office accepts Medicaid through HUSKY Health for children and adults, so every family can get quality dental care.</p>
-      </div>
-      <div class="plan-office" data-reveal>
+        </div>
+        <div class="plan-office" data-plan="mount-kisco">
         <div class="plan-office-head"><h3>Mount Kisco, NY</h3><p class="count"><span data-count="27">27</span> plans &middot; <a href="tel:9146665225">914-666-5225</a></p></div>
         <ul class="plan-list">
           <li>Advantica</li><li>Aetna</li><li>Altus Dental</li><li>Ameritas</li><li>BestLife</li><li>Blue Cross Blue Shield</li><li>Careington</li><li>Cigna</li><li>DentalSelect</li><li>DenteMax</li><li>Dominion National</li><li>First Dental Health</li><li>Group Resources</li><li>Health Edge</li><li>Health Resources, Inc.</li><li>Healthplex</li><li>Humana</li><li>Lincoln Financial</li><li>MetLife</li><li>Mid America</li><li>NovaNet</li><li>NRECA</li><li>Principal</li><li>Shasta</li><li>Sun Life</li><li>UMR</li><li>United Concordia</li>
         </ul>
-      </div>
-      <div class="plan-office" data-reveal>
+        </div>
+        <div class="plan-office" data-plan="kent">
         <div class="plan-office-head"><h3>Kent, CT</h3><p class="count"><span data-count="36">36</span> plans &middot; <a href="tel:8609273577">860-927-3577</a></p></div>
         <ul class="plan-list">
           <li>Advantica</li><li>Aetna</li><li>Aflac</li><li>Altus Dental</li><li>Ameritas</li><li>BestLife</li><li>Blue Cross Blue Shield</li><li>Careington</li><li>Cigna</li><li>Delta Dental</li><li>Dental Network of America</li><li>DentalSelect</li><li>DenteMax</li><li>Dominion National</li><li>FCE Benefits</li><li>First Dental Health</li><li>GEHA</li><li>Group Resources</li><li>Guardian</li><li>Health Edge</li><li>Health Resources, Inc.</li><li>Healthplex</li><li>HRI Dental and Vision</li><li>Humana</li><li>Lincoln Financial</li><li>MetLife</li><li>Mid America</li><li>NovaNet</li><li>NRECA</li><li>Pequot Health Care</li><li>Principal</li><li>Shasta</li><li>Solstice</li><li>Sun Life</li><li>UMR</li><li>United Concordia</li>
         </ul>
+        </div>
       </div>
     </section>
 
@@ -232,12 +236,12 @@
       <div class="two-col">
         <div class="sticky">
           <p class="eyebrow">Financing</p>
-          <h2>Treat Now, Pay Over <span class="accent">Time</span></h2>
+          <h2>Treat now, pay over time</h2>
         </div>
         <div class="prose">
           <h3>Cherry payment plans, 0% for 12 to 18 months</h3>
           <p>All three offices offer Cherry payment plans, with 0% financing for 12 to 18 months available to qualified applicants. Apply in about 60 seconds and see your payment plan options, with no hard credit check to find out if you qualify. Choose the office where you will be treated:</p>
-          <div class="button-row"><a class="button" href="https://pay.withcherry.com/nyctdentistry?utm_source=practice&amp;utm_medium=website&amp;m=64343" target="_blank" rel="noopener">Apply for Mount Kisco</a><a class="button button-ghost" href="https://pay.withcherry.com/nyctdentistry?utm_source=practice&amp;utm_medium=website&amp;m=43553" target="_blank" rel="noopener">Apply for Kent</a><a class="button button-ghost" href="https://pay.withcherry.com/nyctdentistry?utm_source=practice&amp;utm_medium=website&amp;m=19336" target="_blank" rel="noopener">Apply for Stamford</a></div>
+          <div class="button-row"><a class="button button-ghost" href="https://pay.withcherry.com/nyctdentistry?utm_source=practice&amp;utm_medium=website&amp;m=64343" target="_blank" rel="noopener">Apply for Mount Kisco</a><a class="button button-ghost" href="https://pay.withcherry.com/nyctdentistry?utm_source=practice&amp;utm_medium=website&amp;m=43553" target="_blank" rel="noopener">Apply for Kent</a><a class="button button-ghost" href="https://pay.withcherry.com/nyctdentistry?utm_source=practice&amp;utm_medium=website&amp;m=19336" target="_blank" rel="noopener">Apply for Stamford</a></div>
           <h3>Personal arrangements</h3>
           <p>Talk with the office about a payment approach that fits your treatment plan and your budget.</p>
           <h3>HSA and FSA</h3>
@@ -248,8 +252,8 @@
 
     <section class="section" id="calculator">
       <div class="section-heading">
-        <p class="eyebrow">Payment Calculator</p>
-        <h2>See Your Monthly <span class="accent">Payment</span></h2>
+        <p class="eyebrow">Payment calculator</p>
+        <h2>See your monthly payment</h2>
         <p>Enter a treatment amount to see what it could look like spread over 12 or 18 months at 0%. This is an example only. Your actual plan and approval come from Cherry when you apply.</p>
       </div>
       <form class="di-calc" data-calc data-reveal>
@@ -272,8 +276,8 @@
 
     <section class="section section-soft" id="specials">
       <div class="section-heading">
-        <p class="eyebrow">New Patients</p>
-        <h2>Specials for New <span class="accent">Patients</span></h2>
+        <p class="eyebrow">New patients</p>
+        <h2>Specials for new patients</h2>
         <p>Offers and eligibility are confirmed by the office. Insurance may not be used on specials.</p>
       </div>
       <ul class="offer-list">
@@ -287,8 +291,8 @@
     <section class="section" id="how-it-works">
       <div class="two-col">
         <div class="sticky">
-          <p class="eyebrow">How It Works</p>
-          <h2>The Money Conversation, <span class="accent">Handled</span></h2>
+          <p class="eyebrow">How it works</p>
+          <h2>The money conversation, handled</h2>
         </div>
         <ol class="steps">
           <li><div><h3>Share your insurance</h3><p>When you book, give us your carrier and plan details. We check your benefits before you arrive.</p></div></li>
@@ -301,14 +305,25 @@
     <section class="section section-soft">
       <div class="two-col">
         <div class="sticky">
-          <p class="eyebrow">Coverage Questions</p>
-          <h2>What Insurance <span class="accent">Covers</span></h2>
+          <p class="eyebrow">Coverage questions</p>
+          <h2>What insurance covers</h2>
         </div>
         <div class="faq-list">
           <details><summary>Does dental insurance cover implants?</summary><div><p>It depends on your plan. Some plans cover part of an implant as a major procedure. Others exclude implants. We verify your exact benefits and give you a written estimate before treatment.</p></div></details>
           <details><summary>Are veneers and smile makeovers covered?</summary><div><p>Work done purely for appearance is usually not covered. When a crown or veneer is needed for structural reasons, part of the cost may be. We will tell you what applies to your case.</p></div></details>
           <details><summary>My plan is not listed. Can I still come in?</summary><div><p>Yes. Many plans offer out-of-network benefits. Call the office and we will check what your plan pays. If you have no insurance, we give you a written estimate before treatment and can talk through Cherry payment plans.</p></div></details>
           <details><summary>Do you accept Medicaid?</summary><div><p>Our Stamford office accepts Medicaid through HUSKY Health for children and adults. Call <a href="tel:2038834451">203-883-4451</a> to check your coverage and book.</p></div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="cta-band">
+        <h2>Questions about your coverage?</h2>
+        <p>Call the office closest to you and we will check your benefits before your visit.</p>
+        <div class="button-row">
+          <a class="button" href="locations.html" data-office="book">Schedule Now</a>
+          <a class="button button-ghost" href="locations.html" data-office="call">Call Now</a>
         </div>
       </div>
     </section>

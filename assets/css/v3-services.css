@@ -1,0 +1,172 @@
+/* v3 Services overview (services.html, body.v3-tpl-services). Loaded after v3.css and v3-pages.css.
+   An Apple "products" page: short pearl hero, a sticky glass sub-nav (Implants, Cosmetic, Family, Same-day),
+   an icon row of every service, one compact section per group of solid white cards, then a Schedule band.
+   Glass only on the sub-nav, its tabs and the urgent pill. Cards are solid white with the v3 card shadow.
+   Motion is CSS only (scroll-driven), and switched off under prefers-reduced-motion. */
+
+body.v3-tpl-services { --v3s-sub-h: 52px; timeline-scope: --v3s-implants, --v3s-cosmetic, --v3s-family, --v3s-sameday; }
+@media (max-width: 734px) { body.v3-tpl-services { --v3s-sub-h: 50px; } }
+body.v3-tpl-services :is(.section, .page-hero, .v3s-card, .section-heading) { scroll-margin-top: calc(var(--v3-nav-h) + var(--v3s-sub-h)); }
+
+/* ---------- hero: short, one big word, one line ---------- */
+body.v3-tpl-services .v3s-hero { min-height: min(38vh, 400px); padding-top: clamp(56px, 8vh, 84px); padding-bottom: clamp(48px, 7vh, 72px); }
+body.v3-tpl-services .v3s-hero h1 { margin-top: 0; font-size: var(--v3-fs-super); line-height: 1.04; letter-spacing: -.022em; }
+body.v3-tpl-services .v3s-hero .lede { max-width: 46ch; margin-top: 16px; font: 400 var(--v3-fs-intro)/1.3 var(--v3-font); letter-spacing: .011em; }
+
+/* the same-day pill: a glass control, so it is the one thing in the hero with a little color */
+body.v3-tpl-services .v3s-urgent { display: inline-flex; align-items: center; gap: 10px; margin-top: 26px; padding: 11px 20px 11px 16px; border-radius: var(--v3-pill);
+  font: 500 16px/1.2 var(--v3-font); letter-spacing: -.012em; color: var(--v3-ink); text-decoration: none;
+  background: rgba(255,255,255,.58); border: 1px solid rgba(255,255,255,.9);
+  -webkit-backdrop-filter: blur(10px) saturate(190%) brightness(1.04); backdrop-filter: blur(10px) saturate(190%) brightness(1.04);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.55), inset 0 1px 1px #fff, inset 0 -1px 1px rgba(0,0,0,.07), 0 0 0 .5px rgba(29,29,31,.12), 0 8px 20px -10px rgba(40,44,60,.28);
+  transition: transform .45s var(--v3-gel), box-shadow .3s; }
+body.v3-tpl-services .v3s-urgent::after { content: "\203A"; margin-left: -2px; font-size: 1.15em; line-height: 1; transition: transform 240ms var(--v3-ease); }
+body.v3-tpl-services .v3s-urgent:hover { color: var(--v3-ink); transform: translateY(-2px); box-shadow: inset 0 1px 0 #fff, 0 0 0 .5px rgba(29,29,31,.12), 0 0 18px rgba(255,255,255,.2), 0 14px 26px -10px rgba(40,44,60,.32); }
+body.v3-tpl-services .v3s-urgent:hover::after { transform: translateX(3px); }
+body.v3-tpl-services .v3s-urgent-dot { position: relative; width: 9px; height: 9px; flex: 0 0 auto; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #a3adf6 0 18%, var(--v3-brand) 62%); }
+body.v3-tpl-services .v3s-urgent .v3s-urgent-dot::after { content: ""; position: absolute; inset: -4px; border-radius: 50%; border: 1.5px solid rgba(37,82,176,.45); animation: v3s-ping 2.8s var(--v3-ease) infinite; }
+@keyframes v3s-ping { 0% { opacity: .9; transform: scale(.6); } 70%, 100% { opacity: 0; transform: scale(1.5); } }
+
+/* ---------- sticky glass sub-nav (Hero Layouts 1b) ---------- */
+body.v3-tpl-services .v3s-subnav { position: sticky; top: var(--v3-nav-h); z-index: 40; isolation: isolate; }
+body.v3-tpl-services .v3s-subnav::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: rgba(250,250,252,.72); border-bottom: 1px solid rgba(0,0,0,.08);
+  -webkit-backdrop-filter: saturate(190%) blur(30px); backdrop-filter: saturate(190%) blur(30px); }
+body.v3-tpl-services .v3s-subnav-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; max-width: 1080px; min-height: var(--v3s-sub-h); margin: 0 auto; padding: 0 22px; box-sizing: border-box; }
+body.v3-tpl-services .v3s-subnav-title { font: 600 21px/1 var(--v3-font); letter-spacing: .011em; color: var(--v3-ink); text-decoration: none; white-space: nowrap; }
+body.v3-tpl-services .v3s-subnav ul { display: flex; align-items: center; gap: 4px; margin: 0; padding: 0; list-style: none; }
+body.v3-tpl-services .v3s-tab { position: relative; display: inline-flex; align-items: center; gap: 7px; min-height: 34px; padding: 0 15px; border-radius: var(--v3-pill); box-sizing: border-box;
+  font: 400 14px/1 var(--v3-font); letter-spacing: -.01em; color: var(--v3-ink); text-decoration: none; white-space: nowrap; opacity: .82;
+  border: 1px solid transparent; transition: opacity .24s, background-color .24s, box-shadow .24s; }
+body.v3-tpl-services .v3s-tab:hover { opacity: 1; color: var(--v3-ink); background: rgba(255,255,255,.6); }
+body.v3-tpl-services .v3s-tab .v3s-urgent-dot { width: 7px; height: 7px; }
+/* the tab for the group under the bar lights up: a scroll-driven state (each group section is a view timeline seen through a thin band
+   just under the bar), no JS. Browsers without scroll-driven animations simply show no active tab. */
+@keyframes v3s-tab-on { from, to { opacity: 1; font-weight: 600; background: rgba(255,255,255,.92); border-color: rgba(255,255,255,.95);
+  box-shadow: inset 0 1px 1px #fff, inset 0 -1px 1px rgba(0,0,0,.06), 0 0 0 .5px rgba(29,29,31,.14), 0 6px 14px -8px rgba(40,44,60,.35); } }
+@supports (animation-timeline: view()) {
+  body.v3-tpl-services #implants { view-timeline: --v3s-implants block; view-timeline-inset: 30% 69%; }
+  body.v3-tpl-services #cosmetic { view-timeline: --v3s-cosmetic block; view-timeline-inset: 30% 69%; }
+  body.v3-tpl-services #family { view-timeline: --v3s-family block; view-timeline-inset: 30% 69%; }
+  body.v3-tpl-services #same-day { view-timeline: --v3s-sameday block; view-timeline-inset: 30% 69%; }
+  body.v3-tpl-services .v3s-tab { animation: v3s-tab-on linear; animation-range: contain 0% contain 100%; }
+  body.v3-tpl-services .v3s-tab-implants { animation-timeline: --v3s-implants; }
+  body.v3-tpl-services .v3s-tab-cosmetic { animation-timeline: --v3s-cosmetic; }
+  body.v3-tpl-services .v3s-tab-family { animation-timeline: --v3s-family; }
+  body.v3-tpl-services .v3s-tab-sameday { animation-timeline: --v3s-sameday; }
+}
+@media (max-width: 734px) {
+  body.v3-tpl-services .v3s-subnav-inner { justify-content: center; padding: 0 8px; }
+  body.v3-tpl-services .v3s-subnav-title { display: none; }
+  body.v3-tpl-services .v3s-subnav ul { gap: 2px; max-width: 100%; overflow-x: auto; scrollbar-width: none; }
+  body.v3-tpl-services .v3s-tab { min-height: 32px; padding: 0 12px; font-size: 14px; }
+}
+
+/* ---------- icon row: every service, round photo or tooth, label under (Apple's chapter row) ---------- */
+body.v3-tpl-services .v3s-index { padding-top: clamp(48px, 6vw, 72px); padding-bottom: clamp(48px, 6vw, 72px); }
+body.v3-tpl-services .v3s-icons { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 34px 8px; max-width: 1080px; margin: 0 auto; padding: 0; list-style: none; }
+body.v3-tpl-services .v3s-icons a { display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; color: var(--v3-ink); text-decoration: none; }
+body.v3-tpl-services .v3s-icon { position: relative; display: grid; place-items: center; width: 112px; height: 112px; border-radius: 50%; overflow: hidden; background: #f5f5f7; color: var(--v3-ink-metal);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.06), 0 10px 26px -14px rgba(0,0,0,.38); transition: transform .35s var(--v3-lift), box-shadow .35s; }
+body.v3-tpl-services .v3s-icon img { width: 100%; height: 100%; object-fit: cover; }
+body.v3-tpl-services .v3s-icon svg { width: 44px; height: 44px; opacity: .8; }
+body.v3-tpl-services .v3s-icon-label { font: 500 14px/1.29 var(--v3-font); letter-spacing: -.016em; text-wrap: balance; }
+body.v3-tpl-services .v3s-icons a:hover .v3s-icon, body.v3-tpl-services .v3s-icons a:focus-visible .v3s-icon { transform: translateY(-4px) scale(1.04); box-shadow: inset 0 0 0 1px rgba(0,0,0,.08), 0 18px 34px -14px rgba(0,0,0,.45); }
+/* Emergency Care stands out: logo-blue ring and a soft blue tooth */
+body.v3-tpl-services .v3s-icon-urgent .v3s-icon { color: var(--v3-brand); background: radial-gradient(circle at 50% 35%, #fff 0%, #eef1fb 70%);
+  box-shadow: inset 0 0 0 2px rgba(37,82,176,.55), inset 0 0 0 6px #fff, inset 0 0 0 7px rgba(37,82,176,.14), 0 12px 28px -14px rgba(37,82,176,.55); }
+body.v3-tpl-services .v3s-icon-urgent .v3s-icon-label { font-weight: 600; }
+@media (max-width: 1068px) { body.v3-tpl-services .v3s-icons { grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: 640px; } }
+@media (max-width: 734px) {
+  body.v3-tpl-services .v3s-icons { gap: 26px 4px; }
+  body.v3-tpl-services .v3s-icons a { gap: 10px; }
+  body.v3-tpl-services .v3s-icon { width: 72px; height: 72px; }
+  body.v3-tpl-services .v3s-icon svg { width: 30px; height: 30px; }
+  body.v3-tpl-services .v3s-icon-label { font-size: 13px; }
+}
+
+/* ---------- group sections: compact, heading then cards ---------- */
+body.v3-tpl-services .v3s-group { padding-top: clamp(72px, 8vw, 104px); padding-bottom: clamp(72px, 8vw, 104px); }
+body.v3-tpl-services .v3s-group .section-heading { margin-bottom: clamp(32px, 4vw, 48px); }
+body.v3-tpl-services .v3s-group .section-heading h2 { font: 600 var(--v3-fs-hero)/1.07 var(--v3-font); letter-spacing: -.008em; }
+body.v3-tpl-services .v3s-group .more-link { display: flex; justify-content: center; max-width: none; margin: 36px auto 0; text-align: center; }
+/* the icon row and the first group share a white ground: one hairline, less air */
+body.v3-tpl-services .v3s-index + .v3s-group { padding-top: clamp(56px, 6vw, 80px); }
+body.v3-tpl-services .v3s-index + .v3s-group::before { content: ""; position: absolute; top: 0; left: 50%; width: min(1080px, calc(100% - 2 * var(--v3-gutter))); height: 1px; translate: -50% 0; background: rgba(0,0,0,.08); }
+
+body.v3-tpl-services .v3s-cards { display: grid; gap: 20px; max-width: 1080px; margin: 0 auto; padding: 0; list-style: none; }
+body.v3-tpl-services .v3s-cards-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 900px; }
+body.v3-tpl-services .v3s-cards-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+body.v3-tpl-services .v3s-card { position: relative; display: flex; flex-direction: column; margin: 0; padding: 32px 32px 28px; border-radius: var(--v3-radius); text-align: left;
+  background: #fff; box-shadow: var(--v3-card-shadow); transition: transform .3s var(--v3-lift), box-shadow .3s; }
+body.v3-tpl-services .section-soft .v3s-card { background: #fff; }
+body.v3-tpl-services .v3s-card:hover { transform: translateY(-4px); box-shadow: var(--v3-card-shadow-hover); }
+body.v3-tpl-services .v3s-card h3 { margin: 0; font: 600 24px/1.17 var(--v3-font); letter-spacing: .009em; }
+body.v3-tpl-services .v3s-card h3 a { color: var(--v3-ink); text-decoration: none; }
+body.v3-tpl-services .v3s-card > p:not(.v3s-card-links) { flex: 1 1 auto; margin: 10px 0 0; color: var(--v3-ink-2); font-size: 17px; line-height: 1.47; }
+body.v3-tpl-services .v3s-card-links { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px; margin: 22px 0 0; }
+body.v3-tpl-services .v3s-link { position: relative; z-index: 2; display: inline-flex; align-items: baseline; color: var(--v3-ink); font: 400 17px/1.2 var(--v3-font); letter-spacing: -.016em; text-decoration: none; white-space: nowrap; }
+body.v3-tpl-services .v3s-link::after { content: "\203A"; display: inline-block; padding-inline-start: .26em; transition: transform 240ms var(--v3-ease); }
+body.v3-tpl-services .v3s-link:hover { color: var(--v3-ink); }
+body.v3-tpl-services .v3s-link:hover > span:first-child { text-decoration: underline; text-underline-offset: .16em; }
+body.v3-tpl-services .v3s-link:hover::after { transform: translateX(3px); }
+body.v3-tpl-services .v3s-link-book { color: var(--v3-brand); font-weight: 500; }
+body.v3-tpl-services .v3s-link-book:hover { color: var(--v3-brand); }
+
+/* ---------- same-day: the emphasised group, graphite so it reads first from far away ---------- */
+body.v3-tpl-services .v3s-sameday { color: #f5f5f7; background: radial-gradient(120% 80% at 50% 0%, #4a4a52 0%, #2b2b30 55%, #1f1f23 100%); }
+body.v3-tpl-services .v3s-sameday .section-heading .eyebrow { color: rgba(245,245,247,.64); }
+body.v3-tpl-services .v3s-sameday .section-heading h2 { color: #f5f5f7; }
+body.v3-tpl-services .v3s-sameday .section-heading h2 + p { color: rgba(245,245,247,.7); }
+body.v3-tpl-services .v3s-cards-urgent { grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); max-width: 980px; color: var(--v3-ink); }
+body.v3-tpl-services .v3s-card-feature { padding: 40px 40px 34px; }
+body.v3-tpl-services .v3s-card-feature h3 { font-size: 32px; line-height: 1.12; }
+body.v3-tpl-services .v3s-card-feature h3::before { content: "Same day"; display: table; margin: 0 0 14px; padding: 6px 12px; border-radius: var(--v3-pill);
+  font: 600 13px/1 var(--v3-font); letter-spacing: .02em; color: var(--v3-brand); background: rgba(37,82,176,.08); box-shadow: inset 0 0 0 1px rgba(37,82,176,.18); }
+body.v3-tpl-services .v3s-card-feature .v3s-card-links { gap: 12px 16px; margin-top: 26px; }
+body.v3-tpl-services .v3s-card-feature .v3s-card-links .button { min-height: 46px; padding: 0 24px; font-size: 16px; }
+body.v3-tpl-services .v3s-card-feature .v3s-link { margin-left: 6px; }
+
+/* ---------- reveals: the icon row rises column by column, scroll-driven ---------- */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    body.v3-tpl-services .v3s-icons > li { animation: v3p-rise linear both; animation-timeline: view(); animation-range: entry calc(var(--i, 0) * 4%) entry calc(56% + var(--i, 0) * 4%); }
+  }
+}
+
+/* ---------- tablet and phone ---------- */
+@media (max-width: 900px) {
+  body.v3-tpl-services .v3s-cards-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  body.v3-tpl-services .v3s-cards-urgent { grid-template-columns: minmax(0, 1fr); max-width: 620px; }
+}
+@media (max-width: 734px) {
+  body.v3-tpl-services .v3s-hero { min-height: 0; padding-top: 44px; padding-bottom: 44px; }
+  body.v3-tpl-services .v3s-urgent { margin-top: 22px; padding: 10px 16px 10px 14px; font-size: 15px; }
+  body.v3-tpl-services :is(.v3s-cards-2, .v3s-cards-3) { grid-template-columns: minmax(0, 1fr); }
+  body.v3-tpl-services .v3s-cards { gap: 14px; }
+  body.v3-tpl-services .v3s-card { padding: 26px 24px 22px; border-radius: 22px; }
+  body.v3-tpl-services .v3s-card h3 { font-size: 21px; }
+  body.v3-tpl-services .v3s-card > p:not(.v3s-card-links) { font-size: 16px; }
+  body.v3-tpl-services .v3s-card-links { margin-top: 16px; }
+  body.v3-tpl-services .v3s-card-feature { padding: 30px 24px 26px; }
+  body.v3-tpl-services .v3s-card-feature h3 { font-size: 26px; }
+  body.v3-tpl-services .v3s-card-feature .v3s-card-links .button { flex: 1 1 auto; }
+  body.v3-tpl-services .v3s-card-feature .v3s-link { margin-left: 0; }
+}
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  body.v3-tpl-services .v3s-urgent .v3s-urgent-dot::after { animation: none; display: none; }
+  body.v3-tpl-services .v3s-icons > li { animation: none !important; }
+  body.v3-tpl-services :is(.v3s-card, .v3s-icon, .v3s-urgent) { transition: none; }
+}
+
+/* ---------- review fixes (10-06) ---------- */
+/* one outline glyph style for all 16 services, graphite; the urgent one keeps its blue ring */
+body.v3-tpl-services .v3s-icon { color: var(--v3-ink-metal); background: radial-gradient(circle at 50% 35%, #fff 0%, #f2f2f5 72%); }
+body.v3-tpl-services .v3s-icon svg { opacity: .9; }
+/* same-day implants card: a real case photo fills the height beside the emergency card */
+body.v3-tpl-services .v3s-card-photo > p:not(.v3s-card-links) { flex: 0 0 auto; }
+body.v3-tpl-services .v3s-card-media { flex: 1 1 auto; min-height: 150px; margin: 20px 0 0; overflow: hidden; border-radius: 18px; background: #e9eaed; }
+body.v3-tpl-services .v3s-card-media img { display: block; width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 900px) { body.v3-tpl-services .v3s-card-media { flex: 0 0 auto; aspect-ratio: 16 / 9; min-height: 0; } }

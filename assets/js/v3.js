@@ -57,6 +57,9 @@
   /* Language root prefix taken from the header's Services link ("services.html" or "../services.html"). */
   var svcLink = $all('#primary-nav a').filter(function (a) { return /(^|\/)services\.html$/.test(a.getAttribute('href') || ''); })[0] || null;
   var LROOT = svcLink ? svcLink.getAttribute('href').replace(/services\.html$/, '') : '';
+  /* Site root: service detail pages and the v3 home exist only in English, so Spanish pages (one folder down) reach them through ../ */
+  var ES = (root.getAttribute('lang') || '').slice(0, 2) === 'es';
+  var SROOT = LROOT + (ES ? '../' : '');
 
   /* ---------- 1. Header: v2 links + services flyout ---------- */
   function iconList() {
@@ -65,7 +68,7 @@
       var li = el('li');
       li.style.setProperty('--v3-i', String(i));
       var a = el('a');
-      a.href = LROOT + 'services/' + s[0] + '.html';
+      a.href = SROOT + 'services/' + s[0] + '.html';
       var ic = el('span', 'v3-icon-img');
       ic.setAttribute('aria-hidden', 'true');
       if (s[2]) {
@@ -85,7 +88,7 @@
   function footRow() {
     var foot = el('div', 'v3-flyout-foot');
     var all = el('a', 'v3-link');
-    all.href = LROOT + 'v2-services.html';
+    all.href = LROOT + 'services.html';
     all.appendChild(el('span', null, 'All services'));
     var book = el('a', 'v3-flyout-cta', 'Schedule Now');
     book.href = LROOT + 'locations.html';
@@ -96,12 +99,13 @@
 
   function initHeader() {
     var brand = $('.site-header .brand');
-    if (brand) brand.setAttribute('href', LROOT + 'v3.html');
+    if (brand && !ES) brand.setAttribute('href', LROOT + 'v3.html');
     var fbrand = $('.site-footer .footer-brand');
-    if (fbrand) fbrand.setAttribute('href', LROOT + 'v3.html');
+    if (fbrand && !ES) fbrand.setAttribute('href', LROOT + 'v3.html');
+    initMenuLang();
     if (!svcLink) return;
 
-    svcLink.setAttribute('href', LROOT + 'v2-services.html');
+    svcLink.setAttribute('href', LROOT + 'services.html');
     if (/v3-services\.html$/.test(location.pathname)) svcLink.setAttribute('aria-current', 'page');
     svcLink.classList.add('v3-has-flyout');
     svcLink.setAttribute('aria-haspopup', 'true');
@@ -176,6 +180,46 @@
     if (toggle) toggle.addEventListener('click', function () { sheet.classList.remove('is-open'); svcLink.setAttribute('aria-expanded', 'false'); });
     var onChange = function () { setOpen(false); };
     if (mq.addEventListener) mq.addEventListener('change', onChange); else if (mq.addListener) mq.addListener(onChange);
+  }
+
+  /* phone and tablet menu: the header's EN / ES switch is hidden below 1080px, so the menu carries its own (CSS shows it only there) */
+  function initMenuLang() {
+    var nav = $('#primary-nav'), lang = $('.site-header .di-lang');
+    if (!nav || !lang || $('.v3-menu-lang', nav)) return;
+    var box = el('div', 'v3-menu-lang');
+    box.setAttribute('role', 'group');
+    box.setAttribute('aria-label', ES ? 'Idioma' : 'Language');
+    $all('a', lang).forEach(function (a) {
+      var l = (a.getAttribute('lang') || '').slice(0, 2);
+      var c = el('a', null, l === 'es' ? 'Español' : 'English');
+      c.href = a.getAttribute('href');
+      c.setAttribute('lang', l);
+      if (a.getAttribute('aria-current')) c.setAttribute('aria-current', 'true');
+      box.appendChild(c);
+    });
+    nav.appendChild(box);
+  }
+
+  /* filter pills: [data-v3-filter="#grid"] holds buttons with data-filter; items in #grid carry data-treatment="a b".
+     "all" shows everything. Hidden items get the hidden attribute, so the grid reflows. */
+  function initFilters() {
+    $all('[data-v3-filter]').forEach(function (bar) {
+      var grid = $(bar.getAttribute('data-v3-filter'));
+      if (!grid) return;
+      var items = $all('[data-treatment]', grid), btns = $all('button[data-filter]', bar);
+      var status = $('[data-v3-filter-status]', bar);
+      function apply(f) {
+        var n = 0;
+        items.forEach(function (it) {
+          var show = f === 'all' || (' ' + it.getAttribute('data-treatment') + ' ').indexOf(' ' + f + ' ') > -1;
+          it.hidden = !show; if (show) n++;
+        });
+        btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-filter') === f)); });
+        if (status) status.textContent = n + (n === 1 ? ' case shown' : ' cases shown');
+      }
+      btns.forEach(function (b) { b.addEventListener('click', function () { apply(b.getAttribute('data-filter')); }); });
+      apply('all');
+    });
   }
 
   /* ---------- 3. Reddit slot ---------- */
@@ -502,10 +546,10 @@
     if (!mq || !card || !wrap || RM || window.innerWidth < 1000) return;
     collapseOn = true;
     var pill = el('a', 'v3-allpill');
-    pill.href = LROOT + 'v2-services.html'; pill.setAttribute('aria-hidden', 'true'); pill.tabIndex = -1;
+    pill.href = LROOT + (ES ? 'services.html' : 'v2-services.html'); pill.setAttribute('aria-hidden', 'true'); pill.tabIndex = -1;
     var faces = el('span', 'v3-allpill-faces');
     ['ba-4-after.webp', 'ba-5-after.webp', 'ba-7-after.webp'].forEach(function (n) { var im = el('img'); im.src = img(n); im.alt = ''; faces.appendChild(im); });
-    pill.appendChild(faces); pill.appendChild(el('span', null, 'View all of our services'));
+    pill.appendChild(faces); pill.appendChild(el('span', null, ES ? 'Ver todos los servicios' : 'View all of our services'));
     doc.body.appendChild(pill);
     if (SDA) {
       pill.classList.add('is-sda');
@@ -591,7 +635,7 @@
     var pill = el('a', 'v3-reddit-pill');
     pill.innerHTML = '<span class="v3-reddit-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#ff4500"/><ellipse cx="12" cy="14.2" rx="6.4" ry="4.3" fill="#fff"/><circle cx="6.6" cy="10.6" r="1.5" fill="#fff"/><circle cx="17.4" cy="10.6" r="1.5" fill="#fff"/><circle cx="9.7" cy="13.7" r="1.05" fill="#ff4500"/><circle cx="14.3" cy="13.7" r="1.05" fill="#ff4500"/><path d="M9.6 16.2c1.4.9 3.4.9 4.8 0" stroke="#ff4500" stroke-width=".9" fill="none" stroke-linecap="round"/><path d="M12 9.9l.9-3.6 2.7.6" stroke="#fff" stroke-width=".9" fill="none" stroke-linecap="round"/><circle cx="16.4" cy="7.1" r="1.1" fill="#fff"/></svg></span><span class="v3-reddit-txt"><span class="v3-reddit-main">Ask us on Reddit</span><span class="v3-reddit-sub" hidden>Coming soon</span></span>';
     if (REDDIT_URL) { pill.href = REDDIT_URL; pill.target = '_blank'; pill.rel = 'noopener'; }
-    else { pill.classList.add('is-soon'); var sub = pill.querySelector('.v3-reddit-sub'); if (sub) sub.hidden = false; pill.setAttribute('aria-disabled', 'true'); pill.setAttribute('role', 'link'); pill.addEventListener('click', function (e) { e.preventDefault(); }); }
+    else { pill.title = ES ? 'Reddit, muy pronto' : 'Ask us on Reddit, coming soon'; pill.classList.add('is-soon'); var sub = pill.querySelector('.v3-reddit-sub'); if (sub) sub.hidden = false; pill.setAttribute('aria-disabled', 'true'); pill.setAttribute('role', 'link'); pill.addEventListener('click', function (e) { e.preventDefault(); }); }
     doc.body.appendChild(pill);
     function place() {
       var t = $('#di-chat .di-chat-toggle');
@@ -648,6 +692,7 @@
     initHeader();
     initReddit();
     initChatHooks();
+    initFilters();
     initReveal();
     initTilt();
     tagGlass();

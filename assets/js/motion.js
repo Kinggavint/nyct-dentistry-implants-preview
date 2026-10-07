@@ -149,8 +149,7 @@
     var dragging = false, sx = 0, sy = 0, decided = false;
     c.addEventListener("pointerdown", function (ev) {
       dragging = true; decided = ev.pointerType === "mouse"; sx = ev.clientX; sy = ev.clientY;
-      c.classList.remove("mo-hint");
-      if (decided) { c.setPointerCapture(ev.pointerId); set(fromEvent(ev)); }
+      if (decided) { stopSweep(); c.setPointerCapture(ev.pointerId); set(fromEvent(ev)); }
     });
     c.addEventListener("pointermove", function (ev) {
       if (!dragging) return;
@@ -158,7 +157,7 @@
         var dx = Math.abs(ev.clientX - sx), dy = Math.abs(ev.clientY - sy);
         if (dx < 6 && dy < 6) return;
         if (dy > dx) { dragging = false; return; }
-        decided = true; c.setPointerCapture(ev.pointerId);
+        decided = true; stopSweep(); c.setPointerCapture(ev.pointerId);
       }
       set(fromEvent(ev));
     });
@@ -167,6 +166,8 @@
     range.addEventListener("input", function () { set(parseFloat(range.value)); });
     set(50);
     var touched = false, inView = false, loop = null;
+    /* only a real drag (mouse down, or a horizontal touch drag) or the keyboard stops the auto-sweep; a vertical scroll that starts on the card does not */
+    function stopSweep() { touched = true; clearInterval(loop); c.classList.remove("mo-hint"); }
     function sweep() {
       if (touched || !inView) return;
       c.classList.add("mo-hint");
@@ -175,7 +176,7 @@
       setTimeout(function () { if (!touched) set(50); }, 2600);
       setTimeout(function () { if (!touched) c.classList.remove("mo-hint"); }, 3600);
     }
-    ["pointerdown", "keydown", "focusin"].forEach(function (ev) { c.addEventListener(ev, function () { touched = true; clearInterval(loop); c.classList.remove("mo-hint"); }); });
+    c.addEventListener("keydown", stopSweep);
     if (!RM && "IntersectionObserver" in window) {
       new IntersectionObserver(function (es) {
         inView = es[0].isIntersecting && es[0].intersectionRatio > 0.5;

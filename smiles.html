@@ -20,9 +20,12 @@
   <link rel="stylesheet" href="assets/css/site.css">
   <link rel="stylesheet" href="assets/css/features.css">
   <link rel="stylesheet" href="assets/css/motion.css">
+  <link rel="stylesheet" href="assets/css/v3.css">
+  <link rel="stylesheet" href="assets/css/v3-pages.css">
   <script src="assets/js/site.js" defer></script>
   <script src="assets/js/features.js" defer></script>
   <script src="assets/js/motion.js" defer></script>
+  <script src="assets/js/v3.js" defer></script>
   <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -51,7 +54,7 @@
 }
   </script>
 </head>
-<body class="page-smiles">
+<body class="page-smiles page-v3 v3-inner">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="util-bar" aria-label="Call Now">
     <div class="util-inner">
@@ -77,91 +80,91 @@
       <nav class="di-lang" aria-label="Language"><a href="smiles.html" lang="en" aria-current="true">EN</a><a href="es/index.html" lang="es">ES</a></nav>
       <a class="button button-small button-ghost header-call" href="locations.html" data-office="call">Call Now</a>
       <a class="button button-small header-cta" href="locations.html" data-office="book">Schedule Now</a>
+      <p class="v3-loc">Mount Kisco, NY &middot; Kent, CT &middot; Stamford, CT</p>
     </div>
   </header>
   <main id="main">
 <section class="page-hero solo">
-      <p class="eyebrow">Before and After</p>
-      <h1>Real Patients. Real <span class="accent">Smiles</span>.</h1>
+      <p class="eyebrow">Before and after</p>
+      <h1>Real patients. Real smiles.</h1>
       <p class="lede">Every photo on this page is one of our own patients, shared with their written permission. No stock images, no models, no retouching of the results.</p>
+      <div class="v3p-filter" data-v3-filter="#smiles-grid" role="group" aria-label="Filter by treatment">
+        <button type="button" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="implants" aria-pressed="false">Implants</button>
+        <button type="button" data-filter="veneers" aria-pressed="false">Veneers</button>
+        <button type="button" data-filter="crowns" aria-pressed="false">Crowns</button>
+        <button type="button" data-filter="full-arch" aria-pressed="false">Full arch</button>
+        <span class="visually-hidden" data-v3-filter-status aria-live="polite"></span>
+      </div>
+      <p class="v3p-hint">Each photo sweeps between before and after on its own. Drag the handle to compare.</p>
     </section>
 
     <section class="section section-tight">
-      <div class="di-ba-grid">
-        <figure class="di-ba-pair" data-reveal>
+      <div class="di-ba-grid" id="smiles-grid">
+        <figure data-treatment="veneers makeover" class="di-ba-pair" data-reveal>
           <div class="di-ba-images">
             <div class="di-ba-img"><img src="assets/img/ba-5-before.webp" alt="Before: worn and discolored upper front teeth" loading="lazy" width="1600" height="1200"><span class="di-ba-label">Before</span></div>
             <div class="di-ba-img"><img src="assets/img/ba-5-after.webp" alt="After: restored, even upper front teeth" loading="lazy" width="1600" height="1200"><span class="di-ba-label">After</span></div>
           </div>
           <figcaption>Front teeth restored as part of a smile makeover.</figcaption>
         </figure>
-        <figure class="di-ba-pair" data-reveal>
+        <figure data-treatment="implants" class="di-ba-pair" data-reveal>
           <div class="di-ba-images">
             <div class="di-ba-img"><img src="assets/img/ba-2-before.webp" alt="Before: a missing upper front tooth" loading="lazy" width="1440" height="1080"><span class="di-ba-label">Before</span></div>
             <div class="di-ba-img"><img src="assets/img/ba-2-after.webp" alt="After: the upper front teeth complete" loading="lazy" width="1440" height="1080"><span class="di-ba-label">After</span></div>
           </div>
           <figcaption>A missing front tooth replaced.</figcaption>
         </figure>
-        <figure class="di-ba-pair" data-reveal>
+        <figure data-treatment="crowns" class="di-ba-pair" data-reveal>
           <div class="di-ba-images">
             <div class="di-ba-img"><img src="assets/img/ba-3-before.webp" alt="Before: older metal-based crowns with dark lines at the gum" loading="lazy" width="1600" height="1200"><span class="di-ba-label">Before</span></div>
             <div class="di-ba-img"><img src="assets/img/ba-3-after.webp" alt="After: new zirconia crowns" loading="lazy" width="1600" height="1200"><span class="di-ba-label">After</span></div>
           </div>
           <figcaption>Older metal-based crowns replaced with zirconia.</figcaption>
         </figure>
-        <figure class="di-ba-pair" data-reveal>
+        <figure data-treatment="implants" class="di-ba-pair" data-reveal>
           <div class="di-ba-images">
             <div class="di-ba-img"><img src="assets/img/ba-4-before.webp" alt="Before: a gap where a tooth was missing" loading="lazy" width="960" height="720"><span class="di-ba-label">Before</span></div>
             <div class="di-ba-img"><img src="assets/img/ba-4-after.webp" alt="After: the gap filled with an implant crown" loading="lazy" width="960" height="720"><span class="di-ba-label">After</span></div>
           </div>
           <figcaption>A missing tooth replaced with an implant crown.</figcaption>
         </figure>
-        <figure class="di-ba-pair" data-reveal>
+        <figure data-treatment="makeover" class="di-ba-pair" data-reveal>
           <div class="di-ba-images">
             <div class="di-ba-img"><img src="assets/img/ba-6-before.webp" alt="Before: worn, yellowed upper teeth" loading="lazy" width="1440" height="1080"><span class="di-ba-label">Before</span></div>
             <div class="di-ba-img"><img src="assets/img/ba-6-after.webp" alt="After: bright, even upper teeth" loading="lazy" width="1440" height="1080"><span class="di-ba-label">After</span></div>
           </div>
           <figcaption>Upper teeth restored for a brighter, even smile.</figcaption>
         </figure>
-        <figure class="di-ba-pair" data-reveal>
+        <figure data-treatment="fillings" class="di-ba-pair" data-reveal>
           <div class="di-ba-images">
             <div class="di-ba-img"><img src="assets/img/ba-1-before.webp" alt="Before: front teeth with a worn edge" loading="lazy" width="1440" height="1080"><span class="di-ba-label">Before</span></div>
             <div class="di-ba-img"><img src="assets/img/ba-1-after.webp" alt="After: front teeth repaired" loading="lazy" width="1440" height="1080"><span class="di-ba-label">After</span></div>
           </div>
           <figcaption>Front teeth repaired with tooth-colored filling material.</figcaption>
         </figure>
-        <figure class="di-ba-pair" data-reveal>
+        <figure data-treatment="veneers" class="di-ba-pair" data-reveal>
           <div class="di-ba-images">
             <div class="di-ba-img"><img src="assets/img/ba-7-before.webp" alt="Before: discolored front teeth" loading="lazy" width="1440" height="1080"><span class="di-ba-label">Before</span></div>
             <div class="di-ba-img"><img src="assets/img/ba-7-after.webp" alt="After: brighter, restored front teeth" loading="lazy" width="1440" height="1080"><span class="di-ba-label">After</span></div>
           </div>
           <figcaption>Front teeth restored and brightened.</figcaption>
         </figure>
-        <figure class="di-ba-pair" data-reveal>
+        <figure data-treatment="implants" class="di-ba-pair" data-reveal>
           <div class="di-ba-images">
             <div class="di-ba-img"><img src="assets/img/ba-8-before.webp" alt="Before: a discolored front tooth and a gap from a missing tooth" loading="lazy" width="1600" height="1200"><span class="di-ba-label">Before</span></div>
             <div class="di-ba-img"><img src="assets/img/ba-8-after.webp" alt="After: the front teeth restored and the gap filled" loading="lazy" width="1600" height="1200"><span class="di-ba-label">After</span></div>
           </div>
           <figcaption>A discolored front tooth restored and a missing tooth replaced.</figcaption>
         </figure>
-      </div>
-    </section>
-
-    <section class="section section-soft">
-      <div class="section-heading">
-        <p class="eyebrow">Full-Arch Implant Cases</p>
-        <h2>What the X-Rays <span class="accent">Show</span></h2>
-        <p>Panoramic X-rays from two full-arch implant cases. Before, failing and missing teeth. After, a full arch of teeth anchored on implants.</p>
-      </div>
-      <div class="di-ba-grid">
-        <figure class="di-ba-pair di-ba-xray" data-reveal>
+        <figure data-treatment="full-arch" class="di-ba-pair di-ba-xray" data-reveal>
           <div class="di-ba-images">
             <div class="di-ba-img"><img src="assets/img/xray-1-before.webp" alt="Panoramic X-ray before treatment showing failing and missing teeth" loading="lazy" width="550" height="283"><span class="di-ba-label">Before</span></div>
             <div class="di-ba-img"><img src="assets/img/xray-1-after.webp" alt="Panoramic X-ray after treatment showing dental implants supporting new teeth" loading="lazy" width="550" height="283"><span class="di-ba-label">After</span></div>
           </div>
           <figcaption>Case one: full-arch implant treatment.</figcaption>
         </figure>
-        <figure class="di-ba-pair di-ba-xray" data-reveal>
+        <figure data-treatment="full-arch" class="di-ba-pair di-ba-xray" data-reveal>
           <div class="di-ba-images">
             <div class="di-ba-img"><img src="assets/img/xray-2-before.webp" alt="Panoramic X-ray before treatment" loading="lazy" width="550" height="283"><span class="di-ba-label">Before</span></div>
             <div class="di-ba-img"><img src="assets/img/xray-2-after.webp" alt="Panoramic X-ray after treatment showing an implant-supported arch" loading="lazy" width="550" height="285"><span class="di-ba-label">After</span></div>
@@ -171,14 +174,15 @@
       </div>
     </section>
 
+
     <section class="section section-soft">
       <div class="cta-band">
         <div>
-          <h2>Wondering What Is Possible for <span class="accent">Yours</span>?</h2>
+          <h2>Wondering what is possible for yours?</h2>
           <p class="lede">Every smile is different. A consultation and, if you like, a virtual smile design preview is the best way to see what yours could look like.</p>
         </div>
         <div class="button-row">
-          <a class="button" href="locations.html" data-office="book">Book a Consultation</a>
+          <a class="button" href="locations.html" data-office="book">Schedule Now</a>
           <a class="text-link" href="services.html#smile-makeover">Smile makeovers <span aria-hidden="true">&rarr;</span></a>
         </div>
       </div>

@@ -9,7 +9,7 @@
   var T = {
     en: {
       pickTitle: 'Choose your office', close: 'Close',
-      call: 'Call', book: 'Book online', directions: 'Get directions',
+      call: 'Call', book: 'Schedule Now', directions: 'Get directions',
       chatToggle: 'Ask a question', chatTitle: 'Ask Dentistry & Implants',
       chatGreeting: 'Hi. Ask me anything about Dentistry & Implants and I will answer from this website.',
       chatPlaceholder: 'Type your question', chatLabel: 'Your question', send: 'Send',
@@ -26,7 +26,7 @@
     },
     es: {
       pickTitle: 'Elija su consultorio', close: 'Cerrar',
-      call: 'Llamar', book: 'Reservar en línea', directions: 'Cómo llegar',
+      call: 'Llamar', book: 'Reserve ahora', directions: 'Cómo llegar',
       chatToggle: 'Haga una pregunta', chatTitle: 'Pregunte a Dentistry & Implants',
       chatGreeting: 'Hola. Pregúnteme lo que quiera sobre Dentistry & Implants y le responderé con la información de este sitio.',
       chatPlaceholder: 'Escriba su pregunta', chatLabel: 'Su pregunta', send: 'Enviar',
