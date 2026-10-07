@@ -223,6 +223,9 @@ body.page-v3 .v3-hero .v3-links .v3-btn { min-width: 190px; }
 .page-v3 .v3-hero > * { position: relative; z-index: 1; }
 .page-v3 .v3-hero .v3-eyebrow, .page-v3 .v3-hero .v3-intro { color: var(--v3-ink-metal); }
 .page-v3 .v3h-title { max-width: 15ch; margin-left: auto; margin-right: auto; }
+/* two-line mission headline (client request): each line on its own row, never wraps; scales down with the viewport so both lines fit */
+.page-v3 .v3h-title.v3h-title-2l { max-width: none; font-size: min(var(--v3-fs-super), calc((min(100vw, var(--v3-max)) - 2 * var(--v3-gutter)) / 12.8)); }
+.page-v3 .v3h-title-2l .v3h-line { display: block; white-space: nowrap; }
 .page-v3 .v3h-mission { max-width: 46ch; margin-top: 22px; }
 .page-v3 .v3-hero .v3-links { margin-top: 32px; }
 .page-v3 .v3h-ask { margin-top: 18px; }
