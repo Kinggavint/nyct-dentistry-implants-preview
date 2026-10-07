@@ -171,8 +171,8 @@
     function sweep() {
       if (touched || !inView) return;
       c.classList.add("mo-hint");
-      setTimeout(function () { if (!touched) set(80); }, 200);
-      setTimeout(function () { if (!touched) set(20); }, 1400);
+      setTimeout(function () { if (!touched) set(64); }, 200);
+      setTimeout(function () { if (!touched) set(36); }, 1400);
       setTimeout(function () { if (!touched) set(50); }, 2600);
       setTimeout(function () { if (!touched) c.classList.remove("mo-hint"); }, 3600);
     }

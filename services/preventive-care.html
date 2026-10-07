@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="../assets/css/motion.css">
   <link rel="stylesheet" href="../assets/css/v3.css">
   <link rel="stylesheet" href="../assets/css/v3-pages.css">
+  <link rel="stylesheet" href="../assets/css/v3-service.css">
   <script src="../assets/js/site.js" defer></script>
   <script src="../assets/js/features.js" defer></script>
   <script src="../assets/js/motion.js" defer></script>
@@ -155,7 +156,7 @@
 }
   </script>
 </head>
-<body class="page-services page-v3 v3-inner">
+<body class="page-services page-v3 v3-inner v3-tpl-service">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="util-bar" aria-label="Call Now">
     <div class="util-inner">
@@ -185,101 +186,118 @@
     </div>
   </header>
   <main id="main">
-<section class="page-hero solo">
-      <p class="eyebrow">Preventive care</p>
-      <h1>Prevention Is the <span class="accent">Foundation</span> of a Healthy Smile</h1>
-      <p class="lede">The easiest treatment is the one you never need. Regular exams and cleanings catch small problems early, keep gums healthy and help you avoid bigger, costlier work later.</p>
-      <div class="button-row"><a class="button" href="../locations.html" data-office="book">Book a Consultation</a><a class="button button-ghost" href="../locations.html" data-office="call">Call an office</a></div>
+<style>
+      body.v3-tpl-service .svc-card-media { display: block; width: calc(100% + 64px); max-width: none; margin: -34px -32px 14px; aspect-ratio: 16 / 10; object-fit: cover; object-position: 50% 30%; border-radius: var(--v3-radius) var(--v3-radius) 0 0; }
+      body.v3-tpl-service .svc-card { overflow: hidden; }
+    </style>
+    <section class="page-hero solo svc-hero">
+      <div>
+        <p class="eyebrow">Preventive care</p>
+        <h1>Prevention Is the Foundation of a Healthy Smile</h1>
+        <p class="lede">The easiest treatment is the one you never need.</p>
+        <div class="button-row"><a class="button" href="../locations.html" data-office="book">Schedule Now</a><a class="button button-ghost" href="../locations.html" data-office="call">Call Now</a></div>
+      </div>
+      <figure class="svc-hero-media"><img src="../assets/img/mk-office-reception.webp" alt="The reception and waiting area at the Mount Kisco office" width="1455" height="1081"></figure>
     </section>
-    <section class="section">
-      <div class="two-col">
-        <div class="sticky">
-          <p class="eyebrow">Why it matters</p>
-          <h2>What preventive care does</h2>
-        </div>
-        <div class="prose">
-          <p>Tooth decay and gum disease are the most common causes of tooth loss, and both are largely preventable. A visit every six months lets us remove plaque and tartar you cannot reach at home, check every tooth and your gums, and spot trouble while it is still small.</p>
-          <p>An exam can also reveal things beyond your teeth. Dentists look for early signs of oral cancer, and changes in the mouth sometimes point to wider health concerns such as diabetes. Gum health and overall health are connected, so a healthy mouth supports a healthy body.</p>
-          <p>Staying ahead of problems usually means less time in the chair and fewer surprises. That is the whole idea.</p>
-        </div>
+
+    <section class="section svc-what" id="what-it-is" aria-labelledby="svc-what-h">
+      <div class="section-heading">
+        <p class="eyebrow">Why it matters</p>
+        <h2 id="svc-what-h">Small problems, caught early.</h2>
+      </div>
+      <div class="prose svc-lead">
+        <p>Regular exams and cleanings catch small problems early, keep gums healthy and help you avoid bigger, costlier work later. Tooth decay and gum disease are the most common causes of tooth loss, and both are largely preventable. A visit every six months lets us remove plaque and tartar you cannot reach at home, check every tooth and your gums, and spot trouble while it is still small.</p>
+        <p>An exam can also reveal things beyond your teeth. Dentists look for early signs of oral cancer, and changes in the mouth sometimes point to wider health concerns such as diabetes. Gum health and overall health are connected, so a healthy mouth supports a healthy body.</p>
+        <p>Staying ahead of problems usually means less time in the chair and fewer surprises. That is the whole idea.</p>
       </div>
     </section>
-    <section class="section section-soft">
+
+    <section class="section section-soft svc-options" id="options" aria-labelledby="svc-options-h">
       <div class="section-heading">
         <p class="eyebrow">What we offer</p>
-        <h2>Everything in a checkup</h2>
+        <h2 id="svc-options-h">Everything in a checkup.</h2>
         <p>Preventive care is simple, thorough and gentle.</p>
       </div>
-      <ul class="feature-list">
+      <ul class="svc-cards">
         <li data-reveal><h3>Cleanings and exams</h3><p>A professional cleaning about every six months removes plaque, tartar and surface stains. A thorough exam looks for decay, gum disease and bite concerns.</p></li>
-        <li data-reveal><h3>X-rays and diagnostics</h3><p>Digital X-rays and intraoral cameras let you see what we see. Our Mount Kisco and Kent offices also use laser cavity detection.</p></li>
+        <li data-reveal><h3>X-rays and diagnostics</h3><p>Digital X-rays and intraoral cameras let you see what we see.</p><p class="svc-card-foot"><strong>Mount Kisco and Kent</strong> These offices also use laser cavity detection.</p></li>
         <li data-reveal><h3>Fluoride treatment</h3><p>A fluoride gel or paste is applied to the teeth for a few minutes. It attracts minerals and strengthens enamel, even where the earliest stage of decay has begun.</p></li>
         <li data-reveal><h3>Dental sealants</h3><p>A thin protective resin is painted onto the grooves of back teeth and hardened with a light. It blocks bacteria, acid and food from settling in and causing cavities.</p></li>
         <li data-reveal><h3>Oral cancer screening</h3><p>A screening is part of your regular exam. We look for lesions, discolored patches and other changes that deserve a closer look, which matters most if you smoke or spend long hours in the sun.</p></li>
         <li data-reveal><h3>Advice that fits you</h3><p>Dr. Kwon and Dr. Park talk through your habits and answer your questions, so you leave knowing what to keep doing and what to change.</p></li>
       </ul>
     </section>
-    <section class="section">
-      <div class="two-col">
-        <div class="sticky">
-          <p class="eyebrow">Your part</p>
-          <h2>Small habits, big difference</h2>
-        </div>
-        <div class="prose">
-          <p>Your daily routine matters as much as your visits. Brush at least twice a day for two minutes with fluoride toothpaste, and floss once a day to remove debris brushing misses. An antiseptic mouthwash can help.</p>
-          <p>Food and lifestyle count too. Cutting back on sugary drinks and constant snacking lowers your risk of cavities and gum disease. Reducing alcohol and avoiding smoking, vaping and oral tobacco protect your gums and your overall health.</p>
-          <p>If a cleaning shows early gum trouble, we explain it plainly and may suggest <a href="../services/periodontal-care.html">periodontal care</a> so it does not progress.</p>
-        </div>
+
+    <section class="section svc-process" id="process" aria-labelledby="svc-process-h">
+      <div class="section-heading">
+        <p class="eyebrow">Your part</p>
+        <h2 id="svc-process-h">Small habits, big difference.</h2>
+        <p>Your daily routine matters as much as your visits.</p>
       </div>
+      <ol class="svc-steps">
+        <li data-reveal><h3>Brush twice a day</h3><p>Brush at least twice a day for two minutes with fluoride toothpaste.</p></li>
+        <li data-reveal><h3>Floss once a day</h3><p>Floss once a day to remove debris brushing misses. An antiseptic mouthwash can help.</p></li>
+        <li data-reveal><h3>Watch what you eat and drink</h3><p>Cutting back on sugary drinks and constant snacking lowers your risk of cavities and gum disease.</p></li>
+        <li data-reveal><h3>Protect your gums</h3><p>Reducing alcohol and avoiding smoking, vaping and oral tobacco protect your gums and your overall health. If a cleaning shows early gum trouble, we explain it plainly and may suggest <a href="../services/periodontal-care.html">periodontal care</a> so it does not progress.</p></li>
+      </ol>
     </section>
-    <section class="section section-soft">
-      <div class="two-col">
-        <div class="sticky">
-          <p class="eyebrow">For every age</p>
-          <h2>Family dentistry</h2>
-        </div>
-        <div class="prose">
+
+    <section class="section section-soft svc-fit" id="right-for-you" aria-labelledby="svc-fit-h">
+      <div class="section-heading">
+        <p class="eyebrow">For every age</p>
+        <h2 id="svc-fit-h">Care for the whole family.</h2>
+      </div>
+      <div class="svc-duo">
+        <article class="svc-card" data-reveal>
+          <img class="svc-card-media" src="../assets/img/drs-kwon-park.webp" alt="Dr. Kwon and Dr. Park" loading="lazy" width="1600" height="1067">
+          <h3>Family dentistry</h3>
           <p>Dr. Kwon and Dr. Park care for patients of all ages, from toddlers and teens to adults and seniors, so the whole family can see the same team. We aim to make every visit calm and comfortable, and children are welcome.</p>
+          <a class="text-link" href="../doctors.html">Meet the doctors</a>
+        </article>
+        <article class="svc-card" data-reveal id="new-patients">
+          <h3>New patients</h3>
           <p>We work with most major insurers and are glad to welcome new patients at all three offices.</p>
-        </div>
+          <p>New patients can begin with a cleaning, exam and X-rays at a set price. Offers differ by office and eligibility is confirmed when you call. See the details under <a href="../insurance.html#specials">new patient specials</a>.</p>
+          <p>No dental insurance? We give you a written estimate before treatment, and <a href="../insurance.html#financing">0% payment plans</a> are available to qualified applicants.</p>
+          <a class="text-link" href="../insurance.html">Insurance and financing</a>
+        </article>
       </div>
     </section>
-    <section class="section" id="new-patients">
+
+    <section class="section svc-faq" id="faq" aria-labelledby="svc-faq-h">
       <div class="section-heading">
-        <p class="eyebrow">New patients</p>
-        <h2>Start with a special</h2>
-        <p>New patients can begin with a cleaning, exam and X-rays at a set price. Offers differ by office and eligibility is confirmed when you call. See the details under <a href="../insurance.html#specials">new patient specials</a>.</p>
+        <p class="eyebrow">Common questions</p>
+        <h2 id="svc-faq-h">Checkup questions.</h2>
       </div>
-      <p class="prose">No dental insurance? We give you a written estimate before treatment, and <a href="../insurance.html#financing">0% payment plans</a> are available to qualified applicants.</p>
+      <div class="faq-list">
+        <details><summary>How often should I visit?</summary><div><p>Most people do well with a cleaning and exam about every six months. If you have gum disease or a higher risk of cavities, we may suggest visiting more often.</p></div></details>
+        <details><summary>What happens during a cleaning?</summary><div><p>We remove plaque and tartar, polish your teeth and check your gums. The dentist then examines your teeth, gums and mouth and reviews any X-rays with you.</p></div></details>
+        <details><summary>Are dental X-rays necessary?</summary><div><p>X-rays show decay between teeth, bone levels and problems under the gums that cannot be seen by eye. We take only the ones your exam calls for.</p></div></details>
+        <details><summary>Do cleanings hurt?</summary><div><p>Most people feel little or nothing. If your gums are tender, tell us and we will adjust, and we can use numbing if you need it.</p></div></details>
+        <details><summary>What are dental sealants?</summary><div><p>Sealants are thin protective coatings placed on the chewing surfaces of back teeth to help prevent cavities. They are quick and painless.</p></div></details>
+        <details><summary>Can prevention save money?</summary><div><p>Often, yes. Treating a small problem early is usually simpler than repairing a large one. Ask the office about your own costs, or see our <a href="../insurance.html">insurance and financing page</a>.</p></div></details>
+      </div>
+      <div class="svc-related">
+        <p class="svc-related-label">Keep exploring</p>
+        <ul class="service-index">
+          <li><a href="../services/periodontal-care.html">Periodontal care</a></li>
+          <li><a href="../services/teeth-whitening.html">Teeth whitening</a></li>
+          <li><a href="../services/restorative-dentistry.html">Restorative dentistry</a></li>
+          <li><a href="../services/emergency-dentistry.html">Emergency dentistry</a></li>
+          <li><a href="../services.html">All services</a></li>
+        </ul>
+      </div>
     </section>
-    <section class="section section-soft">
-      <div class="two-col">
-        <div class="sticky">
-          <p class="eyebrow">Common questions</p>
-          <h2>Good things to ask</h2>
+
+    <section class="section section-soft svc-book" id="book" aria-labelledby="svc-book-h">
+      <div class="cta-band">
+        <p class="eyebrow">Three offices</p>
+        <h2 id="svc-book-h">Ready for a healthier checkup.</h2>
+        <p>Book a visit at the office nearest you. We will explain everything we find in plain words.</p>
+        <div class="button-row">
+          <a class="button" href="../locations.html" data-office="book">Schedule Now</a>
+          <a class="button button-ghost" href="../locations.html" data-office="call">Call Now</a>
         </div>
-        <div class="faq-list">
-          <details><summary>How often should I visit?</summary><div><p>Most people do well with a cleaning and exam about every six months. If you have gum disease or a higher risk of cavities, we may suggest visiting more often.</p></div></details>
-          <details><summary>What happens during a cleaning?</summary><div><p>We remove plaque and tartar, polish your teeth and check your gums. The dentist then examines your teeth, gums and mouth and reviews any X-rays with you.</p></div></details>
-          <details><summary>Are dental X-rays necessary?</summary><div><p>X-rays show decay between teeth, bone levels and problems under the gums that cannot be seen by eye. We take only the ones your exam calls for.</p></div></details>
-          <details><summary>Do cleanings hurt?</summary><div><p>Most people feel little or nothing. If your gums are tender, tell us and we will adjust, and we can use numbing if you need it.</p></div></details>
-          <details><summary>What are dental sealants?</summary><div><p>Sealants are thin protective coatings placed on the chewing surfaces of back teeth to help prevent cavities. They are quick and painless.</p></div></details>
-          <details><summary>Can prevention save money?</summary><div><p>Often, yes. Treating a small problem early is usually simpler than repairing a large one. Ask the office about your own costs, or see our <a href="../insurance.html">insurance and financing page</a>.</p></div></details>
-        </div>
-      </div>
-    </section>
-    <section class="section section-tight">
-      <div class="section-heading">
-        <p class="eyebrow">Related services</p>
-        <h2>Keep exploring</h2>
-      </div>
-      <ul class="service-index"><li><a href="../services/periodontal-care.html">Periodontal care</a></li><li><a href="../services/teeth-whitening.html">Teeth whitening</a></li><li><a href="../services/restorative-dentistry.html">Restorative dentistry</a></li><li><a href="../services/emergency-dentistry.html">Emergency dentistry</a></li></ul>
-    </section>
-    <section class="section">
-      <div class="section-heading">
-        <p class="eyebrow">Our offices</p>
-        <h2>Three offices, close to home</h2>
-        <p>Call the office nearest you to book or ask a question.</p>
       </div>
       <div class="office-list"><article class="office-row" id="mount-kisco" data-reveal>
   <div class="office-row-name"><p class="eyebrow">New York</p><h3><a href="../locations/mount-kisco.html">Mount Kisco</a></h3></div>
@@ -297,15 +315,6 @@
   <div class="office-row-hours"><dl class="hours"><div><dt>Monday to Wednesday</dt><dd>9:00 am to 5:00 pm</dd></div><div><dt>Thursday</dt><dd>9:00 am to 5:00 pm, every other week</dd></div><div><dt>Friday</dt><dd>9:00 am to 5:00 pm</dd></div><div><dt>Saturday</dt><dd>9:00 am to 3:00 pm</dd></div><div><dt>Sunday</dt><dd>Closed</dd></div></dl><p class="office-note">Open Saturdays. Complimentary parking on site.</p></div>
   <div class="office-row-actions"><a class="button" href="https://www.flexbook.me/bookcsds/googlereserve/1" target="_blank" rel="noopener">Schedule Now</a><a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Dentistry%20%26%20Implants%2C%20800%20E%20Main%20St%2C%20Stamford%2C%20CT%2006902" target="_blank" rel="noopener">Get directions <span aria-hidden="true">&rarr;</span></a></div>
 </article></div>
-    </section>
-    <section class="section section-soft">
-      <div class="cta-band">
-        <div>
-          <h2>Ready for a healthier checkup?</h2>
-          <p class="lede">Book a visit at the office nearest you. We will explain everything we find in plain words.</p>
-        </div>
-        <div class="button-row"><a class="button" href="../locations.html" data-office="book">Book a Consultation</a><a class="button button-ghost" href="../locations.html" data-office="call">Call an office</a></div>
-      </div>
     </section>
   </main>
   <footer class="site-footer">

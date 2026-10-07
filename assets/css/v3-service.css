@@ -110,3 +110,39 @@ body.v3-tpl-service .svc-book .office-list { margin-top: clamp(48px, 6vw, 72px);
 /* "Is it right for you" now sits under "What it is"; Recovery sits under the process timeline */
 body.v3-tpl-service .svc-fit-duo { margin-top: clamp(40px, 5vw, 64px); }
 body.v3-tpl-service .svc-sub { max-width: 760px; margin: clamp(56px, 7vw, 88px) auto clamp(24px, 3vw, 36px); text-align: center; font: 600 clamp(26px, 3vw, 34px)/1.12 var(--v3-font); letter-spacing: -.004em; scroll-margin-top: calc(var(--v3-nav-h) + 16px); }
+
+/* ---------- launch fixes (10-07) ---------- */
+/* low-resolution before and after photos never stretch past their sharp size */
+body.v3-tpl-service .svc-ba .di-ba-pair { width: 100%; max-width: 560px; margin-inline: auto; box-sizing: border-box; }
+/* X-ray pairs fill their frame at the X-ray's own shape: no black bars */
+body.v3-tpl-service .svc-ba-contain .mo-compare, body.v3-tpl-service .svc-ba-contain .di-ba-img { aspect-ratio: 550 / 283; }
+body.v3-tpl-service .svc-ba-contain .mo-compare img, body.v3-tpl-service .svc-ba-contain .di-ba-img img { object-fit: cover; background: #000; }
+/* patient videos under the results */
+body.v3-tpl-service .svc-videos { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 760px; margin: 0 auto; }
+@media (max-width: 620px) { body.v3-tpl-service .svc-videos { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+body.v3-tpl-service .svc-ba .more-link { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 28px; }
+/* a framed photo at the top of a card */
+body.v3-tpl-service .svc-card-photo { width: 100%; margin: 0 0 6px; }
+body.v3-tpl-service .svc-card-photo img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 16px; }
+/* two columns of short items in one section (emergency: first aid, and ER or dentist) */
+body.v3-tpl-service .svc-split { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto; }
+body.v3-tpl-service .svc-split-col { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; padding: 34px 32px; border-radius: var(--v3-radius); background: #fff; box-shadow: var(--v3-card-shadow); scroll-margin-top: calc(var(--v3-nav-h) + 16px); }
+body.v3-tpl-service .svc-split-col h3 { margin: 0; font-size: clamp(21px, 2vw, 24px); }
+body.v3-tpl-service .svc-mini { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
+body.v3-tpl-service .svc-mini li { display: grid; gap: 4px; margin: 0; padding-top: 14px; border-top: 1px solid rgba(0,0,0,.08); }
+body.v3-tpl-service .svc-mini li:first-child { padding-top: 0; border-top: 0; }
+body.v3-tpl-service .svc-mini strong { font: 600 17px/1.3 var(--v3-font); color: var(--v3-ink); }
+body.v3-tpl-service .svc-mini span { font-size: 16px; line-height: 1.5; color: var(--v3-ink-2); }
+body.v3-tpl-service .svc-split-col > .text-link { margin-top: auto; font-size: 17px; }
+@media (max-width: 734px) {
+  body.v3-tpl-service .svc-split { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  body.v3-tpl-service .svc-split-col { padding: 26px 22px; }
+}
+/* one before and after pair sits centered */
+body.v3-tpl-service .svc-ba .di-ba-grid.svc-ba-one { grid-template-columns: minmax(0, 1fr); max-width: 560px; }
+body.v3-tpl-service .svc-ba .di-ba-grid { align-items: start; }
+/* two or three videos on a service page need no language filter (each card carries its EN / ES badge) */
+body.v3-tpl-service .vd-filters { display: none; }
+/* the plain card next to a card with a photo keeps its text centered instead of leaving a gap below */
+body.v3-tpl-service .svc-duo:has(.svc-card-photo) > .svc-card:not(:has(.svc-card-photo)) { justify-content: center; }
+body.v3-tpl-service .svc-card-photo img { aspect-ratio: 16 / 9; }

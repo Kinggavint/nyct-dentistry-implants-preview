@@ -477,13 +477,6 @@ body.v3-inner :is(.service-block, .doctor-spread) figure > figcaption { padding:
   body.v3-inner .svc-nav ul { max-width: none; justify-content: flex-start; }
 }
 
-/* phone: the Reddit pill collapses to its icon so it clears the accessibility button and the screen edge
-   (v3.css has the same rule, but a later base rule re-shows the text) */
-@media (max-width: 734px) {
-  body.v3-inner .v3-reddit-pill { min-height: 52px; padding: 0 8px; gap: 0; }
-  body.v3-inner .v3-reddit-pill :is(.v3-reddit-txt, .v3-reddit-soon) { display: none; }
-}
-
 /* phone: patient videos two across instead of one long stack */
 @media (max-width: 620px) {
   body.v3-inner .vd-testimonials { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 12px; }
@@ -501,12 +494,7 @@ body.v3-inner .tile-dark a { color: #f5f5f7; }
 /* teaching slideshow on graphite: the caption sits on a white glass pill, so its text is graphite */
 body.v3-inner .section-ink .mo-slideshow figcaption { color: #1d1d1f; }
 
-/* floating Ask + Reddit pills stay clear of the 680px reading column: the Reddit pill is icon only on desktop, gone on phones */
-@media (min-width: 1081px) {
-  body.v3-inner .v3-reddit-pill { min-height: 52px; padding: 0 8px; gap: 0; }
-  body.v3-inner .v3-reddit-pill :is(.v3-reddit-txt, .v3-reddit-soon) { display: none; }
-}
-@media (max-width: 599px) { .v3-reddit-pill { display: none; } }
+/* Reddit pill: not built until REDDIT_URL is set (v3.js); its sizing lives in v3.css */
 
 /* ---------- Dr. Kwon: stat row, credentials with a More disclosure, the book ---------- */
 body.v3-inner .v3p-stats-band { padding-top: clamp(44px, 5vw, 68px); padding-bottom: clamp(44px, 5vw, 68px); }
@@ -595,3 +583,44 @@ body.v3-inner .v3p-map figcaption { display: flex; flex-wrap: wrap; align-items:
 body.v3-inner .v3p-map .text-link { font-size: 15px; }
 @media (max-width: 1068px) { body.v3-inner .v3p-map { max-width: 560px; } }
 @media (max-width: 734px) { body.v3-inner .page-hero.v3p-photo-hero { min-height: 72svh; padding-top: 72px; } body.v3-inner .v3p-map { padding: 8px; } body.v3-inner .v3p-map iframe { border-radius: 16px; } }
+
+/* =====================================================================
+   MORE OF HIS PHOTOS AND VIDEOS (10-06, launch prep). Append-only block.
+   Articles: a header photo chosen by topic, and a Related strip at the end.
+   Office pages: the patient video in one solid card ("From our patients.").
+   ===================================================================== */
+/* article header photo: one solid white frame, a little wider than the reading column */
+body.v3-article .v3a-cover { max-width: 880px; margin: 0 auto clamp(36px, 5vw, 56px); padding: 10px; border-radius: var(--v3-radius); background: #fff; box-shadow: var(--v3-card-shadow); box-sizing: border-box; }
+body.v3-article .v3a-cover img { display: block; width: 100%; height: auto; aspect-ratio: 2.1 / 1; object-fit: cover; border-radius: calc(var(--v3-radius) - 8px); background: #e9eaed; }
+body.v3-article .v3a-cover figcaption { padding: 12px 8px 4px; font: 500 14px/1.4 var(--v3-font); color: var(--v3-ink-2); text-align: center; }
+/* related strip: solid white cards in one row, label on top */
+body.v3-article .v3a-related { margin-top: clamp(32px, 4vw, 44px); text-align: center; }
+body.v3-article .prose .v3a-related-h { margin: 0 0 14px; font: 600 15px/1.3 var(--v3-font); letter-spacing: 0; color: var(--v3-ink-2); }
+body.v3-article .prose .v3a-related ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 0; padding: 0; list-style: none; }
+body.v3-article .prose .v3a-related li { margin: 0; padding: 0; }
+body.v3-article .prose .v3a-related li::before { content: none; }
+body.v3-article main .prose .v3a-related a:not(.text-link):not(.button) { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; min-width: 190px; padding: 16px 22px 16px 20px; border-radius: 20px; background: #fff; box-shadow: var(--v3-card-shadow); color: var(--v3-ink); text-align: left; text-decoration: none; transition: transform .3s var(--v3-lift), box-shadow .3s; }
+body.v3-article main .prose .v3a-related a:not(.text-link):not(.button):hover { transform: translateY(-3px); box-shadow: var(--v3-card-shadow-hover); }
+body.v3-article .prose .v3a-related-k { font: 500 13px/1.3 var(--v3-font); color: var(--v3-ink-2); }
+body.v3-article .prose .v3a-related-n { font: 600 17px/1.3 var(--v3-font); letter-spacing: -.01em; color: var(--v3-ink); }
+body.v3-article .prose .v3a-related-n::after { content: "\203A"; padding-inline-start: .3em; color: var(--v3-brand); }
+@media (max-width: 734px) {
+  body.v3-article .v3a-cover { padding: 8px; margin-bottom: 32px; }
+  body.v3-article .v3a-cover img { aspect-ratio: 3 / 2; }
+  body.v3-article .v3a-cover.v3a-cover-wide img { aspect-ratio: 2.1 / 1; }
+  body.v3-article .prose .v3a-related ul { flex-direction: column; align-items: stretch; }
+  body.v3-article .prose .v3a-related a { min-width: 0; }
+}
+/* office pages: the patient video sits in one solid white card */
+body.v3-inner .v3p-video-card { width: fit-content; max-width: 100%; margin: clamp(32px, 4vw, 48px) auto 0; padding: 12px 12px 6px; border-radius: var(--v3-radius); background: #fff; box-shadow: var(--v3-card-shadow); box-sizing: border-box; }
+body.v3-inner .v3p-video-card .vd-testimonials { grid-template-columns: minmax(0, 300px); margin: 0; }
+body.v3-inner .v3p-video-card .vd-testimonials:has([data-orient="landscape"]) { grid-template-columns: minmax(0, 560px); }
+body.v3-inner .v3p-video-card .vd-testimonials:has([data-orient="landscape"]) .vd-start { aspect-ratio: 16 / 9; }
+body.v3-inner .v3p-video-card .vd-testimonial figcaption { padding: 12px 8px 8px; }
+@media (max-width: 620px) {
+  body.v3-inner .v3p-video-card .vd-testimonials { grid-template-columns: minmax(0, 300px); }
+  body.v3-inner .v3p-video-card .vd-testimonials:has([data-orient="landscape"]) { grid-template-columns: minmax(0, 1fr); }
+  body.v3-inner .v3p-video-card .vd-testimonial figcaption { font-size: 14px; }
+}
+/* Dr. Kwon page: the two doctors photo opens the Off the clock section */
+body.v3-inner .v3x-duo.v3x-duo-lead { margin: 0 auto clamp(36px, 5vw, 56px); }

@@ -17,12 +17,14 @@
 
   var SERVICES = [
     ['dental-implants', 'Dental Implants', 'ba-4-after.webp'],
+    ['single-tooth-implants', 'Single Implants', 'ba-4-composite.webp'],
     ['same-day-implants', 'Same-Day Implants', 'ba-8-after.webp'],
     ['full-arch-implants', 'All-on-X', 'xray-1-after.webp'],
     ['cosmetic-dentistry', 'Smile Makeovers', 'ba-5-after.webp'],
     ['porcelain-veneers', 'Veneers', 'ba-7-after.webp'],
     ['dental-crowns', 'Crowns', 'ba-3-after.webp'],
-    ['clear-aligners', 'Clear Aligners', null],
+    ['restorative-dentistry', 'Restorative', null],
+    ['invisalign', 'Clear Aligners', null],
     ['teeth-whitening', 'Whitening', 'ba-6-after.webp'],
     ['preventive-care', 'Cleanings', 'ba-1-after.webp'],
     ['root-canal-treatment', 'Root Canals', null],
@@ -31,6 +33,13 @@
     ['dentures', 'Dentures', null],
     ['emergency-dentistry', 'Emergency Care', null]
   ];
+  /* Spanish menu labels (the service pages themselves are English, so links stay the same) */
+  var SERVICES_ES = {
+    'dental-implants': 'Implantes dentales', 'single-tooth-implants': 'Implantes unitarios', 'same-day-implants': 'Implantes en el mismo día',
+    'full-arch-implants': 'All-on-X', 'cosmetic-dentistry': 'Rediseño de sonrisa', 'porcelain-veneers': 'Carillas', 'dental-crowns': 'Coronas',
+    'restorative-dentistry': 'Restauraciones', 'invisalign': 'Alineadores transparentes', 'teeth-whitening': 'Blanqueamiento', 'preventive-care': 'Limpiezas',
+    'root-canal-treatment': 'Conductos', 'tooth-extractions': 'Extracciones', 'periodontal-care': 'Encías', 'dentures': 'Dentaduras', 'emergency-dentistry': 'Emergencias'
+  };
   var TOOTH = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true">' +
     '<path d="M7 3.2C4.6 3.2 3 5.1 3 7.6c0 2 .8 3.5 1.5 5 .6 1.4.9 3 1.2 4.8.3 1.8.9 3.4 1.9 3.4 1.3 0 1.6-2 2-3.8.3-1.3.8-2.4 2.4-2.4s2.1 1.1 2.4 2.4c.4 1.8.7 3.8 2 3.8 1 0 1.6-1.6 1.9-3.4.3-1.8.6-3.4 1.2-4.8.7-1.5 1.5-3 1.5-5 0-2.5-1.6-4.4-4-4.4-2 0-3 1-5 1s-3-1-5-1z"/></svg>';
 
@@ -79,7 +88,7 @@
         ic.innerHTML = TOOTH;
       }
       a.appendChild(ic);
-      a.appendChild(el('span', 'v3-icon-label', s[1]));
+      a.appendChild(el('span', 'v3-icon-label', (ES && SERVICES_ES[s[0]]) || s[1]));
       li.appendChild(a);
       ul.appendChild(li);
     });
@@ -89,8 +98,8 @@
     var foot = el('div', 'v3-flyout-foot');
     var all = el('a', 'v3-link');
     all.href = LROOT + 'services.html';
-    all.appendChild(el('span', null, 'All services'));
-    var book = el('a', 'v3-flyout-cta', 'Schedule Now');
+    all.appendChild(el('span', null, ES ? 'Todos los servicios' : 'All services'));
+    var book = el('a', 'v3-flyout-cta', ES ? 'Reserve ahora' : 'Schedule Now');
     book.href = LROOT + 'locations.html';
     book.setAttribute('data-office', 'book');
     foot.appendChild(all); foot.appendChild(book);
@@ -115,9 +124,9 @@
     var flyout = el('div', 'v3-flyout');
     flyout.id = 'v3-flyout';
     flyout.setAttribute('role', 'region');
-    flyout.setAttribute('aria-label', 'Services');
+    flyout.setAttribute('aria-label', ES ? 'Servicios' : 'Services');
     var inner = el('div', 'v3-flyout-inner');
-    inner.appendChild(el('p', 'v3-flyout-head', 'Services'));
+    inner.appendChild(el('p', 'v3-flyout-head', ES ? 'Servicios (páginas en inglés)' : 'Services'));
     inner.appendChild(iconList());
     inner.appendChild(footRow());
     flyout.appendChild(inner);
@@ -353,9 +362,6 @@
     });
   }
 
-  /* ---------- 6. Liquid Glass: refraction lens, pointer highlight, header over the dark section ---------- */
-  var GLASS = '.lg, .lg-under, .v3-glass, .v3-frame, .v3-btn-schedule, .header-cta, .v3-flyout-cta, #di-chat .di-chat-toggle';
-
   /* ---------- 6. Liquid Glass: cursor light + rim direction on floating controls ---------- */
   var GLASS = '.v3-btn, .v3-ask, .header-cta, .header-call, .menu-toggle, .v3-flyout-cta, .office-row-actions .button, .cta-dock a, #di-chat .di-chat-toggle';
   function tagGlass() { $all(GLASS).forEach(function (n) { n.setAttribute('data-glass', '1'); }); }
@@ -546,7 +552,7 @@
     if (!mq || !card || !wrap || RM || window.innerWidth < 1000) return;
     collapseOn = true;
     var pill = el('a', 'v3-allpill');
-    pill.href = LROOT + (ES ? 'services.html' : 'v2-services.html'); pill.setAttribute('aria-hidden', 'true'); pill.tabIndex = -1;
+    pill.href = LROOT + 'services.html'; pill.setAttribute('aria-hidden', 'true'); pill.tabIndex = -1;
     var faces = el('span', 'v3-allpill-faces');
     ['ba-4-after.webp', 'ba-5-after.webp', 'ba-7-after.webp'].forEach(function (n) { var im = el('img'); im.src = img(n); im.alt = ''; faces.appendChild(im); });
     pill.appendChild(faces); pill.appendChild(el('span', null, ES ? 'Ver todos los servicios' : 'View all of our services'));
@@ -632,6 +638,7 @@
   /* Reddit pill beside the docked "Ask a question": links to Dr. Kwon's Reddit (subreddit / answers) once REDDIT_URL is set.
      Until then it shows "Coming soon" and does nothing. */
   function initRedditPill() {
+    if (!REDDIT_URL) return;
     var pill = el('a', 'v3-reddit-pill');
     pill.innerHTML = '<span class="v3-reddit-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#ff4500"/><ellipse cx="12" cy="14.2" rx="6.4" ry="4.3" fill="#fff"/><circle cx="6.6" cy="10.6" r="1.5" fill="#fff"/><circle cx="17.4" cy="10.6" r="1.5" fill="#fff"/><circle cx="9.7" cy="13.7" r="1.05" fill="#ff4500"/><circle cx="14.3" cy="13.7" r="1.05" fill="#ff4500"/><path d="M9.6 16.2c1.4.9 3.4.9 4.8 0" stroke="#ff4500" stroke-width=".9" fill="none" stroke-linecap="round"/><path d="M12 9.9l.9-3.6 2.7.6" stroke="#fff" stroke-width=".9" fill="none" stroke-linecap="round"/><circle cx="16.4" cy="7.1" r="1.1" fill="#fff"/></svg></span><span class="v3-reddit-txt"><span class="v3-reddit-main">Ask us on Reddit</span><span class="v3-reddit-sub" hidden>Coming soon</span></span>';
     if (REDDIT_URL) { pill.href = REDDIT_URL; pill.target = '_blank'; pill.rel = 'noopener'; }

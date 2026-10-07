@@ -1,0 +1,67 @@
+/* v3 extras (10-06): the teaching rail, the two-doctors photo, the team gallery.
+   Loaded by the home page (v3.html) and by the Our Team and Dr. Kwon pages. Everything is scoped to body.page-v3.
+   Cards and frames are solid white. The only glass is the small floating pause control on the rail. */
+
+/* ---------- teaching rail: one slow, endless row of photos, captions under each ---------- */
+body.page-v3 .v3x-rail { --h: clamp(230px, 27vw, 340px); --gap: 20px; position: relative; margin: clamp(40px, 5vw, 56px) 0 0; overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+body.page-v3 .v3x-rail-track { display: flex; width: max-content; animation: v3x-rail 90s linear infinite; }
+body.page-v3 .v3x-rail:hover .v3x-rail-track,
+body.page-v3 .v3x-rail:focus-within .v3x-rail-track,
+body.page-v3 .v3x-rail.is-paused .v3x-rail-track { animation-play-state: paused; }
+body.page-v3 .v3x-rail-list { display: flex; gap: var(--gap); margin: 0; padding: 8px var(--gap) 28px 0; list-style: none; }
+body.page-v3 .v3x-shot { flex: none; margin: 0; }
+body.page-v3 .v3x-shot figure { display: flex; flex-direction: column; width: min-content; margin: 0; padding: 8px; border-radius: 26px; background: #fff; box-shadow: var(--v3-card-shadow); }
+body.page-v3 .v3x-shot img { display: block; width: auto; max-width: none; height: var(--h); border-radius: 19px; object-fit: cover; background: #e9eaed; }
+body.page-v3 .v3x-shot figcaption { padding: 12px 10px 6px; font: 500 14px/1.35 var(--v3-font); letter-spacing: -.01em; color: var(--v3-ink-2); text-align: left; }
+@keyframes v3x-rail { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+/* pause control: a small floating glass pill */
+body.page-v3 .v3x-rail-ctl { display: flex; justify-content: center; margin-top: 4px; }
+body.page-v3 .v3x-rail-pause { display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 16px; border: 1px solid rgba(255,255,255,.9); border-radius: var(--v3-pill); color: var(--v3-ink); font: 500 13px/1 var(--v3-font); cursor: pointer;
+  background: rgba(255,255,255,.6); -webkit-backdrop-filter: blur(12px) saturate(180%); backdrop-filter: blur(12px) saturate(180%); box-shadow: inset 0 1px 1px #fff, 0 0 0 .5px rgba(29,29,31,.14), 0 6px 16px -8px rgba(40,44,60,.28); }
+body.page-v3 .v3x-rail-pause:hover { background: #fff; }
+body.page-v3 .v3x-rail-pause svg { width: 10px; height: 10px; fill: currentColor; }
+body.page-v3 .v3x-rail-pause .v3x-play { display: none; }
+body.page-v3 .v3x-rail-pause[aria-pressed="true"] .v3x-play { display: block; }
+body.page-v3 .v3x-rail-pause[aria-pressed="true"] .v3x-pause { display: none; }
+body.page-v3 .v3x-rail + .v3-wrap .v3-links, body.page-v3 .v3x-rail-ctl + .v3-wrap .v3-links { margin-top: 20px; }
+body.v3-inner .v3x-rail-ctl + .more-link { margin-top: 20px; }
+@media (max-width: 734px) {
+  body.page-v3 .v3x-rail { --h: 220px; --gap: 14px; -webkit-mask-image: none; mask-image: none; }
+  body.page-v3 .v3x-shot figure { padding: 6px; border-radius: 22px; }
+  body.page-v3 .v3x-shot img { border-radius: 16px; }
+  body.page-v3 .v3x-shot figcaption { font-size: 13px; padding: 10px 8px 4px; }
+}
+/* reduced motion: no drift, the row scrolls by hand and snaps; the duplicate set and the pause control go away */
+@media (prefers-reduced-motion: reduce) {
+  body.page-v3 .v3x-rail { overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--v3-gutter); -webkit-mask-image: none; mask-image: none; }
+  body.page-v3 .v3x-rail-track { animation: none; padding-inline-start: var(--v3-gutter); }
+  body.page-v3 .v3x-rail-list[aria-hidden="true"], body.page-v3 .v3x-rail-ctl { display: none; }
+  body.page-v3 .v3x-shot { scroll-snap-align: start; }
+}
+
+/* ---------- the two doctors together: one wide solid frame ---------- */
+body.page-v3 .v3x-duo { max-width: 860px; margin: clamp(32px, 4vw, 48px) auto 0; padding: 10px; border-radius: var(--v3-radius); background: #fff; box-shadow: var(--v3-card-shadow); box-sizing: border-box; }
+body.page-v3 .v3x-duo img { display: block; width: 100%; height: auto; aspect-ratio: 2 / 1; object-fit: cover; object-position: 50% 26%; border-radius: calc(var(--v3-radius) - 8px); background: #e9eaed; }
+body.page-v3 .v3x-duo figcaption { padding: 14px 8px 6px; font: 500 15px/1.4 var(--v3-font); color: var(--v3-ink-2); text-align: center; }
+@media (max-width: 734px) { body.page-v3 .v3x-duo { padding: 8px; } body.page-v3 .v3x-duo img { aspect-ratio: 3 / 2; } }
+
+/* ---------- Our Team: the team photo, then one large portrait card per person ---------- */
+body.page-v3 .v3x-team-photo { max-width: var(--v3-max); margin: clamp(36px, 4vw, 52px) auto 0; padding: 10px; border-radius: var(--v3-radius); background: #fff; box-shadow: var(--v3-card-shadow); box-sizing: border-box; }
+body.page-v3 .v3x-team-photo img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: 50% 58%; border-radius: calc(var(--v3-radius) - 8px); background: #e9eaed; }
+body.page-v3 .v3x-team-photo figcaption { padding: 14px 8px 6px; font: 500 15px/1.4 var(--v3-font); color: var(--v3-ink-2); text-align: center; }
+body.page-v3 .v3x-crew { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; max-width: var(--v3-max); margin: 24px auto 0; padding: 0; list-style: none; }
+body.page-v3 .v3x-crew > li { display: flex; flex-direction: column; margin: 0; padding: 10px 10px 26px; border-radius: var(--v3-radius); background: #fff; box-shadow: var(--v3-card-shadow); text-align: left; }
+body.page-v3 .v3x-crew-photo { overflow: hidden; aspect-ratio: 4 / 5; border-radius: calc(var(--v3-radius) - 8px); background: #e9eaed; }
+body.page-v3 .v3x-crew-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
+body.page-v3 .v3x-crew-soon { display: grid; place-items: center; color: var(--v3-ink-2); font: 500 17px/1.3 var(--v3-font); background: linear-gradient(160deg, #f5f5f7, #e3e4e8 60%, #d9dade); }
+body.page-v3 .v3x-crew h3 { margin: 20px 14px 0; font: 600 21px/1.2 var(--v3-font); color: var(--v3-ink); }
+body.page-v3 .v3x-crew .role { margin: 4px 14px 12px; font-size: 15px; letter-spacing: 0; text-transform: none; color: var(--v3-ink-2); }
+body.page-v3 .v3x-crew p:not(.role) { margin: 0 14px; font-size: 16px; line-height: 1.5; color: var(--v3-ink-2); }
+@media (max-width: 1068px) { body.page-v3 .v3x-crew { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 734px) {
+  body.page-v3 .v3x-team-photo { padding: 8px; } body.page-v3 .v3x-team-photo img { aspect-ratio: 4 / 3; }
+  body.page-v3 .v3x-crew { grid-template-columns: minmax(0, 1fr); gap: 16px; max-width: 420px; }
+  body.page-v3 .v3x-crew > li { padding: 8px 8px 22px; }
+  body.page-v3 .v3x-crew-soon { aspect-ratio: 3 / 1; }
+}

@@ -758,3 +758,78 @@ body:has(.primary-nav.is-open) .v3-reddit-pill { display: none; }
 /* before/after labels and the phone doctor captions at the 13px floor */
 .page-v3 .v3h-ba .di-ba-label { font-size: 13px; line-height: 1.3; }
 @media (max-width: 734px) { .page-v3 .v3-person-role, .page-v3 .v3-person-soon { font-size: 13px; } }
+
+/* =====================================================================
+   LAUNCH FIXES (10-07). New rules only; the home hero, its photo layer, the logo flight, the typing line,
+   the carousel collapse and the offer cards are untouched.
+   ===================================================================== */
+/* phone and tablet menu: the flying hero logo and the locations line step aside while the menu is open, so they
+   never paint over (or catch taps meant for) the menu links; the header shows the real logo instead */
+html:has(#primary-nav.is-open) .v3-fly, html:has(#primary-nav.is-open) .v3-navloc { opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+.page-v3 #primary-nav.is-open { z-index: 5; }
+html.v3-fly-on body.page-v3:has(#primary-nav.is-open) .site-header .brand { opacity: 1; }
+/* the open menu locks the page behind it and dims it; a tap on the dimmed page closes the menu (site.js) */
+html.v3-menu-open { overflow: hidden; }
+@media (max-width: 1080px) {
+  body.page-v3::after { content: ""; position: fixed; inset: 0; z-index: 58; background: rgba(29,29,31,.28); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 300ms var(--v3-ease), visibility 0s linear 300ms; }
+  html.v3-menu-open body.page-v3::after { opacity: 1; visibility: visible; pointer-events: auto; transition: opacity 300ms var(--v3-ease), visibility 0s; }
+}
+
+/* floating controls: "Ask a question" hides under its own open panel; on phones and tablets (where the Call / Schedule dock shows)
+   both floating buttons are 44px icons at the same height (each keeps its accessible name) */
+.page-v3 #di-chat:has(#di-chat-panel:not([hidden])) .di-chat-toggle { display: none; }
+.page-v3 #di-a11y > button { color: #1d1d1f; background: rgba(255,255,255,.8); border: 1px solid rgba(255,255,255,.95); box-shadow: inset 0 1px 1px #fff, 0 0 0 .5px rgba(29,29,31,.14), 0 8px 24px -10px rgba(40,44,60,.3); }
+@media (max-width: 860px) {
+  .page-v3 #di-a11y > button { width: 44px; height: 44px; min-height: 44px; padding: 0 !important; font-size: 0 !important; display: grid; place-items: center; }
+  .page-v3 #di-a11y > button::before { content: ""; width: 22px; height: 22px; background: var(--v3-icon-a11y) center / contain no-repeat; }
+  .page-v3 #di-chat .di-chat-toggle { width: 44px; height: 44px; min-height: 44px; padding: 0 !important; gap: 0; justify-content: center; font-size: 0 !important; letter-spacing: 0; }
+  .page-v3 #di-chat .di-chat-toggle::before { width: 44px; height: 44px; background-size: 18px, auto; box-shadow: none; }
+  .page-v3 #di-chat .di-chat-toggle::after { animation: none; }
+}
+/* desktop below 1440: the pill keeps its label but sits lower and tighter, clear of the reading column */
+@media (min-width: 861px) and (max-width: 1439px) {
+  .page-v3 #di-chat .di-chat-toggle { min-height: 48px; padding: 0 18px 0 8px !important; font-size: 15px !important; }
+  .page-v3 #di-chat .di-chat-toggle::before { width: 32px; height: 32px; }
+}
+@media (min-width: 861px) { .page-v3 #di-chat { left: 16px; bottom: 16px; } .page-v3 #di-a11y { right: 16px; bottom: 16px; } }
+
+/* tap targets: carousel and banner dots keep their 8px look with a 24px hit area; office phones and links are 44px tall */
+.page-v3 :is(.v3-banner-dot, .mo-rotator-nav button.mo-dot, .mo-slideshow-dots button) { position: relative; }
+.page-v3 :is(.v3-banner-dot, .mo-rotator-nav button.mo-dot, .mo-slideshow-dots button)::before { content: ""; position: absolute; inset: -8px; }
+.page-v3 .office-row :is(.office-phone, .text-link), .page-v3 .v3p-map figcaption .text-link { display: inline-flex; align-items: center; min-height: 44px; }
+
+/* active chips and the payment calculator: logo blue, like the nav and the accents */
+body.v3-inner :is(.vd-filter[aria-pressed="true"], .v3p-filter button[aria-pressed="true"], .di-calc-opt:has(input:checked)) { background: #2552b0; border-color: #2552b0; color: #fff; box-shadow: 0 6px 16px -8px rgba(37,82,176,.55); }
+
+/* office hours: one fixed day column so all three offices line up; a little air before the Stamford note */
+@media (min-width: 735px) { .page-v3 .office-row .hours div { grid-template-columns: 8.5em minmax(0, 1fr); } }
+.page-v3 .office-row .office-note { margin-top: 10px; }
+
+/* home: Dr. Kwon and Dr. Park, two across */
+.page-v3 .v3-people.v3-people-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 640px; margin-left: auto; margin-right: auto; }
+/* team page: Dr. Oh as a text card until his photo arrives (no placeholder art) */
+body.page-v3 .v3x-crew > li.v3x-crew-text { justify-content: center; padding: 34px 18px; }
+body.page-v3 .v3x-crew > li.v3x-crew-text h3 { margin-top: 0; }
+
+/* a hero with a photo: the jump links line up with the text */
+@media (min-width: 861px) { body.v3-inner .page-hero:has(> figure) .service-index { justify-content: flex-start; } }
+/* a framed photo under a sticky section heading (insurance) */
+body.v3-inner .v3p-side-photo { max-width: 360px; margin: 28px 0 0; padding: 8px; border-radius: 26px; background: #fff; box-shadow: var(--v3-card-shadow); }
+body.v3-inner .v3p-side-photo img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 19px; }
+@media (max-width: 860px) { body.v3-inner .v3p-side-photo { margin: 24px auto 0; } }
+
+/* services: one real photo above each group's cards */
+body.v3-inner .v3s-group-photo { max-width: 560px; margin: 0 auto clamp(32px, 4vw, 48px); padding: 8px; border-radius: 28px; background: #fff; box-shadow: var(--v3-card-shadow); box-sizing: border-box; }
+body.v3-inner .v3s-group-photo img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 21px; }
+body.v3-inner .v3s-group-photo.is-xray { max-width: 520px; }
+body.v3-inner .v3s-group-photo.is-xray img { aspect-ratio: 550 / 283; background: #000; }
+/* the Same day card: its content sits centered in the tall card instead of leaving an empty lower half */
+body.v3-inner .v3s-card-feature { display: flex; flex-direction: column; justify-content: center; }
+
+/* Spanish pages: a short row of patient videos */
+body.v3-inner .v3p-videos { max-width: 760px; margin: clamp(40px, 5vw, 64px) auto; text-align: center; }
+body.v3-inner .v3p-videos h3 { margin: 0 0 20px; font: 600 clamp(22px, 2.4vw, 28px)/1.2 var(--v3-font); color: var(--v3-ink); }
+body.v3-inner .v3p-videos .vd-testimonials:has(> figure:only-child) { grid-template-columns: minmax(0, 300px); justify-content: center; }
+body.v3-tpl-services .v3s-card.v3s-card-feature > p:not(.v3s-card-links) { flex: 0 0 auto; }
+.page-v3 .office-row .office-row-hours .office-note { margin-top: 10px; }
+@media (min-width: 621px) { body.v3-inner .v3p-videos .vd-testimonials { grid-template-columns: repeat(3, minmax(0, 1fr)); } }

@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="../assets/css/motion.css">
   <link rel="stylesheet" href="../assets/css/v3.css">
   <link rel="stylesheet" href="../assets/css/v3-pages.css">
+  <link rel="stylesheet" href="../assets/css/v3-service.css">
   <script src="../assets/js/site.js" defer></script>
   <script src="../assets/js/features.js" defer></script>
   <script src="../assets/js/motion.js" defer></script>
@@ -155,7 +156,7 @@
 }
   </script>
 </head>
-<body class="page-services page-v3 v3-inner">
+<body class="page-services page-v3 v3-inner v3-tpl-service">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="util-bar" aria-label="Call Now">
     <div class="util-inner">
@@ -185,93 +186,117 @@
     </div>
   </header>
   <main id="main">
-<section class="page-hero solo">
-      <p class="eyebrow">Root canal treatment</p>
-      <h1>Relieve the Pain. Keep Your <span class="accent">Tooth</span>.</h1>
-      <p class="lede">A toothache that lasts more than a day or two and does not improve may mean an infected tooth. A root canal removes the infection so you can keep your natural tooth.</p>
-      <div class="button-row"><a class="button" href="../locations.html" data-office="book">Book a Consultation</a><a class="button button-ghost" href="../locations.html" data-office="call">Call an office</a></div>
+<style>
+      body.v3-tpl-service .svc-cards.is-four { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 880px; }
+      @media (max-width: 734px) { body.v3-tpl-service .svc-cards.is-four { grid-template-columns: minmax(0, 1fr); } }
+    </style>
+    <section class="page-hero solo svc-hero">
+      <div>
+        <p class="eyebrow">Root canal treatment</p>
+        <h1>Relieve the Pain. Keep Your Tooth.</h1>
+        <p class="lede">A root canal removes the infection so you can keep your natural tooth.</p>
+        <div class="button-row"><a class="button" href="../locations.html" data-office="book">Schedule Now</a><a class="button button-ghost" href="../locations.html" data-office="call">Call Now</a></div>
+      </div>
+      <figure class="svc-hero-media"><img src="../assets/img/dr-kwon-portrait.webp" alt="Dr. GiTae Kwon" width="1536" height="1024"></figure>
     </section>
-    <section class="section">
-      <div class="two-col">
-        <div class="sticky">
-          <p class="eyebrow">Do you need one?</p>
-          <h2>When a root canal is needed</h2>
-        </div>
-        <div class="prose">
-          <p>Inside every tooth is soft pulp filled with blood vessels and nerves. When a deep cavity wears through the enamel and dentin, or an injury cracks the tooth, bacteria can reach the pulp. It becomes infected and begins to die, which is why a toothache is the most common sign.</p>
-          <p>Without treatment, the pain usually gets worse and the tooth may be lost. A root canal cleans out the infection, seals the inside of the tooth and protects it, so you keep your own tooth.</p>
-        </div>
+
+    <section class="section svc-what" id="what-it-is" aria-labelledby="svc-what-h">
+      <div class="section-heading">
+        <p class="eyebrow">Do you need one</p>
+        <h2 id="svc-what-h">When a root canal is needed.</h2>
+      </div>
+      <div class="prose svc-lead">
+        <p>A toothache that lasts more than a day or two and does not improve may mean an infected tooth. Inside every tooth is soft pulp filled with blood vessels and nerves. When a deep cavity wears through the enamel and dentin, or an injury cracks the tooth, bacteria can reach the pulp. It becomes infected and begins to die, which is why a toothache is the most common sign.</p>
+        <p>Without treatment, the pain usually gets worse and the tooth may be lost. A root canal cleans out the infection, seals the inside of the tooth and protects it, so you keep your own tooth.</p>
       </div>
     </section>
-    <section class="section section-soft">
+
+    <section class="section section-soft svc-options" id="signs" aria-labelledby="svc-options-h">
       <div class="section-heading">
         <p class="eyebrow">Signs</p>
-        <h2>What an infected tooth feels like</h2>
+        <h2 id="svc-options-h">What an infected tooth feels like.</h2>
         <p>Not everyone has every sign. Call us if you notice any of these.</p>
       </div>
-      <ul class="feature-list">
+      <ul class="svc-cards is-four">
         <li data-reveal><h3>Lasting pain</h3><p>A throbbing or radiating toothache that does not go away after a day or two.</p></li>
         <li data-reveal><h3>Sensitivity</h3><p>Pain with hot or cold foods, or when you bite down and chew.</p></li>
         <li data-reveal><h3>Gum or color changes</h3><p>Inflamed or irritated gums near the tooth, or a tooth that has darkened.</p></li>
         <li data-reveal><h3>Swelling or fever</h3><p>Swelling in the face or cheek, or a fever. These are less common and mean you should call right away.</p></li>
       </ul>
     </section>
-    <section class="section">
-      <div class="two-col">
-        <div class="sticky">
-          <p class="eyebrow">The treatment</p>
-          <h2>What happens during a root canal</h2>
-        </div>
-        <ol class="steps">
-          <li><div><h3>Comfort first</h3><p>Your mouth is cleaned and numbed so you are comfortable throughout.</p></div></li>
-          <li><div><h3>A small opening</h3><p>The dentist makes a small opening through the top of the tooth to reach the pulp.</p></div></li>
-          <li><div><h3>Cleaning inside</h3><p>The infected and damaged material is removed. The inside of the tooth is cleaned and disinfected.</p></div></li>
-          <li><div><h3>Filling and sealing</h3><p>The cleaned space is filled with a safe, inert material that strengthens the roots.</p></div></li>
-          <li><div><h3>Restoring the tooth</h3><p>The tooth is rebuilt with a filling or a <a href="../services/dental-crowns.html">crown</a>, depending on where it sits in your mouth.</p></div></li>
-        </ol>
+
+    <section class="section svc-process" id="process" aria-labelledby="svc-process-h">
+      <div class="section-heading">
+        <p class="eyebrow">The treatment</p>
+        <h2 id="svc-process-h">What happens during a root canal.</h2>
       </div>
+      <ol class="svc-steps">
+        <li data-reveal><h3>Comfort first</h3><p>Your mouth is cleaned and numbed so you are comfortable throughout.</p></li>
+        <li data-reveal><h3>A small opening</h3><p>The dentist makes a small opening through the top of the tooth to reach the pulp.</p></li>
+        <li data-reveal><h3>Cleaning inside</h3><p>The infected and damaged material is removed. The inside of the tooth is cleaned and disinfected.</p></li>
+        <li data-reveal><h3>Filling and sealing</h3><p>The cleaned space is filled with a safe, inert material that strengthens the roots.</p></li>
+        <li data-reveal><h3>Restoring the tooth</h3><p>The tooth is rebuilt with a filling or a <a href="../services/dental-crowns.html">crown</a>, depending on where it sits in your mouth.</p></li>
+      </ol>
     </section>
-    <section class="section section-soft">
-      <div class="two-col">
-        <div class="sticky">
-          <p class="eyebrow">Afterward</p>
-          <h2>Aftercare and recovery</h2>
-        </div>
-        <div class="prose">
+
+    <section class="section section-soft svc-recovery" id="recovery" aria-labelledby="svc-recovery-h">
+      <div class="section-heading">
+        <p class="eyebrow">Afterward</p>
+        <h2 id="svc-recovery-h">Aftercare and recovery.</h2>
+      </div>
+      <ul class="svc-facts">
+        <li data-reveal><strong>Same day</strong><span>Most people go back to their normal day.</span></li>
+        <li data-reveal><strong>A few days</strong><span>The tooth may feel tender or sensitive.</span></li>
+        <li data-reveal><strong>About a week</strong><span>Most people feel normal again.</span></li>
+      </ul>
+      <div class="svc-duo">
+        <article class="svc-card" data-reveal>
+          <h3>Easier than its reputation</h3>
           <p>Root canals have a reputation they do not deserve. The treatment is done with local anesthesia, and many patients say it feels much like getting a filling. Most people go back to their normal day, and some return to work right away.</p>
-          <p>The tooth may feel tender or sensitive for a few days. Most people feel normal within about a week. Severe pain that continues after several days is not normal, so call the office so we can look at it. For more detail, read our <a href="../articles/root-canal-aftercare-what-to-expect.html">root canal aftercare guide</a>.</p>
-          <p>Want to know more about the visit itself? See <a href="../articles/what-is-the-process-of-root-canal-treatment.html">the process of root canal treatment</a>.</p>
+          <a class="text-link" href="../articles/what-is-the-process-of-root-canal-treatment.html">The process of root canal treatment</a>
+        </article>
+        <article class="svc-card" data-reveal>
+          <h3>When to call us</h3>
+          <p>Severe pain that continues after several days is not normal, so call the office so we can look at it.</p>
           <p>If a tooth cannot be saved, we explain other options, including <a href="../services/tooth-extractions.html">extraction</a> and replacement.</p>
-        </div>
+          <a class="text-link" href="../articles/root-canal-aftercare-what-to-expect.html">Root canal aftercare guide</a>
+        </article>
       </div>
     </section>
-    <section class="section section-soft">
-      <div class="two-col">
-        <div class="sticky">
-          <p class="eyebrow">Common questions</p>
-          <h2>Good things to ask</h2>
-        </div>
-        <div class="faq-list">
-          <details><summary>Does a root canal hurt?</summary><div><p>The tooth is numbed, so the procedure itself should feel much like having a filling. You may feel tender for a few days afterward.</p></div></details>
-          <details><summary>How long does it take?</summary><div><p>Treatment is often completed in a single appointment, and complex teeth may take more than one. We tell you what to expect at your visit.</p></div></details>
-          <details><summary>Will I need a crown?</summary><div><p>Often, yes. A crown protects a tooth that has had a root canal, especially a back tooth. The dentist will tell you what your tooth needs.</p></div></details>
-          <details><summary>What if I wait?</summary><div><p>An infected tooth does not heal on its own. Waiting usually brings more pain and a greater chance of losing the tooth.</p></div></details>
-          <details><summary>Is a root canal an emergency?</summary><div><p>Severe pain, swelling or fever should be seen promptly. Call the office and we will arrange a visit. See <a href="../services/emergency-dentistry.html">emergency dentistry</a>.</p></div></details>
-        </div>
-      </div>
-    </section>
-    <section class="section section-tight">
+
+    <section class="section svc-faq" id="faq" aria-labelledby="svc-faq-h">
       <div class="section-heading">
-        <p class="eyebrow">Related services</p>
-        <h2>Keep exploring</h2>
+        <p class="eyebrow">Common questions</p>
+        <h2 id="svc-faq-h">Root canal questions.</h2>
       </div>
-      <ul class="service-index"><li><a href="../services/dental-crowns.html">Dental crowns</a></li><li><a href="../services/emergency-dentistry.html">Emergency dentistry</a></li><li><a href="../services/restorative-dentistry.html">Restorative dentistry</a></li><li><a href="../services/tooth-extractions.html">Tooth extractions</a></li></ul>
+      <div class="faq-list">
+        <details><summary>Does a root canal hurt?</summary><div><p>The tooth is numbed, so the procedure itself should feel much like having a filling. You may feel tender for a few days afterward.</p></div></details>
+        <details><summary>How long does it take?</summary><div><p>Treatment is often completed in a single appointment, and complex teeth may take more than one. We tell you what to expect at your visit.</p></div></details>
+        <details><summary>Will I need a crown?</summary><div><p>Often, yes. A crown protects a tooth that has had a root canal, especially a back tooth. The dentist will tell you what your tooth needs.</p></div></details>
+        <details><summary>What if I wait?</summary><div><p>An infected tooth does not heal on its own. Waiting usually brings more pain and a greater chance of losing the tooth.</p></div></details>
+        <details><summary>Is a root canal an emergency?</summary><div><p>Severe pain, swelling or fever should be seen promptly. Call the office and we will arrange a visit. See <a href="../services/emergency-dentistry.html">emergency dentistry</a>.</p></div></details>
+      </div>
+      <div class="svc-related">
+        <p class="svc-related-label">Keep exploring</p>
+        <ul class="service-index">
+          <li><a href="../services/dental-crowns.html">Dental crowns</a></li>
+          <li><a href="../services/emergency-dentistry.html">Emergency dentistry</a></li>
+          <li><a href="../services/restorative-dentistry.html">Restorative dentistry</a></li>
+          <li><a href="../services/tooth-extractions.html">Tooth extractions</a></li>
+          <li><a href="../services.html">All services</a></li>
+        </ul>
+      </div>
     </section>
-    <section class="section">
-      <div class="section-heading">
-        <p class="eyebrow">Our offices</p>
-        <h2>Three offices, close to home</h2>
-        <p>Call the office nearest you to book or ask a question.</p>
+
+    <section class="section section-soft svc-book" id="book" aria-labelledby="svc-book-h">
+      <div class="cta-band">
+        <p class="eyebrow">Three offices</p>
+        <h2 id="svc-book-h">Do not wait with tooth pain.</h2>
+        <p>Call the office nearest you. We often see patients in pain the same day.</p>
+        <div class="button-row">
+          <a class="button" href="../locations.html" data-office="book">Schedule Now</a>
+          <a class="button button-ghost" href="../locations.html" data-office="call">Call Now</a>
+        </div>
       </div>
       <div class="office-list"><article class="office-row" id="mount-kisco" data-reveal>
   <div class="office-row-name"><p class="eyebrow">New York</p><h3><a href="../locations/mount-kisco.html">Mount Kisco</a></h3></div>
@@ -289,15 +314,6 @@
   <div class="office-row-hours"><dl class="hours"><div><dt>Monday to Wednesday</dt><dd>9:00 am to 5:00 pm</dd></div><div><dt>Thursday</dt><dd>9:00 am to 5:00 pm, every other week</dd></div><div><dt>Friday</dt><dd>9:00 am to 5:00 pm</dd></div><div><dt>Saturday</dt><dd>9:00 am to 3:00 pm</dd></div><div><dt>Sunday</dt><dd>Closed</dd></div></dl><p class="office-note">Open Saturdays. Complimentary parking on site.</p></div>
   <div class="office-row-actions"><a class="button" href="https://www.flexbook.me/bookcsds/googlereserve/1" target="_blank" rel="noopener">Schedule Now</a><a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Dentistry%20%26%20Implants%2C%20800%20E%20Main%20St%2C%20Stamford%2C%20CT%2006902" target="_blank" rel="noopener">Get directions <span aria-hidden="true">&rarr;</span></a></div>
 </article></div>
-    </section>
-    <section class="section section-soft">
-      <div class="cta-band">
-        <div>
-          <h2>Do not wait with tooth pain</h2>
-          <p class="lede">Call the office nearest you. We often see patients in pain the same day.</p>
-        </div>
-        <div class="button-row"><a class="button" href="../locations.html" data-office="book">Book a Consultation</a><a class="button button-ghost" href="../locations.html" data-office="call">Call an office</a></div>
-      </div>
     </section>
   </main>
   <footer class="site-footer">
