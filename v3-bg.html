@@ -446,6 +446,7 @@
       /* the banner keeps its caption and dots, but its own photos give way to the shared layer */
       body.page-v3 .v3-banner-full .v3-banner-stage { background: transparent; }
       body.page-v3 .v3-banner-full .v3-banner-stage img { visibility: hidden; }
+      @media (max-width: 734px) { body.page-v3 .v3-hero-bgs { height: calc(var(--v3-band-h, 290px) + 240px); } body.page-v3 .v3-hero-bgs img { object-position: 50% 38% !important; } }
       @media (prefers-reduced-motion: reduce) { body.page-v3 .v3-hero-bgs img { transition: none; transform: none; } }
     </style>
     <script>
