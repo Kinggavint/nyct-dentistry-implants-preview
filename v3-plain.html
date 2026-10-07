@@ -8,7 +8,7 @@
   <title>Dentistry &amp; Implants | Implant Dentist in Mount Kisco, Kent and Stamford</title>
   <meta name="description" content="Dr. GiTae Kwon, DDS MSc, offers dental implants, same-day implants, All-on-X, smile makeovers and family dentistry in Mount Kisco, NY, Kent, CT and Stamford, CT.">
   <meta name="theme-color" content="#ffffff">
-  <link rel="canonical" href="https://kinggavint.github.io/nyct-dentistry-implants-preview/v3.html">
+  <link rel="canonical" href="https://kinggavint.github.io/nyct-dentistry-implants-preview/v3-plain.html">
   <meta property="og:title" content="Dentistry &amp; Implants | Implant Dentist in Mount Kisco, Kent and Stamford">
   <meta property="og:description" content="Dr. GiTae Kwon, DDS MSc, offers dental implants, same-day implants, All-on-X, smile makeovers and family dentistry in Mount Kisco, NY, Kent, CT and Stamford, CT.">
   <meta property="og:type" content="website">
@@ -218,7 +218,7 @@
         <a href="locations.html">Locations</a>
         <a href="articles.html">Articles</a>
       </nav>
-      <nav class="di-lang" aria-label="Language"><a href="v3.html" lang="en" aria-current="true">EN</a><a href="es/index.html" lang="es">ES</a></nav>
+      <nav class="di-lang" aria-label="Language"><a href="v3-plain.html" lang="en" aria-current="true">EN</a><a href="es/index.html" lang="es">ES</a></nav>
       <a class="button button-small button-ghost header-call" href="locations.html" data-office="call">Call Now</a>
       <a class="button button-small header-cta" href="locations.html" data-office="book">Schedule Now</a>
     </div>
@@ -227,7 +227,6 @@
 <script>document.documentElement.classList.add("v3-js")</script>
 
     <section class="v3-hero" aria-label="Dentistry and Implants">
-      <div class="v3-hero-bgs" aria-hidden="true"><div class="v3-bgs-veil"></div><img src="assets/img/mk-office-reception.webp" alt="" style="object-position: 50% 40%" class="is-on" width="1455" height="1081"><img src="assets/img/mk-office-2.webp" alt="" style="object-position: 50% 52%" width="1500" height="2000"><img src="assets/img/mk-office-3.webp" alt="" style="object-position: 50% 36%" width="1501" height="2000"><img src="assets/img/mk-office-4.webp" alt="" style="object-position: 50% 40%" width="1501" height="2000"></div>
       <div class="v3-wrap">
         <a class="v3-hero-logo" href="v3.html" aria-label="Dentistry &amp; Implants home"><img src="assets/img/logo/kwon-icon-blue.png" alt="" width="256" height="253"><span>Dentistry &amp; Implants</span></a>
         <h1 class="v3-headline v3-super v3h-title v3-metal-text" data-v3-reveal="blur">Dentistry Built on <span class="v3-em v3-em-trust">Trust</span>. Implants Designed to <span class="v3-em v3-em-last">Last</span>.</h1>
@@ -434,56 +433,6 @@
     <link rel="stylesheet" href="assets/css/v3.css">
     <script src="assets/js/video.js" defer></script>
     <script src="assets/js/v3.js" defer></script>
-
-
-
-    <style>
-      /* The office photo rides with you: it is pinned to the screen behind the hero (faded), clears as you scroll,
-         and comes to rest exactly as the full-width banner, then scrolls away with the page. One photo, synced with the banner dots. */
-      body.page-v3 .v3-hero { overflow: clip; }
-      body.page-v3 .v3-hero-bgs { position: sticky; top: 0; z-index: -2; width: 100%; height: 100svh; margin-top: -72px; margin-bottom: calc(72px - 100svh); align-self: stretch; pointer-events: none; overflow: hidden; }
-      body.page-v3 .v3-hero-bgs img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.06); transition: opacity 1.2s cubic-bezier(.22,.61,.36,1), transform 7s linear; }
-      body.page-v3 .v3-hero-bgs img.is-on { opacity: 1; transform: scale(1); }
-      /* uniform pearl veil: heavy at the top of the page, gone when the photo lands as the banner */
-      body.page-v3 .v3-bgs-veil { position: absolute; inset: 0; z-index: 2; background: rgba(240,241,244,.8); opacity: var(--veil, 1); }
-      /* a soft top edge that always stays, so the photo meets the pearl hero without a line */
-      body.page-v3 .v3-hero-bgs::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 38%; z-index: 3; background: linear-gradient(180deg, rgba(240,241,244,.92), rgba(240,241,244,0)); opacity: calc(.35 + var(--veil, 1) * .65); }
-      html.v3-sda body.page-v3 .v3-bgs-veil { animation: v3-veil linear both; animation-timeline: scroll(root); animation-range: 0px var(--v3-land, 600px); }
-      html.v3-sda body.page-v3 .v3-hero-bgs::after { animation: v3-edge linear both; animation-timeline: scroll(root); animation-range: 0px var(--v3-land, 600px); }
-      @keyframes v3-veil { from { opacity: 1; } to { opacity: 0; } }
-      @keyframes v3-edge { from { opacity: 1; } to { opacity: .35; } }
-      body.page-v3 .v3-banner-full .v3-banner-stage { background: transparent; }
-      body.page-v3 .v3-banner-full .v3-banner-stage img { visibility: hidden; }
-      @media (max-width: 734px) { body.page-v3 .v3-hero-bgs { margin-top: -48px; margin-bottom: calc(48px - 100svh); } }
-      @media (prefers-reduced-motion: reduce) { body.page-v3 .v3-hero-bgs img { transition: none; transform: none; } }
-    </style>
-    <script>
-      (function () {
-        var bg = document.querySelector('.v3-hero-bgs'), stage = document.querySelector('.v3-banner-full .v3-banner-stage'), hero = document.querySelector('.v3-hero');
-        if (!bg || !stage || !hero) return;
-        var layers = bg.querySelectorAll('img'), slides = stage.querySelectorAll('img');
-        function sync() { for (var k = 0; k < slides.length; k++) { if (layers[k]) layers[k].classList.toggle('is-on', slides[k].classList.contains('is-active')); } }
-        new MutationObserver(sync).observe(stage, { subtree: true, attributes: true, attributeFilter: ['class'] });
-        sync();
-        /* landing point: the scroll position where the pinned photo releases (hero bottom meets the screen bottom) */
-        function land() {
-          var top = hero.getBoundingClientRect().top + (window.scrollY || 0);
-          var v = Math.max(1, top + hero.offsetHeight - window.innerHeight);
-          hero.style.setProperty('--v3-land', v + 'px');
-          return v;
-        }
-        var L = land();
-        window.addEventListener('resize', function () { L = land(); });
-        window.addEventListener('load', function () { L = land(); });
-        if (!document.documentElement.classList.contains('v3-sda')) {
-          var raf = 0;
-          window.addEventListener('scroll', function () {
-            if (raf) return;
-            raf = requestAnimationFrame(function () { raf = 0; hero.style.setProperty('--veil', Math.max(0, 1 - (window.scrollY || 0) / L).toFixed(3)); });
-          }, { passive: true });
-        }
-      })();
-    </script>
   </main>
   <footer class="site-footer">
     <div class="footer-main">
