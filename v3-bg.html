@@ -227,7 +227,7 @@
 <script>document.documentElement.classList.add("v3-js")</script>
 
     <section class="v3-hero" aria-label="Dentistry and Implants">
-      <div class="v3-hero-bgs" aria-hidden="true"><img src="assets/img/mk-office-reception.webp" alt="" class="is-on" loading="eager" width="1455" height="1081"><img src="assets/img/lecture-hands-on.webp" alt="" loading="lazy" width="1600" height="900"><img src="assets/img/mk-office-2.webp" alt="" loading="lazy" width="1500" height="2000"><img src="assets/img/teaching-tijuana-surgery.webp" alt="" loading="lazy" width="1600" height="1209"><img src="assets/img/mk-office-3.webp" alt="" loading="lazy" width="1501" height="2000"><img src="assets/img/unicamillus-rome.webp" alt="" loading="lazy" width="1080" height="1440"><img src="assets/img/stamford-lounge.webp" alt="" loading="lazy" width="600" height="700"><img src="assets/img/drs-kwon-park.webp" alt="" loading="lazy" width="1600" height="1067"></div>
+      <div class="v3-hero-bgs" aria-hidden="true"><img src="assets/img/mk-office-reception.webp" alt="" style="object-position: 50% 40%" class="is-on" width="1455" height="1081"><img src="assets/img/mk-office-2.webp" alt="" style="object-position: 50% 52%" width="1500" height="2000"><img src="assets/img/mk-office-3.webp" alt="" style="object-position: 50% 36%" width="1501" height="2000"><img src="assets/img/mk-office-4.webp" alt="" style="object-position: 50% 40%" width="1501" height="2000"></div>
       <div class="v3-wrap">
         <a class="v3-hero-logo" href="v3.html" aria-label="Dentistry &amp; Implants home"><img src="assets/img/logo/kwon-icon-blue.png" alt="" width="256" height="253"><span>Dentistry &amp; Implants</span></a>
         <h1 class="v3-headline v3-super v3h-title v3-metal-text" data-v3-reveal="blur">Dentistry Built on <span class="v3-em v3-em-trust">Trust</span>. Implants Designed to <span class="v3-em v3-em-last">Last</span>.</h1>
@@ -435,17 +435,29 @@
     <script src="assets/js/video.js" defer></script>
     <script src="assets/js/v3.js" defer></script>
 
+
     <style>
-      body.page-v3 .v3-hero-bgs { position: absolute; inset: 0; z-index: -2; overflow: hidden; pointer-events: none;
-        -webkit-mask-image: radial-gradient(ellipse 58% 52% at 50% 40%, rgba(0,0,0,.18) 0%, rgba(0,0,0,.55) 55%, #000 100%);
-        mask-image: radial-gradient(ellipse 58% 52% at 50% 40%, rgba(0,0,0,.18) 0%, rgba(0,0,0,.55) 55%, #000 100%); }
-      body.page-v3 .v3-hero-bgs img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; filter: grayscale(.35) contrast(.9) brightness(1.08); transform: scale(1.08); transition: opacity 2.4s cubic-bezier(.22,.61,.36,1), transform 9s linear; }
-      body.page-v3 .v3-hero-bgs img.is-on { opacity: .26; transform: scale(1); }
-      body.page-v3 .v3-hero-bgs::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(245,246,248,.35) 0%, rgba(245,246,248,0) 30%, rgba(245,246,248,0) 70%, rgba(245,246,248,.6) 100%); }
+      /* one continuous photo: it fades up out of the full-width banner into the hero, and changes in step with the banner */
+      body.page-v3 .v3-hero-bgs { position: absolute; left: 0; right: 0; bottom: 0; height: calc(var(--v3-band-h, 560px) + 620px); z-index: -2; overflow: hidden; pointer-events: none;
+        -webkit-mask-image: linear-gradient(180deg, transparent 0, rgba(0,0,0,.18) 22%, rgba(0,0,0,.45) 40%, rgba(0,0,0,.82) 50%, #000 calc(100% - var(--v3-band-h, 560px)));
+        mask-image: linear-gradient(180deg, transparent 0, rgba(0,0,0,.18) 22%, rgba(0,0,0,.45) 40%, rgba(0,0,0,.82) 50%, #000 calc(100% - var(--v3-band-h, 560px))); }
+      body.page-v3 .v3-hero-bgs img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.06); transition: opacity 1.2s cubic-bezier(.22,.61,.36,1), transform 7s linear; }
+      body.page-v3 .v3-hero-bgs img.is-on { opacity: 1; transform: scale(1); }
+      /* the banner keeps its caption and dots, but its own photos give way to the shared layer */
+      body.page-v3 .v3-banner-full .v3-banner-stage { background: transparent; }
+      body.page-v3 .v3-banner-full .v3-banner-stage img { visibility: hidden; }
       @media (prefers-reduced-motion: reduce) { body.page-v3 .v3-hero-bgs img { transition: none; transform: none; } }
     </style>
     <script>
-      (function(){var w=document.querySelector('.v3-hero-bgs');if(!w||matchMedia('(prefers-reduced-motion: reduce)').matches)return;var im=w.querySelectorAll('img'),i=0;setInterval(function(){if(document.hidden)return;im[i].classList.remove('is-on');i=(i+1)%im.length;im[i].classList.add('is-on');},6000);})();
+      (function () {
+        var bg = document.querySelector('.v3-hero-bgs'), stage = document.querySelector('.v3-banner-full .v3-banner-stage'), hero = document.querySelector('.v3-hero');
+        if (!bg || !stage) return;
+        var layers = bg.querySelectorAll('img'), slides = stage.querySelectorAll('img');
+        function size() { hero.style.setProperty('--v3-band-h', stage.getBoundingClientRect().height + 'px'); }
+        function sync() { for (var k = 0; k < slides.length; k++) { if (layers[k]) layers[k].classList.toggle('is-on', slides[k].classList.contains('is-active')); } }
+        new MutationObserver(sync).observe(stage, { subtree: true, attributes: true, attributeFilter: ['class'] });
+        window.addEventListener('resize', size); size(); sync();
+      })();
     </script>
   </main>
   <footer class="site-footer">
