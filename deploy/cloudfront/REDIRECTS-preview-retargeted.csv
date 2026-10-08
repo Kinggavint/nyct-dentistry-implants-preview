@@ -1,0 +1,177 @@
+old_host,old_path,old_proof_target,new_target,note,retarget_method
+nyctdentistry.com,/blog/,/articles.html,/articles.html,blog not in this proof; decide whether articles move over,old_proof
+nyctdentistry.com,/accessibility-statement/,/accessibility.html,/accessibility.html,legal page not in this proof; build before launch,old_proof
+nyctdentistry.com,/terms-conditions/,/terms.html,/terms.html,legal page not in this proof; build before launch,old_proof
+nyctdentistry.com,/services/tooth-extractions/,/services/tooth-extractions.html,/services/tooth-extractions.html,,old_proof
+nyctdentistry.com,/services/teeth-whitening/,/services/teeth-whitening.html,/services/teeth-whitening.html,no dedicated page yet; closest match,old_proof
+nyctdentistry.com,/services/preventive-care/,/services/preventive-care.html,/services/preventive-care.html,no dedicated page yet; closest match,old_proof
+nyctdentistry.com,/services/porcelain-veneers/,/services/porcelain-veneers.html,/services/porcelain-veneers.html,,old_proof
+nyctdentistry.com,/services/invisalign/,/services/invisalign.html,/services/invisalign.html,,old_proof
+nyctdentistry.com,/services/emergency-dentistry/,/services/emergency-dentistry.html,/services/emergency-dentistry.html,,old_proof
+nyctdentistry.com,/services/dentures/,/services/dentures.html,/services/dentures.html,no dedicated page yet; closest match,old_proof
+nyctdentistry.com,/services/dental-implants/,/services/dental-implants.html,/services/dental-implants.html,,old_proof
+nyctdentistry.com,/services/dental-crowns/,/services/dental-crowns.html,/services/dental-crowns.html,,old_proof
+nyctdentistry.com,/services/cosmetic-dentistry/,/services/cosmetic-dentistry.html,/services/cosmetic-dentistry.html,,old_proof
+nyctdentistry.com,/services/,/services.html,/services.html,,old_proof
+nyctdentistry.com,/privacy/,/privacy.html,/privacy.html,legal page not in this proof; build before launch,old_proof
+nyctdentistry.com,/patient-resources/testimonials/,/testimonials.html,/testimonials.html,gallery/testimonials not in this proof (consent pending),old_proof
+nyctdentistry.com,/patient-resources/specials/,/insurance.html#specials,/insurance.html#specials,,old_proof
+nyctdentistry.com,/patient-resources/insurance-and-financing-mt-kisco/,/insurance.html#plans,/insurance.html#plans,,old_proof
+nyctdentistry.com,/patient-resources/insurance-and-financing-kent/,/insurance.html#plans,/insurance.html#plans,,old_proof
+nyctdentistry.com,/patient-resources/cherry-financing/,/insurance.html#financing,/insurance.html#financing,,old_proof
+nyctdentistry.com,/patient-resources/beforeafter/,/smiles.html,/smiles.html,gallery/testimonials not in this proof (consent pending),old_proof
+nyctdentistry.com,/patient-resources/,/insurance.html,/insurance.html,,old_proof
+nyctdentistry.com,/contact-us/,/contact.html,/contact.html,,old_proof
+nyctdentistry.com,/about-us/mt-kisco-ny/,/locations/mount-kisco.html,/locations/mount-kisco.html, launch path /locations/mount-kisco.html until Phase A adds /mount-kisco/,old_proof
+nyctdentistry.com,/about-us/,/doctors.html,/doctors.html,,old_proof
+nyctdentistry.com,/about-us-kent-ct/,/locations/kent.html,/locations/kent.html, launch forward may use /locations/kent.html until Phase A adds /kent/,old_proof
+nyctdentistry.com,/cookie-policy/,/privacy.html,/privacy.html,legal page not in this proof; build before launch,old_proof
+nyctdentistry.com,/,/index.html,/index.html,,old_proof
+nyctdentistry.com,/privacy-policy/,/privacy.html,/privacy.html,legal page not in this proof; build before launch,old_proof
+nyctdentistry.com,/style-guide/,/index.html,/index.html,,old_proof
+nyctdentistry.com,/terms-of-service/,/terms.html,/terms.html,legal page not in this proof; build before launch,old_proof
+nyctdentistry.com,/hello-world/,/articles.html,/articles.html,blog not in this proof; decide whether articles move over,old_proof
+nyctdentistry.com,/category/uncategorized/,/articles.html,/articles.html,blog not in this proof; decide whether articles move over,old_proof
+nyctdentistry.com,/author/websitesenergize-group-com/,/articles.html,/articles.html,blog not in this proof; decide whether articles move over,old_proof
+clearsmiledentalstudio.com,/,/locations/stamford.html,/locations/stamford.html, launch forward may use /locations/stamford.html until Phase A adds /stamford/,old_proof
+clearsmiledentalstudio.com,/are-single-dental-implants-worth-it/,/articles/are-single-dental-implants-worth-it.html,/articles/are-single-dental-implants-worth-it.html,article not in this proof; temporary target,old_proof
+clearsmiledentalstudio.com,/before-after-gallery/,/smiles.html,/smiles.html,gallery/testimonials not in this proof (consent pending),old_proof
+clearsmiledentalstudio.com,/best-dental-implant-dentist-in-stamford-ct-top-rated/,/articles/best-dental-implant-dentist-in-stamford-ct-top-rated.html,/articles/best-dental-implant-dentist-in-stamford-ct-top-rated.html,article not in this proof; temporary target,old_proof
+clearsmiledentalstudio.com,/blog/,/articles.html,/articles.html,blog not in this proof; decide whether articles move over,old_proof
+clearsmiledentalstudio.com,/category/dental-care/,/articles.html,/articles.html,blog not in this proof; decide whether articles move over,old_proof
+clearsmiledentalstudio.com,/category/uncategorized/,/articles.html,/articles.html,blog not in this proof; decide whether articles move over,old_proof
+clearsmiledentalstudio.com,/contact-us/,/contact.html,/contact.html,,old_proof
+clearsmiledentalstudio.com,/cosmetic-dentistry/,/services/cosmetic-dentistry.html,/services/cosmetic-dentistry.html,,old_proof
+clearsmiledentalstudio.com,/dental-crowns/,/services/dental-crowns.html,/services/dental-crowns.html,,old_proof
+clearsmiledentalstudio.com,/dental-implants-darien-ct/,/service-area.html,/service-area.html,,old_proof
+clearsmiledentalstudio.com,/dental-implants-greenwich-ct/,/service-area.html,/service-area.html,,old_proof
+clearsmiledentalstudio.com,/dental-implants-new-canaan-ct/,/service-area.html,/service-area.html,,old_proof
+clearsmiledentalstudio.com,/dental-implants-new-rochelle-ny/,/service-area.html,/service-area.html,,old_proof
+clearsmiledentalstudio.com,/dental-implants-norwalk-ct/,/service-area.html,/service-area.html,,old_proof
+clearsmiledentalstudio.com,/dental-implants-port-chester-ny/,/service-area.html,/service-area.html,,old_proof
+clearsmiledentalstudio.com,/dental-implants-riverside-ct/,/service-area.html,/service-area.html,,old_proof
+clearsmiledentalstudio.com,/dental-implants-stamford-ct/,/services/dental-implants.html,/services/dental-implants.html,,old_proof
+clearsmiledentalstudio.com,/dental-implants-westchester-ny/,/service-area.html,/service-area.html,,old_proof
+clearsmiledentalstudio.com,/dental-implants-westport-ct/,/service-area.html,/service-area.html,,old_proof
+clearsmiledentalstudio.com,/dental-implants-which-is-right-for-you/,/articles/dental-implants-which-is-right-for-you.html,/articles/dental-implants-which-is-right-for-you.html,article not in this proof; temporary target,old_proof
+clearsmiledentalstudio.com,/dentures/,/services/dentures.html,/services/dentures.html,no dedicated page yet; closest match,old_proof
+clearsmiledentalstudio.com,/emergency-dentistry/,/services/emergency-dentistry.html,/services/emergency-dentistry.html,,old_proof
+clearsmiledentalstudio.com,/full-arch-implants/,/services/full-arch-implants.html,/services/full-arch-implants.html,,old_proof
+clearsmiledentalstudio.com,/greenwich-ct-dental-health/,/articles/greenwich-ct-dental-health.html,/articles/greenwich-ct-dental-health.html,article not in this proof; temporary target,old_proof
+clearsmiledentalstudio.com,/healing-process-after-dental-implants-what-to-expect/,/articles/healing-process-after-dental-implants-what-to-expect.html,/articles/healing-process-after-dental-implants-what-to-expect.html,article not in this proof; temporary target,old_proof
+clearsmiledentalstudio.com,/how-bad-does-a-tooth-need-to-be-to-be-extracted/,/articles/how-bad-does-a-tooth-need-to-be-to-be-extracted.html,/articles/how-bad-does-a-tooth-need-to-be-to-be-extracted.html,article not in this proof; temporary target,old_proof
+clearsmiledentalstudio.com,/how-do-i-choose-a-local-dentist-in-stamford-ct/,/articles/how-do-i-choose-a-local-dentist-in-stamford-ct.html,/articles/how-do-i-choose-a-local-dentist-in-stamford-ct.html,article not in this proof; temporary target,old_proof
+clearsmiledentalstudio.com,/how-do-i-find-the-best-local-dentist-in-stamford-ct/,/articles/how-do-i-find-the-best-local-dentist-in-stamford-ct.html,/articles/how-do-i-find-the-best-local-dentist-in-stamford-ct.html,article not in this proof; temporary target,old_proof
+clearsmiledentalstudio.com,/how-do-people-afford-to-go-to-the-dentist/,/articles/how-do-people-afford-to-go-to-the-dentist.html,/articles/how-do-people-afford-to-go-to-the-dentist.html,article not in this proof; temporary target,old_proof
+clearsmiledentalstudio.com,/how-do-you-know-if-the-dentist-you-found-is-a-good-dentist-or-not/,/articles/how-do-you-know-if-the-dentist-you-found-is-a-good-dentist-or-not.html,/articles/how-do-you-know-if-the-dentist-you-found-is-a-good-dentist-or-not.html,article not in this proof; temporary target,old_proof
+clearsmiledentalstudio.com,/how-do-you-know-who-is-a-good-dentist/,/articles/how-do-you-know-who-is-a-good-dentist.html,/articles/how-do-you-know-who-is-a-good-dentist.html,article not in this proof; temporary target,old_proof
+clearsmiledentalstudio.com,/how-long-does-an-implanted-tooth-last/,/articles/how-long-does-an-implanted-tooth-last.html,/articles/how-long-does-an-implanted-tooth-last.html,article not in this proof; temporary target,old_proof
+clearsmiledentalstudio.com,/how-long-does-it-take-to-get-dental-implants-from-start-to-finish/,/articles/how-long-does-it-take-to-get-dental-implants-from-start-to-finish.html,/articles/how-long-does-it-take-to-get-dental-implants-from-start-to-finish.html,article not in this proof; temporary target,old_proof
+clearsmiledentalstudio.com,/how-much-do-dental-implants-cost-near-connecticut/,/articles/how-much-do-dental-implants-cost-near-connecticut.html,/articles/how-much-do-dental-implants-cost-near-connecticut.html,article not in this proof; temporary target,old_proof
+clearsmiledentalstudio.com,/how-painful-is-getting-a-dental-implant/,/articles/how-painful-is-getting-a-dental-implant.html,/articles/how-painful-is-getting-a-dental-implant.html,article not in this proof; temporary target,old_proof
+clearsmiledentalstudio.com,/how-to-afford-full-dental-implants-in-connecticut/,/articles/how-to-afford-full-dental-implants-in-connecticut.html,/articles/how-to-afford-full-dental-implants-in-connecticut.html,article not in this proof; temporary target,old_proof
+clearsmiledentalstudio.com,/how-to-treat-sensitivity-after-teeth-whitening/,/articles/how-to-treat-sensitivity-after-teeth-whitening.html,/articles/how-to-treat-sensitivity-after-teeth-whitening.html,article not in this proof; temporary target,old_proof
+clearsmiledentalstudio.com,/implant-restorations/,/services/dental-implants.html,/services/dental-implants.html,,old_proof
+clearsmiledentalstudio.com,/in-house-membership-plan/,/insurance.html,/insurance.html,,old_proof
+clearsmiledentalstudio.com,/insurance-and-financing/,/insurance.html,/insurance.html,,old_proof
+clearsmiledentalstudio.com,/invisalign-vs-braces-which-is-faster/,/articles/invisalign-vs-braces-which-is-faster.html,/articles/invisalign-vs-braces-which-is-faster.html,article not in this proof; temporary target,old_proof
+clearsmiledentalstudio.com,/is-going-to-the-dentist-a-big-deal/,/articles/is-going-to-the-dentist-a-big-deal.html,/articles/is-going-to-the-dentist-a-big-deal.html,article not in this proof; temporary target,old_proof
+clearsmiledentalstudio.com,/lectures/,/doctor.html#training,/doctor.html#training,,old_proof
+clearsmiledentalstudio.com,/looking-for-a-pain-free-dentist-in-stamford-ct/,/articles/looking-for-a-pain-free-dentist-in-stamford-ct.html,/articles/looking-for-a-pain-free-dentist-in-stamford-ct.html,article not in this proof; temporary target,old_proof
+clearsmiledentalstudio.com,/meet-our-doctors/,/doctors.html,/doctors.html,,old_proof
+clearsmiledentalstudio.com,/meet-the-team/,/doctors.html#team,/doctors.html#team,,old_proof
+clearsmiledentalstudio.com,/new-rochelle-dental-health/,/articles/new-rochelle-dental-health.html,/articles/new-rochelle-dental-health.html,article not in this proof; temporary target,old_proof
+clearsmiledentalstudio.com,/newpatientspecial/,/insurance.html#specials,/insurance.html#specials,,old_proof
+clearsmiledentalstudio.com,/norwalk-ct-dental-health/,/articles/norwalk-ct-dental-health.html,/articles/norwalk-ct-dental-health.html,article not in this proof; temporary target,old_proof
+clearsmiledentalstudio.com,/our-practice/,/locations/stamford.html,/locations/stamford.html, launch forward may use /locations/stamford.html until Phase A adds /stamford/,old_proof
+clearsmiledentalstudio.com,/pay-with-cherry/,/insurance.html#financing,/insurance.html#financing,,old_proof
+clearsmiledentalstudio.com,/periodontal-care/,/services/periodontal-care.html,/services/periodontal-care.html,no dedicated page yet; closest match,old_proof
+clearsmiledentalstudio.com,/preventive-dentistry/,/services/preventive-care.html,/services/preventive-care.html,no dedicated page yet; closest match,old_proof
+clearsmiledentalstudio.com,/privacy-policy/,/privacy.html,/privacy.html,legal page not in this proof; build before launch,old_proof
+clearsmiledentalstudio.com,/restorative-dentistry/,/services/restorative-dentistry.html,/services/restorative-dentistry.html,no dedicated page yet; closest match,old_proof
+clearsmiledentalstudio.com,/root-canal-aftercare-what-to-expect/,/articles/root-canal-aftercare-what-to-expect.html,/articles/root-canal-aftercare-what-to-expect.html,article not in this proof; temporary target,old_proof
+clearsmiledentalstudio.com,/root-canal-treatment/,/services/root-canal-treatment.html,/services/root-canal-treatment.html,no dedicated page yet; closest match,old_proof
+clearsmiledentalstudio.com,/single-tooth-implants/,/services/single-tooth-implants.html,/services/single-tooth-implants.html,,old_proof
+clearsmiledentalstudio.com,/sitemap/,/index.html,/index.html,,old_proof
+clearsmiledentalstudio.com,/teeth-whitening/,/services/teeth-whitening.html,/services/teeth-whitening.html,no dedicated page yet; closest match,old_proof
+clearsmiledentalstudio.com,/test-form/,/contact.html,/contact.html,,old_proof
+clearsmiledentalstudio.com,/testimonials/,/testimonials.html,/testimonials.html,gallery/testimonials not in this proof (consent pending),old_proof
+clearsmiledentalstudio.com,/tooth-extractions/,/services/tooth-extractions.html,/services/tooth-extractions.html,,old_proof
+clearsmiledentalstudio.com,/veneers-vs-lumineers-whats-best-for-me/,/articles/veneers-vs-lumineers-whats-best-for-me.html,/articles/veneers-vs-lumineers-whats-best-for-me.html,article not in this proof; temporary target,old_proof
+clearsmiledentalstudio.com,/veneers/,/services/porcelain-veneers.html,/services/porcelain-veneers.html,,old_proof
+clearsmiledentalstudio.com,/what-are-the-most-common-types-of-restorative-dentistry/,/articles/what-are-the-most-common-types-of-restorative-dentistry.html,/articles/what-are-the-most-common-types-of-restorative-dentistry.html,article not in this proof; temporary target,old_proof
+clearsmiledentalstudio.com,/what-does-gum-disease-look-like/,/articles/what-does-gum-disease-look-like.html,/articles/what-does-gum-disease-look-like.html,article not in this proof; temporary target,old_proof
+clearsmiledentalstudio.com,/what-happens-to-teeth-under-veneers/,/articles/what-happens-to-teeth-under-veneers.html,/articles/what-happens-to-teeth-under-veneers.html,article not in this proof; temporary target,old_proof
+clearsmiledentalstudio.com,/what-is-the-average-cost-of-a-dental-implant-in-ct/,/articles/what-is-the-average-cost-of-a-dental-implant-in-ct.html,/articles/what-is-the-average-cost-of-a-dental-implant-in-ct.html,article not in this proof; temporary target,old_proof
+clearsmiledentalstudio.com,/what-is-the-process-of-root-canal-treatment/,/articles/what-is-the-process-of-root-canal-treatment.html,/articles/what-is-the-process-of-root-canal-treatment.html,article not in this proof; temporary target,old_proof
+clearsmiledentalstudio.com,/what-to-look-for-in-a-dental-implant-specialist/,/articles/what-to-look-for-in-a-dental-implant-specialist.html,/articles/what-to-look-for-in-a-dental-implant-specialist.html,article not in this proof; temporary target,old_proof
+clearsmiledentalstudio.com,/why-does-my-dentist-want-to-give-me-preventative-fillings/,/articles/why-does-my-dentist-want-to-give-me-preventative-fillings.html,/articles/why-does-my-dentist-want-to-give-me-preventative-fillings.html,article not in this proof; temporary target,old_proof
+kentdentistryct.com,/,/locations/kent.html,/locations/kent.html, launch forward may use /locations/kent.html until Phase A adds /kent/,old_proof
+kentdentistryct.com,/are-single-dental-implants-worth-it/,/articles/are-single-dental-implants-worth-it.html,/articles/are-single-dental-implants-worth-it.html,article not in this proof; temporary target,old_proof
+kentdentistryct.com,/author/tjl_buddy_gmb/,/articles.html,/articles.html,blog not in this proof; decide whether articles move over,old_proof
+kentdentistryct.com,/before-after-gallery/,/smiles.html,/smiles.html,gallery/testimonials not in this proof (consent pending),old_proof
+kentdentistryct.com,/best-dental-implant-dentist-in-kent-ct-top-rated/,/locations/kent.html,/locations/kent.html, launch forward may use /locations/kent.html until Phase A adds /kent/,old_proof
+kentdentistryct.com,/blog/,/articles.html,/articles.html,blog not in this proof; decide whether articles move over,old_proof
+kentdentistryct.com,/contact-us/,/contact.html,/contact.html,,old_proof
+kentdentistryct.com,/cosmetic-dentistry/,/services/cosmetic-dentistry.html,/services/cosmetic-dentistry.html,,old_proof
+kentdentistryct.com,/dental-crowns/,/services/dental-crowns.html,/services/dental-crowns.html,,old_proof
+kentdentistryct.com,/dental-implants-darien-ct/,/service-area.html,/service-area.html,,old_proof
+kentdentistryct.com,/dental-implants-greenwich-ct/,/service-area.html,/service-area.html,,old_proof
+kentdentistryct.com,/dental-implants-kent-ct/,/locations/kent.html,/locations/kent.html, launch forward may use /locations/kent.html until Phase A adds /kent/,old_proof
+kentdentistryct.com,/dental-implants-new-canaan-ct/,/service-area.html,/service-area.html,,old_proof
+kentdentistryct.com,/dental-implants-new-rochelle-ny/,/service-area.html,/service-area.html,,old_proof
+kentdentistryct.com,/dental-implants-norwalk-ct/,/service-area.html,/service-area.html,,old_proof
+kentdentistryct.com,/dental-implants-port-chester-ny/,/service-area.html,/service-area.html,,old_proof
+kentdentistryct.com,/dental-implants-riverside-ct/,/service-area.html,/service-area.html,,old_proof
+kentdentistryct.com,/dental-implants-stamford-ct/,/services/dental-implants.html,/services/dental-implants.html,,old_proof
+kentdentistryct.com,/dental-implants-westchester-ny/,/service-area.html,/service-area.html,,old_proof
+kentdentistryct.com,/dental-implants-westport-ct/,/service-area.html,/service-area.html,,old_proof
+kentdentistryct.com,/dental-implants-which-is-right-for-you/,/articles/dental-implants-which-is-right-for-you.html,/articles/dental-implants-which-is-right-for-you.html,article not in this proof; temporary target,old_proof
+kentdentistryct.com,/dentures/,/services/dentures.html,/services/dentures.html,no dedicated page yet; closest match,old_proof
+kentdentistryct.com,/emergency-dentistry/,/services/emergency-dentistry.html,/services/emergency-dentistry.html,,old_proof
+kentdentistryct.com,/full-arch-implants/,/services/full-arch-implants.html,/services/full-arch-implants.html,,old_proof
+kentdentistryct.com,/greenwich-ct-dental-health/,/articles/greenwich-ct-dental-health.html,/articles/greenwich-ct-dental-health.html,article not in this proof; temporary target,old_proof
+kentdentistryct.com,/healing-process-after-dental-implants-what-to-expect/,/articles/healing-process-after-dental-implants-what-to-expect.html,/articles/healing-process-after-dental-implants-what-to-expect.html,article not in this proof; temporary target,old_proof
+kentdentistryct.com,/how-do-i-choose-a-local-dentist-in-kent-ct/,/locations/kent.html,/locations/kent.html, launch forward may use /locations/kent.html until Phase A adds /kent/,old_proof
+kentdentistryct.com,/how-do-i-find-the-best-local-dentist-in-kent-ct/,/locations/kent.html,/locations/kent.html, launch forward may use /locations/kent.html until Phase A adds /kent/,old_proof
+kentdentistryct.com,/how-do-people-afford-to-go-to-the-dentist/,/articles/how-do-people-afford-to-go-to-the-dentist.html,/articles/how-do-people-afford-to-go-to-the-dentist.html,article not in this proof; temporary target,old_proof
+kentdentistryct.com,/how-do-you-know-if-the-dentist-you-found-is-a-good-dentist-or-not/,/articles/how-do-you-know-if-the-dentist-you-found-is-a-good-dentist-or-not.html,/articles/how-do-you-know-if-the-dentist-you-found-is-a-good-dentist-or-not.html,article not in this proof; temporary target,old_proof
+kentdentistryct.com,/how-do-you-know-who-is-a-good-dentist/,/articles/how-do-you-know-who-is-a-good-dentist.html,/articles/how-do-you-know-who-is-a-good-dentist.html,article not in this proof; temporary target,old_proof
+kentdentistryct.com,/how-long-does-it-take-to-get-dental-implants-from-start-to-finish/,/articles/how-long-does-it-take-to-get-dental-implants-from-start-to-finish.html,/articles/how-long-does-it-take-to-get-dental-implants-from-start-to-finish.html,article not in this proof; temporary target,old_proof
+kentdentistryct.com,/how-much-do-dental-implants-cost-near-connecticut/,/articles/how-much-do-dental-implants-cost-near-connecticut.html,/articles/how-much-do-dental-implants-cost-near-connecticut.html,article not in this proof; temporary target,old_proof
+kentdentistryct.com,/how-to-treat-sensitivity-after-teeth-whitening/,/articles/how-to-treat-sensitivity-after-teeth-whitening.html,/articles/how-to-treat-sensitivity-after-teeth-whitening.html,article not in this proof; temporary target,old_proof
+kentdentistryct.com,/implant-restorations/,/services/dental-implants.html,/services/dental-implants.html,,old_proof
+kentdentistryct.com,/in-house-membership-plan/,/insurance.html,/insurance.html,,old_proof
+kentdentistryct.com,/insurance-and-financing/,/insurance.html,/insurance.html,,old_proof
+kentdentistryct.com,/invisalign-vs-braces-which-is-faster/,/articles/invisalign-vs-braces-which-is-faster.html,/articles/invisalign-vs-braces-which-is-faster.html,article not in this proof; temporary target,old_proof
+kentdentistryct.com,/invisalign/,/services/invisalign.html,/services/invisalign.html,,old_proof
+kentdentistryct.com,/is-going-to-the-dentist-a-big-deal/,/articles/is-going-to-the-dentist-a-big-deal.html,/articles/is-going-to-the-dentist-a-big-deal.html,article not in this proof; temporary target,old_proof
+kentdentistryct.com,/lectures/,/doctor.html#training,/doctor.html#training,,old_proof
+kentdentistryct.com,/looking-for-a-pain-free-dentist-in-kent-ct/,/locations/kent.html,/locations/kent.html, launch forward may use /locations/kent.html until Phase A adds /kent/,old_proof
+kentdentistryct.com,/meet-our-doctors/,/doctors.html,/doctors.html,,old_proof
+kentdentistryct.com,/meet-the-team/,/doctors.html#team,/doctors.html#team,,old_proof
+kentdentistryct.com,/new-rochelle-dental-health/,/articles/new-rochelle-dental-health.html,/articles/new-rochelle-dental-health.html,article not in this proof; temporary target,old_proof
+kentdentistryct.com,/newpatientspecial/,/insurance.html#specials,/insurance.html#specials,,old_proof
+kentdentistryct.com,/norwalk-ct-dental-health/,/articles/norwalk-ct-dental-health.html,/articles/norwalk-ct-dental-health.html,article not in this proof; temporary target,old_proof
+kentdentistryct.com,/our-practice/,/locations/kent.html,/locations/kent.html, launch forward may use /locations/kent.html until Phase A adds /kent/,old_proof
+kentdentistryct.com,/pay-with-cherry/,/insurance.html#financing,/insurance.html#financing,,old_proof
+kentdentistryct.com,/periodontal-care/,/services/periodontal-care.html,/services/periodontal-care.html,no dedicated page yet; closest match,old_proof
+kentdentistryct.com,/preventive-dentistry/,/services/preventive-care.html,/services/preventive-care.html,no dedicated page yet; closest match,old_proof
+kentdentistryct.com,/privacy-policy/,/privacy.html,/privacy.html,legal page not in this proof; build before launch,old_proof
+kentdentistryct.com,/restorative-dentistry/,/services/restorative-dentistry.html,/services/restorative-dentistry.html,no dedicated page yet; closest match,old_proof
+kentdentistryct.com,/root-canal-aftercare-what-to-expect/,/articles/root-canal-aftercare-what-to-expect.html,/articles/root-canal-aftercare-what-to-expect.html,article not in this proof; temporary target,old_proof
+kentdentistryct.com,/root-canal-treatment/,/services/root-canal-treatment.html,/services/root-canal-treatment.html,no dedicated page yet; closest match,old_proof
+kentdentistryct.com,/single-tooth-implants/,/services/single-tooth-implants.html,/services/single-tooth-implants.html,,old_proof
+kentdentistryct.com,/sitemap/,/index.html,/index.html,,old_proof
+kentdentistryct.com,/special-offers/,/insurance.html#specials,/insurance.html#specials,,old_proof
+kentdentistryct.com,/teeth-whitening/,/services/teeth-whitening.html,/services/teeth-whitening.html,no dedicated page yet; closest match,old_proof
+kentdentistryct.com,/test-form/,/contact.html,/contact.html,,old_proof
+kentdentistryct.com,/testimonials/,/testimonials.html,/testimonials.html,gallery/testimonials not in this proof (consent pending),old_proof
+kentdentistryct.com,/tooth-extractions/,/services/tooth-extractions.html,/services/tooth-extractions.html,,old_proof
+kentdentistryct.com,/veneers-vs-lumineers-whats-best-for-me/,/articles/veneers-vs-lumineers-whats-best-for-me.html,/articles/veneers-vs-lumineers-whats-best-for-me.html,article not in this proof; temporary target,old_proof
+kentdentistryct.com,/veneers/,/services/porcelain-veneers.html,/services/porcelain-veneers.html,,old_proof
+kentdentistryct.com,/what-are-the-most-common-types-of-restorative-dentistry/,/articles/what-are-the-most-common-types-of-restorative-dentistry.html,/articles/what-are-the-most-common-types-of-restorative-dentistry.html,article not in this proof; temporary target,old_proof
+kentdentistryct.com,/what-does-gum-disease-look-like/,/articles/what-does-gum-disease-look-like.html,/articles/what-does-gum-disease-look-like.html,article not in this proof; temporary target,old_proof
+kentdentistryct.com,/what-is-the-average-cost-of-a-dental-implant-in-ct/,/articles/what-is-the-average-cost-of-a-dental-implant-in-ct.html,/articles/what-is-the-average-cost-of-a-dental-implant-in-ct.html,article not in this proof; temporary target,old_proof
+kentdentistryct.com,/what-to-look-for-in-a-dental-implant-specialist/,/articles/what-to-look-for-in-a-dental-implant-specialist.html,/articles/what-to-look-for-in-a-dental-implant-specialist.html,article not in this proof; temporary target,old_proof
+kentdentistryct.com,/why-does-my-dentist-want-to-give-me-preventative-fillings/,/articles/why-does-my-dentist-want-to-give-me-preventative-fillings.html,/articles/why-does-my-dentist-want-to-give-me-preventative-fillings.html,article not in this proof; temporary target,old_proof
