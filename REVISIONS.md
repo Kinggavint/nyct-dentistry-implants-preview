@@ -27,7 +27,9 @@ material we do not have yet.
    $240 and $150 specials and the complimentary consultation, and only Cherry for financing. So the $399
    membership plan, $1,000 off implants, implant packages ($1,499 / $11,999 / $19,999), senior savings,
    CareCredit, Sunbit, Chewsi and GreenSky are off the site. Restore from git (before this commit) if any
-   are still offered.
+   are still offered. The practice confirmed (email 2026-10-11) the $1,499 implant price is old; it stays off.
+   The practice asked whether to list prices at all or ask patients to call for the complimentary
+   consultation. The site shows no implant prices today and points to the complimentary consultation.
 3. **Team.** Dr. Ryan Oh, associate dentist, Stamford office only, is on the team page and the Stamford page
    (name, role and office only). His photo and bio are coming from the practice (email 2026-10-06: "tbd"). Maggie and Malena Valero are
    shown from the Stamford site's team page. Still wanted: names, photos and a line for Mount Kisco and Kent
@@ -97,6 +99,14 @@ material we do not have yet.
     Profile connection on our side, which is what the access is for. Real patient quotes from both websites are
     shown meanwhile. Google names today: Kent Dentistry & Implants, Mt Kisco Dentistry & Implants, Stamford
     Dentistry & Implants - Clear Smile (practice is open to suggestions).
+    Email 2026-10-11: the practice will add support@apexailabs.ai as a Manager on the profile for each office
+    (Stamford, Kent and Mount Kisco) and email once done.
+25. **Clear Smile domain.** clearsmiledentalstudio.com needs to forward to the new Stamford page. The practice
+    (2026-10-11) only knows about GoDaddy, not Cloudflare, and has emailed Energize to ask whether they run
+    Cloudflare and the hosting for the Clear Smile site. It also added Apex as a manager on the GoDaddy account
+    for Clear Smile and asked whether that is enough.
+26. **Google Analytics and Search Console.** The practice wants them owned by nyctdentistryimplants@gmail.com
+    (email 2026-10-11).
 21. **Website chat.** Live. Handoffs go to nyctdentistryimplants@gmail.com (confirmed 2026-10-06). It now opens
     by asking which location works best and offers the three offices as buttons, as the practice asked.
     Common questions and answers from the practice would make it more useful.
