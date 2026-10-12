@@ -94,13 +94,14 @@ material we do not have yet.
 
 ## Features waiting on access
 
-20. **Live Google reviews.** The practice added our support address to two of the three Google Business
-    Profiles (Stamford is being fixed) and asked why reviews are not already live. They need the Business
-    Profile connection on our side, which is what the access is for. Real patient quotes from both websites are
-    shown meanwhile. Google names today: Kent Dentistry & Implants, Mt Kisco Dentistry & Implants, Stamford
-    Dentistry & Implants - Clear Smile (practice is open to suggestions).
-    Email 2026-10-11: the practice will add support@apexailabs.ai as a Manager on the profile for each office
-    (Stamford, Kent and Mount Kisco) and email once done.
+20. **Live Google reviews.** Business Profile access is confirmed: support@apexailabs.ai has been a Manager
+    on all three profiles since 2026-10-06 (Google's "You are now a manager" emails for Mt Kisco Dentistry &
+    Implants, Kent Dentistry and Implants, and Stamford Dentistry & Implants - Clear Smile Dental Studio).
+    The practice asked us to double check (email 2026-10-12); nothing more is needed from the practice.
+    Live reviews on the site still need the Business Profile API connection on our side, which Google has
+    not opened for our project yet. Real patient quotes from both websites are shown meanwhile. Google names
+    today: Kent Dentistry and Implants, Mt Kisco Dentistry & Implants, Stamford Dentistry & Implants - Clear
+    Smile Dental Studio (practice is open to suggestions).
 25. **Clear Smile domain.** clearsmiledentalstudio.com needs to forward to the new Stamford page. The practice
     (2026-10-11) only knows about GoDaddy, not Cloudflare, and has emailed Energize to ask whether they run
     Cloudflare and the hosting for the Clear Smile site. It also added Apex as a manager on the GoDaddy account
