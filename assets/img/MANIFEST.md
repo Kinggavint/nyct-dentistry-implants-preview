@@ -49,3 +49,6 @@ Same upload, not exported: "Dr Kwon" (same photo as dr-kwon-portrait), DSC01851 
 "Dr Park.jpg" and "dr kwon & park photo.jpg" (same as the held Dr. Park photos), KakaoTalk_..._02.jpg
 (portrait-format lecture shot, dim, implant company branding prominent in the foreground).
 All re-encoded without metadata, orientation applied, WebP q80.
+
+## Correction 2026-10-13 (Dr. Kwon)
+Pair 7 was reversed by the earlier correction. Dr. Kwon confirmed on Oct 13 that before/after were swapped (bottom-left front tooth veneer), so the files are swapped back: ba-7-before.webp is from kakao-105252336.jpg and ba-7-after.webp from kakao-105252336_04.jpg.

@@ -86,9 +86,9 @@
 
 
 /* ---------- hero identity: big logo + locations that fly into the header corners on scroll ---------- */
-.page-v3 .v3-hero-logo { display: inline-flex; align-items: center; gap: 30px; margin: 0 0 22px; color: var(--v3-brand); text-decoration: none; white-space: nowrap; }
+.page-v3 .v3-hero-logo { display: inline-flex; align-items: center; gap: 30px; margin: 0 0 22px; color: #111; text-decoration: none; white-space: nowrap; }
 .page-v3 .v3-hero-logo img { width: 84px; height: 84px; object-fit: contain; }
-.page-v3 .v3-hero-logo span { font: 600 36px/1 var(--v3-font); letter-spacing: .16em; text-transform: uppercase; }
+.page-v3 .v3-hero-logo span { font: 600 30px/1 var(--v3-font); letter-spacing: .16em; text-transform: uppercase; }
 .page-v3 .v3-hero-loc { width: fit-content; margin: 0 auto; font: 600 21px/1.19 var(--v3-font); letter-spacing: .011em; color: var(--v3-ink-metal); white-space: nowrap; }
 .page-v3 .v3h-title { margin-top: 12px; }
 .v3-navloc { position: fixed; left: 0; top: 0; z-index: 2; margin: 0; pointer-events: none; will-change: transform, opacity; white-space: nowrap; font: 600 12px/1.2 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif; letter-spacing: .01em; color: #4a4a52; }
@@ -101,7 +101,7 @@ html.v3-fly-on .page-v3 .v3-hero .v3-hero-logo:not(.v3-fly), html.v3-fly-on .pag
 html.v3-fly-on .page-v3 .site-header .brand { opacity: 0; }
 @media (min-width: 1380px) { body.page-v3 .site-header .header-inner { max-width: 1400px; padding-right: 290px; } }
 @media (max-width: 734px) {
-  .page-v3 .v3-hero-logo { gap: 14px; margin-bottom: 16px; } .page-v3 .v3-hero-logo img { width: 48px; height: 48px; } .page-v3 .v3-hero-logo span { font-size: 17px; }
+  .page-v3 .v3-hero-logo { gap: 14px; margin-bottom: 16px; } .page-v3 .v3-hero-logo img { width: 48px; height: 48px; } .page-v3 .v3-hero-logo span { font-size: 13px; letter-spacing: .1em; }
   .page-v3 .v3-hero-loc { font-size: 15px; white-space: normal; padding: 0 16px; }
 }
 
@@ -438,9 +438,9 @@ html:not(.v3-ctas-docked) body.page-v3 .site-header :is(.header-call, .header-ct
 .page-v3 .site-header::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: rgba(250,250,252,.72); border-bottom: 1px solid rgba(0,0,0,.06); -webkit-backdrop-filter: saturate(190%) blur(34px); backdrop-filter: saturate(190%) blur(34px); }
 html.mo-scrolled .page-v3 .site-header { background: none; box-shadow: none; }
 .page-v3 .header-inner { position: static; width: 100%; max-width: 1080px; min-height: var(--v3-nav-h); margin: 0 auto; padding: 0 22px; gap: 4px; box-sizing: border-box; }
-.page-v3 .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--v3-brand); font: 600 12px/1 var(--v3-font); letter-spacing: .16em; text-transform: uppercase; white-space: nowrap; }
-.page-v3 .brand::before { content: ""; width: 28px; height: 28px; flex: 0 0 auto; background: url("../img/logo/kwon-icon-blue.png") center / contain no-repeat; }
-.page-v3 .brand:hover { color: var(--v3-brand); }
+.page-v3 .brand { display: inline-flex; align-items: center; gap: 10px; color: #111; font: 600 12px/1 var(--v3-font); letter-spacing: .16em; text-transform: uppercase; white-space: nowrap; }
+.page-v3 .brand::before { content: ""; width: 28px; height: 28px; flex: 0 0 auto; background: url("../img/logo/kwon-icon-black.png") center / contain no-repeat; }
+.page-v3 .brand:hover { color: #111; }
 .page-v3 .primary-nav { gap: 0; margin: 0 0 0 auto; }
 .page-v3 .primary-nav a { display: flex; align-items: center; height: var(--v3-nav-h); padding: 0 10px; color: var(--v3-ink); opacity: .8; font: 400 13px/1 var(--v3-font); letter-spacing: -.01em; text-decoration: none; transition: opacity 240ms; }
 .page-v3 .primary-nav a:hover, .page-v3 .primary-nav a[aria-current="page"], .page-v3 .primary-nav a[aria-expanded="true"] { opacity: 1; color: var(--v3-ink); text-decoration: none; }
@@ -502,7 +502,7 @@ html.mo-scrolled .page-v3 .site-header { background: none; box-shadow: none; }
 .page-v3 .site-footer p { margin: 0 0 .8em; font-size: 13px; color: rgba(245,245,247,.64); }
 .page-v3 .footer-main { max-width: var(--v3-max); margin: 0 auto; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr); gap: 28px; padding: 0 0 28px; border-bottom: 1px solid rgba(255,255,255,.18); }
 .page-v3 .footer-brand { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 14px; color: #f5f5f7; font: 600 12px/1 var(--v3-font); letter-spacing: .16em; text-transform: uppercase; text-decoration: none; }
-.page-v3 .footer-brand::before { content: ""; width: 34px; height: 34px; background: url("../img/logo/kwon-icon-white.png") center / contain no-repeat; }
+.page-v3 .footer-brand::before { content: ""; width: 34px; height: 34px; background: url("../img/logo/kwon-icon-white-2026.png") center / contain no-repeat; }
 .page-v3 .footer-head { margin: 0 0 .9em; font: 600 13px/1.3 var(--v3-font); letter-spacing: -.01em; text-transform: none; color: #f5f5f7 !important; }
 .page-v3 .footer-links { display: grid; gap: .7em; }
 .page-v3 .site-footer a { color: rgba(245,245,247,.64); font-size: 13px; text-decoration: none; }
@@ -836,3 +836,7 @@ body.v3-inner .v3p-videos .vd-testimonials:has(> figure:only-child) { grid-templ
 body.v3-tpl-services .v3s-card.v3s-card-feature > p:not(.v3s-card-links) { flex: 0 0 auto; }
 .page-v3 .office-row .office-row-hours .office-note { margin-top: 10px; }
 @media (min-width: 621px) { body.v3-inner .v3p-videos .vd-testimonials { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* Oct 13: Dentistry and Implants highlight below the home hero */
+.page-v3 .v3-focus { padding: 64px 0 8px; }
+.page-v3 .v3-focus .v3-offers { padding: 0; }

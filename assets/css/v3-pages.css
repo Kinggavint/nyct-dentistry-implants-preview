@@ -624,3 +624,9 @@ body.v3-inner .v3p-video-card .vd-testimonial figcaption { padding: 12px 8px 8px
 }
 /* Dr. Kwon page: the two doctors photo opens the Off the clock section */
 body.v3-inner .v3x-duo.v3x-duo-lead { margin: 0 auto clamp(36px, 5vw, 56px); }
+
+/* Oct 13: insurance "call us" cards (no plan lists) */
+body.v3-inner .v3p-plans.v3p-callus .plan-office { display: block; padding: 18px 0; border-top: 1px solid rgba(0,0,0,.08); }
+body.v3-inner .v3p-plans.v3p-callus .plan-office:first-child { border-top: 0; }
+body.v3-inner .v3p-plans.v3p-callus .plan-office-head { margin-bottom: 0; }
+body.v3-inner .v3p-plans.v3p-callus .plan-note { margin: 10px 0 0; }
