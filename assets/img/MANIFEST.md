@@ -49,3 +49,18 @@ Same upload, not exported: "Dr Kwon" (same photo as dr-kwon-portrait), DSC01851 
 "Dr Park.jpg" and "dr kwon & park photo.jpg" (same as the held Dr. Park photos), KakaoTalk_..._02.jpg
 (portrait-format lecture shot, dim, implant company branding prominent in the foreground).
 All re-encoded without metadata, orientation applied, WebP q80.
+
+## Correction 2026-10-13 (Dr. Kwon, email)
+Pair 7 was still reversed: Dr. Kwon flagged it ("Before/After swapped, front tooth veneer"). Files swapped back:
+ba-7-before.webp now shows the single darker front tooth, ba-7-after.webp the matched veneer. Order confirmed by the practice.
+
+## Update 2026-10-13 (Drive upload of 2026-10-08, "3 Office Photos" and "2 Doctors and Team", plus the 10-13 email logo)
+Kent (IMG_32xx.jpeg): kent-exterior (3256, Kent page opening), kent-waiting (3242), kent-operatory (3250),
+kent-imaging (3240) are used; kent-reception (3244), kent-hallway (3245), kent-office-desk (3238),
+kent-entrance (3260) and kent-sign (3259, sign reads "Kent Dentistry & Implants") are exported for later.
+stamford-operatory-2 ("Stamford Op 1", Clear Smile on the screen) exported, not used.
+dr-oh / dr-oh-card ("Dr Oh.jpg"; the card is a tighter crop on him). kent-office-tour.webp is the tour poster.
+Not exported: "Dr Kwon taking photo in Stamford office" (patient in the chair, consent unknown).
+Mount Kisco files in the same upload are the photos already live as mk-office-*.
+Logo: logo/kwon-2026-mark-black|white.png and kwon-2026-logo-black.png from "Logo 2026.PNG"; favicon.ico,
+favicon-32.png, apple-touch-icon.png from the same mark. All re-encoded without metadata, orientation applied.

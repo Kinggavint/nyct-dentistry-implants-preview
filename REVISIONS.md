@@ -17,25 +17,17 @@ material we do not have yet.
    quotes that name him are back on every page. Please confirm his title and which offices he sees patients at;
    his bio names Fairfield and Litchfield counties in Connecticut and Northern Westchester, New York, so the
    site says that rather than naming offices.
-1. **Logo.** All three office logos are uploaded (email 2026-10-06: "Done, all 3"). No direction picked yet,
-   so the site keeps its "Dentistry & Implants" text wordmark. Four concepts are on the logo board (D uses
-   the tooth mark and Kent blue). Which one? Note the Kent logo on the sheet names Dr. Park.
 2. **Stamford details still unconfirmed.** Hours, HUSKY, the $150 special and Cherry are confirmed (2026-10-06).
-   Still from clearsmiledentalstudio.com and not yet confirmed: the 39 plans, complimentary parking, CBCT and
-   intraoral cameras, and the office photos.
+   Still from clearsmiledentalstudio.com and not yet confirmed: CBCT and intraoral cameras, and the office photos.
    **Removed 2026-10-06 until confirmed:** asked "which offers are current", the practice listed only the
    $240 and $150 specials and the complimentary consultation, and only Cherry for financing. So the $399
    membership plan, $1,000 off implants, implant packages ($1,499 / $11,999 / $19,999), senior savings,
    CareCredit, Sunbit, Chewsi and GreenSky are off the site. Restore from git (before this commit) if any
    are still offered. The practice confirmed (email 2026-10-11) the $1,499 implant price is old; it stays off.
-   The practice asked whether to list prices at all or ask patients to call for the complimentary
-   consultation. The site shows no implant prices today and points to the complimentary consultation.
-3. **Team.** Dr. Ryan Oh, associate dentist, Stamford office only, is on the team page and the Stamford page
-   (name, role and office only). His photo and bio are coming from the practice (email 2026-10-06: "tbd"). Maggie and Malena Valero are
-   shown from the Stamford site's team page. Still wanted: names, photos and a line for Mount Kisco and Kent
-   team members.
-5. **Insurance lists.** The practice offered (2026-10-06) to send the updated list of plans for each office.
-   Yes please: the current three lists come from the plan logos on the old websites.
+   Prices: answered 2026-10-13, no prices; patients call or book online for the complimentary consultation.
+3. **Team photos for each office.** Every office page now has a "Meet the team" section (2026-10-13): Stamford
+   shows Dr. Oh (photo and bio now live), Maggie and Malena Valero; Mount Kisco and Kent show Dr. Kwon and Dr. Park
+   for now. The practice is sending team photos: for each person please send the name, role and office.
 9. **GIA and GIIA.** Dr. Kwon's new bio says he is faculty for the "GIA Implant Seminar Live Surgery Course"
    in Tijuana; the site now uses that wording. Both old websites also call him part-time faculty at the
    "Gangnam International Implant Academy (GIIA)", which is still listed. Are these the same program? If so,
@@ -61,14 +53,17 @@ material we do not have yet.
 
 ## Photos
 
-17. **Before and after order.** Please confirm set 7 (front teeth restored and brightened) is in
-    the right order, and that set 2 (missing front tooth replaced) is one patient.
+17. **Before and after order.** Set 7 (front tooth veneer) was reversed; swapped 2026-10-13 as the practice
+    pointed out. Please confirm set 2 (missing front tooth replaced) is one patient.
 18. **Unpaired photos.** DSC_0248 and DSC_0259 are now shown as a pair (the old site pairs them too).
     DSC_0667 and DSC_0679 still have no "after"; the old site shows them as a pair, but both look
     like "before" photos. The two full-arch X-ray cases come from the old site's gallery.
-19. **Mount Kisco and Kent office photos.** The only photos we have of these two offices are
-    low resolution, so the site shows the Stamford office. Five to eight photos of each would
-    let every office have its own gallery.
+19. **Office photos.** Kent's nine photos and tour video (Drive, 2026-10-08) are live on the Kent page (2026-10-13):
+    exterior as the page opening, waiting room, treatment room and X-ray room, plus the tour. Mount Kisco's photos
+    were already live. Not used: "Dr Kwon taking photo in Stamford office" (a patient is in the chair; may we show
+    it?) and the 6-second second Kent clip (repeats the tour). The tour's sound was removed because we have not
+    reviewed what is said; tell us if you want it with sound. The home page opening now cycles Kent and Stamford
+    photos without office signs instead of Mount Kisco only, as the practice asked.
 
 ## Answered 2026-10-06 (email)
 
@@ -91,6 +86,32 @@ material we do not have yet.
   year"), and he lectures across North America since 2024 (was "North and Central America"). Travel added to
   his off-the-clock section.
 - Dr. Park's bio received; he is restored (see item 0).
+
+## Answered 2026-10-13 (email)
+
+- **Logo and name.** The practice chose its black tooth logo ("Logo 2026", simple, black on white). It is in the
+  header, the home page opening, the footer (white) and the browser icon. The name "NY, CT Dentistry & Implants"
+  is used in page titles, Google's listing data and the footer copyright; the logo keeps the words
+  "Dentistry & Implants" exactly as in the file. Original kept in logo-concepts/client-originals/.
+- **Home page.** "Dentistry" and "Implants" in the opening line are highlighted like "Trust" and "Last".
+- **Prices.** None listed; patients call or book online (the practice's online booking links).
+- **Insurance.** The plan lists are gone from all three offices; the insurance page and office pages say to
+  call the office, with each phone number. Stamford still notes HUSKY Health (Medicaid).
+- **Clear aligners** are now "Spark Aligners" in the service buttons and menus, and the aligner page links to
+  the Spark Aligners brand page. Please confirm all three offices offer Spark.
+- **Parking** is no longer mentioned anywhere (all offices have it).
+- **Dr. Ryan Oh.** His bio (sent 2026-10-06) is now live on his own page, the team page and the Stamford page,
+  with his photo (Drive, 2026-10-08).
+- The practice asked to be told when all the old websites forward to the new one, and for the Drive link
+  again to upload team photos.
+
+## Questions from 2026-10-13
+
+27. **Name in the header.** The header shows the logo as sent ("Dentistry & Implants"). Should the header
+    text read "NY, CT Dentistry & Implants" instead? Google's office names are still "Kent Dentistry and
+    Implants", "Mt Kisco Dentistry & Implants" and "Stamford Dentistry & Implants - Clear Smile Dental Studio".
+28. **Logo color on the site.** The logo is black; buttons and links still use the blue accent. Keep blue for
+    buttons, or move to black and white throughout?
 
 ## Features waiting on access
 
@@ -125,4 +146,4 @@ material we do not have yet.
     - The Stamford video shows the old Clear Smile sign on a screen behind the patient. Keep it?
     - The Spanish video "2 (1).mp4" has a built-in caption reading "Doctor Quick". Keep it as is?
     - Two patients say their full names; the site shows first name and last initial only.
-    Still wanted: an office tour and a short introduction of Dr. Kwon and the team.
+    Still wanted: a short introduction of Dr. Kwon and the team.
