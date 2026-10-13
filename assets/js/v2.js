@@ -25,7 +25,7 @@
     ['cosmetic-dentistry', 'Smile Makeovers', 'ba-5-after.webp'],
     ['porcelain-veneers', 'Veneers', 'ba-7-after.webp'],
     ['dental-crowns', 'Crowns', 'ba-3-after.webp'],
-    ['invisalign', 'Clear Aligners', null],
+    ['spark-aligners', 'Spark Aligners', null],
     ['teeth-whitening', 'Whitening', 'ba-6-after.webp'],
     ['preventive-care', 'Cleanings', 'ba-1-after.webp'],
     ['root-canal-treatment', 'Root Canals', null],
@@ -85,7 +85,7 @@
     all.href = LROOT + 'v2-services.html';
     all.appendChild(el('span', null, 'All services'));
     var book = el('a', 'v2-flyout-cta', 'Schedule Now');
-    book.href = LROOT + 'locations.html';
+    book.href = LROOT + 'contact.html';
     book.setAttribute('data-office', 'book');
     foot.appendChild(all); foot.appendChild(book);
     return foot;
