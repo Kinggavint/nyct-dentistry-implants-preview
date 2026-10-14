@@ -519,3 +519,7 @@ h3 { font-size: clamp(1.35rem, 2vw, 1.75rem); letter-spacing: -0.02em; line-heig
 .page-v3 .v3-hero-logo span { font-size: 34px; }
 @media (max-width: 734px) { .page-v3 .v3-hero-logo span { font-size: 17px; } }
 .brand .brand-amp, .footer-brand .brand-amp { color: inherit; }
+/* keep "NY, CT Dentistry & Implants" as one run of text: no flex gap around the ampersand */
+.page-v3 .brand, .page-v2 .brand, .page-v2 .footer-brand { gap: 0 !important; font-size: 14px; }
+.page-v3 .brand::before, .page-v2 .brand::before, .page-v2 .footer-brand::before { margin-right: 10px; }
+.brand .brand-amp, .footer-brand .brand-amp { padding: 0 .28em; }

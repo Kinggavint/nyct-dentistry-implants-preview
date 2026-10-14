@@ -15,7 +15,7 @@
   <!-- labels -->
   <g font-family="Helvetica, Arial, sans-serif" font-size="17" fill="#e5e7eb">
     <line x1="408" y1="120" x2="470" y2="100" stroke="#c7d2fe" stroke-width="2"/><text x="476" y="105">Crown</text>
-    <line x1="354" y1="200" x2="470" y2="186" stroke="#f59e0b" stroke-width="2"/><text x="476" y="191">Cleaned, sealed chamber</text>
+    <line x1="354" y1="200" x2="470" y2="186" stroke="#f59e0b" stroke-width="2"/><text x="476" y="191">Sealed chamber</text>
     <line x1="348" y1="320" x2="470" y2="318" stroke="#f59e0b" stroke-width="2"/><text x="476" y="323">Filled root canals</text>
     <line x1="236" y1="270" x2="170" y2="290" stroke="#94a3b8" stroke-width="2"/><text x="40" y="296">Gum and bone</text>
   </g>
