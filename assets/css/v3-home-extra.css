@@ -65,3 +65,13 @@ body.page-v3 .v3x-crew p:not(.role) { margin: 0 14px; font-size: 16px; line-heig
   body.page-v3 .v3x-crew > li { padding: 8px 8px 22px; }
   body.page-v3 .v3x-crew-soon { aspect-ratio: 3 / 1; }
 }
+
+/* home: three doctors (Dr. Kwon, Dr. Park, Dr. Oh) and Dr. Oh's short bio (Dr. Kwon, 2026-10-13) */
+body.page-v3 .v3-people.v3-people-3 { max-width: 900px; margin-left: auto; margin-right: auto; }
+body.page-v3 .v3x-bio { max-width: 680px; margin: clamp(32px, 4vw, 48px) auto 0; padding: clamp(24px, 3vw, 36px); border-radius: var(--v3-radius); background: #fff; box-shadow: var(--v3-card-shadow); text-align: left; box-sizing: border-box; }
+body.page-v3 .v3x-bio .v3-eyebrow { margin: 0 0 10px; }
+body.page-v3 .v3x-bio p { margin: 0; font: 400 17px/1.55 var(--v3-font); color: var(--v3-ink); }
+body.page-v3 .v3x-bio p.v3x-bio-meta { margin-top: 14px; font-size: 14px; line-height: 1.45; color: var(--v3-ink-2); }
+@media (max-width: 734px) {
+  body.page-v3 .v3x-bio p { font-size: 16px; }
+}

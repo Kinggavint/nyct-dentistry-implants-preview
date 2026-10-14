@@ -123,6 +123,13 @@ material we do not have yet.
 - **Root canals.** The root canal page now says "Most root canals can be done in our office, including molar
   root canals and retreatments."
 
+## Answered 2026-10-13 (third email)
+
+- **Dr. Oh on the home page.** The practice found his page "a bit secluded" and asked for his bio on the front page.
+  The home page doctors section (English and Spanish) now shows Dr. Kwon, Dr. Park and Dr. Oh side by side, with a
+  short bio card for Dr. Oh (from the bio the practice sent) and a "Meet Dr. Oh" link to his full page.
+- **Still preview only.** Like the rest of the 2026-10-13 work, this is on the preview, not yet on nyctdentistry.com.
+
 ## Questions from 2026-10-13
 
 28. **Logo color on the site.** The logo is black; buttons and links still use the blue accent. Keep blue for
