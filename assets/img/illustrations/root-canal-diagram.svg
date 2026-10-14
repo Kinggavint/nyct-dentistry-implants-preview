@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="t d">
+  <title id="t">Diagram of a molar after root canal treatment</title>
+  <desc id="d">A cross-section of a molar. The two root canals are cleaned and sealed, and a crown covers the top of the tooth.</desc>
+  <rect width="640" height="400" fill="#0f1218"/>
+  <g fill="none" stroke="#2a3140" stroke-width="1">
+    <path d="M0 300 C160 288 480 288 640 300"/>
+  </g>
+  <path d="M0 250 C120 238 200 232 236 236 L404 236 C440 232 520 238 640 250 L640 400 L0 400Z" fill="#1b2130"/>
+  <!-- tooth body -->
+  <path d="M236 150 C236 104 270 82 320 82 C370 82 404 104 404 150 L404 214 C404 240 396 262 386 300 C378 330 370 360 352 362 C336 364 332 330 328 300 L320 268 L312 300 C308 330 304 364 288 362 C270 360 262 330 254 300 C244 262 236 240 236 214Z" fill="#e8ebf2" stroke="#ffffff" stroke-width="3"/>
+  <!-- crown cap -->
+  <path d="M232 156 C232 100 270 74 320 74 C370 74 408 100 408 156 L408 176 L232 176Z" fill="#c7d2fe" stroke="#ffffff" stroke-width="3"/>
+  <!-- sealed pulp chamber and canals -->
+  <path d="M286 182 L354 182 L354 214 C354 222 350 226 344 230 C346 262 352 300 348 342 L340 342 C336 306 330 270 328 238 L312 238 C310 270 304 306 300 342 L292 342 C288 300 294 262 296 230 C290 226 286 222 286 214Z" fill="#f59e0b"/>
+  <!-- labels -->
+  <g font-family="Helvetica, Arial, sans-serif" font-size="17" fill="#e5e7eb">
+    <line x1="408" y1="120" x2="470" y2="100" stroke="#c7d2fe" stroke-width="2"/><text x="476" y="105">Crown</text>
+    <line x1="354" y1="200" x2="470" y2="186" stroke="#f59e0b" stroke-width="2"/><text x="476" y="191">Cleaned, sealed chamber</text>
+    <line x1="348" y1="320" x2="470" y2="318" stroke="#f59e0b" stroke-width="2"/><text x="476" y="323">Filled root canals</text>
+    <line x1="236" y1="270" x2="170" y2="290" stroke="#94a3b8" stroke-width="2"/><text x="40" y="296">Gum and bone</text>
+  </g>
+</svg>

@@ -65,3 +65,14 @@ body.page-v3 .v3x-crew p:not(.role) { margin: 0 14px; font-size: 16px; line-heig
   body.page-v3 .v3x-crew > li { padding: 8px 8px 22px; }
   body.page-v3 .v3x-crew-soon { aspect-ratio: 3 / 1; }
 }
+
+/* 2026-10-14 Dentistry and Implants highlight on the home page */
+.page-v3 .v3-hl { position: relative; z-index: 0; padding: 0 .08em; }
+.page-v3 .v3-hl::after { content: ""; position: absolute; left: 0; right: 0; bottom: .06em; height: .34em; z-index: -1; border-radius: .08em; background: linear-gradient(90deg, rgba(99,102,241,.38), rgba(129,140,248,.30)); }
+.page-v3 .v3-focus { padding-top: 56px; padding-bottom: 56px; }
+.page-v3 .v3-focus .v3-focus-title { text-align: center; margin: 0 0 28px; }
+.page-v3 .v3-focus .v3-card.v3-focus-card { background: #111318; color: #fff; border: 0; box-shadow: 0 24px 60px -24px rgba(17,19,24,.55); padding: 40px 36px; }
+.page-v3 .v3-focus .v3-focus-card .v3-eyebrow { display: inline-block; margin-bottom: 14px; padding: 6px 14px; border-radius: 999px; background: linear-gradient(90deg,#6366f1,#818cf8); color: #fff; font-size: 15px; font-weight: 700; letter-spacing: .02em; }
+.page-v3 .v3-focus .v3-focus-card .v3-focus-word { display: block; margin: 0 0 8px; font: 600 clamp(40px, 5vw, 60px)/1.02 var(--v3-font); letter-spacing: -.02em; color: #fff; }
+.page-v3 .v3-focus .v3-focus-card .v3-h3, .page-v3 .v3-focus .v3-focus-card .v3-body { color: rgba(255,255,255,.86); }
+.page-v3 .v3-focus .v3-focus-card .v3-link { color: #c7d2fe; }

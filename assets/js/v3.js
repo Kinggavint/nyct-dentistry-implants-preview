@@ -24,7 +24,7 @@
     ['porcelain-veneers', 'Veneers', 'ba-7-after.webp'],
     ['dental-crowns', 'Crowns', 'ba-3-after.webp'],
     ['restorative-dentistry', 'Restorative', null],
-    ['spark-aligners', 'Spark Aligners', null],
+    ['spark-aligners', 'Clear Aligners - Spark', null],
     ['teeth-whitening', 'Whitening', 'ba-6-after.webp'],
     ['preventive-care', 'Cleanings', 'ba-1-after.webp'],
     ['root-canal-treatment', 'Root Canals', null],
@@ -37,7 +37,7 @@
   var SERVICES_ES = {
     'dental-implants': 'Implantes dentales', 'single-tooth-implants': 'Implantes unitarios', 'same-day-implants': 'Implantes en el mismo día',
     'full-arch-implants': 'All-on-X', 'cosmetic-dentistry': 'Rediseño de sonrisa', 'porcelain-veneers': 'Carillas', 'dental-crowns': 'Coronas',
-    'restorative-dentistry': 'Restauraciones', 'spark-aligners': 'Alineadores Spark', 'teeth-whitening': 'Blanqueamiento', 'preventive-care': 'Limpiezas',
+    'restorative-dentistry': 'Restauraciones', 'spark-aligners': 'Alineadores transparentes - Spark', 'teeth-whitening': 'Blanqueamiento', 'preventive-care': 'Limpiezas',
     'root-canal-treatment': 'Conductos', 'tooth-extractions': 'Extracciones', 'periodontal-care': 'Encías', 'dentures': 'Dentaduras', 'emergency-dentistry': 'Emergencias'
   };
   var TOOTH = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true">' +
