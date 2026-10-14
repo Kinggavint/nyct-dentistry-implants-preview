@@ -76,3 +76,4 @@ body.page-v3 .v3x-crew p:not(.role) { margin: 0 14px; font-size: 16px; line-heig
 .page-v3 .v3-focus .v3-focus-card .v3-focus-word { display: block; margin: 0 0 8px; font: 600 clamp(40px, 5vw, 60px)/1.02 var(--v3-font); letter-spacing: -.02em; color: #fff; }
 .page-v3 .v3-focus .v3-focus-card .v3-h3, .page-v3 .v3-focus .v3-focus-card .v3-body { color: rgba(255,255,255,.86); }
 .page-v3 .v3-focus .v3-focus-card .v3-link { color: #c7d2fe; }
+.page-v3 .v3h-title.v3h-title-2l.v3h-title-es { font-size: min(calc(var(--v3-fs-super) * .8), calc((min(100vw, var(--v3-max)) - 2 * var(--v3-gutter)) / 18)); }
