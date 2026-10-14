@@ -91,13 +91,13 @@ material we do not have yet.
 
 - **Logo and name.** The practice chose its black tooth logo ("Logo 2026", simple, black on white). It is in the
   header, the home page opening, the footer (white) and the browser icon. The name "NY, CT Dentistry & Implants"
-  is used in page titles, Google's listing data and the footer copyright; the logo keeps the words
-  "Dentistry & Implants" exactly as in the file. Original kept in logo-concepts/client-originals/.
+  is used in page titles, Google's listing data and the footer copyright (and, after the second email, the
+  header and home page wordmark). Original kept in logo-concepts/client-originals/.
 - **Home page.** "Dentistry" and "Implants" in the opening line are highlighted like "Trust" and "Last".
 - **Prices.** None listed; patients call or book online (the practice's online booking links).
 - **Insurance.** The plan lists are gone from all three offices; the insurance page and office pages say to
   call the office, with each phone number. Stamford still notes HUSKY Health (Medicaid).
-- **Clear aligners** are now "Spark Aligners" in the service buttons and menus, and the aligner page links to
+- **Clear aligners** are now "Spark Aligners" in the service buttons and menus (renamed "Clear Aligners - Spark" after the second email), and the aligner page links to
   the Spark Aligners brand page. Please confirm all three offices offer Spark.
 - **Parking** is no longer mentioned anywhere (all offices have it).
 - **Dr. Ryan Oh.** His bio (sent 2026-10-06) is now live on his own page, the team page and the Stamford page,
@@ -105,14 +105,34 @@ material we do not have yet.
 - The practice asked to be told when all the old websites forward to the new one, and for the Drive link
   again to upload team photos.
 
+## Answered 2026-10-13 (second email)
+
+- **The live site was not updated.** The practice checked nyctdentistry.com, which still runs an older build
+  (production branch `launch-cloudfront`), so the logo, home highlight and Dr. Oh's page it asked about were only
+  on this preview. Production needs a deploy before the practice sees any of the 2026-10-13 work.
+- **Wordmark (answers item 27).** The name reads "NY, CT Dentistry & Implants" in the header, home page opening
+  and footer, in normal case (the live site shows it in capitals). It is set in Figtree, the closest open font to
+  the lettering in the "Logo 2026" file, self-hosted in assets/fonts/.
+- **Home page.** "Dentistry" and "Implants" are now clearly highlighted (blue with a full underline, also on
+  phones); before, they had the same faint underline as "Trust" and "Last".
+- **Dr. Park.** The line under his name now reads "Calm, Conservative, and Detail-Oriented" (was "Caring for
+  Connecticut patients since 2015") on the team page, the home page and the office team cards. His bio text
+  still says he has cared for Connecticut patients since 2015.
+- **Services.** The aligner button and links read "Clear Aligners - Spark" (Spanish: "Alineadores transparentes
+  - Spark"). The aligner page heading still reads "Spark Aligners for a Straighter Smile".
+- **Root canals.** The root canal page now says "Most root canals can be done in our office, including molar
+  root canals and retreatments."
+
 ## Questions from 2026-10-13
 
-27. **Name in the header.** The header shows the logo as sent ("Dentistry & Implants"). Should the header
-    text read "NY, CT Dentistry & Implants" instead? Google's office names are still "Kent Dentistry and
-    Implants", "Mt Kisco Dentistry & Implants" and "Stamford Dentistry & Implants - Clear Smile Dental Studio".
 28. **Logo color on the site.** The logo is black; buttons and links still use the blue accent. Keep blue for
     buttons, or move to black and white throughout?
-
+29. **Root canal X-ray.** The practice asked whether an X-ray of a root canal would help. Yes: please send one or
+    two of your own root canal X-rays (before and after, no patient name or date on the image) and we will add
+    them to the root canal page. We have no root canal X-ray from the practice yet.
+30. **Logo font.** The exact font in the "Logo 2026" file is not named in the file. If the designer can tell us
+    the font name (or send the font), we will switch the name to it; until then the site uses the closest open
+    match.
 ## Features waiting on access
 
 20. **Live Google reviews.** Business Profile access is confirmed: support@apexailabs.ai has been a Manager
