@@ -140,6 +140,16 @@ material we do not have yet.
 30. **Logo font.** The exact font in the "Logo 2026" file is not named in the file. If the designer can tell us
     the font name (or send the font), we will switch the name to it; until then the site uses the closest open
     match.
+## Answered 2026-10-15 (email)
+
+- **Team photos and root canal X-ray are coming.** The practice wrote "Will get the two things done soon":
+  team photos for Meet the Team and a root canal X-ray (no patient information) go to the shared Drive folder.
+  Nothing new was attached to this email, so the site is unchanged.
+- **Clear Smile forwarding.** The practice asked when clearsmiledentalstudio.com will be merged into the new
+  site. See item 25: the forward depends on who controls the Clear Smile DNS and hosting (GoDaddy manager
+  access was added; the Energize answer on Cloudflare and hosting is still pending). We owe the practice a
+  date or the blocker in plain words.
+
 ## Features waiting on access
 
 20. **Live Google reviews.** Business Profile access is confirmed: support@apexailabs.ai has been a Manager
@@ -154,6 +164,9 @@ material we do not have yet.
     (2026-10-11) only knows about GoDaddy, not Cloudflare, and has emailed Energize to ask whether they run
     Cloudflare and the hosting for the Clear Smile site. It also added Apex as a manager on the GoDaddy account
     for Clear Smile and asked whether that is enough.
+    Asked again 2026-10-15: "Any clue when the clear smile dental studio website will be merged to the new one?"
+    The merged content is already on the new site (Stamford page, blog posts, redirects in REDIRECTS.csv); only
+    the domain forward is outstanding.
 26. **Google Analytics and Search Console.** The practice wants them owned by nyctdentistryimplants@gmail.com
     (email 2026-10-11).
 21. **Website chat.** Live. Handoffs go to nyctdentistryimplants@gmail.com (confirmed 2026-10-06). It now opens
