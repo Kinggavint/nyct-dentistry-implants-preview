@@ -86,9 +86,9 @@
 
 
 /* ---------- hero identity: big logo + locations that fly into the header corners on scroll ---------- */
-.page-v3 .v3-hero-logo { display: inline-flex; align-items: center; gap: 30px; margin: 0 0 22px; color: var(--v3-brand); text-decoration: none; white-space: nowrap; }
+.page-v3 .v3-hero-logo { display: inline-flex; align-items: center; gap: 30px; margin: 0 0 22px; color: #111; text-decoration: none; white-space: nowrap; }
 .page-v3 .v3-hero-logo img { width: 84px; height: 84px; object-fit: contain; }
-.page-v3 .v3-hero-logo span { font: 600 36px/1 var(--v3-font); letter-spacing: .16em; text-transform: uppercase; }
+.page-v3 .v3-hero-logo span { font: 400 32px/1 "Jost", "Helvetica Neue", Arial, sans-serif; letter-spacing: .02em; }
 .page-v3 .v3-hero-loc { width: fit-content; margin: 0 auto; font: 600 21px/1.19 var(--v3-font); letter-spacing: .011em; color: var(--v3-ink-metal); white-space: nowrap; }
 .page-v3 .v3h-title { margin-top: 12px; }
 .v3-navloc { position: fixed; left: 0; top: 0; z-index: 2; margin: 0; pointer-events: none; will-change: transform, opacity; white-space: nowrap; font: 600 12px/1.2 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif; letter-spacing: .01em; color: #4a4a52; }
@@ -101,7 +101,7 @@ html.v3-fly-on .page-v3 .v3-hero .v3-hero-logo:not(.v3-fly), html.v3-fly-on .pag
 html.v3-fly-on .page-v3 .site-header .brand { opacity: 0; }
 @media (min-width: 1380px) { body.page-v3 .site-header .header-inner { max-width: 1400px; padding-right: 290px; } }
 @media (max-width: 734px) {
-  .page-v3 .v3-hero-logo { gap: 14px; margin-bottom: 16px; } .page-v3 .v3-hero-logo img { width: 48px; height: 48px; } .page-v3 .v3-hero-logo span { font-size: 17px; }
+  .page-v3 .v3-hero-logo { gap: 14px; margin-bottom: 16px; } .page-v3 .v3-hero-logo img { width: 48px; height: 48px; } .page-v3 .v3-hero-logo span { font-size: 17px; letter-spacing: .02em; }
   .page-v3 .v3-hero-loc { font-size: 15px; white-space: normal; padding: 0 16px; }
 }
 
@@ -223,6 +223,9 @@ body.page-v3 .v3-hero .v3-links .v3-btn { min-width: 190px; }
 .page-v3 .v3-hero > * { position: relative; z-index: 1; }
 .page-v3 .v3-hero .v3-eyebrow, .page-v3 .v3-hero .v3-intro { color: var(--v3-ink-metal); }
 .page-v3 .v3h-title { max-width: 15ch; margin-left: auto; margin-right: auto; }
+/* two-line mission headline (client request): each line on its own row, never wraps; scales down with the viewport so both lines fit */
+.page-v3 .v3h-title.v3h-title-2l { max-width: none; font-size: min(var(--v3-fs-super), calc((min(100vw, var(--v3-max)) - 2 * var(--v3-gutter)) / 12.8)); }
+.page-v3 .v3h-title-2l .v3h-line { display: block; white-space: nowrap; }
 .page-v3 .v3h-mission { max-width: 46ch; margin-top: 22px; }
 .page-v3 .v3-hero .v3-links { margin-top: 32px; }
 .page-v3 .v3h-ask { margin-top: 18px; }
@@ -435,9 +438,9 @@ html:not(.v3-ctas-docked) body.page-v3 .site-header :is(.header-call, .header-ct
 .page-v3 .site-header::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: rgba(250,250,252,.72); border-bottom: 1px solid rgba(0,0,0,.06); -webkit-backdrop-filter: saturate(190%) blur(34px); backdrop-filter: saturate(190%) blur(34px); }
 html.mo-scrolled .page-v3 .site-header { background: none; box-shadow: none; }
 .page-v3 .header-inner { position: static; width: 100%; max-width: 1080px; min-height: var(--v3-nav-h); margin: 0 auto; padding: 0 22px; gap: 4px; box-sizing: border-box; }
-.page-v3 .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--v3-brand); font: 600 12px/1 var(--v3-font); letter-spacing: .16em; text-transform: uppercase; white-space: nowrap; }
-.page-v3 .brand::before { content: ""; width: 28px; height: 28px; flex: 0 0 auto; background: url("../img/logo/kwon-icon-blue.png") center / contain no-repeat; }
-.page-v3 .brand:hover { color: var(--v3-brand); }
+.page-v3 .brand { display: inline-flex; align-items: center; gap: 10px; color: #111; font: 400 15px/1 "Jost", "Helvetica Neue", Arial, sans-serif; letter-spacing: .02em; white-space: nowrap; }
+.page-v3 .brand::before { content: ""; width: 28px; height: 28px; flex: 0 0 auto; background: url("../img/logo/kwon-icon-black.png") center / contain no-repeat; }
+.page-v3 .brand:hover { color: #111; }
 .page-v3 .primary-nav { gap: 0; margin: 0 0 0 auto; }
 .page-v3 .primary-nav a { display: flex; align-items: center; height: var(--v3-nav-h); padding: 0 10px; color: var(--v3-ink); opacity: .8; font: 400 13px/1 var(--v3-font); letter-spacing: -.01em; text-decoration: none; transition: opacity 240ms; }
 .page-v3 .primary-nav a:hover, .page-v3 .primary-nav a[aria-current="page"], .page-v3 .primary-nav a[aria-expanded="true"] { opacity: 1; color: var(--v3-ink); text-decoration: none; }
@@ -498,8 +501,8 @@ html.mo-scrolled .page-v3 .site-header { background: none; box-shadow: none; }
 .page-v3 .site-footer { position: relative; padding: 56px var(--v3-gutter) 24px; color: rgba(245,245,247,.64); background: linear-gradient(180deg, #2b2b30, #1f1f23); font: 400 13px/1.38 var(--v3-font); letter-spacing: -.01em; }
 .page-v3 .site-footer p { margin: 0 0 .8em; font-size: 13px; color: rgba(245,245,247,.64); }
 .page-v3 .footer-main { max-width: var(--v3-max); margin: 0 auto; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr); gap: 28px; padding: 0 0 28px; border-bottom: 1px solid rgba(255,255,255,.18); }
-.page-v3 .footer-brand { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 14px; color: #f5f5f7; font: 600 12px/1 var(--v3-font); letter-spacing: .16em; text-transform: uppercase; text-decoration: none; }
-.page-v3 .footer-brand::before { content: ""; width: 34px; height: 34px; background: url("../img/logo/kwon-icon-white.png") center / contain no-repeat; }
+.page-v3 .footer-brand { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 14px; color: #f5f5f7; font: 400 15px/1 "Jost", "Helvetica Neue", Arial, sans-serif; letter-spacing: .02em; text-decoration: none; }
+.page-v3 .footer-brand::before { content: ""; width: 34px; height: 34px; background: url("../img/logo/kwon-icon-white-2026.png") center / contain no-repeat; }
 .page-v3 .footer-head { margin: 0 0 .9em; font: 600 13px/1.3 var(--v3-font); letter-spacing: -.01em; text-transform: none; color: #f5f5f7 !important; }
 .page-v3 .footer-links { display: grid; gap: .7em; }
 .page-v3 .site-footer a { color: rgba(245,245,247,.64); font-size: 13px; text-decoration: none; }
@@ -599,7 +602,7 @@ body.page-v3:has(#di-chat-panel:not([hidden])) #di-a11y { display: none; }
   body.page-v3 .v3-hero .v3-links .v3-btn { min-width: 0; }
   .page-v3 .v3-links { gap: 12px 16px; }
   .page-v3 .header-inner { padding: 0 14px; gap: 2px; min-width: 0; }
-  .page-v3 .brand { min-width: 0; gap: 8px; font-size: 11px; letter-spacing: .1em; } .page-v3 .brand::before { width: 26px; height: 26px; }
+  .page-v3 .brand { min-width: 0; gap: 8px; font-size: 13px; letter-spacing: .02em; } .page-v3 .brand::before { width: 26px; height: 26px; }
   .page-v3 .di-lang a { padding: 0 4px; font-size: 12px; }
   .page-v3 .v3h-stats { gap: 22px 18px; margin-top: 44px; } .page-v3 .v3h-stats strong { font-size: 30px; } .page-v3 .v3h-stats span { font-size: 13px; }
   .page-v3 .v3h-offices { padding: 0 20px; } .page-v3 .v3h-offices .office-row { grid-template-columns: minmax(0, 1fr); gap: 14px; } .page-v3 .v3h-offices .hours div { grid-template-columns: minmax(0, 1fr) auto; }
@@ -610,7 +613,7 @@ body.page-v3:has(#di-chat-panel:not([hidden])) #di-a11y { display: none; }
   .page-v3 #di-chat .di-chat-toggle::before { width: 30px; height: 30px; }
   .page-v3 .di-chat-panel { width: calc(100vw - 32px); }
 }
-@media (max-width: 390px) { .page-v3 .brand { gap: 7px; font-size: 10.5px; letter-spacing: .08em; } .page-v3 .v3-super { font-size: 40px; } .page-v3 .v3-headline { font-size: 32px; } .page-v3 .v3-wrap { padding: 0 16px; } }
+@media (max-width: 390px) { .page-v3 .brand { gap: 7px; font-size: 12px; letter-spacing: .02em; } .page-v3 .v3-super { font-size: 40px; } .page-v3 .v3-headline { font-size: 32px; } .page-v3 .v3-wrap { padding: 0 16px; } }
 
 /* ---------- reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
@@ -758,3 +761,92 @@ body:has(.primary-nav.is-open) .v3-reddit-pill { display: none; }
 /* before/after labels and the phone doctor captions at the 13px floor */
 .page-v3 .v3h-ba .di-ba-label { font-size: 13px; line-height: 1.3; }
 @media (max-width: 734px) { .page-v3 .v3-person-role, .page-v3 .v3-person-soon { font-size: 13px; } }
+
+/* =====================================================================
+   LAUNCH FIXES (10-07). New rules only; the home hero, its photo layer, the logo flight, the typing line,
+   the carousel collapse and the offer cards are untouched.
+   ===================================================================== */
+/* phone and tablet menu: the flying hero logo and the locations line step aside while the menu is open, so they
+   never paint over (or catch taps meant for) the menu links; the header shows the real logo instead */
+html:has(#primary-nav.is-open) .v3-fly, html:has(#primary-nav.is-open) .v3-navloc { opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+.page-v3 #primary-nav.is-open { z-index: 5; }
+html.v3-fly-on body.page-v3:has(#primary-nav.is-open) .site-header .brand { opacity: 1; }
+/* the open menu locks the page behind it and dims it; a tap on the dimmed page closes the menu (site.js) */
+html.v3-menu-open { overflow: hidden; }
+@media (max-width: 1080px) {
+  body.page-v3::after { content: ""; position: fixed; inset: 0; z-index: 58; background: rgba(29,29,31,.28); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 300ms var(--v3-ease), visibility 0s linear 300ms; }
+  html.v3-menu-open body.page-v3::after { opacity: 1; visibility: visible; pointer-events: auto; transition: opacity 300ms var(--v3-ease), visibility 0s; }
+}
+
+/* floating controls: "Ask a question" hides under its own open panel; on phones and tablets (where the Call / Schedule dock shows)
+   both floating buttons are 44px icons at the same height (each keeps its accessible name) */
+.page-v3 #di-chat:has(#di-chat-panel:not([hidden])) .di-chat-toggle { display: none; }
+.page-v3 #di-a11y > button { color: #1d1d1f; background: rgba(255,255,255,.8); border: 1px solid rgba(255,255,255,.95); box-shadow: inset 0 1px 1px #fff, 0 0 0 .5px rgba(29,29,31,.14), 0 8px 24px -10px rgba(40,44,60,.3); }
+@media (max-width: 860px) {
+  .page-v3 #di-a11y > button { width: 44px; height: 44px; min-height: 44px; padding: 0 !important; font-size: 0 !important; display: grid; place-items: center; }
+  .page-v3 #di-a11y > button::before { content: ""; width: 22px; height: 22px; background: var(--v3-icon-a11y) center / contain no-repeat; }
+  .page-v3 #di-chat .di-chat-toggle { width: 44px; height: 44px; min-height: 44px; padding: 0 !important; gap: 0; justify-content: center; font-size: 0 !important; letter-spacing: 0; }
+  .page-v3 #di-chat .di-chat-toggle::before { width: 44px; height: 44px; background-size: 18px, auto; box-shadow: none; }
+  .page-v3 #di-chat .di-chat-toggle::after { animation: none; }
+}
+/* desktop below 1440: the pill keeps its label but sits lower and tighter, clear of the reading column */
+@media (min-width: 861px) and (max-width: 1439px) {
+  .page-v3 #di-chat .di-chat-toggle { min-height: 48px; padding: 0 18px 0 8px !important; font-size: 15px !important; }
+  .page-v3 #di-chat .di-chat-toggle::before { width: 32px; height: 32px; }
+}
+@media (min-width: 861px) { .page-v3 #di-chat { left: 16px; bottom: 16px; } .page-v3 #di-a11y { right: 16px; bottom: 16px; } }
+
+/* tap targets: carousel and banner dots keep their 8px look with a 24px hit area; office phones and links are 44px tall */
+.page-v3 :is(.v3-banner-dot, .mo-rotator-nav button.mo-dot, .mo-slideshow-dots button) { position: relative; }
+.page-v3 :is(.v3-banner-dot, .mo-rotator-nav button.mo-dot, .mo-slideshow-dots button)::before { content: ""; position: absolute; inset: -8px; }
+.page-v3 .office-row :is(.office-phone, .text-link), .page-v3 .v3p-map figcaption .text-link { display: inline-flex; align-items: center; min-height: 44px; }
+
+/* active chips and the payment calculator: logo blue, like the nav and the accents */
+body.v3-inner :is(.vd-filter[aria-pressed="true"], .v3p-filter button[aria-pressed="true"], .di-calc-opt:has(input:checked)) { background: #2552b0; border-color: #2552b0; color: #fff; box-shadow: 0 6px 16px -8px rgba(37,82,176,.55); }
+
+/* office hours: one fixed day column so all three offices line up; a little air before the Stamford note */
+@media (min-width: 735px) { .page-v3 .office-row .hours div { grid-template-columns: 8.5em minmax(0, 1fr); } }
+.page-v3 .office-row .office-note { margin-top: 10px; }
+
+/* home: Dr. Kwon and Dr. Park, two across */
+.page-v3 .v3-people.v3-people-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 640px; margin-left: auto; margin-right: auto; }
+/* team page: Dr. Oh as a text card until his photo arrives (no placeholder art) */
+body.page-v3 .v3x-crew > li.v3x-crew-text { justify-content: center; padding: 34px 18px; }
+body.page-v3 .v3x-crew > li.v3x-crew-text h3 { margin-top: 0; }
+
+/* a hero with a photo: the jump links line up with the text */
+@media (min-width: 861px) { body.v3-inner .page-hero:has(> figure) .service-index { justify-content: flex-start; } }
+/* a framed photo under a sticky section heading (insurance) */
+body.v3-inner .v3p-side-photo { max-width: 360px; margin: 28px 0 0; padding: 8px; border-radius: 26px; background: #fff; box-shadow: var(--v3-card-shadow); }
+body.v3-inner .v3p-side-photo img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 19px; }
+@media (max-width: 860px) { body.v3-inner .v3p-side-photo { margin: 24px auto 0; } }
+
+/* services: one real photo above each group's cards */
+body.v3-inner .v3s-group-photo { max-width: 560px; margin: 0 auto clamp(32px, 4vw, 48px); padding: 8px; border-radius: 28px; background: #fff; box-shadow: var(--v3-card-shadow); box-sizing: border-box; }
+body.v3-inner .v3s-group-photo img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 21px; }
+body.v3-inner .v3s-group-photo.is-xray { max-width: 520px; }
+body.v3-inner .v3s-group-photo.is-xray img { aspect-ratio: 550 / 283; background: #000; }
+/* the Same day card: its content sits centered in the tall card instead of leaving an empty lower half */
+body.v3-inner .v3s-card-feature { display: flex; flex-direction: column; justify-content: center; }
+
+/* Spanish pages: a short row of patient videos */
+body.v3-inner .v3p-videos { max-width: 760px; margin: clamp(40px, 5vw, 64px) auto; text-align: center; }
+body.v3-inner .v3p-videos h3 { margin: 0 0 20px; font: 600 clamp(22px, 2.4vw, 28px)/1.2 var(--v3-font); color: var(--v3-ink); }
+body.v3-inner .v3p-videos .vd-testimonials:has(> figure:only-child) { grid-template-columns: minmax(0, 300px); justify-content: center; }
+body.v3-tpl-services .v3s-card.v3s-card-feature > p:not(.v3s-card-links) { flex: 0 0 auto; }
+.page-v3 .office-row .office-row-hours .office-note { margin-top: 10px; }
+@media (min-width: 621px) { body.v3-inner .v3p-videos .vd-testimonials { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* Oct 13: Dentistry and Implants highlight below the home hero */
+.page-v3 .v3-focus { padding: 64px 0 8px; }
+.page-v3 .v3-focus .v3-offers { padding: 0; }
+
+/* 2026-10-14 Dr. Kwon: practice name in mixed case, set in Jost to match his Logo 2026 file */
+.brand, .footer-brand, .page-v2 .brand, .page-v2 .footer-brand, .page-v3 .v3-hero-logo span, .v3-fly.v3-hero-logo span, .v3-hero-logo span {
+  font-family: "Jost", "Helvetica Neue", Arial, sans-serif !important; font-weight: 400 !important; text-transform: none !important; letter-spacing: .02em !important;
+}
+.brand .brand-amp, .footer-brand .brand-amp { color: inherit; }
+/* keep "NY, CT Dentistry & Implants" as one run of text: no flex gap around the ampersand */
+.page-v3 .brand, .page-v2 .brand, .page-v2 .footer-brand { gap: 0 !important; }
+.page-v3 .brand::before, .page-v2 .brand::before, .page-v2 .footer-brand::before { margin-right: 10px; }
+.brand .brand-amp, .footer-brand .brand-amp { padding: 0 .28em; }

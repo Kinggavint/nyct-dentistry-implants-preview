@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://nyctdentistry.com/</loc></url>
   <url><loc>https://nyctdentistry.com/accessibility.html</loc></url>
   <url><loc>https://nyctdentistry.com/articles.html</loc></url>
+  <url><loc>https://nyctdentistry.com/contact.html</loc></url>
+  <url><loc>https://nyctdentistry.com/doctor.html</loc></url>
+  <url><loc>https://nyctdentistry.com/doctors.html</loc></url>
+  <url><loc>https://nyctdentistry.com/dr-ryan-oh.html</loc></url>
+  <url><loc>https://nyctdentistry.com/insurance.html</loc></url>
+  <url><loc>https://nyctdentistry.com/service-area.html</loc></url>
+  <url><loc>https://nyctdentistry.com/services.html</loc></url>
+  <url><loc>https://nyctdentistry.com/smiles.html</loc></url>
+  <url><loc>https://nyctdentistry.com/terms.html</loc></url>
+  <url><loc>https://nyctdentistry.com/testimonials.html</loc></url>
   <url><loc>https://nyctdentistry.com/articles/are-single-dental-implants-worth-it.html</loc></url>
   <url><loc>https://nyctdentistry.com/articles/best-dental-implant-dentist-in-stamford-ct-top-rated.html</loc></url>
-  <url><loc>https://nyctdentistry.com/articles/clear-aligners-vs-braces-which-is-faster.html</loc></url>
   <url><loc>https://nyctdentistry.com/articles/dental-implants-which-is-right-for-you.html</loc></url>
   <url><loc>https://nyctdentistry.com/articles/greenwich-ct-dental-health.html</loc></url>
   <url><loc>https://nyctdentistry.com/articles/healing-process-after-dental-implants-what-to-expect.html</loc></url>
@@ -22,6 +32,7 @@
   <url><loc>https://nyctdentistry.com/articles/how-to-treat-sensitivity-after-teeth-whitening.html</loc></url>
   <url><loc>https://nyctdentistry.com/articles/implant-consultation.html</loc></url>
   <url><loc>https://nyctdentistry.com/articles/insurance-implants-cosmetic.html</loc></url>
+  <url><loc>https://nyctdentistry.com/articles/clear-aligners-vs-braces-which-is-faster.html</loc></url>
   <url><loc>https://nyctdentistry.com/articles/is-going-to-the-dentist-a-big-deal.html</loc></url>
   <url><loc>https://nyctdentistry.com/articles/looking-for-a-pain-free-dentist-in-stamford-ct.html</loc></url>
   <url><loc>https://nyctdentistry.com/articles/new-rochelle-dental-health.html</loc></url>
@@ -36,28 +47,15 @@
   <url><loc>https://nyctdentistry.com/articles/what-is-the-process-of-root-canal-treatment.html</loc></url>
   <url><loc>https://nyctdentistry.com/articles/what-to-look-for-in-a-dental-implant-specialist.html</loc></url>
   <url><loc>https://nyctdentistry.com/articles/why-does-my-dentist-want-to-give-me-preventative-fillings.html</loc></url>
-  <url><loc>https://nyctdentistry.com/contact.html</loc></url>
-  <url><loc>https://nyctdentistry.com/doctor.html</loc></url>
-  <url><loc>https://nyctdentistry.com/doctors.html</loc></url>
-  <url><loc>https://nyctdentistry.com/es/doctor.html</loc></url>
-  <url><loc>https://nyctdentistry.com/es/</loc></url>
-  <url><loc>https://nyctdentistry.com/es/insurance.html</loc></url>
-  <url><loc>https://nyctdentistry.com/es/locations.html</loc></url>
-  <url><loc>https://nyctdentistry.com/es/services.html</loc></url>
-  <url><loc>https://nyctdentistry.com/</loc></url>
-  <url><loc>https://nyctdentistry.com/insurance.html</loc></url>
   <url><loc>https://nyctdentistry.com/kent/</loc></url>
-  <url><loc>https://nyctdentistry.com/locations.html</loc></url>
   <url><loc>https://nyctdentistry.com/mount-kisco/</loc></url>
-  <url><loc>https://nyctdentistry.com/service-area.html</loc></url>
-  <url><loc>https://nyctdentistry.com/services.html</loc></url>
-  <url><loc>https://nyctdentistry.com/services/clear-aligners.html</loc></url>
   <url><loc>https://nyctdentistry.com/services/cosmetic-dentistry.html</loc></url>
   <url><loc>https://nyctdentistry.com/services/dental-crowns.html</loc></url>
   <url><loc>https://nyctdentistry.com/services/dental-implants.html</loc></url>
   <url><loc>https://nyctdentistry.com/services/dentures.html</loc></url>
   <url><loc>https://nyctdentistry.com/services/emergency-dentistry.html</loc></url>
   <url><loc>https://nyctdentistry.com/services/full-arch-implants.html</loc></url>
+  <url><loc>https://nyctdentistry.com/services/spark-aligners.html</loc></url>
   <url><loc>https://nyctdentistry.com/services/periodontal-care.html</loc></url>
   <url><loc>https://nyctdentistry.com/services/porcelain-veneers.html</loc></url>
   <url><loc>https://nyctdentistry.com/services/preventive-care.html</loc></url>
@@ -67,8 +65,10 @@
   <url><loc>https://nyctdentistry.com/services/single-tooth-implants.html</loc></url>
   <url><loc>https://nyctdentistry.com/services/teeth-whitening.html</loc></url>
   <url><loc>https://nyctdentistry.com/services/tooth-extractions.html</loc></url>
-  <url><loc>https://nyctdentistry.com/smiles.html</loc></url>
   <url><loc>https://nyctdentistry.com/stamford/</loc></url>
-  <url><loc>https://nyctdentistry.com/terms.html</loc></url>
-  <url><loc>https://nyctdentistry.com/testimonials.html</loc></url>
+  <url><loc>https://nyctdentistry.com/es/</loc></url>
+  <url><loc>https://nyctdentistry.com/es/doctor.html</loc></url>
+  <url><loc>https://nyctdentistry.com/es/insurance.html</loc></url>
+  <url><loc>https://nyctdentistry.com/es/locations.html</loc></url>
+  <url><loc>https://nyctdentistry.com/es/services.html</loc></url>
 </urlset>

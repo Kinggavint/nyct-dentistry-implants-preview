@@ -14,19 +14,25 @@
   <meta property="og:description" content="Same-day emergency dental care for toothaches, broken or knocked-out teeth, lost crowns and fillings, and abscesses in Mount Kisco, Kent and Stamford.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://nyctdentistry.com/assets/img/dr-kwon-portrait.webp">
+  <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Space+Grotesk:wght@500;600;700&family=Jost:wght@400&display=swap">
   <link rel="stylesheet" href="../assets/css/site.css">
   <link rel="stylesheet" href="../assets/css/features.css">
   <link rel="stylesheet" href="../assets/css/motion.css">
   <link rel="stylesheet" href="../assets/css/v3.css">
   <link rel="stylesheet" href="../assets/css/v3-pages.css">
+  <link rel="stylesheet" href="../assets/css/v3-service.css">
   <script src="../assets/js/site.js" defer></script>
   <script src="../assets/js/features.js" defer></script>
   <script src="../assets/js/motion.js" defer></script>
   <script src="../assets/js/v3.js" defer></script>
+  <script src="../assets/js/analytics.js" defer></script>
   <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -41,21 +47,21 @@
    "medicalSpecialty": "Dentistry",
    "department": [
     {
-     "@id": "https://nyctdentistry.com/locations.html#mount-kisco"
+     "@id": "https://nyctdentistry.com/contact.html#mount-kisco"
     },
     {
-     "@id": "https://nyctdentistry.com/locations.html#kent"
+     "@id": "https://nyctdentistry.com/contact.html#kent"
     },
     {
-     "@id": "https://nyctdentistry.com/locations.html#stamford"
+     "@id": "https://nyctdentistry.com/contact.html#stamford"
     }
    ]
   },
   {
    "@type": "Dentist",
-   "@id": "https://nyctdentistry.com/locations.html#mount-kisco",
+   "@id": "https://nyctdentistry.com/contact.html#mount-kisco",
    "name": "Dentistry & Implants, Mount Kisco",
-   "url": "https://nyctdentistry.com/locations.html#mount-kisco",
+   "url": "https://nyctdentistry.com/contact.html#mount-kisco",
    "telephone": "+1-914-666-5225",
    "email": "nyctdentistryimplants@gmail.com",
    "address": {
@@ -86,9 +92,9 @@
   },
   {
    "@type": "Dentist",
-   "@id": "https://nyctdentistry.com/locations.html#kent",
+   "@id": "https://nyctdentistry.com/contact.html#kent",
    "name": "Dentistry & Implants, Kent",
-   "url": "https://nyctdentistry.com/locations.html#kent",
+   "url": "https://nyctdentistry.com/contact.html#kent",
    "telephone": "+1-860-927-3577",
    "email": "nyctdentistryimplants@gmail.com",
    "address": {
@@ -121,9 +127,9 @@
   },
   {
    "@type": "Dentist",
-   "@id": "https://nyctdentistry.com/locations.html#stamford",
+   "@id": "https://nyctdentistry.com/contact.html#stamford",
    "name": "Dentistry & Implants, Stamford",
-   "url": "https://nyctdentistry.com/locations.html#stamford",
+   "url": "https://nyctdentistry.com/contact.html#stamford",
    "telephone": "+1-203-883-4451",
    "email": "nyctdentistryimplants@gmail.com",
    "address": {
@@ -155,8 +161,11 @@
  ]
 }
   </script>
+<!-- APEX:GA4 head -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B4YH72HDLT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'granted'});gtag('js',new Date());gtag('config','G-B4YH72HDLT',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
 </head>
-<body class="page-services page-v3 v3-inner">
+<body class="page-services page-v3 v3-inner v3-tpl-service">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="util-bar" aria-label="Call Now">
     <div class="util-inner">
@@ -168,7 +177,7 @@
   </div>
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="../index.html" aria-label="Dentistry & Implants home">Dentistry <span class="brand-amp">&amp;</span> Implants</a>
+      <a class="brand" href="../index.html" aria-label="NY, CT Dentistry & Implants home">NY, CT Dentistry <span class="brand-amp">&amp;</span> Implants</a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
       <nav class="primary-nav" id="primary-nav" aria-label="Main">
         <a href="../doctor.html">Dr. Kwon</a>
@@ -176,64 +185,76 @@
         <a href="../services.html" aria-current="page">Services</a>
         <a href="../smiles.html">Smiles</a>
         <a href="../insurance.html">Insurance</a>
-        <a href="../locations.html">Locations</a>
+        <a href="../contact.html">Locations</a>
         <a href="../articles.html">Articles</a>
       </nav>
       <nav class="di-lang" aria-label="Language"><a href="../services/emergency-dentistry.html" lang="en" aria-current="true">EN</a><a href="../es/index.html" lang="es">ES</a></nav>
-      <a class="button button-small button-ghost header-call" href="../locations.html" data-office="call">Call Now</a>
-      <a class="button button-small header-cta" href="../locations.html" data-office="book">Schedule Now</a>
+      <a class="button button-small button-ghost header-call" href="../contact.html" data-office="call">Call Now</a>
+      <a class="button button-small header-cta" href="../contact.html" data-office="book">Schedule Now</a>
       <p class="v3-loc">Mount Kisco, NY &middot; Kent, CT &middot; Stamford, CT</p>
     </div>
   </header>
   <main id="main">
-<section class="page-hero solo">
-      <p class="eyebrow">Emergency dentistry</p>
-      <h1>Dental Pain Does Not Wait. Neither <span class="accent">Should</span> You.</h1>
-      <p class="lede">Toothache, a broken tooth or a lost crown? Call the office nearest you. We often see patients in pain the same day.</p>
-      <div class="button-row"><a class="button" href="../locations.html" data-office="book">Book a Consultation</a><a class="button button-ghost" href="../locations.html" data-office="call">Call an office</a></div>
+<style>
+      body.v3-tpl-service .svc-cards.is-four { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 880px; }
+      body.v3-tpl-service .svc-call .svc-cards > li { align-items: center; text-align: center; }
+      body.v3-tpl-service .svc-call .svc-cards .eyebrow { margin: 0; }
+      body.v3-tpl-service .svc-phone { display: block; margin: 4px 0 8px; font: 600 clamp(28px, 3vw, 34px)/1.1 var(--v3-font); letter-spacing: -.01em; color: var(--v3-brand); text-decoration: none; white-space: nowrap; }
+      body.v3-tpl-service .svc-phone:hover { text-decoration: underline; }
+      body.v3-tpl-service .svc-call .svc-cards .button { margin-top: auto; }
+      body.v3-tpl-service .svc-call .svc-facts { margin-top: clamp(44px, 6vw, 64px); grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 640px; }
+      body.v3-tpl-service .svc-firstaid .svc-sub + .svc-duo { margin-top: 0; }
+      @media (max-width: 734px) { body.v3-tpl-service .svc-cards.is-four { grid-template-columns: minmax(0, 1fr); } }
+    </style>
+    <section class="page-hero solo svc-hero">
+      <div>
+        <p class="eyebrow">Emergency dentistry</p>
+        <h1>Dental Pain Does Not Wait. Neither Should You.</h1>
+        <p class="lede">Toothache, a broken tooth or a lost crown? Call the office nearest you. We often see patients in pain the same day.</p>
+        <div class="button-row"><a class="button" href="../contact.html" data-office="book">Schedule Now</a><a class="button button-ghost" href="../contact.html" data-office="call">Call Now</a></div>
+      </div>
+      <figure class="svc-hero-media"><img src="../assets/img/stamford-lounge.webp" alt="The waiting area at the Stamford office" width="600" height="700"></figure>
     </section>
-    <section class="section section-tight">
+
+    <section class="section svc-call" id="call" aria-labelledby="svc-call-h">
       <div class="section-heading">
         <p class="eyebrow">Call now</p>
-        <h2>Reach an office directly</h2>
+        <h2 id="svc-call-h">Reach an office directly.</h2>
         <p>Call ahead if you can so we can prepare for your visit.</p>
       </div>
-      <ul class="feature-list">
-        <li data-reveal><h3>Mount Kisco</h3><p><a class="button" href="tel:9146665225">914-666-5225</a></p></li>
-        <li data-reveal><h3>Kent</h3><p><a class="button" href="tel:8609273577">860-927-3577</a></p></li>
-        <li data-reveal><h3>Stamford</h3><p><a class="button" href="tel:2038834451">203-883-4451</a></p></li>
+      <ul class="svc-cards">
+        <li data-reveal>
+          <p class="eyebrow">New York</p>
+          <h3>Mount Kisco</h3>
+          <a class="svc-phone" href="tel:9146665225">914-666-5225</a>
+          <a class="button button-ghost" href="tel:9146665225">Call Now</a>
+        </li>
+        <li data-reveal>
+          <p class="eyebrow">Connecticut</p>
+          <h3>Kent</h3>
+          <a class="svc-phone" href="tel:8609273577">860-927-3577</a>
+          <a class="button button-ghost" href="tel:8609273577">Call Now</a>
+        </li>
+        <li data-reveal>
+          <p class="eyebrow">Connecticut</p>
+          <h3>Stamford</h3>
+          <a class="svc-phone" href="tel:2038834451">203-883-4451</a>
+          <a class="button button-ghost" href="tel:2038834451">Call Now</a>
+        </li>
+      </ul>
+      <ul class="svc-facts">
+        <li data-reveal><strong>Same day</strong><span>We often see patients in pain the same day.</span></li>
+        <li data-reveal><strong>Three offices</strong><span>Mount Kisco, Kent and Stamford. Call the one closest to you.</span></li>
       </ul>
     </section>
-    <section class="section section-soft">
-      <div class="section-heading">
-        <p class="eyebrow">Visit us</p>
-        <h2>Three offices</h2>
-        <p>Hours and addresses for each location. Our Stamford office accepts walk-in emergency patients, and calling ahead helps us prepare.</p>
-      </div>
-      <div class="office-list"><article class="office-row" id="mount-kisco" data-reveal>
-  <div class="office-row-name"><p class="eyebrow">New York</p><h3><a href="../locations/mount-kisco.html">Mount Kisco</a></h3></div>
-  <div class="office-row-addr"><p>39 Smith Ave, Rear LL<br>Mount Kisco, NY 10549</p><a class="office-phone" href="tel:9146665225">914-666-5225</a></div>
-  <div class="office-row-hours"><dl class="hours"><div><dt>Monday</dt><dd>9:00 am to 6:00 pm</dd></div><div><dt>Tuesday</dt><dd>8:00 am to 6:00 pm</dd></div><div><dt>Wednesday</dt><dd>Closed</dd></div><div><dt>Thursday</dt><dd>10:00 am to 6:00 pm</dd></div><div><dt>Friday</dt><dd>9:30 am to 3:00 pm, every other week</dd></div><div><dt>Saturday and Sunday</dt><dd>Closed</dd></div></dl></div>
-  <div class="office-row-actions"><a class="button" href="https://www.flexbook.me/mtkisco/googlereserve/1" target="_blank" rel="noopener">Schedule Now</a><a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Dentistry%20%26%20Implants%2C%2039%20Smith%20Ave%2C%20Rear%20LL%2C%20Mount%20Kisco%2C%20NY%2010549" target="_blank" rel="noopener">Get directions <span aria-hidden="true">&rarr;</span></a></div>
-</article><article class="office-row" id="kent" data-reveal>
-  <div class="office-row-name"><p class="eyebrow">Connecticut</p><h3><a href="../locations/kent.html">Kent</a></h3></div>
-  <div class="office-row-addr"><p>70 Maple St<br>Kent, CT 06757</p><a class="office-phone" href="tel:8609273577">860-927-3577</a></div>
-  <div class="office-row-hours"><dl class="hours"><div><dt>Monday</dt><dd>8:30 am to 6:00 pm</dd></div><div><dt>Tuesday</dt><dd>9:00 am to 6:00 pm</dd></div><div><dt>Wednesday</dt><dd>8:30 am to 5:00 pm</dd></div><div><dt>Thursday</dt><dd>9:00 am to 5:00 pm</dd></div><div><dt>Friday</dt><dd>9:00 am to 2:00 pm</dd></div><div><dt>Saturday and Sunday</dt><dd>Closed</dd></div></dl></div>
-  <div class="office-row-actions"><a class="button" href="https://www.flexbook.me/kentdent/googlereserve/1" target="_blank" rel="noopener">Schedule Now</a><a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Dentistry%20%26%20Implants%2C%2070%20Maple%20St%2C%20Kent%2C%20CT%2006757" target="_blank" rel="noopener">Get directions <span aria-hidden="true">&rarr;</span></a></div>
-</article><article class="office-row" id="stamford" data-reveal>
-  <div class="office-row-name"><p class="eyebrow">Connecticut</p><h3><a href="../locations/stamford.html">Stamford</a></h3></div>
-  <div class="office-row-addr"><p>800 E Main St<br>Stamford, CT 06902</p><a class="office-phone" href="tel:2038834451">203-883-4451</a></div>
-  <div class="office-row-hours"><dl class="hours"><div><dt>Monday to Wednesday</dt><dd>9:00 am to 5:00 pm</dd></div><div><dt>Thursday</dt><dd>9:00 am to 5:00 pm, every other week</dd></div><div><dt>Friday</dt><dd>9:00 am to 5:00 pm</dd></div><div><dt>Saturday</dt><dd>9:00 am to 3:00 pm</dd></div><div><dt>Sunday</dt><dd>Closed</dd></div></dl><p class="office-note">Open Saturdays. Complimentary parking on site.</p></div>
-  <div class="office-row-actions"><a class="button" href="https://www.flexbook.me/bookcsds/googlereserve/1" target="_blank" rel="noopener">Schedule Now</a><a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Dentistry%20%26%20Implants%2C%20800%20E%20Main%20St%2C%20Stamford%2C%20CT%2006902" target="_blank" rel="noopener">Get directions <span aria-hidden="true">&rarr;</span></a></div>
-</article></div>
-    </section>
-    <section class="section">
+
+    <section class="section section-soft svc-options" id="emergencies" aria-labelledby="svc-options-h">
       <div class="section-heading">
         <p class="eyebrow">What counts</p>
-        <h2>Common dental emergencies</h2>
+        <h2 id="svc-options-h">Common dental emergencies.</h2>
         <p>When in doubt, call. We can help you decide whether you need to be seen right away.</p>
       </div>
-      <ul class="feature-list">
+      <ul class="svc-cards">
         <li data-reveal><h3>Severe toothache</h3><p>Pain that will not go away or that wakes you at night, or sensitivity that is getting worse.</p></li>
         <li data-reveal><h3>Broken, chipped or cracked teeth</h3><p>Including teeth driven back into the socket, and loose or knocked-out teeth.</p></li>
         <li data-reveal><h3>Lost crown or filling</h3><p>Pulled-out dental work can leave the tooth exposed and painful.</p></li>
@@ -242,82 +263,103 @@
         <li data-reveal><h3>Something stuck</h3><p>An object caught between teeth that you cannot remove gently.</p></li>
       </ul>
     </section>
-    <section class="section section-soft">
-      <div class="two-col">
-        <div class="sticky">
-          <p class="eyebrow">What we do</p>
-          <h2>Treatment that gets you out of pain</h2>
-        </div>
-        <div class="prose">
-          <p>Once we find the source, we treat it. That may mean a filling or crown to repair damage, a <a href="../services/root-canal-treatment.html">root canal</a> for an infected tooth, or splinting a loose or knocked-out tooth to the neighbors so it can heal.</p>
-          <p>If a tooth is too damaged to keep, we may recommend <a href="../services/tooth-extractions.html">extraction</a> and talk with you about replacing it. We explain your options before we begin.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section">
-      <div class="two-col">
-        <div class="sticky">
-          <p class="eyebrow">Until you arrive</p>
-          <h2>General first aid tips</h2>
-        </div>
-        <div class="prose">
-          <p>These tips are general. They do not replace a call to the office, so phone us first and we will guide you.</p>
-          <p><strong>Toothache or broken tooth:</strong> rinse gently with lukewarm salt water, use a cold compress on the outside of the cheek for swelling, and save any pieces of tooth.</p>
-          <p><strong>Knocked-out adult tooth:</strong> pick it up by the crown, not the root. If it is clean and you can, gently place it back in the socket. Otherwise keep it in milk or in your saliva, and get to us fast, because time matters.</p>
-          <p><strong>Knocked-out baby tooth:</strong> do not push it back in. Bring the tooth and call us.</p>
-          <p><strong>Lost crown or filling:</strong> keep it, call us, and avoid chewing on that side. A temporary filling material from a pharmacy can protect the tooth until your visit.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section section-soft">
-      <div class="two-col">
-        <div class="sticky">
-          <p class="eyebrow">Emergency room or dentist?</p>
-          <h2>Know where to go</h2>
-        </div>
-        <div class="prose">
-          <p>Go to the emergency room, or call 911, for trouble breathing or swallowing, uncontrolled bleeding, a broken or dislocated jaw, or a serious wound to the face or mouth. For most other dental problems, a hospital can only offer pain relief and send you to a dentist.</p>
-          <p>For everything else, call us first. We will tell you what to do until you arrive and schedule you as soon as possible. Ask about cost when you call, or see <a href="../insurance.html">insurance and financing</a>.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section section-soft">
-      <div class="two-col">
-        <div class="sticky">
-          <p class="eyebrow">Common questions</p>
-          <h2>Good things to ask</h2>
-        </div>
-        <div class="faq-list">
-          <details><summary>What is a dental emergency?</summary><div><p>Severe pain, a broken or knocked-out tooth, swelling, a lost crown or filling, or bleeding that will not stop. When unsure, call.</p></div></details>
-          <details><summary>Should I go to the ER?</summary><div><p>Only for trouble breathing or swallowing, heavy bleeding, a jaw injury or a serious facial wound. Otherwise call us.</p></div></details>
-          <details><summary>How quickly can I be seen?</summary><div><p>We often see patients in pain the same day. Call the office nearest you.</p></div></details>
-          <details><summary>What if I knock out a tooth?</summary><div><p>Act quickly. Handle it by the crown, keep it moist in milk or saliva, and call us right away.</p></div></details>
-          <details><summary>How do I manage pain until I arrive?</summary><div><p>A cold compress and a salt water rinse help many people. Ask us before taking medication, and follow the package directions.</p></div></details>
-          <details><summary>Are emergency visits expensive?</summary><div><p>Cost depends on what is needed. We explain it before treatment. See our <a href="../insurance.html">insurance and financing page</a>.</p></div></details>
-        </div>
-      </div>
-    </section>
-    <section class="section section-tight">
+
+    <section class="section svc-process" id="process" aria-labelledby="svc-process-h">
       <div class="section-heading">
-        <p class="eyebrow">Related services</p>
-        <h2>Keep exploring</h2>
+        <p class="eyebrow">What we do</p>
+        <h2 id="svc-process-h">Treatment that gets you out of pain.</h2>
       </div>
-      <ul class="service-index"><li><a href="../services/root-canal-treatment.html">Root canal treatment</a></li><li><a href="../services/tooth-extractions.html">Tooth extractions</a></li><li><a href="../services/dental-crowns.html">Dental crowns</a></li><li><a href="../services/preventive-care.html">Preventive care</a></li></ul>
+      <ol class="svc-steps">
+        <li data-reveal><h3>Call us first</h3><p>We will tell you what to do until you arrive and schedule you as soon as possible.</p></li>
+        <li data-reveal><h3>Find the source</h3><p>Once we find the source, we treat it. We explain your options before we begin.</p></li>
+        <li data-reveal><h3>Treat it</h3><p>That may mean a filling or crown to repair damage, a <a href="../services/root-canal-treatment.html">root canal</a> for an infected tooth, or splinting a loose or knocked-out tooth to the neighbors so it can heal.</p></li>
+        <li data-reveal><h3>If a tooth cannot be kept</h3><p>If a tooth is too damaged to keep, we may recommend <a href="../services/tooth-extractions.html">extraction</a> and talk with you about replacing it.</p></li>
+      </ol>
     </section>
-    <section class="section section-soft">
-      <div class="cta-band">
-        <div>
-          <h2>In pain? Call now</h2>
-          <p class="lede">Reach the office nearest you and we will take it from there.</p>
-        </div>
-        <div class="button-row"><a class="button" href="../locations.html" data-office="book">Book a Consultation</a><a class="button button-ghost" href="../locations.html" data-office="call">Call an office</a></div>
+
+    <section class="section section-soft svc-firstaid" id="first-aid" aria-labelledby="svc-firstaid-h">
+      <div class="section-heading">
+        <p class="eyebrow">Before your visit</p>
+        <h2 id="svc-firstaid-h">Until you arrive.</h2>
+        <p>These tips are general. They do not replace a call to the office, so phone us first and we will guide you.</p>
       </div>
+      <div class="svc-split">
+        <div class="svc-split-col" data-reveal>
+          <h3>First aid</h3>
+          <ul class="svc-mini">
+            <li><strong>Toothache or broken tooth</strong><span>Rinse gently with lukewarm salt water, use a cold compress on the outside of the cheek for swelling, and save any pieces of tooth.</span></li>
+            <li><strong>Knocked-out adult tooth</strong><span>Pick it up by the crown, not the root. If it is clean and you can, gently place it back in the socket. Otherwise keep it in milk or in your saliva, and get to us fast, because time matters.</span></li>
+            <li><strong>Knocked-out baby tooth</strong><span>Do not push it back in. Bring the tooth and call us.</span></li>
+            <li><strong>Lost crown or filling</strong><span>Keep it, call us, and avoid chewing on that side. A temporary filling material from a pharmacy can protect the tooth until your visit.</span></li>
+          </ul>
+        </div>
+        <div class="svc-split-col" id="where-to-go" data-reveal>
+          <h3>Emergency room or dentist</h3>
+          <ul class="svc-mini">
+            <li><strong>Go to the emergency room</strong><span>Go to the emergency room, or call 911, for trouble breathing or swallowing, uncontrolled bleeding, a broken or dislocated jaw, or a serious wound to the face or mouth. For most other dental problems, a hospital can only offer pain relief and send you to a dentist.</span></li>
+            <li><strong>Call us for everything else</strong><span>For everything else, call us first. We will tell you what to do until you arrive and schedule you as soon as possible. Ask about cost when you call, or see <a href="../insurance.html">insurance and financing</a>.</span></li>
+          </ul>
+          <a class="text-link" href="#call">Office phone numbers</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section svc-faq" id="faq" aria-labelledby="svc-faq-h">
+      <div class="section-heading">
+        <p class="eyebrow">Common questions</p>
+        <h2 id="svc-faq-h">Emergency questions.</h2>
+      </div>
+      <div class="faq-list">
+        <details><summary>What is a dental emergency?</summary><div><p>Severe pain, a broken or knocked-out tooth, swelling, a lost crown or filling, or bleeding that will not stop. When unsure, call.</p></div></details>
+        <details><summary>Should I go to the ER?</summary><div><p>Only for trouble breathing or swallowing, heavy bleeding, a jaw injury or a serious facial wound. Otherwise call us.</p></div></details>
+        <details><summary>How quickly can I be seen?</summary><div><p>We often see patients in pain the same day. Call the office nearest you.</p></div></details>
+        <details><summary>What if I knock out a tooth?</summary><div><p>Act quickly. Handle it by the crown, keep it moist in milk or saliva, and call us right away.</p></div></details>
+        <details><summary>How do I manage pain until I arrive?</summary><div><p>A cold compress and a salt water rinse help many people. Ask us before taking medication, and follow the package directions.</p></div></details>
+        <details><summary>Are emergency visits expensive?</summary><div><p>Cost depends on what is needed. We explain it before treatment. See our <a href="../insurance.html">insurance and financing page</a>.</p></div></details>
+      </div>
+      <div class="svc-related">
+        <p class="svc-related-label">Keep exploring</p>
+        <ul class="service-index">
+          <li><a href="../services/root-canal-treatment.html">Root canal treatment</a></li>
+          <li><a href="../services/tooth-extractions.html">Tooth extractions</a></li>
+          <li><a href="../services/dental-crowns.html">Dental crowns</a></li>
+          <li><a href="../services/preventive-care.html">Preventive care</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-soft svc-book" id="book" aria-labelledby="svc-book-h">
+      <div class="cta-band">
+        <p class="eyebrow">Three offices</p>
+        <h2 id="svc-book-h">In pain? Call now.</h2>
+        <p>Reach the office nearest you and we will take it from there. Hours and addresses for each location are below.</p>
+        <div class="button-row">
+          <a class="button" href="../contact.html" data-office="book">Schedule Now</a>
+          <a class="button button-ghost" href="../contact.html" data-office="call">Call Now</a>
+        </div>
+      </div>
+      <div class="office-list"><article class="office-row" id="mount-kisco" data-reveal>
+  <div class="office-row-name"><p class="eyebrow">New York</p><h3><a href="../mount-kisco/">Mount Kisco</a></h3></div>
+  <div class="office-row-addr"><p>39 Smith Ave, Rear LL<br>Mount Kisco, NY 10549</p><a class="office-phone" href="tel:9146665225">914-666-5225</a></div>
+  <div class="office-row-hours"><dl class="hours"><div><dt>Monday</dt><dd>9:00 am to 6:00 pm</dd></div><div><dt>Tuesday</dt><dd>8:00 am to 6:00 pm</dd></div><div><dt>Wednesday</dt><dd>Closed</dd></div><div><dt>Thursday</dt><dd>10:00 am to 6:00 pm</dd></div><div><dt>Friday</dt><dd>9:30 am to 3:00 pm, every other week</dd></div><div><dt>Saturday and Sunday</dt><dd>Closed</dd></div></dl></div>
+  <div class="office-row-actions"><a class="button" href="https://www.flexbook.me/mtkisco/googlereserve/1" target="_blank" rel="noopener">Schedule Now</a><a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Dentistry%20%26%20Implants%2C%2039%20Smith%20Ave%2C%20Rear%20LL%2C%20Mount%20Kisco%2C%20NY%2010549" target="_blank" rel="noopener">Get directions <span aria-hidden="true">&rarr;</span></a></div>
+</article><article class="office-row" id="kent" data-reveal>
+  <div class="office-row-name"><p class="eyebrow">Connecticut</p><h3><a href="../kent/">Kent</a></h3></div>
+  <div class="office-row-addr"><p>70 Maple St<br>Kent, CT 06757</p><a class="office-phone" href="tel:8609273577">860-927-3577</a></div>
+  <div class="office-row-hours"><dl class="hours"><div><dt>Monday</dt><dd>8:30 am to 6:00 pm</dd></div><div><dt>Tuesday</dt><dd>9:00 am to 6:00 pm</dd></div><div><dt>Wednesday</dt><dd>8:30 am to 5:00 pm</dd></div><div><dt>Thursday</dt><dd>9:00 am to 5:00 pm</dd></div><div><dt>Friday</dt><dd>9:00 am to 2:00 pm</dd></div><div><dt>Saturday and Sunday</dt><dd>Closed</dd></div></dl></div>
+  <div class="office-row-actions"><a class="button" href="https://www.flexbook.me/kentdent/googlereserve/1" target="_blank" rel="noopener">Schedule Now</a><a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Dentistry%20%26%20Implants%2C%2070%20Maple%20St%2C%20Kent%2C%20CT%2006757" target="_blank" rel="noopener">Get directions <span aria-hidden="true">&rarr;</span></a></div>
+</article><article class="office-row" id="stamford" data-reveal>
+  <div class="office-row-name"><p class="eyebrow">Connecticut</p><h3><a href="../stamford/">Stamford</a></h3></div>
+  <div class="office-row-addr"><p>800 E Main St<br>Stamford, CT 06902</p><a class="office-phone" href="tel:2038834451">203-883-4451</a></div>
+  <div class="office-row-hours"><dl class="hours"><div><dt>Monday to Wednesday</dt><dd>9:00 am to 5:00 pm</dd></div><div><dt>Thursday</dt><dd>9:00 am to 5:00 pm, every other week</dd></div><div><dt>Friday</dt><dd>9:00 am to 5:00 pm</dd></div><div><dt>Saturday</dt><dd>9:00 am to 3:00 pm</dd></div><div><dt>Sunday</dt><dd>Closed</dd></div></dl><p class="office-note">Open Saturdays.</p></div>
+  <div class="office-row-actions"><a class="button" href="https://www.flexbook.me/bookcsds/googlereserve/1" target="_blank" rel="noopener">Schedule Now</a><a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Dentistry%20%26%20Implants%2C%20800%20E%20Main%20St%2C%20Stamford%2C%20CT%2006902" target="_blank" rel="noopener">Get directions <span aria-hidden="true">&rarr;</span></a></div>
+</article></div>
     </section>
   </main>
   <footer class="site-footer">
     <div class="footer-main">
       <div class="footer-brand-block">
-        <a class="footer-brand" href="../index.html">Dentistry <span class="brand-amp">&amp;</span> Implants</a>
+        <a class="footer-brand" href="../index.html">NY, CT Dentistry <span class="brand-amp">&amp;</span> Implants</a>
         <p>Dentistry Built on Trust. Implants Designed to Last.</p>
         <p class="footer-lang">Hablamos español.</p>
         <p><a href="mailto:nyctdentistryimplants@gmail.com">nyctdentistryimplants@gmail.com</a></p>
@@ -330,7 +372,7 @@
           <a href="../services.html">Services</a>
           <a href="../smiles.html">Before and After</a>
           <a href="../insurance.html">Insurance and Financing</a>
-          <a href="../locations.html">Locations</a>
+          <a href="../contact.html">Locations</a>
           <a href="../service-area.html">Areas We Serve</a>
           <a href="../testimonials.html">Patient Reviews</a>
           <a href="../articles.html">Articles</a>
@@ -340,17 +382,17 @@
       <div>
         <p class="footer-head">Offices</p>
         <ul class="footer-offices">
-          <li><a class="footer-office-name" href="../locations/mount-kisco.html"><strong>Mount Kisco, NY</strong></a><span>39 Smith Ave, Rear LL</span><a href="tel:9146665225">914-666-5225</a></li>
-          <li><a class="footer-office-name" href="../locations/kent.html"><strong>Kent, CT</strong></a><span>70 Maple St</span><a href="tel:8609273577">860-927-3577</a></li>
-          <li><a class="footer-office-name" href="../locations/stamford.html"><strong>Stamford, CT</strong></a><span>800 E Main St</span><a href="tel:2038834451">203-883-4451</a></li>
+          <li><a class="footer-office-name" href="../mount-kisco/"><strong>Mount Kisco, NY</strong></a><span>39 Smith Ave, Rear LL</span><a href="tel:9146665225">914-666-5225</a></li>
+          <li><a class="footer-office-name" href="../kent/"><strong>Kent, CT</strong></a><span>70 Maple St</span><a href="tel:8609273577">860-927-3577</a></li>
+          <li><a class="footer-office-name" href="../stamford/"><strong>Stamford, CT</strong></a><span>800 E Main St</span><a href="tel:2038834451">203-883-4451</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom"><span>&copy; 2026 Dentistry &amp; Implants &middot; Mount Kisco, NY &middot; Kent, CT &middot; Stamford, CT</span><span class="footer-legal"><a href="../privacy.html">Privacy</a> <a href="../terms.html">Terms</a> <a href="../accessibility.html">Accessibility</a></span></div>
   </footer>
   <nav class="cta-dock" aria-label="Call Now / Schedule Now">
-    <a class="cta-call" href="../locations.html" data-office="call">Call Now</a>
-    <a class="cta-book" href="../locations.html" data-office="book">Schedule Now</a>
+    <a class="cta-call" href="../contact.html" data-office="call">Call Now</a>
+    <a class="cta-book" href="../contact.html" data-office="book">Schedule Now</a>
   </nav>
 </body>
 </html>

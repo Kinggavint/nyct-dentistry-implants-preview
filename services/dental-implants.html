@@ -14,10 +14,14 @@
   <meta property="og:description" content="Dental implants for one tooth, several teeth or a full arch, placed by an implant surgeon who teaches the procedure. Mount Kisco NY, Kent CT and Stamford CT.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://nyctdentistry.com/assets/img/dr-kwon-portrait.webp">
+  <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Space+Grotesk:wght@500;600;700&family=Jost:wght@400&display=swap">
   <link rel="stylesheet" href="../assets/css/site.css">
   <link rel="stylesheet" href="../assets/css/features.css">
   <link rel="stylesheet" href="../assets/css/motion.css">
@@ -28,6 +32,7 @@
   <script src="../assets/js/features.js" defer></script>
   <script src="../assets/js/motion.js" defer></script>
   <script src="../assets/js/v3.js" defer></script>
+  <script src="../assets/js/analytics.js" defer></script>
   <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -42,21 +47,21 @@
    "medicalSpecialty": "Dentistry",
    "department": [
     {
-     "@id": "https://nyctdentistry.com/locations.html#mount-kisco"
+     "@id": "https://nyctdentistry.com/contact.html#mount-kisco"
     },
     {
-     "@id": "https://nyctdentistry.com/locations.html#kent"
+     "@id": "https://nyctdentistry.com/contact.html#kent"
     },
     {
-     "@id": "https://nyctdentistry.com/locations.html#stamford"
+     "@id": "https://nyctdentistry.com/contact.html#stamford"
     }
    ]
   },
   {
    "@type": "Dentist",
-   "@id": "https://nyctdentistry.com/locations.html#mount-kisco",
+   "@id": "https://nyctdentistry.com/contact.html#mount-kisco",
    "name": "Dentistry & Implants, Mount Kisco",
-   "url": "https://nyctdentistry.com/locations.html#mount-kisco",
+   "url": "https://nyctdentistry.com/contact.html#mount-kisco",
    "telephone": "+1-914-666-5225",
    "email": "nyctdentistryimplants@gmail.com",
    "address": {
@@ -87,9 +92,9 @@
   },
   {
    "@type": "Dentist",
-   "@id": "https://nyctdentistry.com/locations.html#kent",
+   "@id": "https://nyctdentistry.com/contact.html#kent",
    "name": "Dentistry & Implants, Kent",
-   "url": "https://nyctdentistry.com/locations.html#kent",
+   "url": "https://nyctdentistry.com/contact.html#kent",
    "telephone": "+1-860-927-3577",
    "email": "nyctdentistryimplants@gmail.com",
    "address": {
@@ -122,9 +127,9 @@
   },
   {
    "@type": "Dentist",
-   "@id": "https://nyctdentistry.com/locations.html#stamford",
+   "@id": "https://nyctdentistry.com/contact.html#stamford",
    "name": "Dentistry & Implants, Stamford",
-   "url": "https://nyctdentistry.com/locations.html#stamford",
+   "url": "https://nyctdentistry.com/contact.html#stamford",
    "telephone": "+1-203-883-4451",
    "email": "nyctdentistryimplants@gmail.com",
    "address": {
@@ -156,6 +161,9 @@
  ]
 }
   </script>
+<!-- APEX:GA4 head -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B4YH72HDLT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'granted'});gtag('js',new Date());gtag('config','G-B4YH72HDLT',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
 </head>
 <body class="page-services page-v3 v3-inner v3-tpl-service">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -169,7 +177,7 @@
   </div>
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="../index.html" aria-label="Dentistry & Implants home">Dentistry <span class="brand-amp">&amp;</span> Implants</a>
+      <a class="brand" href="../index.html" aria-label="NY, CT Dentistry & Implants home">NY, CT Dentistry <span class="brand-amp">&amp;</span> Implants</a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
       <nav class="primary-nav" id="primary-nav" aria-label="Main">
         <a href="../doctor.html">Dr. Kwon</a>
@@ -177,12 +185,12 @@
         <a href="../services.html" aria-current="page">Services</a>
         <a href="../smiles.html">Smiles</a>
         <a href="../insurance.html">Insurance</a>
-        <a href="../locations.html">Locations</a>
+        <a href="../contact.html">Locations</a>
         <a href="../articles.html">Articles</a>
       </nav>
       <nav class="di-lang" aria-label="Language"><a href="../services/dental-implants.html" lang="en" aria-current="true">EN</a><a href="../es/index.html" lang="es">ES</a></nav>
-      <a class="button button-small button-ghost header-call" href="../locations.html" data-office="call">Call Now</a>
-      <a class="button button-small header-cta" href="../locations.html" data-office="book">Schedule Now</a>
+      <a class="button button-small button-ghost header-call" href="../contact.html" data-office="call">Call Now</a>
+      <a class="button button-small header-cta" href="../contact.html" data-office="book">Schedule Now</a>
       <p class="v3-loc">Mount Kisco, NY &middot; Kent, CT &middot; Stamford, CT</p>
     </div>
   </header>
@@ -192,9 +200,9 @@
         <p class="eyebrow">Implant dentistry</p>
         <h1>Dental Implants That Look and Feel Like Your Own Teeth</h1>
         <p class="lede">A stable, natural-looking way to chew, speak and smile again.</p>
-        <div class="button-row"><a class="button" href="../locations.html" data-office="book">Schedule Now</a><a class="button button-ghost" href="../locations.html" data-office="call">Call Now</a></div>
+        <div class="button-row"><a class="button" href="../contact.html" data-office="book">Schedule Now</a><a class="button button-ghost" href="../contact.html" data-office="call">Call Now</a></div>
       </div>
-      <figure class="svc-hero-media"><img src="../assets/img/teaching-live-surgery.webp" alt="Dr. Kwon guiding dentists through a live implant surgery" width="1440" height="1080"></figure>
+      <figure class="svc-hero-media"><img src="../assets/img/dr-kwon-portrait.webp" alt="Dr. GiTae Kwon, implant surgeon" style="object-position: 50% 30%" width="1536" height="1024"></figure>
     </section>
 
     <section class="section svc-what" id="what-it-is" aria-labelledby="svc-what-h">
@@ -213,7 +221,7 @@
           <p>Dr. Kwon prioritizes saving natural teeth whenever possible.</p>
         </article>
         <article class="svc-card svc-card-person" data-reveal>
-          <img class="svc-avatar" src="../assets/img/dr-kwon-portrait.webp" alt="Dr. GiTae Kwon" loading="lazy" width="1536" height="1024">
+          <figure class="svc-card-photo"><img src="../assets/img/teaching-live-surgery.webp" alt="Dr. Kwon guiding dentists through a live implant surgery course" loading="lazy" decoding="async" width="1440" height="1080"></figure>
           <h3>Placed by someone who teaches it</h3>
           <p>Dr. GiTae Kwon holds a Master's degree in Dental Implantology and Advanced Surgical Extractions from UniCamillus, Saint Camillus International University of Health Sciences, in Rome. He practices as a full-time implant surgeon, and he teaches implant surgery to other dentists and lectures on surgical extractions and implants.</p>
           <p>For you, that means the person planning your case is the person placing your implants, with a surgeon's attention to detail.</p>
@@ -302,7 +310,13 @@
           <figcaption>An X-ray before and after full-arch implants.</figcaption>
         </figure>
       </div>
-      <p class="more-link"><a class="text-link" href="../smiles.html">See more smiles</a></p>
+      <h3 class="svc-sub">In their own words.</h3>
+      <div class="vd-testimonials vd-tall svc-videos">
+        <figure class="vd-testimonial" data-reveal data-src="../assets/video/testimonial-implant-crown.mp4" data-poster="../assets/img/testimonial-implant-crown.webp" data-lang="en" data-orient="portrait" data-duration="0:25"><figcaption>An implant and crown for a front tooth</figcaption></figure>
+        <figure class="vd-testimonial" data-reveal data-src="../assets/video/testimonial-kent-es.mp4" data-poster="../assets/img/testimonial-kent-es.webp" data-lang="es" data-orient="portrait" data-duration="0:35"><figcaption>Humberta C., Kent: a front tooth implant</figcaption></figure>
+        <figure class="vd-testimonial" data-reveal data-src="../assets/video/testimonial-implante.mp4" data-poster="../assets/img/testimonial-implante.webp" data-lang="es" data-orient="portrait" data-duration="0:27"><figcaption>Her implant, three and a half months later</figcaption></figure>
+      </div>
+      <p class="more-link"><a class="text-link" href="../smiles.html">See more smiles</a> <a class="text-link" href="../testimonials.html">More patient videos</a></p>
     </section>
 
     <section class="section svc-faq" id="faq" aria-labelledby="svc-faq-h">
@@ -315,7 +329,7 @@
         <details><summary>How long does an implant last?</summary><div><p>An implant in healthy bone, cared for well, is meant to last many years. The crown may need replacing eventually.</p></div></details>
         <details><summary>How long does the whole process take?</summary><div><p>Healing takes several months, so the full process is measured in months, not weeks. Your plan gives you a timeline for your case.</p></div></details>
         <details><summary>Can I get an implant if I have gum disease or bone loss?</summary><div><p>Often yes, after preparation. Gum disease usually needs treatment first, and bone loss may call for a graft. Your exam tells us which applies.</p></div></details>
-        <details><summary>What will it cost, and does insurance help?</summary><div><p>Cost depends on your case, and we give you a written estimate before treatment. See our <a href="../insurance.html">insurance and financing page</a>.</p></div></details>
+        <details><summary>What will it cost, and does insurance help?</summary><div><p>Cost depends on your case, and we give you a written estimate before treatment. See our <a href="../insurance.html">insurance and financing page</a>. We do not list implant prices online. Call the office or <a href="../contact.html" data-office="book">book a complimentary consultation online</a> and we will go over your options.</p></div></details>
       </div>
       <div class="svc-related">
         <p class="svc-related-label">More about implants</p>
@@ -334,32 +348,34 @@
         <h2 id="svc-book-h">Start with a consultation.</h2>
         <p>Bring your questions. You will leave with a clear plan and an honest answer about whether implants fit your case.</p>
         <div class="button-row">
-          <a class="button" href="../locations.html" data-office="book">Schedule Now</a>
-          <a class="button button-ghost" href="../locations.html" data-office="call">Call Now</a>
+          <a class="button" href="../contact.html" data-office="book">Schedule Now</a>
+          <a class="button button-ghost" href="../contact.html" data-office="call">Call Now</a>
         </div>
       </div>
       <div class="office-list"><article class="office-row" id="mount-kisco" data-reveal>
-  <div class="office-row-name"><p class="eyebrow">New York</p><h3><a href="../locations/mount-kisco.html">Mount Kisco</a></h3></div>
+  <div class="office-row-name"><p class="eyebrow">New York</p><h3><a href="../mount-kisco/">Mount Kisco</a></h3></div>
   <div class="office-row-addr"><p>39 Smith Ave, Rear LL<br>Mount Kisco, NY 10549</p><a class="office-phone" href="tel:9146665225">914-666-5225</a></div>
   <div class="office-row-hours"><dl class="hours"><div><dt>Monday</dt><dd>9:00 am to 6:00 pm</dd></div><div><dt>Tuesday</dt><dd>8:00 am to 6:00 pm</dd></div><div><dt>Wednesday</dt><dd>Closed</dd></div><div><dt>Thursday</dt><dd>10:00 am to 6:00 pm</dd></div><div><dt>Friday</dt><dd>9:30 am to 3:00 pm, every other week</dd></div><div><dt>Saturday and Sunday</dt><dd>Closed</dd></div></dl></div>
   <div class="office-row-actions"><a class="button" href="https://www.flexbook.me/mtkisco/googlereserve/1" target="_blank" rel="noopener">Schedule Now</a><a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Dentistry%20%26%20Implants%2C%2039%20Smith%20Ave%2C%20Rear%20LL%2C%20Mount%20Kisco%2C%20NY%2010549" target="_blank" rel="noopener">Get directions <span aria-hidden="true">&rarr;</span></a></div>
 </article><article class="office-row" id="kent" data-reveal>
-  <div class="office-row-name"><p class="eyebrow">Connecticut</p><h3><a href="../locations/kent.html">Kent</a></h3></div>
+  <div class="office-row-name"><p class="eyebrow">Connecticut</p><h3><a href="../kent/">Kent</a></h3></div>
   <div class="office-row-addr"><p>70 Maple St<br>Kent, CT 06757</p><a class="office-phone" href="tel:8609273577">860-927-3577</a></div>
   <div class="office-row-hours"><dl class="hours"><div><dt>Monday</dt><dd>8:30 am to 6:00 pm</dd></div><div><dt>Tuesday</dt><dd>9:00 am to 6:00 pm</dd></div><div><dt>Wednesday</dt><dd>8:30 am to 5:00 pm</dd></div><div><dt>Thursday</dt><dd>9:00 am to 5:00 pm</dd></div><div><dt>Friday</dt><dd>9:00 am to 2:00 pm</dd></div><div><dt>Saturday and Sunday</dt><dd>Closed</dd></div></dl></div>
   <div class="office-row-actions"><a class="button" href="https://www.flexbook.me/kentdent/googlereserve/1" target="_blank" rel="noopener">Schedule Now</a><a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Dentistry%20%26%20Implants%2C%2070%20Maple%20St%2C%20Kent%2C%20CT%2006757" target="_blank" rel="noopener">Get directions <span aria-hidden="true">&rarr;</span></a></div>
 </article><article class="office-row" id="stamford" data-reveal>
-  <div class="office-row-name"><p class="eyebrow">Connecticut</p><h3><a href="../locations/stamford.html">Stamford</a></h3></div>
+  <div class="office-row-name"><p class="eyebrow">Connecticut</p><h3><a href="../stamford/">Stamford</a></h3></div>
   <div class="office-row-addr"><p>800 E Main St<br>Stamford, CT 06902</p><a class="office-phone" href="tel:2038834451">203-883-4451</a></div>
-  <div class="office-row-hours"><dl class="hours"><div><dt>Monday to Wednesday</dt><dd>9:00 am to 5:00 pm</dd></div><div><dt>Thursday</dt><dd>9:00 am to 5:00 pm, every other week</dd></div><div><dt>Friday</dt><dd>9:00 am to 5:00 pm</dd></div><div><dt>Saturday</dt><dd>9:00 am to 3:00 pm</dd></div><div><dt>Sunday</dt><dd>Closed</dd></div></dl><p class="office-note">Open Saturdays. Complimentary parking on site.</p></div>
+  <div class="office-row-hours"><dl class="hours"><div><dt>Monday to Wednesday</dt><dd>9:00 am to 5:00 pm</dd></div><div><dt>Thursday</dt><dd>9:00 am to 5:00 pm, every other week</dd></div><div><dt>Friday</dt><dd>9:00 am to 5:00 pm</dd></div><div><dt>Saturday</dt><dd>9:00 am to 3:00 pm</dd></div><div><dt>Sunday</dt><dd>Closed</dd></div></dl><p class="office-note">Open Saturdays.</p></div>
   <div class="office-row-actions"><a class="button" href="https://www.flexbook.me/bookcsds/googlereserve/1" target="_blank" rel="noopener">Schedule Now</a><a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Dentistry%20%26%20Implants%2C%20800%20E%20Main%20St%2C%20Stamford%2C%20CT%2006902" target="_blank" rel="noopener">Get directions <span aria-hidden="true">&rarr;</span></a></div>
 </article></div>
     </section>
+    <link rel="stylesheet" href="../assets/css/video.css">
+    <script src="../assets/js/video.js" defer></script>
   </main>
   <footer class="site-footer">
     <div class="footer-main">
       <div class="footer-brand-block">
-        <a class="footer-brand" href="../index.html">Dentistry <span class="brand-amp">&amp;</span> Implants</a>
+        <a class="footer-brand" href="../index.html">NY, CT Dentistry <span class="brand-amp">&amp;</span> Implants</a>
         <p>Dentistry Built on Trust. Implants Designed to Last.</p>
         <p class="footer-lang">Hablamos español.</p>
         <p><a href="mailto:nyctdentistryimplants@gmail.com">nyctdentistryimplants@gmail.com</a></p>
@@ -372,7 +388,7 @@
           <a href="../services.html">Services</a>
           <a href="../smiles.html">Before and After</a>
           <a href="../insurance.html">Insurance and Financing</a>
-          <a href="../locations.html">Locations</a>
+          <a href="../contact.html">Locations</a>
           <a href="../service-area.html">Areas We Serve</a>
           <a href="../testimonials.html">Patient Reviews</a>
           <a href="../articles.html">Articles</a>
@@ -382,17 +398,17 @@
       <div>
         <p class="footer-head">Offices</p>
         <ul class="footer-offices">
-          <li><a class="footer-office-name" href="../locations/mount-kisco.html"><strong>Mount Kisco, NY</strong></a><span>39 Smith Ave, Rear LL</span><a href="tel:9146665225">914-666-5225</a></li>
-          <li><a class="footer-office-name" href="../locations/kent.html"><strong>Kent, CT</strong></a><span>70 Maple St</span><a href="tel:8609273577">860-927-3577</a></li>
-          <li><a class="footer-office-name" href="../locations/stamford.html"><strong>Stamford, CT</strong></a><span>800 E Main St</span><a href="tel:2038834451">203-883-4451</a></li>
+          <li><a class="footer-office-name" href="../mount-kisco/"><strong>Mount Kisco, NY</strong></a><span>39 Smith Ave, Rear LL</span><a href="tel:9146665225">914-666-5225</a></li>
+          <li><a class="footer-office-name" href="../kent/"><strong>Kent, CT</strong></a><span>70 Maple St</span><a href="tel:8609273577">860-927-3577</a></li>
+          <li><a class="footer-office-name" href="../stamford/"><strong>Stamford, CT</strong></a><span>800 E Main St</span><a href="tel:2038834451">203-883-4451</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom"><span>&copy; 2026 Dentistry &amp; Implants &middot; Mount Kisco, NY &middot; Kent, CT &middot; Stamford, CT</span><span class="footer-legal"><a href="../privacy.html">Privacy</a> <a href="../terms.html">Terms</a> <a href="../accessibility.html">Accessibility</a></span></div>
   </footer>
   <nav class="cta-dock" aria-label="Call Now / Schedule Now">
-    <a class="cta-call" href="../locations.html" data-office="call">Call Now</a>
-    <a class="cta-book" href="../locations.html" data-office="book">Schedule Now</a>
+    <a class="cta-call" href="../contact.html" data-office="call">Call Now</a>
+    <a class="cta-book" href="../contact.html" data-office="book">Schedule Now</a>
   </nav>
 </body>
 </html>
