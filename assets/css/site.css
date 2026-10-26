@@ -511,3 +511,13 @@ h3 { font-size: clamp(1.35rem, 2vw, 1.75rem); letter-spacing: -0.02em; line-heig
 
 /* Team member without a photo yet */
 .team-member.no-photo { grid-template-columns: minmax(0, 1fr); padding-left: 20px; border-left: 3px solid var(--accent); }
+
+/* 2026-10-14 Dr. Kwon: practice name in mixed case, set in Jost to match his Logo 2026 file */
+.brand, .footer-brand, .page-v2 .brand, .page-v2 .footer-brand, .page-v3 .v3-hero-logo span, .v3-fly.v3-hero-logo span, .v3-hero-logo span {
+  font-family: "Jost", "Helvetica Neue", Arial, sans-serif !important; font-weight: 400 !important; text-transform: none !important; letter-spacing: .02em !important;
+}
+.brand .brand-amp, .footer-brand .brand-amp { color: inherit; }
+/* keep "NY, CT Dentistry & Implants" as one run of text: no flex gap around the ampersand */
+.page-v3 .brand, .page-v2 .brand, .page-v2 .footer-brand { gap: 0 !important; }
+.page-v3 .brand::before, .page-v2 .brand::before, .page-v2 .footer-brand::before { margin-right: 10px; }
+.brand .brand-amp, .footer-brand .brand-amp { padding: 0 .28em; }
