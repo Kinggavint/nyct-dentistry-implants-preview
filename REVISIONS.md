@@ -64,6 +64,10 @@ material we do not have yet.
     it?) and the 6-second second Kent clip (repeats the tour). The tour's sound was removed because we have not
     reviewed what is said; tell us if you want it with sound. The home page opening now cycles Kent and Stamford
     photos without office signs instead of Mount Kisco only, as the practice asked.
+    Stamford's tour video (email 2026-10-27) is now on the Stamford page under the office photos. It has no
+    sound (the file's audio track is silent) and ends on a "Clear Smile Dental Studio" title, which we left
+    as sent. **Mount Kisco has no tour video yet**; please send one if you would like all three offices to
+    have one.
 
 ## Answered 2026-10-06 (email)
 
@@ -149,6 +153,16 @@ material we do not have yet.
   site. See item 25: the forward depends on who controls the Clear Smile DNS and hosting (GoDaddy manager
   access was added; the Energize answer on Cloudflare and hosting is still pending). We owe the practice a
   date or the blocker in plain words.
+
+## Answered 2026-10-27 (email)
+
+- **Stamford office tour.** The practice sent its Stamford tour video (Google Drive link). It is live on the
+  Stamford page, with the photos above it. No people or patient information appear in it.
+- **"Do you have the video tour of all 3 offices now?"** Kent and Stamford, yes. Mount Kisco, no: no Mount
+  Kisco tour has come in by Drive or email (see item 19).
+- **Hosting.** The practice wrote that the hosting for all three websites looks done. We owe the practice a
+  reply confirming the status of each domain forward (item 25), and nyctdentistry.com still needs the
+  latest build deployed so it matches this preview.
 
 ## Features waiting on access
 

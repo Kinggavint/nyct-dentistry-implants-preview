@@ -620,6 +620,7 @@ body.v3-inner .v3p-video-card .vd-testimonial figcaption { padding: 12px 8px 8px
 @media (max-width: 620px) {
   body.v3-inner .v3p-video-card .vd-testimonials { grid-template-columns: minmax(0, 300px); }
   body.v3-inner .v3p-video-card .vd-testimonials:has([data-orient="landscape"]) { grid-template-columns: minmax(0, 1fr); }
+  body.v3-inner .v3p-video-card:has([data-orient="landscape"]) { width: 100%; }
   body.v3-inner .v3p-video-card .vd-testimonial figcaption { font-size: 14px; }
 }
 /* Dr. Kwon page: the two doctors photo opens the Off the clock section */
