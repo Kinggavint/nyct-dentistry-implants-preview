@@ -58,16 +58,15 @@ material we do not have yet.
 18. **Unpaired photos.** DSC_0248 and DSC_0259 are now shown as a pair (the old site pairs them too).
     DSC_0667 and DSC_0679 still have no "after"; the old site shows them as a pair, but both look
     like "before" photos. The two full-arch X-ray cases come from the old site's gallery.
-19. **Office photos.** Kent's nine photos and tour video (Drive, 2026-10-08) are live on the Kent page (2026-10-13):
-    exterior as the page opening, waiting room, treatment room and X-ray room, plus the tour. Mount Kisco's photos
+19. **Office photos.** Kent's nine photos (Drive, 2026-10-08) are on the Kent page (2026-10-13):
+    exterior as the page opening, waiting room, treatment room and X-ray room. Mount Kisco's photos
     were already live. Not used: "Dr Kwon taking photo in Stamford office" (a patient is in the chair; may we show
-    it?) and the 6-second second Kent clip (repeats the tour). The tour's sound was removed because we have not
-    reviewed what is said; tell us if you want it with sound. The home page opening now cycles Kent and Stamford
-    photos without office signs instead of Mount Kisco only, as the practice asked.
-    Stamford's tour video (email 2026-10-27) is now on the Stamford page under the office photos. It has no
-    sound (the file's audio track is silent) and ends on a "Clear Smile Dental Studio" title, which we left
-    as sent. **Mount Kisco has no tour video yet**; please send one if you would like all three offices to
-    have one.
+    it?). The home page opening now cycles Kent and Stamford photos without office signs instead of Mount Kisco
+    only, as the practice asked.
+    **Office tour videos (2026-10-28):** the Kent tour (two clips, sound removed) and the Stamford tour are being
+    added to the live Kent and Stamford pages through PR #12 on the live branch. The earlier preview-only
+    versions on this branch were removed so this branch does not show tours that were never live.
+    **Mount Kisco has no tour video yet**; please send one if you would like all three offices to have one.
 
 ## Answered 2026-10-06 (email)
 
@@ -156,13 +155,12 @@ material we do not have yet.
 
 ## Answered 2026-10-27 (email)
 
-- **Stamford office tour.** The practice sent its Stamford tour video (Google Drive link). It is live on the
-  Stamford page, with the photos above it. No people or patient information appear in it.
+- **Stamford office tour.** The practice sent its Stamford tour video (Google Drive link). It is going on the
+  Stamford page (see item 19). No patient information appears in it.
 - **"Do you have the video tour of all 3 offices now?"** Kent and Stamford, yes. Mount Kisco, no: no Mount
   Kisco tour has come in by Drive or email (see item 19).
 - **Hosting.** The practice wrote that the hosting for all three websites looks done. We owe the practice a
-  reply confirming the status of each domain forward (item 25), and nyctdentistry.com still needs the
-  latest build deployed so it matches this preview.
+  reply confirming the status of each domain forward (item 25).
 
 ## Features waiting on access
 
