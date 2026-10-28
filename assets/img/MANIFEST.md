@@ -59,7 +59,7 @@ Kent (IMG_32xx.jpeg): kent-exterior (3256, Kent page opening), kent-waiting (324
 kent-imaging (3240) are used; kent-reception (3244), kent-hallway (3245), kent-office-desk (3238),
 kent-entrance (3260) and kent-sign (3259, sign reads "Kent Dentistry & Implants") are exported for later.
 stamford-operatory-2 ("Stamford Op 1", Clear Smile on the screen) exported, not used.
-dr-oh / dr-oh-card ("Dr Oh.jpg"; the card is a tighter crop on him). kent-office-tour.webp is the tour poster.
+dr-oh / dr-oh-card ("Dr Oh.jpg"; the card is a tighter crop on him).
 Not exported: "Dr Kwon taking photo in Stamford office" (patient in the chair, consent unknown).
 Mount Kisco files in the same upload are the photos already live as mk-office-*.
 Logo: logo/kwon-2026-mark-black|white.png and kwon-2026-logo-black.png from "Logo 2026.PNG"; favicon.ico,
