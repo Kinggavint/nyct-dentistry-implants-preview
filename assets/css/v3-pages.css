@@ -630,3 +630,10 @@ body.v3-inner .v3p-plans.v3p-callus .plan-office { display: block; padding: 18px
 body.v3-inner .v3p-plans.v3p-callus .plan-office:first-child { border-top: 0; }
 body.v3-inner .v3p-plans.v3p-callus .plan-office-head { margin-bottom: 0; }
 body.v3-inner .v3p-plans.v3p-callus .plan-note { margin: 10px 0 0; }
+/* Oct 28: office tour videos (Stamford and Kent pages) */
+body.v3-inner .v3p-tour-grid { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: clamp(20px, 3vw, 32px); }
+body.v3-inner .v3p-tour { width: 100%; margin: 0; padding: 10px 10px 4px; border-radius: var(--v3-radius); background: #fff; box-shadow: var(--v3-card-shadow); box-sizing: border-box; }
+body.v3-inner .v3p-tour-landscape { max-width: 980px; }
+body.v3-inner .v3p-tour-portrait { max-width: 340px; }
+body.v3-inner .v3p-tour video { display: block; width: 100%; height: auto; border-radius: 20px; background: #e9eaed; }
+body.v3-inner .v3p-tour figcaption { padding: 12px 12px 8px; font-size: 15px; color: var(--v3-ink-2); }
