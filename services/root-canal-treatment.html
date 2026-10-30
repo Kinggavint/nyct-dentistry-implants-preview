@@ -193,6 +193,10 @@
 <style>
       body.v3-tpl-service .svc-cards.is-four { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 880px; }
       @media (max-width: 734px) { body.v3-tpl-service .svc-cards.is-four { grid-template-columns: minmax(0, 1fr); } }
+      body.v3-tpl-service .svc-rc-xray { margin-top: clamp(40px, 5vw, 64px); }
+      body.v3-tpl-service .svc-rc-xray .di-ba-grid { grid-template-columns: minmax(0, 1fr); }
+      body.v3-tpl-service .svc-rc-xray .mo-compare, body.v3-tpl-service .svc-rc-xray .di-ba-img { aspect-ratio: 764 / 546; }
+      body.v3-tpl-service .svc-rc-xray .mo-compare img, body.v3-tpl-service .svc-rc-xray .di-ba-img img { object-fit: cover; background: #000; }
     </style>
     <section class="page-hero solo svc-hero">
       <div>
@@ -213,6 +217,17 @@
         <p>A toothache that lasts more than a day or two and does not improve may mean an infected tooth. Inside every tooth is soft pulp filled with blood vessels and nerves. When a deep cavity wears through the enamel and dentin, or an injury cracks the tooth, bacteria can reach the pulp. It becomes infected and begins to die, which is why a toothache is the most common sign.</p>
         <p>Without treatment, the pain usually gets worse and the tooth may be lost. A root canal cleans out the infection, seals the inside of the tooth and protects it, so you keep your own tooth.</p>
         <p>Most root canals can be done in our office, including molar root canals and retreatments.</p>
+      </div>
+      <div class="svc-ba svc-rc-xray">
+        <div class="di-ba-grid">
+          <figure class="di-ba-pair" data-reveal>
+            <div class="di-ba-images">
+              <div class="di-ba-img"><img src="../assets/img/root-canal-molar-before.webp" alt="Before: X-ray of a lower molar before root canal treatment" loading="lazy" width="762" height="546"><span class="di-ba-label">Before</span></div>
+              <div class="di-ba-img"><img src="../assets/img/root-canal-molar-after.webp" alt="After: X-ray of the same molar with its root canals cleaned, filled and sealed" loading="lazy" width="764" height="546"><span class="di-ba-label">After</span></div>
+            </div>
+            <figcaption>A lower molar before and after root canal treatment.</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 

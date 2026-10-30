@@ -137,9 +137,6 @@ material we do not have yet.
 
 28. **Logo color on the site.** The logo is black; buttons and links still use the blue accent. Keep blue for
     buttons, or move to black and white throughout?
-29. **Root canal X-ray.** The practice asked whether an X-ray of a root canal would help. Yes: please send one or
-    two of your own root canal X-rays (before and after, no patient name or date on the image) and we will add
-    them to the root canal page. We have no root canal X-ray from the practice yet.
 30. **Logo font.** The exact font in the "Logo 2026" file is not named in the file. If the designer can tell us
     the font name (or send the font), we will switch the name to it; until then the site uses the closest open
     match.
@@ -161,6 +158,16 @@ material we do not have yet.
   Kisco tour has come in by Drive or email (see item 19).
 - **Hosting.** The practice wrote that the hosting for all three websites looks done. We owe the practice a
   reply confirming the status of each domain forward (item 25).
+
+## Answered 2026-10-29 (email)
+
+- **Root canal X-ray (item 29, done on the preview).** The practice sent a before and after X-ray of a molar
+  root canal (#30) in the email. Both are on the root canal page under "Most root canals can be done in our
+  office", as a before and after pair. No patient name or date is on either image.
+- **Team photos.** Still coming: the practice is gathering more for the office team (item 3).
+- **"Do you have all the information? What's the next step?"** and **a monthly SEO and AEO progress
+  meeting.** Both need a reply from us; nothing on the site depends on them.
+- **Still preview only.** Like the earlier preview work, this is not yet on nyctdentistry.com.
 
 ## Features waiting on access
 

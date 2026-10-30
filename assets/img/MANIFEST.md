@@ -64,3 +64,8 @@ Not exported: "Dr Kwon taking photo in Stamford office" (patient in the chair, c
 Mount Kisco files in the same upload are the photos already live as mk-office-*.
 Logo: logo/kwon-2026-mark-black|white.png and kwon-2026-logo-black.png from "Logo 2026.PNG"; favicon.ico,
 favicon-32.png, apple-touch-icon.png from the same mark. All re-encoded without metadata, orientation applied.
+
+2026-10-29 email (inline images, "molar root canal #30 before & after"):
+| root-canal-molar-before.webp | 762x546 | 21 | Periapical X-ray, lower molar #30 before root canal | email image 1 | root canal pair before |
+| root-canal-molar-after.webp | 764x546 | 40 | Same molar after root canal, canals filled, core build-up | email image 2 | root canal pair after |
+No patient information on either image. Re-encoded without metadata.
