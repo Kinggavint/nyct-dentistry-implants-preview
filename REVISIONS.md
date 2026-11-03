@@ -191,11 +191,25 @@ material we do not have yet.
 - **Contact form goes to the chosen office.** "Preferred office" now starts on "No preference", which goes to
   nyctdentistryimplants@gmail.com. Mount Kisco goes to mountkiscodentistry@gmail.com (the address on the old
   nyctdentistry.com) and Stamford to clearsmiledentalstudio@gmail.com (the address on the old Stamford site).
-  Please confirm both are the right office addresses. **Kent has no address of its own on either old site,** so
-  Kent messages go to the practice address until we have one.
+  Both confirmed, and Kent's address sent, in the third email (below).
 - **Reddit.** The practice made a Reddit account and shared its login with us. The login is kept privately,
   never in this file.
 - Both changes are on the preview only; nyctdentistry.com still shows the prices until the live site is updated.
+
+## Answered 2026-11-03 (third email)
+
+- **Payment calculator.** Keep it: the $4,000 over 12 months sample stays on the insurance page.
+- **Office email addresses (done on the preview).** Confirmed: Stamford clearsmiledentalstudio@gmail.com, Mount
+  Kisco mountkiscodentistry@gmail.com, and Kent kentdentistryct@gmail.com. Kent messages from "Write to us" now go
+  to the Kent address instead of the practice address. "No preference" still goes to nyctdentistryimplants@gmail.com.
+- **Drive time to each office (done on the preview).** The practice suggested a map link or drive time so new
+  patients can pick the closest office. The Locations page (English and Spanish) now has a "Drive time to ..."
+  button for each office that opens Google Maps with driving directions and the drive time from where the patient
+  is. Every "Get directions" link on the site now opens the same driving directions. Please let us know if you
+  would also like these on the home page or each office page.
+- **Reddit.** The practice asks whether we were able to log in with the account it shared. Needs a reply from
+  Apex (Mike or Gavin).
+- Preview only, like the earlier 2026-11-03 changes; not yet on nyctdentistry.com.
 
 ## Features waiting on access
 
