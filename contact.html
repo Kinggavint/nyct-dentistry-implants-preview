@@ -212,7 +212,7 @@
           <p class="aside-note">Prefer email? Write to <a href="mailto:nyctdentistryimplants@gmail.com">nyctdentistryimplants@gmail.com</a>.</p>
           <p class="aside-note">Please do not include medical details or anything private in this form. If you are in pain, call us instead.</p>
         </div>
-        <form class="contact-form" id="contact-form" action="mailto:nyctdentistryimplants@gmail.com" method="post" enctype="text/plain">
+        <form class="contact-form" id="contact-form" action="mailto:nyctdentistryimplants@gmail.com" method="post" enctype="text/plain" data-office-routing data-default-email="nyctdentistryimplants@gmail.com">
           <div class="row">
             <label>Name<input name="name" autocomplete="name" required></label>
             <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
@@ -220,9 +220,9 @@
           <label>Email<input name="email" type="email" autocomplete="email"></label>
           <label>Preferred office
             <select name="office">
-              <option>Mount Kisco, NY</option>
-              <option>Kent, CT</option>
-              <option>Stamford, CT</option>
+              <option data-email="nyctdentistryimplants@gmail.com">Mount Kisco, NY</option>
+              <option data-email="nyctdentistryimplants@gmail.com">Kent, CT</option>
+              <option data-email="nyctdentistryimplants@gmail.com">Stamford, CT</option>
               <option>No preference</option>
             </select>
           </label>
