@@ -17,7 +17,7 @@ material we do not have yet.
    quotes that name him are back on every page. Please confirm his title and which offices he sees patients at;
    his bio names Fairfield and Litchfield counties in Connecticut and Northern Westchester, New York, so the
    site says that rather than naming offices.
-2. **Stamford details still unconfirmed.** Hours, HUSKY, the $150 special and Cherry are confirmed (2026-10-06).
+2. **Stamford details still unconfirmed.** Hours, HUSKY, the new patient special and Cherry are confirmed (2026-10-06).
    Still from clearsmiledentalstudio.com and not yet confirmed: CBCT and intraoral cameras, and the office photos.
    **Removed 2026-10-06 until confirmed:** asked "which offers are current", the practice listed only the
    $240 and $150 specials and the complimentary consultation, and only Cherry for financing. So the $399
@@ -181,6 +181,21 @@ material we do not have yet.
 - **Old hosting and domains.** The practice is not cancelling anything for now, so the Clear Smile and Kent
   domains stay active and keep forwarding.
 - Meeting with Mike on 2026-11-03 at 1 PM Eastern. Nothing was attached, so the site is unchanged.
+
+## Answered 2026-11-03 (second email)
+
+- **Special prices removed.** The practice asked to remove the fees ($240 versus $150 might look unfair) and have
+  patients call instead. Every dollar figure for the new patient specials is gone from the home page (English and
+  Spanish), the insurance page (one "New Patient Special, all three offices, call for details" card), the Stamford
+  page and five articles. The complimentary consultation stays.
+- **Contact form goes to the chosen office.** "Preferred office" now starts on "No preference", which goes to
+  nyctdentistryimplants@gmail.com. Mount Kisco goes to mountkiscodentistry@gmail.com (the address on the old
+  nyctdentistry.com) and Stamford to clearsmiledentalstudio@gmail.com (the address on the old Stamford site).
+  Please confirm both are the right office addresses. **Kent has no address of its own on either old site,** so
+  Kent messages go to the practice address until we have one.
+- **Reddit.** The practice made a Reddit account and shared its login with us. The login is kept privately,
+  never in this file.
+- Both changes are on the preview only; nyctdentistry.com still shows the prices until the live site is updated.
 
 ## Features waiting on access
 

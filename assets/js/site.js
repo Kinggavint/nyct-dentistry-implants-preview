@@ -41,3 +41,16 @@ if (menuToggle && primaryNav) {
   const onWide = () => { if (wide.matches && primaryNav.classList.contains("is-open")) setMenu(false, false); };
   if (wide.addEventListener) wide.addEventListener("change", onWide); else if (wide.addListener) wide.addListener(onWide);
 }
+
+/* contact form: the message goes to the chosen office's address (data-email on each option), else the practice address */
+document.querySelectorAll("form[data-office-mail]").forEach((form) => {
+  const select = form.querySelector('select[name="office"]');
+  if (!select) return;
+  const route = () => {
+    const email = select.selectedOptions[0] && select.selectedOptions[0].dataset.email;
+    if (email) form.action = "mailto:" + email;
+  };
+  select.addEventListener("change", route);
+  form.addEventListener("submit", route);
+  route();
+});

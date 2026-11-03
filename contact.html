@@ -207,7 +207,7 @@
           <p class="aside-note">Prefer email? Write to <a href="mailto:nyctdentistryimplants@gmail.com">nyctdentistryimplants@gmail.com</a>.</p>
           <p class="aside-note">Please do not include medical details or anything private in this form. If you are in pain, call us instead.</p>
         </div>
-        <form class="contact-form" id="contact-form" action="mailto:nyctdentistryimplants@gmail.com" method="post" enctype="text/plain">
+        <form class="contact-form" id="contact-form" action="mailto:nyctdentistryimplants@gmail.com" method="post" enctype="text/plain" data-office-mail>
           <div class="row">
             <label>Name<input name="name" autocomplete="name" required></label>
             <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
@@ -215,10 +215,10 @@
           <label>Email<input name="email" type="email" autocomplete="email"></label>
           <label>Preferred office
             <select name="office">
-              <option>Mount Kisco, NY</option>
-              <option>Kent, CT</option>
-              <option>Stamford, CT</option>
-              <option>No preference</option>
+              <option value="No preference" data-email="nyctdentistryimplants@gmail.com" selected>No preference</option>
+              <option value="Mount Kisco, NY" data-email="mountkiscodentistry@gmail.com">Mount Kisco, NY</option>
+              <option value="Kent, CT" data-email="nyctdentistryimplants@gmail.com">Kent, CT</option>
+              <option value="Stamford, CT" data-email="clearsmiledentalstudio@gmail.com">Stamford, CT</option>
             </select>
           </label>
           <label>How can we help?<textarea name="message"></textarea></label>
