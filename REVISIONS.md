@@ -66,7 +66,8 @@ material we do not have yet.
     **Office tour videos (2026-10-28):** the Kent tour (two clips, sound removed) and the Stamford tour are being
     added to the live Kent and Stamford pages through PR #12 on the live branch. The earlier preview-only
     versions on this branch were removed so this branch does not show tours that were never live.
-    **Mount Kisco has no tour video yet**; please send one if you would like all three offices to have one.
+    **Mount Kisco has no tour video yet.** The practice wrote (2026-11-03) that it will send one that day; it
+    goes on the Mount Kisco page when it arrives.
 
 ## Answered 2026-10-06 (email)
 
@@ -169,12 +170,25 @@ material we do not have yet.
   meeting.** Both need a reply from us; nothing on the site depends on them.
 - **Still preview only.** Like the earlier preview work, this is not yet on nyctdentistry.com.
 
+## Answered 2026-11-03 (email, reply to the November search update)
+
+- **Mount Kisco tour video.** Coming the same day (item 19).
+- **Business Profile manager access.** The practice believes Apex is already a manager on all three profiles
+  and asked us to verify. It is (item 20); we owe a one-line confirmation.
+- **Reddit.** The practice asks how we will work together on it: should it make a professional Reddit account
+  and share access with us? Needs an answer from Apex (Mike or Gavin) on the approach before anything is posted.
+- **Mount Kisco reviews.** The practice will keep asking happy Mount Kisco patients for Google reviews.
+- **Old hosting and domains.** The practice is not cancelling anything for now, so the Clear Smile and Kent
+  domains stay active and keep forwarding.
+- Meeting with Mike on 2026-11-03 at 1 PM Eastern. Nothing was attached, so the site is unchanged.
+
 ## Features waiting on access
 
 20. **Live Google reviews.** Business Profile access is confirmed: support@apexailabs.ai has been a Manager
     on all three profiles since 2026-10-06 (Google's "You are now a manager" emails for Mt Kisco Dentistry &
     Implants, Kent Dentistry and Implants, and Stamford Dentistry & Implants - Clear Smile Dental Studio).
-    The practice asked us to double check (email 2026-10-12); nothing more is needed from the practice.
+    The practice asked us to double check (emails 2026-10-12 and again 2026-11-03); nothing more is needed
+    from the practice. We owe it a short confirmation.
     Live reviews on the site still need the Business Profile API connection on our side, which Google has
     not opened for our project yet. Real patient quotes from both websites are shown meanwhile. Google names
     today: Kent Dentistry and Implants, Mt Kisco Dentistry & Implants, Stamford Dentistry & Implants - Clear
