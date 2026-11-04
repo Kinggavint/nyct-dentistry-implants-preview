@@ -1,0 +1,11 @@
+{
+  "_comment": "Single source of truth for NY/CT Dentistry & Implants office phones (go-live readiness packet 2026-10-06 NAP).",
+  "name": "NY/CT Dentistry & Implants",
+  "phones": [
+    {"label": "Mount Kisco", "display": "(914) 666-5225", "e164": "+19146665225"},
+    {"label": "Kent", "display": "(860) 927-3577", "e164": "+18609273577"},
+    {"label": "Stamford", "display": "(203) 883-4451", "e164": "+12038834451"}
+  ],
+  "other_allowed_tel": [],
+  "banned_numbers": []
+}
