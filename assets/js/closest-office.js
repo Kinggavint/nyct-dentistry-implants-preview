@@ -27,6 +27,20 @@
       list.appendChild(li);
     });
   }
+  var STATES = {AL: "Alabama", AK: "Alaska", AZ: "Arizona", AR: "Arkansas", CA: "California", CO: "Colorado", CT: "Connecticut", DE: "Delaware", DC: "District of Columbia", FL: "Florida", GA: "Georgia", HI: "Hawaii", ID: "Idaho", IL: "Illinois", IN: "Indiana", IA: "Iowa", KS: "Kansas", KY: "Kentucky", LA: "Louisiana", ME: "Maine", MD: "Maryland", MA: "Massachusetts", MI: "Michigan", MN: "Minnesota", MS: "Mississippi", MO: "Missouri", MT: "Montana", NE: "Nebraska", NV: "Nevada", NH: "New Hampshire", NJ: "New Jersey", NM: "New Mexico", NY: "New York", NC: "North Carolina", ND: "North Dakota", OH: "Ohio", OK: "Oklahoma", OR: "Oregon", PA: "Pennsylvania", RI: "Rhode Island", SC: "South Carolina", SD: "South Dakota", TN: "Tennessee", TX: "Texas", UT: "Utah", VT: "Vermont", VA: "Virginia", WA: "Washington", WV: "West Virginia", WI: "Wisconsin", WY: "Wyoming"};
+  function norm(q) {
+    return q.replace(/[,\s]+(AL|AK|AZ|AR|CA|CO|CT|DE|DC|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY)\.?(\s+\d{5}(-\d{4})?)?\s*$/i, function (m, st, zip) {
+      return ", " + STATES[st.toUpperCase()] + (zip || "");
+    });
+  }
+  function near(lat, lon) {
+    var R = 3958.8, k = Math.PI / 180;
+    return OFFICES.some(function (o) {
+      var dLa = (o.lat - lat) * k, dLo = (o.lon - lon) * k;
+      var a = Math.sin(dLa / 2) * Math.sin(dLa / 2) + Math.cos(lat * k) * Math.cos(o.lat * k) * Math.sin(dLo / 2) * Math.sin(dLo / 2);
+      return 2 * R * Math.asin(Math.sqrt(a)) <= 100;
+    });
+  }
   function init(box) {
     var lang = (document.documentElement.lang || "en").slice(0, 2) === "es" ? "es" : "en";
     var t = T[lang], form = box.querySelector("form"), input = box.querySelector("input"), status = box.querySelector("[data-co-status]");
@@ -40,10 +54,10 @@
       var ctl = window.AbortController ? new AbortController() : null;
       var timer = setTimeout(function () { if (ctl) ctl.abort(); }, 12000);
       var opt = ctl ? { signal: ctl.signal } : {};
-      fetch("https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=us&accept-language=" + lang + "&q=" + encodeURIComponent(q), opt)
+      fetch("https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=us&viewbox=-74.3,42.1,-71.7,40.5&bounded=1&accept-language=" + lang + "&q=" + encodeURIComponent(norm(q)), opt)
         .then(function (r) { if (!r.ok) throw 0; return r.json(); })
         .then(function (g) {
-          if (!g || !g.length) { status.textContent = t.nf; return null; }
+          if (!g || !g.length || !near(+g[0].lat, +g[0].lon)) { status.textContent = t.nf; render(box, t, q, null); return null; }
           var pts = [g[0].lon + "," + g[0].lat].concat(OFFICES.map(function (o) { return o.lon + "," + o.lat; })).join(";");
           return fetch("https://router.project-osrm.org/table/v1/driving/" + pts + "?sources=0&annotations=duration,distance", opt)
             .then(function (r) { if (!r.ok) throw 0; return r.json(); })

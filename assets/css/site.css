@@ -545,7 +545,7 @@ body.page-sample-glass main { overflow-x: clip; }
 .co-office { display: grid; gap: 2px; min-width: 0; }
 .co-office span { font-size: .92rem; overflow-wrap: anywhere; }
 .co-time { font-weight: 700; }
-.co-badge { display: inline-block; margin-left: 6px; padding: 2px 8px; border-radius: 999px; font-size: .75rem; background: #1d1d1f; color: #fff; }
+.co-office .co-badge { display: inline-block; align-self: flex-start; justify-self: start; width: auto; max-width: max-content; margin-left: 0; padding: 2px 8px; border-radius: 999px; font-size: .75rem; background: #1d1d1f; color: #fff; }
 .co-actions { display: flex; flex-wrap: wrap; gap: 8px; }
 .co-note { font-size: .82rem; opacity: .75; margin-top: 10px; }
 @media (max-width: 860px) { .co-wrap { grid-template-columns: minmax(0, 1fr); } }
