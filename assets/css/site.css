@@ -527,6 +527,6 @@ h3 { font-size: clamp(1.35rem, 2vw, 1.75rem); letter-spacing: -0.02em; line-heig
   body.page-v3 .primary-nav a { padding: 0 6px; font-size: 12px; }
   body.page-v3 .site-header .header-inner { gap: 10px; }
 }
-body[class*="page-sample-"] .site-header .header-inner { flex-wrap: wrap; row-gap: 6px; }
-body[class*="page-sample-"] .primary-nav { flex-wrap: wrap; row-gap: 4px; min-width: 0; }
+body[class*="page-sample-"] .site-header .header-inner, body.page-samples .site-header .header-inner { flex-wrap: wrap; row-gap: 6px; }
+body[class*="page-sample-"] .primary-nav, body.page-samples .primary-nav { flex-wrap: wrap; row-gap: 4px; min-width: 0; }
 body.page-sample-glass main { overflow-x: clip; }
