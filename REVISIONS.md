@@ -228,10 +228,22 @@ material we do not have yet.
   in his screenshot are the live site, which does not have the 11-03 changes yet.
 - Preview only; not yet on nyctdentistry.com.
 
+## Answered 2026-11-04 (second email)
+
+- **Insurance line now says PPO (done on the preview).** All three offices read: "We participate with most PPO
+  insurance plans and will send the claim out for you, to save you the hassle." Updated on the Insurance page
+  (heading, intro, FAQ, page description) and the Payment Plans page, English and Spanish.
+- **One shared New Patient Special (done on the preview).** His wording, on the Insurance page card, the home
+  page and the Stamford page, English and Spanish: a regular cleaning, a comprehensive exam and the X-rays you
+  need, valued at $480+, call us to find out more, cannot be combined with dental insurance.
+- Preview only; not yet on nyctdentistry.com.
+
 ## Questions from 2026-11-04
 
 31. **HUSKY elsewhere.** The Stamford office page and four Stamford articles still say the Stamford office accepts
     Medicaid through HUSKY Health. Should that come off those pages too, or only the Insurance page?
+32. **Special fine print.** The Stamford page also says the special cannot be combined with periodontal
+    treatment (from the old Clear Smile site). Does that apply at all three offices, or should it come off?
 
 ## Features waiting on access
 
