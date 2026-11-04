@@ -501,7 +501,7 @@
       m.D = Math.max(1, m.y0 - m.y1);
       var lw = loc.offsetWidth, lh = loc.offsetHeight;
       m.lx0 = br.left; m.ly = hr.top + hr.height / 2 - lh / 2;
-      m.wide = window.innerWidth >= 1380;
+      m.wide = window.innerWidth >= 1520;
       m.lx1 = ir.right - 22 - lw;
     }
     var t = 0;

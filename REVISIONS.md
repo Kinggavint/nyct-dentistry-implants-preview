@@ -211,6 +211,28 @@ material we do not have yet.
   Apex (Mike or Gavin).
 - Preview only, like the earlier 2026-11-03 changes; not yet on nyctdentistry.com.
 
+## Answered 2026-11-04 (email, reply on the November search update thread)
+
+- **Which office is closest (done on the preview).** The Locations page (English and Spanish) now has a
+  "Which office is closest to me?" section: the patient types an address, town or ZIP code (or taps "Use my
+  location"), the three offices are ranked by distance with the closest marked, and a map shows the real
+  driving time from Google Maps to the chosen office. Tapping another office shows its drive. The Contact page
+  links to it. Distances in the list are straight-line miles; the map shows the actual drive.
+- **Insurance (done on the preview).** The Stamford HUSKY and Medicaid lines are off the Insurance page (list and
+  FAQ), and all three offices now read: "We participate with most insurance plans and will send the claim out for
+  you, to save you the hassle."
+- **Payment Plans tab (done on the preview).** New Payment Plans page in the top menu next to Insurance (English
+  and Spanish): introduces Cherry with its logo and a link to withcherry.com/consumers, the Apply button for each
+  office, the payment calculator, and other ways to pay. The Insurance page keeps a short link to it.
+- **New patient special.** Already one card for all three offices on the preview (since 2026-11-03); the two cards
+  in his screenshot are the live site, which does not have the 11-03 changes yet.
+- Preview only; not yet on nyctdentistry.com.
+
+## Questions from 2026-11-04
+
+31. **HUSKY elsewhere.** The Stamford office page and four Stamford articles still say the Stamford office accepts
+    Medicaid through HUSKY Health. Should that come off those pages too, or only the Insurance page?
+
 ## Features waiting on access
 
 20. **Live Google reviews.** Business Profile access is confirmed: support@apexailabs.ai has been a Manager

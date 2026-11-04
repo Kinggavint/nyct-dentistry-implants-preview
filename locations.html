@@ -182,6 +182,7 @@
         <a href="services.html">Services</a>
         <a href="smiles.html">Smiles</a>
         <a href="insurance.html">Insurance</a>
+        <a href="payment-plans.html">Payment Plans</a>
         <a href="locations.html" aria-current="page">Locations</a>
         <a href="articles.html">Articles</a>
       </nav>
@@ -196,8 +197,37 @@
       <p class="eyebrow">Locations</p>
       <h1>Three Offices, One <span class="accent">Standard</span> of Care</h1>
       <p class="lede">Choose the office closest to you. Book online any time, or call and the team will help you find a time that works.</p>
-      <p>Not sure which office is closest? Tap one to see your drive time on Google Maps.</p>
-      <div class="button-row"><a class="button button-ghost" href="https://www.google.com/maps/dir/?api=1&amp;travelmode=driving&amp;destination=Dentistry%20%26%20Implants%2C%2039%20Smith%20Ave%2C%20Rear%20LL%2C%20Mount%20Kisco%2C%20NY%2010549" target="_blank" rel="noopener">Drive time to Mount Kisco</a><a class="button button-ghost" href="https://www.google.com/maps/dir/?api=1&amp;travelmode=driving&amp;destination=Dentistry%20%26%20Implants%2C%2070%20Maple%20St%2C%20Kent%2C%20CT%2006757" target="_blank" rel="noopener">Drive time to Kent</a><a class="button button-ghost" href="https://www.google.com/maps/dir/?api=1&amp;travelmode=driving&amp;destination=Dentistry%20%26%20Implants%2C%20800%20E%20Main%20St%2C%20Stamford%2C%20CT%2006902" target="_blank" rel="noopener">Drive time to Stamford</a></div>
+      <p><a class="text-link" href="#closest">Which office is closest to me? <span aria-hidden="true">&rarr;</span></a></p>
+    </section>
+
+    <section class="section section-tight" id="closest">
+      <div class="section-heading">
+        <p class="eyebrow">Find your office</p>
+        <h2>Which office is closest to me?</h2>
+        <p>Enter your address, town or ZIP code and see your drive time to each office on the map.</p>
+      </div>
+      <div class="di-finder" data-finder data-places="assets/data/places.json" data-hl="en">
+        <form class="di-finder-form" data-finder-form>
+          <label for="finder-from">Your address, town or ZIP code</label>
+          <div class="di-finder-row">
+            <input id="finder-from" name="from" type="text" autocomplete="street-address" enterkeyhint="search">
+            <button class="button" type="submit">Show drive time</button>
+          </div>
+          <button class="di-finder-locate" type="button" data-finder-locate>Use my location</button>
+          <p class="di-finder-status" data-finder-status aria-live="polite"></p>
+        </form>
+        <div class="di-finder-grid">
+          <ul class="di-finder-list" data-finder-list>
+          <li><button type="button" class="di-finder-office" data-finder-office data-name="Mount Kisco, NY" data-addr="39 Smith Ave, Mount Kisco, NY 10549" data-lat="41.2" data-lng="-73.7266" aria-pressed="true"><strong>Mount Kisco, NY</strong><span>39 Smith Ave, Rear LL</span><span class="di-finder-dist" data-finder-dist></span></button></li>
+          <li><button type="button" class="di-finder-office" data-finder-office data-name="Kent, CT" data-addr="70 Maple St, Kent, CT 06757" data-lat="41.7243" data-lng="-73.4767" aria-pressed="false"><strong>Kent, CT</strong><span>70 Maple St</span><span class="di-finder-dist" data-finder-dist></span></button></li>
+          <li><button type="button" class="di-finder-office" data-finder-office data-name="Stamford, CT" data-addr="800 E Main St, Stamford, CT 06902" data-lat="41.0554" data-lng="-73.5296" aria-pressed="false"><strong>Stamford, CT</strong><span>800 E Main St</span><span class="di-finder-dist" data-finder-dist></span></button></li>
+          </ul>
+          <div class="di-finder-map">
+            <iframe data-finder-map title="Map and drive time to the selected office" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=39%20Smith%20Ave%2C%20Mount%20Kisco%2C%20NY%2010549&amp;z=14&amp;output=embed"></iframe>
+            <a class="text-link" data-finder-open href="https://www.google.com/maps/dir/?api=1&amp;travelmode=driving&amp;destination=Dentistry%20%26%20Implants%2C%2039%20Smith%20Ave%2C%20Rear%20LL%2C%20Mount%20Kisco%2C%20NY%2010549" target="_blank" rel="noopener">Open in Google Maps <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="section section-tight">
@@ -280,7 +310,8 @@
           <a href="doctors.html">Our Team</a>
           <a href="services.html">Services</a>
           <a href="smiles.html">Before and After</a>
-          <a href="insurance.html">Insurance and Financing</a>
+          <a href="insurance.html">Insurance</a>
+          <a href="payment-plans.html">Payment Plans</a>
           <a href="locations.html">Locations</a>
           <a href="service-area.html">Areas We Serve</a>
           <a href="testimonials.html">Patient Reviews</a>

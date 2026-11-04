@@ -25,7 +25,7 @@ body.v3-inner .review-banner { display: block; padding: 8px var(--v3-gutter); ba
 
 /* header: locations line at the top right (wide screens, where the home page shows it too) */
 body.v3-inner .v3-loc { display: none; margin: 0; white-space: nowrap; font: 600 12px/1.2 var(--v3-font); letter-spacing: .01em; color: var(--v3-ink-metal); }
-@media (min-width: 1380px) {
+@media (min-width: 1520px) {
   body.v3-inner .site-header .header-inner { position: relative; }
   body.v3-inner .v3-loc { display: block; position: absolute; right: 22px; top: 50%; translate: 0 -50%; }
 }

@@ -393,9 +393,123 @@
     });
   }
 
+  /* "Which office is closest to me?": rank the offices from a ZIP, town or the visitor's location
+     (straight-line miles from Census centroids in assets/data/places.json), then show the real drive
+     time on the map. The typed text goes to the map as the starting point, so a full address works too. */
+  function initFinder() {
+    var F = {
+      en: { empty: 'Enter your address, town or ZIP code.', away: '{n} mi away', closest: 'Closest',
+            ranked: 'Closest to you: {o}. Miles are a straight line; the map shows your real drive time. Tap another office to compare.',
+            unranked: 'The map shows your drive time to {o}. Tap another office to compare.',
+            here: 'your location', locating: 'Finding your location...',
+            noLocate: 'We could not get your location. Please type your address, town or ZIP code.' },
+      es: { empty: 'Escriba su dirección, ciudad o código postal.', away: 'a {n} millas', closest: 'El más cercano',
+            ranked: 'El más cercano a usted: {o}. Las millas son en línea recta; el mapa muestra su tiempo real en auto. Toque otro consultorio para comparar.',
+            unranked: 'El mapa muestra su tiempo en auto a {o}. Toque otro consultorio para comparar.',
+            here: 'su ubicación', locating: 'Buscando su ubicación...',
+            noLocate: 'No pudimos obtener su ubicación. Escriba su dirección, ciudad o código postal.' }
+    }[lang];
+    var STATES = { 'new york': 'ny', 'connecticut': 'ct', 'new jersey': 'nj', 'massachusetts': 'ma', 'pennsylvania': 'pa' };
+    Array.prototype.forEach.call(doc.querySelectorAll('[data-finder]'), function (w) {
+      var form = w.querySelector('[data-finder-form]');
+      var input = form.elements.from;
+      var list = w.querySelector('[data-finder-list]');
+      var map = w.querySelector('[data-finder-map]');
+      var open = w.querySelector('[data-finder-open]');
+      var status = w.querySelector('[data-finder-status]');
+      var hl = w.getAttribute('data-hl') === 'es' ? '&hl=es' : '';
+      var places = null;
+      var origin = '';
+      function offices() { return Array.prototype.slice.call(list.querySelectorAll('[data-finder-office]')); }
+      function current() { return list.querySelector('[aria-pressed="true"]') || offices()[0]; }
+      function show(btn) {
+        offices().forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+        var to = btn.getAttribute('data-addr');
+        map.src = origin
+          ? 'https://maps.google.com/maps?saddr=' + encodeURIComponent(origin) + '&daddr=' + encodeURIComponent(to) + '&dirflg=d&output=embed' + hl
+          : 'https://maps.google.com/maps?q=' + encodeURIComponent(to) + '&z=14&output=embed' + hl;
+        open.href = 'https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=' + encodeURIComponent(to) +
+          (origin ? '&origin=' + encodeURIComponent(origin) : '');
+      }
+      function miles(a, b) {
+        var r = Math.PI / 180, dLat = (b[0] - a[0]) * r, dLng = (b[1] - a[1]) * r;
+        var x = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(a[0] * r) * Math.cos(b[0] * r) * Math.sin(dLng / 2) * Math.sin(dLng / 2);
+        return 7917.6 * Math.asin(Math.sqrt(x));
+      }
+      function lookup(text) {
+        if (!places) return null;
+        var zips = text.match(/\b\d{5}\b/g);
+        if (zips && places.zip[zips[zips.length - 1]]) return places.zip[zips[zips.length - 1]];
+        var t = text.toLowerCase().replace(/\b\d{5}(-\d{4})?\b/g, ' ').replace(/\bmt\.?\s/g, 'mount ').replace(/\s+/g, ' ');
+        Object.keys(STATES).forEach(function (k) { t = t.replace(new RegExp('\\b' + k + '\\b', 'g'), STATES[k]); });
+        var st = (t.match(/\b(ny|ct|nj|ma|pa)\b\s*,?\s*$/) || t.match(/,\s*(ny|ct|nj|ma|pa)\b/) || [])[1];
+        var parts = t.split(',').map(function (p) { return p.replace(/\b(ny|ct|nj|ma|pa|usa?)\b/g, '').replace(/[^a-z' .-]/g, '').trim(); })
+          .filter(Boolean).reverse();
+        var order = st ? [st] : ['ny', 'ct', 'nj', 'ma', 'pa'];
+        for (var i = 0; i < parts.length; i++) {
+          for (var j = 0; j < order.length; j++) {
+            var hit = places.town[parts[i] + '|' + order[j]];
+            if (hit) return hit;
+          }
+        }
+        return null;
+      }
+      function rank(at) {
+        offices().forEach(function (b) {
+          var d = b.querySelector('[data-finder-dist]');
+          var badge = b.querySelector('.di-finder-badge');
+          if (badge) badge.parentNode.removeChild(badge);
+          if (!at) { d.textContent = ''; return; }
+          b._mi = miles(at, [parseFloat(b.getAttribute('data-lat')), parseFloat(b.getAttribute('data-lng'))]);
+          d.textContent = F.away.replace('{n}', Math.max(1, Math.round(b._mi)));
+        });
+        if (!at) return null;
+        var sorted = offices().sort(function (a, b) { return a._mi - b._mi; });
+        sorted.forEach(function (b) { list.appendChild(b.parentNode); });
+        sorted[0].insertBefore(el('span', 'di-finder-badge', F.closest), sorted[0].firstChild);
+        return sorted[0];
+      }
+      function run(at) {
+        var best = rank(at);
+        var target = best || current();
+        show(target);
+        status.textContent = (best ? F.ranked : F.unranked).replace('{o}', target.getAttribute('data-name'));
+      }
+      function withPlaces(fn) {
+        if (places) return fn();
+        fetch(w.getAttribute('data-places')).then(function (r) { return r.json(); })
+          .then(function (d) { places = d; }).catch(function () {}).then(fn);
+      }
+      list.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-finder-office]');
+        if (b) show(b);
+      });
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var text = input.value.trim();
+        if (!text) { status.textContent = F.empty; input.focus(); return; }
+        origin = text;
+        withPlaces(function () { run(lookup(text)); });
+      });
+      var locate = w.querySelector('[data-finder-locate]');
+      if (!navigator.geolocation) { locate.hidden = true; return; }
+      locate.addEventListener('click', function () {
+        status.textContent = F.locating;
+        navigator.geolocation.getCurrentPosition(function (pos) {
+          var at = [pos.coords.latitude, pos.coords.longitude];
+          origin = at[0].toFixed(5) + ',' + at[1].toFixed(5);
+          input.value = '';
+          input.placeholder = F.here;
+          run(at);
+        }, function () { status.textContent = F.noLocate; }, { timeout: 10000, maximumAge: 600000 });
+      });
+    });
+  }
+
   function start() {
     initReveal();
     initCalc();
+    initFinder();
     initOffices();
     initChat();
     initA11y();

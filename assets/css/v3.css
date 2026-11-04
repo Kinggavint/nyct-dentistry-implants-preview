@@ -107,7 +107,11 @@ html.v3-js .page-v3 .v3-offers[data-v3-scroll] .v3-card { will-change: transform
 .v3-fly.v3-hero-logo, .v3-fly a { pointer-events: auto; }
 html.v3-fly-on .page-v3 .v3-hero .v3-hero-logo:not(.v3-fly), html.v3-fly-on .page-v3 .v3-hero .v3-hero-loc.is-flying:not(.v3-fly) { visibility: hidden; }
 html.v3-fly-on .page-v3 .site-header .brand { opacity: 0; }
-@media (min-width: 1380px) { body.page-v3 .site-header .header-inner { max-width: 1400px; padding-right: 290px; } }
+@media (min-width: 1520px) { body.page-v3 .site-header .header-inner { max-width: 1520px; padding-right: 290px; } }
+/* 8 nav tabs since Payment Plans (2026-11-04): a wider bar and tighter tabs until the locations line has room; the header Call pill steps aside below 1280px (the call dock stays) */
+@media (min-width: 1081px) and (max-width: 1519px) { body.page-v3 .site-header .header-inner { max-width: 1240px; } body.page-v3 .site-header .primary-nav > a { padding: 0 7px; } }
+@media (min-width: 1081px) and (max-width: 1279px) { body.page-v3 .site-header .header-call { display: none; } }
+@media (min-width: 1081px) and (max-width: 1179px) { body.page-v3 .site-header .primary-nav > a { padding: 0 6px; } }
 @media (max-width: 734px) {
   .page-v3 .v3-hero-logo { gap: 14px; margin-bottom: 16px; } .page-v3 .v3-hero-logo img { width: 48px; height: 48px; } .page-v3 .v3-hero-logo span { font-size: 21px; }
   .page-v3 .v3-hero-loc { font-size: 15px; white-space: normal; padding: 0 16px; }
