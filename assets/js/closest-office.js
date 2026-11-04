@@ -53,11 +53,12 @@
       render(box, t, q, null);
       var ctl = window.AbortController ? new AbortController() : null;
       var timer = setTimeout(function () { if (ctl) ctl.abort(); }, 12000);
-      var opt = ctl ? { signal: ctl.signal } : {};
+      var opt = { referrerPolicy: "origin", credentials: "omit" };
+      if (ctl) opt.signal = ctl.signal;
       fetch("https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=us&viewbox=-74.3,42.1,-71.7,40.5&bounded=1&accept-language=" + lang + "&q=" + encodeURIComponent(norm(q)), opt)
         .then(function (r) { if (!r.ok) throw 0; return r.json(); })
         .then(function (g) {
-          if (!g || !g.length || !near(+g[0].lat, +g[0].lon)) { status.textContent = t.nf; render(box, t, q, null); return null; }
+          if (!g || !g.length || !near(+g[0].lat, +g[0].lon)) { status.textContent = t.nf; render(box, t, "", null); return null; }
           var pts = [g[0].lon + "," + g[0].lat].concat(OFFICES.map(function (o) { return o.lon + "," + o.lat; })).join(";");
           return fetch("https://router.project-osrm.org/table/v1/driving/" + pts + "?sources=0&annotations=duration,distance", opt)
             .then(function (r) { if (!r.ok) throw 0; return r.json(); })
