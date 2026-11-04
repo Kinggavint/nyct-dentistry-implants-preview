@@ -393,9 +393,33 @@
     });
   }
 
+  /* 6. Contact form office routing: <form data-office-routing data-default-email="...">
+        Sends the mailto to the chosen office's <option data-email>, else the default. */
+  function initOfficeRouting() {
+    var forms = doc.querySelectorAll('form[data-office-routing]');
+    var ok = /^[^\s@<>"'?&]+@[^\s@<>"'?&]+\.[a-z]{2,}$/i;
+    Array.prototype.forEach.call(forms, function (f) {
+      var fallback = f.getAttribute('data-default-email') || '';
+      function route() {
+        var sel = f.querySelector('select[name="office"]');
+        var opt = sel && sel.options[sel.selectedIndex];
+        var to = (opt && opt.getAttribute('data-email')) || '';
+        if (!ok.test(to)) to = fallback;
+        if (!ok.test(to)) return;
+        var office = opt && opt.getAttribute('data-email') ? (opt.value || opt.text) : '';
+        var subject = 'Website message' + (office ? ' (' + office + ')' : '');
+        f.setAttribute('action', 'mailto:' + to + '?subject=' + encodeURIComponent(subject));
+      }
+      f.addEventListener('change', route);
+      f.addEventListener('submit', route);
+      route();
+    });
+  }
+
   function start() {
     initReveal();
     initCalc();
+    initOfficeRouting();
     initOffices();
     initChat();
     initA11y();
