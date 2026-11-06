@@ -14,7 +14,11 @@
   <meta property="og:description" content="Our Kent, CT office offers dental implants, cosmetic dentistry, veneers, crowns, preventive care and emergency visits with Dr. GiTae Kwon.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://nyctdentistry.com/assets/img/dr-kwon-portrait.webp">
+  <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap">
@@ -27,6 +31,7 @@
   <script src="../assets/js/features.js" defer></script>
   <script src="../assets/js/motion.js" defer></script>
   <script src="../assets/js/v3.js" defer></script>
+  <script src="../assets/js/analytics.js" defer></script>
   <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -155,6 +160,10 @@
  ]
 }
   </script>
+<!-- APEX:GA4 head -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B4YH72HDLT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'granted'});gtag('js',new Date());gtag('config','G-B4YH72HDLT',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+  <!-- PR18-RECONCILE: live production base preserved (analytics/GA4 consent, NY CT branding, live office video/imagery). Applied only PR #18 Payment Plans nav/footer + exact PPO insurance FAQ line. -->
 </head>
 <body class="page-locations page-v3 v3-inner">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -168,7 +177,7 @@
   </div>
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="../index.html" aria-label="Dentistry & Implants home">Dentistry <span class="brand-amp">&amp;</span> Implants</a>
+      <a class="brand" href="../index.html" aria-label="NY, CT Dentistry & Implants home">NY, CT Dentistry <span class="brand-amp">&amp;</span> Implants</a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
       <nav class="primary-nav" id="primary-nav" aria-label="Main">
         <a href="../doctor.html">Dr. Kwon</a>
@@ -176,6 +185,7 @@
         <a href="../services.html">Services</a>
         <a href="../smiles.html">Smiles</a>
         <a href="../insurance.html">Insurance</a>
+        <a href="../payment-plans.html">Payment Plans</a>
         <a href="../locations.html" aria-current="page">Locations</a>
         <a href="../articles.html">Articles</a>
       </nav>
@@ -211,7 +221,7 @@
     <section class="section section-soft">
       <div class="section-heading">
         <p class="eyebrow">Services in Kent</p>
-        <h2>What you can have done in Kent</h2>
+        <h2>What you can have done in Kent.</h2>
         <p>These are the treatments our Kent office offers. Which one is right for you is decided at an exam, after we look at your teeth, gums and goals.</p>
       </div>
       <ul class="general-list">
@@ -230,7 +240,7 @@
       <div class="two-col">
         <div class="sticky">
           <p class="eyebrow">Your doctors</p>
-          <h2>Two doctors, one team</h2>
+          <h2>Two doctors, one team.</h2>
         </div>
         <div class="prose">
           <p>Dr. GiTae Kwon is an implant surgeon with a master's degree in dental implantology who also teaches implant surgery to other dentists. His focus includes general, cosmetic and implant dentistry, full mouth reconstruction and All-on-X treatment.</p>
@@ -252,14 +262,16 @@
       <p class="more-link"><a class="text-link" href="../testimonials.html">Read more patient reviews <span aria-hidden="true">&rarr;</span></a></p>
     </section>
 
-    <section class="section">
+    <section class="section section-soft v3p-patients">
       <div class="section-heading">
         <p class="eyebrow">Video review</p>
-        <h2>A Kent smile</h2>
-        <p>Filmed at this office. In Spanish.</p>
+        <h2>From our patients.</h2>
+        <p>Filmed at our Kent office. In Spanish.</p>
       </div>
-      <div class="vd-testimonials vd-tall">
-        <figure class="vd-testimonial" data-reveal data-src="../assets/video/testimonial-kent-es.mp4" data-poster="../assets/img/testimonial-kent-es.webp" data-lang="es" data-orient="portrait" data-duration="0:35"><figcaption>Humberta C., Kent: a front tooth implant</figcaption></figure>
+      <div class="v3p-video-card" data-reveal>
+        <div class="vd-testimonials vd-tall">
+          <figure class="vd-testimonial" data-src="../assets/video/testimonial-kent-es.mp4" data-poster="../assets/img/testimonial-kent-es.webp" data-lang="es" data-orient="portrait" data-duration="0:35"><figcaption>Humberta C., Kent: a front tooth implant</figcaption></figure>
+        </div>
       </div>
       <p class="more-link"><a class="text-link" href="../testimonials.html">Watch more patient videos <span aria-hidden="true">&rarr;</span></a></p>
     </section>
@@ -268,12 +280,12 @@
       <div class="two-col">
         <div class="sticky">
           <p class="eyebrow">Common questions</p>
-          <h2>Before you visit</h2>
+          <h2>Before you visit.</h2>
         </div>
         <div class="faq-list">
           <details>
             <summary>Do you accept my dental insurance?</summary>
-            <div><p>Each office is in network with its own list of plans, and coverage can vary by employer. See the Kent plans on our <a href="../insurance.html#plans">insurance page</a>, then call the office so we can verify your benefits before your visit.</p></div>
+            <div><p>We participate with most PPO insurances, and will send the claim out for you to save your hassle. Call the office and we will verify your benefits before your visit.</p></div>
           </details>
           <details>
             <summary>What are the office hours?</summary>
@@ -310,7 +322,7 @@
   <footer class="site-footer">
     <div class="footer-main">
       <div class="footer-brand-block">
-        <a class="footer-brand" href="../index.html">Dentistry <span class="brand-amp">&amp;</span> Implants</a>
+        <a class="footer-brand" href="../index.html">NY, CT Dentistry <span class="brand-amp">&amp;</span> Implants</a>
         <p>Dentistry Built on Trust. Implants Designed to Last.</p>
         <p class="footer-lang">Hablamos español.</p>
         <p><a href="mailto:nyctdentistryimplants@gmail.com">nyctdentistryimplants@gmail.com</a></p>
@@ -323,6 +335,7 @@
           <a href="../services.html">Services</a>
           <a href="../smiles.html">Before and After</a>
           <a href="../insurance.html">Insurance and Financing</a>
+          <a href="../payment-plans.html">Payment Plans</a>
           <a href="../locations.html">Locations</a>
           <a href="../service-area.html">Areas We Serve</a>
           <a href="../testimonials.html">Patient Reviews</a>

@@ -233,6 +233,7 @@
         <a href="services.html">Services</a>
         <a href="smiles.html">Smiles</a>
         <a href="insurance.html">Insurance</a>
+        <a href="payment-plans.html">Payment Plans</a>
         <a href="contact.html">Locations</a>
         <a href="articles.html">Articles</a>
       </nav>
@@ -283,7 +284,7 @@
         <p class="v3-eyebrow">New Patients</p>
         <h2 class="v3-h3">Complimentary new patient consultation.</h2>
         <p class="v3-body">Available at all three offices: Mount Kisco, Kent and Stamford.</p>
-        <p class="v3-fine">New patient specials include a cleaning, a comprehensive exam and X-rays, and cannot be combined with insurance. Call us for pricing: Stamford <a href="tel:2038834451">203-883-4451</a>, Mount Kisco <a href="tel:9146665225">914-666-5225</a>, Kent <a href="tel:8609273577">860-927-3577</a>.</p>
+        <p class="v3-fine"><strong>New Patient Special, all three offices:</strong> A regular cleaning, a comprehensive exam and the X-rays you need. Cannot be combined with dental insurance. Valued at $480+ but call us to find out more about the New Patient Special. Call: Stamford <a href="tel:2038834451">203-883-4451</a>, Mount Kisco <a href="tel:9146665225">914-666-5225</a>, Kent <a href="tel:8609273577">860-927-3577</a>.</p>
         <div class="v3-links">
           <a class="v3-link v3-link-cta" href="contact.html" data-office="book"><span>Schedule Now</span></a>
           <a class="v3-link" href="insurance.html"><span>Details</span></a>
@@ -467,6 +468,27 @@
       </div>
     </section>
 
+    <section class="v3-section v3-white" id="closest-office" aria-labelledby="co-title">
+      <div class="v3-wrap v3-wrap-wide">
+      <p class="v3-eyebrow">Find your office</p><h2 class="v3-headline" id="co-title">Which office is the closest to me?</h2><p class="v3-intro">Enter your address or ZIP code to see the drive time to each of our three offices.</p>
+      <div class="co-wrap" data-closest-office>
+        <svg class="co-map" viewBox="0 0 360 420" role="img" aria-label="Map of our offices in Mount Kisco, NY, Kent, CT and Stamford, CT"><rect width="360" height="420" fill="none"/><line x1="240.0" y1="20" x2="135.0" y2="400" stroke="#b7bcc5" stroke-dasharray="6 6"/><text x="40" y="150" fill="#6e6e73" font-size="12">NY</text><text x="300" y="150" fill="#6e6e73" font-size="12">CT</text><circle cx="232.9" cy="364.2" r="8" fill="#1d1d1f"/><text x="244.9" y="368.2" text-anchor="start" font-size="13">Stamford, CT</text><circle cx="275.0" cy="49.3" r="8" fill="#1d1d1f"/><text x="275.0" y="76" text-anchor="middle" font-size="13">Kent, CT</text><circle cx="84.5" cy="295.4" r="8" fill="#1d1d1f"/><text x="96.5" y="299.4" text-anchor="start" font-size="13">Mount Kisco, NY</text></svg>
+        <div>
+          <form class="co-form" role="search">
+            <label for="co-address">Your address or ZIP code</label>
+            <input id="co-address" name="address" type="text" autocomplete="street-address" placeholder="e.g. 10 Main St, Danbury, CT">
+            <button class="button" type="submit">Show drive times</button>
+          </form>
+          <p class="co-status" data-co-status role="status" aria-live="polite"></p>
+          <ul class="co-list" data-co-results></ul>
+          <p class="co-note">Drive times are estimates from OpenStreetMap and OSRM without live traffic. Your address is only used to find the route and is not saved.</p>
+        </div>
+      </div>
+    </div>
+    </section>
+    <script src="assets/js/closest-office.js" defer></script>
+
+
     <section class="v3-section v3-silver v3-band" id="referral" aria-labelledby="v3h-referral">
       <div class="v3-wrap v3h-band">
         <div>
@@ -548,6 +570,7 @@
           <a href="services.html">Services</a>
           <a href="smiles.html">Before and After</a>
           <a href="insurance.html">Insurance and Financing</a>
+          <a href="payment-plans.html">Payment Plans</a>
           <a href="contact.html">Locations</a>
           <a href="service-area.html">Areas We Serve</a>
           <a href="testimonials.html">Patient Reviews</a>

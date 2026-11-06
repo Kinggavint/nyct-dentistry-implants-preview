@@ -521,3 +521,31 @@ h3 { font-size: clamp(1.35rem, 2vw, 1.75rem); letter-spacing: -0.02em; line-heig
 .page-v3 .brand, .page-v2 .brand, .page-v2 .footer-brand { gap: 0 !important; }
 .page-v3 .brand::before, .page-v2 .brand::before, .page-v2 .footer-brand::before { margin-right: 10px; }
 .brand .brand-amp, .footer-brand .brand-amp { padding: 0 .28em; }
+
+/* Header fit after the Payment Plans tab (PR #18) */
+@media (min-width: 1081px) and (max-width: 1260px) {
+  body.page-v3 .primary-nav a { padding: 0 6px; font-size: 12px; }
+  body.page-v3 .site-header .header-inner { gap: 10px; }
+}
+body[class*="page-sample-"] .site-header .header-inner, body.page-samples .site-header .header-inner { flex-wrap: wrap; row-gap: 6px; }
+body[class*="page-sample-"] .primary-nav, body.page-samples .primary-nav { flex-wrap: wrap; row-gap: 4px; min-width: 0; }
+body.page-sample-glass main { overflow-x: clip; }
+
+/* Which office is closest to me? */
+.co-wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 32px; align-items: start; max-width: 1100px; margin: 0 auto; text-align: left; }
+.co-map { width: 100%; height: auto; border-radius: 20px; background: #f1f3f6; border: 1px solid rgba(0,0,0,.06); }
+.co-map text { font: 600 13px/1 system-ui, sans-serif; fill: #1d1d1f; }
+.co-form { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 8px; }
+.co-form label { flex-basis: 100%; font-weight: 600; }
+.co-form input { flex: 1 1 220px; min-width: 0; padding: 12px 14px; font: inherit; border: 1px solid #c9ccd2; border-radius: 12px; }
+.co-status { min-height: 1.4em; margin: 0 0 8px; font-size: .95rem; }
+.co-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.co-row { display: flex; flex-wrap: wrap; gap: 10px 16px; justify-content: space-between; align-items: center; padding: 14px 16px; border: 1px solid rgba(0,0,0,.08); border-radius: 16px; background: #fff; }
+.co-row.is-closest { border-color: currentColor; box-shadow: 0 0 0 1px currentColor inset; }
+.co-office { display: grid; gap: 2px; min-width: 0; }
+.co-office span { font-size: .92rem; overflow-wrap: anywhere; }
+.co-time { font-weight: 700; }
+.co-office .co-badge { display: inline-block; align-self: flex-start; justify-self: start; width: auto; max-width: max-content; margin-left: 0; padding: 2px 8px; border-radius: 999px; font-size: .75rem; background: #1d1d1f; color: #fff; }
+.co-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.co-note { font-size: .82rem; opacity: .75; margin-top: 10px; }
+@media (max-width: 860px) { .co-wrap { grid-template-columns: minmax(0, 1fr); } }

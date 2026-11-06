@@ -186,6 +186,7 @@
         <a href="doctor.html">Dr. Kwon</a>
         <a href="services.html">Servicios</a>
         <a href="insurance.html">Seguros</a>
+        <a href="payment-plans.html">Planes de pago</a>
         <a href="locations.html" aria-current="page">Ubicaciones</a>
       </nav>
       <nav class="di-lang" aria-label="Idioma"><a href="../contact.html" lang="en">EN</a><a href="locations.html" lang="es" aria-current="true">ES</a></nav>
@@ -200,6 +201,25 @@
       <h1>Tres consultorios, un mismo <span class="accent">estándar</span> de atención</h1>
       <p class="lede">Elija el consultorio más cercano a usted. Reserve en línea a cualquier hora, o llame y el equipo le ayudará a encontrar un horario que le convenga.</p>
     </section>
+
+    <section class="section" id="closest-office" aria-labelledby="co-title">
+      <div class="section-heading"><p class="eyebrow">Encuentre su consultorio</p><h2 id="co-title">¿Qué consultorio me queda más cerca?</h2><p>Escriba su dirección o código postal para ver el tiempo de manejo a cada uno de nuestros tres consultorios.</p></div>
+      <div class="co-wrap" data-closest-office>
+        <svg class="co-map" viewBox="0 0 360 420" role="img" aria-label="Mapa de nuestros consultorios en Mount Kisco, NY, Kent, CT y Stamford, CT"><rect width="360" height="420" fill="none"/><line x1="240.0" y1="20" x2="135.0" y2="400" stroke="#b7bcc5" stroke-dasharray="6 6"/><text x="40" y="150" fill="#6e6e73" font-size="12">NY</text><text x="300" y="150" fill="#6e6e73" font-size="12">CT</text><circle cx="232.9" cy="364.2" r="8" fill="#1d1d1f"/><text x="244.9" y="368.2" text-anchor="start" font-size="13">Stamford, CT</text><circle cx="275.0" cy="49.3" r="8" fill="#1d1d1f"/><text x="275.0" y="76" text-anchor="middle" font-size="13">Kent, CT</text><circle cx="84.5" cy="295.4" r="8" fill="#1d1d1f"/><text x="96.5" y="299.4" text-anchor="start" font-size="13">Mount Kisco, NY</text></svg>
+        <div>
+          <form class="co-form" role="search">
+            <label for="co-address">Su dirección o código postal</label>
+            <input id="co-address" name="address" type="text" autocomplete="street-address" placeholder="ej. 10 Main St, Danbury, CT">
+            <button class="button" type="submit">Ver tiempos de manejo</button>
+          </form>
+          <p class="co-status" data-co-status role="status" aria-live="polite"></p>
+          <ul class="co-list" data-co-results></ul>
+          <p class="co-note">Los tiempos de manejo son estimados de OpenStreetMap y OSRM sin tráfico en vivo. Su dirección solo se usa para calcular la ruta y no se guarda.</p>
+        </div>
+      </div>
+    </section>
+    <script src="../assets/js/closest-office.js" defer></script>
+
 
     <section class="section section-tight">
       <div class="office-list">
@@ -287,6 +307,7 @@
           <a href="doctor.html">Dr. Kwon</a>
           <a href="services.html">Servicios</a>
           <a href="insurance.html">Seguros y financiamiento</a>
+          <a href="payment-plans.html">Planes de pago</a>
           <a href="locations.html">Ubicaciones</a>
         </nav>
       </div>

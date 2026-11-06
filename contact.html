@@ -184,6 +184,7 @@
         <a href="services.html">Services</a>
         <a href="smiles.html">Smiles</a>
         <a href="insurance.html">Insurance</a>
+        <a href="payment-plans.html">Payment Plans</a>
         <a href="contact.html">Locations</a>
         <a href="articles.html">Articles</a>
       </nav>
@@ -203,6 +204,25 @@
         <a class="button button-ghost" href="contact.html" data-office="call">Call an office</a>
       </div>
     </section>
+
+    <section class="section" id="closest-office" aria-labelledby="co-title">
+      <div class="section-heading"><p class="eyebrow">Find your office</p><h2 id="co-title">Which office is the closest to me?</h2><p>Enter your address or ZIP code to see the drive time to each of our three offices.</p></div>
+      <div class="co-wrap" data-closest-office>
+        <svg class="co-map" viewBox="0 0 360 420" role="img" aria-label="Map of our offices in Mount Kisco, NY, Kent, CT and Stamford, CT"><rect width="360" height="420" fill="none"/><line x1="240.0" y1="20" x2="135.0" y2="400" stroke="#b7bcc5" stroke-dasharray="6 6"/><text x="40" y="150" fill="#6e6e73" font-size="12">NY</text><text x="300" y="150" fill="#6e6e73" font-size="12">CT</text><circle cx="232.9" cy="364.2" r="8" fill="#1d1d1f"/><text x="244.9" y="368.2" text-anchor="start" font-size="13">Stamford, CT</text><circle cx="275.0" cy="49.3" r="8" fill="#1d1d1f"/><text x="275.0" y="76" text-anchor="middle" font-size="13">Kent, CT</text><circle cx="84.5" cy="295.4" r="8" fill="#1d1d1f"/><text x="96.5" y="299.4" text-anchor="start" font-size="13">Mount Kisco, NY</text></svg>
+        <div>
+          <form class="co-form" role="search">
+            <label for="co-address">Your address or ZIP code</label>
+            <input id="co-address" name="address" type="text" autocomplete="street-address" placeholder="e.g. 10 Main St, Danbury, CT">
+            <button class="button" type="submit">Show drive times</button>
+          </form>
+          <p class="co-status" data-co-status role="status" aria-live="polite"></p>
+          <ul class="co-list" data-co-results></ul>
+          <p class="co-note">Drive times are estimates from OpenStreetMap and OSRM without live traffic. Your address is only used to find the route and is not saved.</p>
+        </div>
+      </div>
+    </section>
+    <script src="assets/js/closest-office.js" defer></script>
+
 
     <section class="section section-tight section-soft">
       <div class="two-col">
@@ -277,6 +297,7 @@
           <a href="services.html">Services</a>
           <a href="smiles.html">Before and After</a>
           <a href="insurance.html">Insurance and Financing</a>
+          <a href="payment-plans.html">Payment Plans</a>
           <a href="contact.html">Locations</a>
           <a href="service-area.html">Areas We Serve</a>
           <a href="testimonials.html">Patient Reviews</a>
